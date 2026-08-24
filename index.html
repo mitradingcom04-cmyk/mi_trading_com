@@ -28,9 +28,15 @@ box-sizing:border-box;
 font-family:'Segoe UI',Arial,sans-serif;
 }
 
+html{
+scroll-behavior:smooth;
+scroll-padding-top:125px;
+}
+
 body{
 background:var(--bg);
 color:var(--text);
+overflow-x:hidden;
 }
 
 header{
@@ -40,6 +46,7 @@ position:sticky;
 top:0;
 z-index:1000;
 box-shadow:0 2px 10px rgba(0,0,0,.1);
+will-change:transform;
 }
 
 .header-top{
@@ -79,6 +86,7 @@ padding:12px;
 border:none;
 border-radius:4px 0 0 4px;
 font-size:15px;
+outline:none;
 }
 
 .search-wrap button{
@@ -96,6 +104,12 @@ display:flex;
 gap:20px;
 padding:0 5%;
 overflow-x:auto;
+-webkit-overflow-scrolling:touch;
+scrollbar-width:none;
+}
+
+nav::-webkit-scrollbar{
+display:none;
 }
 
 nav button{
@@ -152,6 +166,7 @@ border:2px solid white;
 max-width:1300px;
 margin:30px auto;
 padding:0 5%;
+scroll-margin-top:125px;
 }
 
 .categories{
@@ -159,6 +174,7 @@ display:grid;
 grid-template-columns:repeat(auto-fit,minmax(160px,1fr));
 gap:15px;
 margin:30px 0;
+contain:layout;
 }
 
 .cat-card{
@@ -168,7 +184,7 @@ border-radius:8px;
 text-align:center;
 cursor:pointer;
 box-shadow:0 2px 5px rgba(0,0,0,.08);
-transition:.3s;
+transition:transform .2s ease,box-shadow .2s ease;
 }
 
 .cat-card:hover{
@@ -184,6 +200,7 @@ border:2px solid var(--orange);
 display:grid;
 grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
 gap:20px;
+contain:layout;
 }
 
 .card{
@@ -191,7 +208,9 @@ background:var(--card);
 border-radius:8px;
 overflow:hidden;
 box-shadow:0 2px 8px rgba(0,0,0,.08);
-transition:.3s;
+transition:transform .2s ease;
+transform:translateZ(0);
+backface-visibility:hidden;
 }
 
 .card:hover{
@@ -203,6 +222,7 @@ width:100%;
 height:200px;
 object-fit:contain;
 background:#fafafa;
+display:block;
 }
 
 .card-body{
@@ -459,6 +479,12 @@ grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
 
 }
 
+/* EXTRA SCROLL FIX */
+
+section{
+scroll-margin-top:125px;
+}
+
 </style>
 </head>
 
@@ -578,7 +604,7 @@ Industrial Products & General Supply Solutions
 MI TRADING COM supplies industrial bearings, belts, CNC machine components, pneumatic and hydraulic products, electrical items, tools, hardware and general industrial supplies.
 </p>
 
-<a href="#products" class="btn">
+<a href="#products" class="btn" onclick="showSection('products');return false;">
 Explore Products
 </a>
 
@@ -635,7 +661,7 @@ placeholder="Price e.g. Rs. 960"
 <input
 type="text"
 id="pImage"
-placeholder="Image URL"
+placeholder="Paste Direct Image URL Here"
 >
 
 
@@ -895,6 +921,90 @@ onclick="event.stopPropagation()"
 <script>
 
 /* =========================================
+   UNIVERSAL IMAGE URL HANDLER
+========================================= */
+
+function getImageUrl(url){
+
+    if(!url || !url.trim()){
+        return "https://placehold.co/600x400?text=MI+TRADING+COM";
+    }
+
+    url = url.trim();
+
+    /*
+       Google Drive:
+       Converts:
+       https://drive.google.com/file/d/FILE_ID/view
+       into a usable image URL.
+    */
+
+    if(url.includes("drive.google.com")){
+
+        let match = url.match(/\/d\/([^/]+)/);
+
+        if(match && match[1]){
+
+            return "https://drive.google.com/uc?export=view&id=" + match[1];
+
+        }
+
+    }
+
+    /*
+       GitHub:
+       Converts:
+       https://github.com/user/repo/blob/main/image.jpg
+       into:
+       https://raw.githubusercontent.com/user/repo/main/image.jpg
+    */
+
+    if(
+        url.includes("github.com") &&
+        url.includes("/blob/")
+    ){
+
+        return url
+        .replace(
+            "https://github.com/",
+            "https://raw.githubusercontent.com/"
+        )
+        .replace(
+            "/blob/",
+            "/"
+        );
+
+    }
+
+    return url;
+
+}
+
+
+/* =========================================
+   IMAGE ERROR HANDLER
+========================================= */
+
+function imageError(img){
+
+    if(img.dataset.failed === "true"){
+
+        img.src =
+        "https://placehold.co/600x400?text=MI+TRADING+COM";
+
+        return;
+
+    }
+
+    img.dataset.failed = "true";
+
+    img.src =
+    "https://placehold.co/600x400?text=MI+TRADING+COM";
+
+}
+
+
+/* =========================================
    MI TRADING COM PRODUCT DATABASE
 ========================================= */
 
@@ -907,7 +1017,9 @@ title:"Deep Groove Ball Bearing",
 model:"6206",
 category:"Bearings",
 price:"Rs. 960",
+
 image:"https://m.media-amazon.com/images/I/61KjZQp8Y-L._AC_SL1500_.jpg",
+
 desc:"High quality steel bearing. Size: 30x62x16mm",
 avail:"In Stock"
 },
@@ -918,7 +1030,9 @@ title:"Taper Roller Bearing",
 model:"30206",
 category:"Taper Roller Bearings",
 price:"Rs. 1250",
+
 image:"https://m.media-amazon.com/images/I/61vBzQZQZ-L._AC_SL1500_.jpg",
+
 desc:"Heavy duty for automotive. Size: 30x62x17.25mm",
 avail:"In Stock"
 },
@@ -929,7 +1043,9 @@ title:"Timing Belt",
 model:"XL-100",
 category:"Timing Belts",
 price:"Rs. 450",
+
 image:"https://m.media-amazon.com/images/I/71vBzQZQZ-L._AC_SL1500_.jpg",
+
 desc:"Industrial timing belt for machinery",
 avail:"In Stock"
 },
@@ -940,7 +1056,9 @@ title:"Pneumatic Fitting",
 model:"PC-6mm",
 category:"Pneumatic Fittings",
 price:"Ask for Price",
+
 image:"https://m.media-amazon.com/images/I/61vBzQZQZ-L._AC_SL1500_.jpg",
+
 desc:"Straight pneumatic connector 6mm",
 avail:"In Stock"
 }
@@ -995,7 +1113,6 @@ let currentFilter =
 
 const OWNER_PASSWORD = "MI@2026";
 
-
 let ownerLoggedIn =
 sessionStorage.getItem("miOwnerLoggedIn") === "true";
 
@@ -1010,20 +1127,30 @@ return;
 
 }
 
-document.getElementById("ownerLogin").style.display="flex";
+document.getElementById(
+"ownerLogin"
+).style.display="flex";
 
-document.getElementById("ownerPassword").focus();
+document.getElementById(
+"ownerPassword"
+).focus();
 
 }
 
 
 function closeOwnerLogin(){
 
-document.getElementById("ownerLogin").style.display="none";
+document.getElementById(
+"ownerLogin"
+).style.display="none";
 
-document.getElementById("ownerPassword").value="";
+document.getElementById(
+"ownerPassword"
+).value="";
 
-document.getElementById("loginError").innerText="";
+document.getElementById(
+"loginError"
+).innerText="";
 
 }
 
@@ -1031,7 +1158,9 @@ document.getElementById("loginError").innerText="";
 function ownerLogin(){
 
 let password =
-document.getElementById("ownerPassword").value;
+document.getElementById(
+"ownerPassword"
+).value;
 
 
 if(password === OWNER_PASSWORD){
@@ -1055,7 +1184,9 @@ alert(
 
 else{
 
-document.getElementById("loginError").innerText =
+document.getElementById(
+"loginError"
+).innerText =
 "Incorrect password. Please try again.";
 
 }
@@ -1090,11 +1221,9 @@ document.getElementById(
 "adminPanel"
 ).style.display="block";
 
-
 document.getElementById(
 "ownerTools"
 ).style.display="block";
-
 
 document.getElementById(
 "ownerBadge"
@@ -1118,11 +1247,9 @@ document.getElementById(
 "adminPanel"
 ).style.display="none";
 
-
 document.getElementById(
 "ownerTools"
 ).style.display="none";
-
 
 document.getElementById(
 "ownerBadge"
@@ -1245,22 +1372,26 @@ p.category==currentFilter;
 
 let matchSearch =
 
-p.title.toLowerCase()
+String(p.title || "")
+.toLowerCase()
 .includes(searchValue)
 
 ||
 
-p.model.toLowerCase()
+String(p.model || "")
+.toLowerCase()
 .includes(searchValue)
 
 ||
 
-p.desc.toLowerCase()
+String(p.desc || "")
+.toLowerCase()
 .includes(searchValue)
 
 ||
 
-p.category.toLowerCase()
+String(p.category || "")
+.toLowerCase()
 .includes(searchValue);
 
 
@@ -1279,9 +1410,11 @@ html += `
 <div class="card">
 
 <img
-src="${p.image}"
+src="${getImageUrl(p.image)}"
 alt="${p.title}"
-onerror="this.src='https://via.placeholder.com/600x400?text=MI+TRADING+COM'"
+loading="lazy"
+decoding="async"
+onerror="imageError(this)"
 >
 
 
@@ -1434,13 +1567,16 @@ document.querySelector(
 ).innerHTML = `
 
 <img
-src="${p.image}"
+src="${getImageUrl(p.image)}"
+alt="${p.title}"
+loading="lazy"
+decoding="async"
 style="
 width:100%;
 max-height:300px;
 object-fit:contain;
 "
-onerror="this.src='https://via.placeholder.com/600x400?text=MI+TRADING+COM'"
+onerror="imageError(this)"
 >
 
 
@@ -1575,7 +1711,7 @@ category:category,
 
 price:price || "Ask for Price",
 
-image:image || "https://via.placeholder.com/600x400?text=MI+TRADING+COM",
+image:getImageUrl(image),
 
 desc:desc || "Industrial product supplied by MI TRADING COM.",
 
@@ -1604,17 +1740,29 @@ alert(
 
 function clearProductForm(){
 
-document.getElementById("pTitle").value="";
+document.getElementById(
+"pTitle"
+).value="";
 
-document.getElementById("pModel").value="";
+document.getElementById(
+"pModel"
+).value="";
 
-document.getElementById("pPrice").value="";
+document.getElementById(
+"pPrice"
+).value="";
 
-document.getElementById("pImage").value="";
+document.getElementById(
+"pImage"
+).value="";
 
-document.getElementById("pDesc").value="";
+document.getElementById(
+"pDesc"
+).value="";
 
-document.getElementById("pAvail").value="In Stock";
+document.getElementById(
+"pAvail"
+).value="In Stock";
 
 }
 
@@ -1785,7 +1933,7 @@ p.price=price;
 
 p.desc=desc;
 
-p.image=image;
+p.image=getImageUrl(image);
 
 p.avail=avail;
 
@@ -1825,7 +1973,8 @@ document.getElementById(
 document.getElementById(
 "adminPanel"
 ).scrollIntoView({
-behavior:"smooth"
+behavior:"smooth",
+block:"start"
 });
 
 }
@@ -1840,7 +1989,8 @@ function scrollToCategories(){
 document.getElementById(
 "categoryList"
 ).scrollIntoView({
-behavior:"smooth"
+behavior:"smooth",
+block:"start"
 });
 
 }
@@ -1848,28 +1998,87 @@ behavior:"smooth"
 
 /* =========================================
    NAVIGATION
+   FIXED SCROLL GLITCH
 ========================================= */
 
 function showSection(id){
 
-document.querySelectorAll(
-"section"
-).forEach(function(s){
+let sections =
+document.querySelectorAll("section");
+
+
+sections.forEach(function(s){
 
 s.style.display="none";
 
 });
 
 
-document.getElementById(
-id
-).style.display="block";
+let target =
+document.getElementById(id);
 
 
-window.scrollTo(
-0,
-0
-);
+if(!target) return;
+
+
+target.style.display="block";
+
+
+/*
+   Wait until browser finishes layout,
+   then scroll smoothly.
+*/
+
+requestAnimationFrame(function(){
+
+let headerHeight =
+document.querySelector("header").offsetHeight;
+
+let targetPosition =
+target.getBoundingClientRect().top +
+window.pageYOffset -
+headerHeight -
+10;
+
+
+window.scrollTo({
+
+top:Math.max(0,targetPosition),
+
+behavior:"smooth"
+
+});
+
+});
+
+
+/* Update active nav */
+
+document.querySelectorAll(
+"nav button"
+).forEach(function(button){
+
+button.classList.remove("active");
+
+});
+
+
+let buttons =
+document.querySelectorAll("nav button");
+
+
+buttons.forEach(function(button){
+
+if(
+button.getAttribute("onclick") ===
+"showSection('"+id+"')"
+){
+
+button.classList.add("active");
+
+}
+
+});
 
 }
 
@@ -1902,6 +2111,44 @@ renderCategories();
 renderProducts();
 
 protectAdminControls();
+
+
+/* =========================================
+   PREVENT HASH JUMP GLITCH
+========================================= */
+
+window.addEventListener(
+"load",
+function(){
+
+if(window.location.hash){
+
+history.replaceState(
+null,
+"",
+window.location.pathname +
+window.location.search
+);
+
+window.scrollTo(
+0,
+0
+);
+
+}
+
+});
+
+
+/* =========================================
+   FIX BROWSER BACK/FORWARD SCROLL
+========================================= */
+
+if("scrollRestoration" in history){
+
+history.scrollRestoration="manual";
+
+}
 
 </script>
 
