@@ -40,13 +40,8 @@ color:var(--text);
 overflow-x:hidden;
 }
 
-button,input,select,textarea{
-font:inherit;
-}
-
-a{
-text-decoration:none;
-}
+button,input,select,textarea{font:inherit}
+a{text-decoration:none}
 
 header{
 position:sticky;
@@ -71,9 +66,7 @@ font-weight:900;
 color:#fff;
 }
 
-.logo span{
-color:var(--orange);
-}
+.logo span{color:var(--orange)}
 
 .contact-mini{
 font-size:13px;
@@ -81,9 +74,7 @@ display:flex;
 gap:18px;
 }
 
-.contact-mini a{
-color:#fff;
-}
+.contact-mini a{color:#fff}
 
 .searchbar{
 display:flex;
@@ -117,9 +108,7 @@ overflow-x:auto;
 scrollbar-width:none;
 }
 
-nav::-webkit-scrollbar{
-display:none;
-}
+nav::-webkit-scrollbar{display:none}
 
 nav button{
 border:0;
@@ -131,9 +120,7 @@ white-space:nowrap;
 font-weight:bold;
 }
 
-nav button:hover{
-color:var(--orange);
-}
+nav button:hover{color:var(--orange)}
 
 .hero{
 background:linear-gradient(135deg,#10264a,#244c84);
@@ -234,9 +221,7 @@ height:100%;
 object-fit:contain;
 }
 
-.card-body{
-padding:15px;
-}
+.card-body{padding:15px}
 
 .badge-cat{
 font-size:11px;
@@ -259,8 +244,7 @@ color:var(--muted);
 font-size:13px;
 color:#555;
 line-height:1.5;
-height:40px;
-overflow:hidden;
+min-height:40px;
 margin:8px 0;
 }
 
@@ -277,13 +261,8 @@ font-weight:bold;
 margin-bottom:10px;
 }
 
-.instock{
-color:var(--green);
-}
-
-.outstock{
-color:var(--red);
-}
+.instock{color:var(--green)}
+.outstock{color:var(--red)}
 
 .actions{
 display:flex;
@@ -300,17 +279,9 @@ font-size:12px;
 cursor:pointer;
 }
 
-.details{
-background:#475569;
-}
-
-.whatsapp{
-background:#25d366;
-}
-
-.call{
-background:#0d6efd;
-}
+.details{background:#475569}
+.whatsapp{background:#25d366}
+.call{background:#0d6efd}
 
 .admin-actions{
 display:none;
@@ -328,13 +299,8 @@ cursor:pointer;
 font-size:11px;
 }
 
-.edit{
-background:#f59e0b;
-}
-
-.delete{
-background:#dc3545;
-}
+.edit{background:#f59e0b}
+.delete{background:#dc3545}
 
 footer{
 background:var(--navy);
@@ -360,9 +326,7 @@ line-height:1.8;
 color:#dbe4f0;
 }
 
-footer a{
-color:#dbe4f0;
-}
+footer a{color:#dbe4f0}
 
 .modal{
 display:none;
@@ -385,18 +349,14 @@ border-radius:12px;
 padding:25px;
 }
 
-.login-box{
-max-width:400px;
-}
+.login-box{max-width:400px}
 
 .modal-box h2{
 color:var(--navy);
 margin-bottom:15px;
 }
 
-.field{
-margin-bottom:12px;
-}
+.field{margin-bottom:12px}
 
 .field label{
 display:block;
@@ -457,13 +417,8 @@ overflow:auto;
 padding:20px;
 }
 
-.tab{
-display:none;
-}
-
-.tab.active{
-display:block;
-}
+.tab{display:none}
+.tab.active{display:block}
 
 .stats{
 display:grid;
@@ -485,9 +440,7 @@ font-size:25px;
 color:var(--navy);
 }
 
-.stat small{
-color:#777;
-}
+.stat small{color:#777}
 
 .form-grid{
 display:grid;
@@ -495,9 +448,7 @@ grid-template-columns:1fr 1fr;
 gap:12px;
 }
 
-.full{
-grid-column:1/-1;
-}
+.full{grid-column:1/-1}
 
 .preview{
 width:220px;
@@ -525,9 +476,7 @@ margin-top:6px;
 line-height:1.5;
 }
 
-.table-wrap{
-overflow:auto;
-}
+.table-wrap{overflow:auto}
 
 table{
 width:100%;
@@ -598,15 +547,21 @@ text-align:center;
 color:#777;
 }
 
+.featured-title{
+display:flex;
+align-items:center;
+justify-content:space-between;
+gap:10px;
+margin-bottom:20px;
+}
+
+.featured-title h2{margin:0}
+
 @media(max-width:700px){
 
-.topbar{
-padding:11px 4%;
-}
+.topbar{padding:11px 4%}
 
-.logo{
-font-size:21px;
-}
+.logo{font-size:21px}
 
 .contact-mini{
 display:block;
@@ -619,50 +574,30 @@ gap:18px;
 padding:0 4%;
 }
 
-.hero{
-padding:55px 4%;
-}
+.hero{padding:55px 4%}
 
-.hero h1{
-font-size:27px;
-}
+.hero h1{font-size:27px}
 
-.section{
-padding:32px 4%;
-}
+.section{padding:32px 4%}
 
 .products{
 grid-template-columns:repeat(2,1fr);
 gap:11px;
 }
 
-.card-img{
-height:160px;
-}
+.card-img{height:160px}
 
-.card-body{
-padding:10px;
-}
+.card-body{padding:10px}
 
-.card h3{
-font-size:14px;
-}
+.card h3{font-size:14px}
 
-.actions{
-flex-direction:column;
-}
+.actions{flex-direction:column}
 
-.stats{
-grid-template-columns:1fr 1fr;
-}
+.stats{grid-template-columns:1fr 1fr}
 
-.form-grid{
-grid-template-columns:1fr;
-}
+.form-grid{grid-template-columns:1fr}
 
-.full{
-grid-column:auto;
-}
+.full{grid-column:auto}
 
 .admin-dashboard{
 flex-direction:column;
@@ -681,9 +616,7 @@ min-width:125px;
 white-space:nowrap;
 }
 
-.dashboard-content{
-padding:12px;
-}
+.dashboard-content{padding:12px}
 
 .preview{
 width:100%;
@@ -719,9 +652,7 @@ type="search"
 placeholder="Search product, model or part number..."
 >
 
-<button onclick="renderProducts()">
-SEARCH
-</button>
+<button onclick="renderProducts()">SEARCH</button>
 
 </div>
 
@@ -729,6 +660,7 @@ SEARCH
 
 <button onclick="go('home')">Home</button>
 <button onclick="go('products')">Products</button>
+<button onclick="go('featuredCustomers')">Featured</button>
 <button onclick="go('about')">About</button>
 <button onclick="go('contact')">Contact</button>
 <button onclick="openLogin()">Owner Login</button>
@@ -740,9 +672,7 @@ SEARCH
 
 <section id="home" class="hero">
 
-<h1>
-Industrial Products & General Supply Solutions
-</h1>
+<h1>Industrial Products & General Supply Solutions</h1>
 
 <p>
 MI TRADING COM supplies bearings, belts, CNC machine components,
@@ -778,6 +708,29 @@ WhatsApp Inquiry
 </section>
 
 
+<!-- CUSTOMER FEATURED -->
+
+<section id="featuredCustomers" class="section">
+
+<div class="featured-title">
+
+<h2>⭐ Featured Products</h2>
+
+<button class="btn blue" onclick="showFeaturedProducts()">
+Refresh
+</button>
+
+</div>
+
+<p style="color:#777;margin-bottom:20px">
+Our selected featured industrial products.
+</p>
+
+<div id="customerFeaturedList" class="products"></div>
+
+</section>
+
+
 <section id="products" class="section">
 
 <div style="
@@ -788,23 +741,15 @@ gap:10px;
 margin-bottom:20px;
 ">
 
-<h2 style="margin:0">
-Our Products
-</h2>
+<h2 style="margin:0">Our Products</h2>
 
-<button
-class="btn blue"
-onclick="allProducts()"
->
+<button class="btn blue" onclick="allProducts()">
 All Products
 </button>
 
 </div>
 
-<p
-id="productCount"
-style="color:#777;margin-bottom:15px"
-></p>
+<p id="productCount" style="color:#777;margin-bottom:15px"></p>
 
 <div id="productList" class="products"></div>
 
@@ -869,9 +814,7 @@ and applications.
 <div class="card-body">
 <h3>📞 Phone</h3>
 <p>
-<a href="tel:03134854823">
-0313-4854823
-</a>
+<a href="tel:03134854823">0313-4854823</a>
 </p>
 </div>
 </div>
@@ -880,10 +823,7 @@ and applications.
 <div class="card-body">
 <h3>💬 WhatsApp</h3>
 <p>
-<a
-target="_blank"
-href="https://wa.me/923134854823"
->
+<a target="_blank" href="https://wa.me/923134854823">
 Chat on WhatsApp
 </a>
 </p>
@@ -934,6 +874,7 @@ mitradingcom04@gmail.com
 <h3>Quick Links</h3>
 <p><a href="#home">Home</a></p>
 <p><a href="#products">Products</a></p>
+<p><a href="#featuredCustomers">Featured</a></p>
 <p><a href="#about">About</a></p>
 <p><a href="#contact">Contact</a></p>
 </div>
@@ -977,18 +918,11 @@ placeholder="Enter owner password"
 
 </div>
 
-<p
-id="loginError"
-style="color:red;font-size:13px"
-></p>
+<p id="loginError" style="color:red;font-size:13px"></p>
 
-<button class="btn" onclick="login()">
-Login
-</button>
+<button class="btn" onclick="login()">Login</button>
 
-<button class="btn dark" onclick="closeLogin()">
-Cancel
-</button>
+<button class="btn dark" onclick="closeLogin()">Cancel</button>
 
 </div>
 
@@ -1080,17 +1014,18 @@ Cancel
 
 <p style="line-height:1.8;color:#555">
 
-✔ Add unlimited products<br>
+✔ Add products<br>
 ✔ Upload pictures directly from mobile gallery<br>
 ✔ Replace product picture while editing<br>
-✔ Picture remains after page refresh<br>
-✔ Add image URLs if required<br>
+✔ Picture remains after refresh on this browser<br>
+✔ Add image URLs<br>
 ✔ Edit products<br>
 ✔ Delete products<br>
 ✔ Change prices<br>
 ✔ Change stock<br>
 ✔ Manage categories<br>
 ✔ Mark products Featured<br>
+✔ Featured products automatically appear to customers<br>
 ✔ Product search<br>
 ✔ WhatsApp inquiries<br>
 ✔ Manage website contact information
@@ -1103,13 +1038,11 @@ Cancel
 </div>
 
 
-<!-- ADD / EDIT PRODUCT -->
+<!-- ADD PRODUCT -->
 
 <div id="tab-add" class="tab">
 
-<h2 id="formTitle">
-Add Product
-</h2>
+<h2 id="formTitle">Add Product</h2>
 
 <div class="card">
 
@@ -1121,10 +1054,7 @@ Add Product
 
 <label>Product Name *</label>
 
-<input
-id="pName"
-placeholder="Example: SKF Bearing"
->
+<input id="pName" placeholder="Example: SKF Bearing">
 
 </div>
 
@@ -1133,10 +1063,7 @@ placeholder="Example: SKF Bearing"
 
 <label>Model / Part Number *</label>
 
-<input
-id="pModel"
-placeholder="Example: 6206"
->
+<input id="pModel" placeholder="Example: 6206">
 
 </div>
 
@@ -1154,32 +1081,23 @@ placeholder="Example: 6206"
 
 <label>Price</label>
 
-<input
-id="pPrice"
-placeholder="Rs. 960"
->
+<input id="pPrice" placeholder="Rs. 960">
 
 </div>
 
 
-<!-- OPTIONAL URL -->
-
 <div class="field full">
 
-<label>
-Image URL — Optional
-</label>
+<label>Image URL — Optional</label>
 
 <input
 id="pImage"
-placeholder="Optional — Gallery se picture upload karna ho to neeche select karein"
+placeholder="Image URL or gallery image"
 oninput="previewImage()"
 >
 
 </div>
 
-
-<!-- DIRECT GALLERY -->
 
 <div class="field full">
 
@@ -1261,17 +1179,11 @@ placeholder="Professional product description"
 </div>
 
 
-<button
-class="btn"
-onclick="saveProduct()"
->
+<button class="btn" onclick="saveProduct()">
 💾 Save Product
 </button>
 
-<button
-class="btn dark"
-onclick="clearForm()"
->
+<button class="btn dark" onclick="clearForm()">
 Clear
 </button>
 
@@ -1337,10 +1249,7 @@ placeholder="Example: Oil Seals"
 
 </div>
 
-<button
-class="btn"
-onclick="addCategory()"
->
+<button class="btn" onclick="addCategory()">
 ➕ Add Category
 </button>
 
@@ -1350,10 +1259,7 @@ onclick="addCategory()"
 
 <br>
 
-<div
-id="adminCategories"
-class="categories"
-></div>
+<div id="adminCategories" class="categories"></div>
 
 </div>
 
@@ -1364,10 +1270,11 @@ class="categories"
 
 <h2>Featured Products</h2>
 
-<div
-id="featuredProducts"
-class="products"
-></div>
+<p style="color:#777;margin-bottom:15px">
+Products marked as Featured will appear in the customer Featured section.
+</p>
+
+<div id="featuredProducts" class="products"></div>
 
 </div>
 
@@ -1414,11 +1321,8 @@ Save Settings
 
 
 </div>
-
 </div>
-
 </div>
-
 </div>
 
 
@@ -1430,10 +1334,7 @@ Save Settings
 
 <div id="details"></div>
 
-<button
-class="btn dark"
-onclick="closeDetails()"
->
+<button class="btn dark" onclick="closeDetails()">
 Close
 </button>
 
@@ -1454,17 +1355,11 @@ Close
 
 <br>
 
-<button
-class="btn green"
-onclick="sendWhatsApp()"
->
+<button class="btn green" onclick="sendWhatsApp()">
 Send WhatsApp Inquiry
 </button>
 
-<button
-class="btn dark"
-onclick="closeCart()"
->
+<button class="btn dark" onclick="closeCart()">
 Close
 </button>
 
@@ -1476,8 +1371,7 @@ Close
 <script>
 
 /* =========================================================
-   MI TRADING COM
-   COMPLETE PRODUCT + GALLERY SYSTEM
+MI TRADING COM - PRODUCT SYSTEM
 ========================================================= */
 
 const PASSWORD = "MI@2026";
@@ -1518,12 +1412,6 @@ let categories = [
 "Safety Items"
 ];
 
-
-/* =========================================================
-   LOAD EXISTING PRODUCTS
-   IMPORTANT:
-   Existing localStorage products will NOT be replaced.
-========================================================= */
 
 let products =
 JSON.parse(
@@ -1600,7 +1488,7 @@ localStorage.getItem("mi_cart")
 
 
 /* =========================================================
-   IMAGE URL
+IMAGE URL
 ========================================================= */
 
 function imageURL(url){
@@ -1610,17 +1498,8 @@ return "https://placehold.co/700x500?text=MI+TRADING+COM";
 
 url = String(url).trim();
 
-
-/* DIRECT GALLERY DATA IMAGE */
-
-if(url.startsWith("data:image/")){
-
+if(url.startsWith("data:image/"))
 return url;
-
-}
-
-
-/* GOOGLE DRIVE */
 
 let drive =
 url.match(
@@ -1635,9 +1514,6 @@ return
 drive[1];
 
 }
-
-
-/* GITHUB */
 
 if(
 url.includes("github.com") &&
@@ -1656,14 +1532,12 @@ return url
 
 }
 
-
 return url;
-
 }
 
 
 /* =========================================================
-   IMAGE ERROR
+IMAGE ERROR
 ========================================================= */
 
 function imgError(img){
@@ -1674,12 +1548,11 @@ img.onerror = null;
 
 img.src =
 "https://placehold.co/700x500?text=Image+Not+Available";
-
 }
 
 
 /* =========================================================
-   DIRECT GALLERY UPLOAD
+GALLERY IMAGE UPLOAD - FIXED
 ========================================================= */
 
 function galleryImageUpload(event){
@@ -1689,39 +1562,26 @@ event.target.files[0];
 
 if(!file)return;
 
-
 if(!file.type.startsWith("image/")){
 
-alert(
-"Please select an image file."
-);
+alert("Please select an image file.");
 
 event.target.value = "";
 
 return;
-
 }
 
+if(file.size > 10 * 1024 * 1024){
 
-const maxSize =
-15 * 1024 * 1024;
-
-if(file.size > maxSize){
-
-alert(
-"Image 15MB se choti honi chahiye."
-);
+alert("Image 10MB se choti honi chahiye.");
 
 event.target.value = "";
 
 return;
-
 }
-
 
 const reader =
 new FileReader();
-
 
 reader.onload =
 function(e){
@@ -1729,16 +1589,14 @@ function(e){
 const img =
 new Image();
 
-
 img.onload =
 function(){
 
-const MAX_WIDTH = 1400;
-const MAX_HEIGHT = 1400;
+const MAX_WIDTH = 1200;
+const MAX_HEIGHT = 1200;
 
 let width = img.width;
 let height = img.height;
-
 
 if(width > MAX_WIDTH){
 
@@ -1750,7 +1608,6 @@ width = MAX_WIDTH;
 
 }
 
-
 if(height > MAX_HEIGHT){
 
 width =
@@ -1761,11 +1618,8 @@ height = MAX_HEIGHT;
 
 }
 
-
 const canvas =
-document.createElement(
-"canvas"
-);
+document.createElement("canvas");
 
 canvas.width =
 Math.round(width);
@@ -1773,10 +1627,8 @@ Math.round(width);
 canvas.height =
 Math.round(height);
 
-
 const ctx =
 canvas.getContext("2d");
-
 
 ctx.drawImage(
 img,
@@ -1786,41 +1638,16 @@ canvas.width,
 canvas.height
 );
 
-
-/*
-WebP compression
-*/
-
 let compressed =
 canvas.toDataURL(
-"image/webp",
-0.82
-);
-
-
-if(
-!compressed ||
-compressed.length < 100
-){
-
-compressed =
-canvas.toDataURL(
 "image/jpeg",
-0.82
+0.75
 );
-
-}
-
-
-/*
-Store image directly
-*/
 
 document.getElementById(
 "pImage"
 ).value =
 compressed;
-
 
 document.getElementById(
 "imagePreview"
@@ -1829,32 +1656,24 @@ compressed;
 
 };
 
-
 img.onerror =
 function(){
 
-alert(
-"Image load nahi ho saki."
-);
+alert("Image load nahi ho saki.");
 
 };
-
 
 img.src =
 e.target.result;
 
 };
 
-
 reader.onerror =
 function(){
 
-alert(
-"Image upload nahi ho saki."
-);
+alert("Image upload nahi ho saki.");
 
 };
-
 
 reader.readAsDataURL(file);
 
@@ -1862,7 +1681,7 @@ reader.readAsDataURL(file);
 
 
 /* =========================================================
-   CATEGORIES
+CATEGORIES
 ========================================================= */
 
 function renderCategories(){
@@ -1913,7 +1732,7 @@ ${escape(c)}
 
 
 /* =========================================================
-   PRODUCTS
+PRODUCTS
 ========================================================= */
 
 function renderProducts(){
@@ -1925,7 +1744,6 @@ document.getElementById(
 .toLowerCase()
 .trim();
 
-
 let list =
 products.filter(
 function(p){
@@ -1933,7 +1751,6 @@ function(p){
 let categoryOK =
 activeCategory==="All Products" ||
 p.category===activeCategory;
-
 
 let text =
 (
@@ -1943,7 +1760,6 @@ let text =
 (p.description||p.desc||"")
 )
 .toLowerCase();
-
 
 return categoryOK &&
 (!search ||
@@ -1969,7 +1785,6 @@ No products found.
 </div>`;
 
 return;
-
 }
 
 
@@ -1982,7 +1797,8 @@ function(p){
 
 let name =
 p.name ||
-p.title;
+p.title ||
+"";
 
 let desc =
 p.description ||
@@ -1993,7 +1809,6 @@ let stock =
 p.stock ||
 p.avail ||
 "";
-
 
 return `
 
@@ -2016,9 +1831,7 @@ onerror="imgError(this)"
 ${escape(p.category)}
 </div>
 
-<h3>
-${escape(name)}
-</h3>
+<h3>${escape(name)}</h3>
 
 <div class="model">
 Model: ${escape(p.model)}
@@ -2087,13 +1900,11 @@ Delete
 </div>
 
 </div>
-
 </div>
 
 `;
 
 }).join("");
-
 
 updateAdminButtons();
 
@@ -2101,7 +1912,139 @@ updateAdminButtons();
 
 
 /* =========================================================
-   FILTER
+FEATURED CUSTOMER PRODUCTS
+========================================================= */
+
+function showFeaturedProducts(){
+
+const box =
+document.getElementById(
+"customerFeaturedList"
+);
+
+if(!box)return;
+
+const featured =
+products.filter(
+function(p){
+
+return (
+p.featured === true ||
+p.featured === "true"
+);
+
+});
+
+if(!featured.length){
+
+box.innerHTML =
+`
+<div class="empty">
+No featured products available.
+</div>
+`;
+
+return;
+}
+
+box.innerHTML =
+
+featured.map(
+function(p){
+
+let name =
+p.name ||
+p.title ||
+"";
+
+let desc =
+p.description ||
+p.desc ||
+"";
+
+return `
+
+<div class="card">
+
+<div class="card-img">
+
+<img
+src="${imageURL(p.image)}"
+alt="${escape(name)}"
+loading="lazy"
+onerror="imgError(this)"
+>
+
+</div>
+
+<div class="card-body">
+
+<div class="badge-cat">
+⭐ FEATURED • ${escape(p.category)}
+</div>
+
+<h3>
+${escape(name)}
+</h3>
+
+<div class="model">
+Model: ${escape(p.model)}
+</div>
+
+<div class="desc">
+${escape(desc)}
+</div>
+
+<div class="price">
+${escape(p.price||"Ask for Price")}
+</div>
+
+<div class="stock ${
+(p.stock||p.avail)==="In Stock"
+?"instock"
+:"outstock"
+}">
+● ${escape(p.stock||p.avail||"Available")}
+</div>
+
+<div class="actions">
+
+<button
+class="details"
+onclick="details(${p.id})"
+>
+Details
+</button>
+
+<button
+class="whatsapp"
+onclick="addCart(${p.id})"
+>
+Inquiry
+</button>
+
+<button
+class="call"
+onclick="call()"
+>
+Call
+</button>
+
+</div>
+
+</div>
+
+</div>
+
+`;
+
+}).join("");
+
+}
+
+
+/* =========================================================
+FILTER
 ========================================================= */
 
 function filterCategory(c){
@@ -2138,7 +2081,7 @@ renderProducts();
 
 
 /* =========================================================
-   DETAILS
+DETAILS
 ========================================================= */
 
 function details(id){
@@ -2149,7 +2092,6 @@ x=>x.id===id
 );
 
 if(!p)return;
-
 
 document.getElementById(
 "details"
@@ -2181,7 +2123,7 @@ ${escape(p.category)}
 
 <p>
 <b>Price:</b>
-${escape(p.price)}
+${escape(p.price||"Ask for Price")}
 </p>
 
 <p>
@@ -2228,7 +2170,7 @@ document.getElementById(
 
 
 /* =========================================================
-   LOGIN
+LOGIN
 ========================================================= */
 
 function openLogin(){
@@ -2270,7 +2212,6 @@ document.getElementById(
 "loginPassword"
 ).value;
 
-
 if(password === PASSWORD){
 
 loggedIn = true;
@@ -2297,7 +2238,7 @@ document.getElementById(
 
 
 /* =========================================================
-   OWNER
+OWNER
 ========================================================= */
 
 function openOwner(){
@@ -2334,9 +2275,7 @@ closeOwner();
 
 updateAdminButtons();
 
-alert(
-"Owner Logout Successful."
-);
+alert("Owner Logout Successful.");
 
 }
 
@@ -2353,7 +2292,6 @@ document.getElementById(
 "tab-"+id
 ).classList.add("active");
 
-
 document.querySelectorAll(
 ".sidebar button"
 ).forEach(
@@ -2368,69 +2306,58 @@ refreshAdmin();
 
 
 /* =========================================================
-   SAVE / UPDATE PRODUCT
+SAVE PRODUCT
 ========================================================= */
 
 function saveProduct(){
 
 if(!loggedIn){
 
-alert(
-"Owner Login Required."
-);
+alert("Owner Login Required.");
 
 return;
 
 }
-
 
 let name =
 document.getElementById(
 "pName"
 ).value.trim();
 
-
 let model =
 document.getElementById(
 "pModel"
 ).value.trim();
-
 
 let category =
 document.getElementById(
 "pCategory"
 ).value;
 
-
 let price =
 document.getElementById(
 "pPrice"
 ).value.trim();
-
 
 let image =
 document.getElementById(
 "pImage"
 ).value.trim();
 
-
 let stock =
 document.getElementById(
 "pStock"
 ).value;
-
 
 let featured =
 document.getElementById(
 "pFeatured"
 ).value === "true";
 
-
 let description =
 document.getElementById(
 "pDescription"
 ).value.trim();
-
 
 if(!name || !model){
 
@@ -2439,6 +2366,13 @@ alert(
 );
 
 return;
+
+}
+
+if(!image){
+
+image =
+"https://placehold.co/700x500?text=MI+TRADING+COM";
 
 }
 
@@ -2452,48 +2386,29 @@ products.find(
 x=>x.id===editId
 );
 
-if(p){
+if(!p)return;
 
 p.name = name;
 p.title = name;
 p.model = model;
 p.category = category;
-
-p.price =
-price ||
-"Ask for Price";
-
-
-/*
-New gallery image ho
-to replace.
-Warna purani image rahegi.
-*/
+p.price = price || "Ask for Price";
 
 if(image){
-
 p.image = image;
-
 }
-
 
 p.stock = stock;
 p.avail = stock;
-
 p.featured = featured;
 
 p.description =
 description ||
 "Industrial product supplied by MI TRADING COM.";
 
-p.desc =
-p.description;
+p.desc = p.description;
 
-}
-
-alert(
-"Product Updated Successfully."
-);
+alert("Product Updated Successfully.");
 
 }
 
@@ -2518,9 +2433,7 @@ price:
 price ||
 "Ask for Price",
 
-image:
-image ||
-"https://placehold.co/700x500?text=MI+TRADING+COM",
+image:image,
 
 stock:stock,
 
@@ -2538,16 +2451,12 @@ description ||
 
 });
 
-alert(
-"Product Added Successfully."
-);
+alert("Product Added Successfully.");
 
 }
 
 
-/*
-SAVE DATABASE
-*/
+/* SAVE */
 
 try{
 
@@ -2559,7 +2468,7 @@ JSON.stringify(products)
 }catch(error){
 
 alert(
-"Image bohat bari hai. Choti picture upload karein."
+"Image storage full hai. Picture thori choti karein."
 );
 
 console.error(error);
@@ -2568,12 +2477,13 @@ return;
 
 }
 
-
 editId = null;
 
 clearForm();
 
 renderProducts();
+
+showFeaturedProducts();
 
 refreshAdmin();
 
@@ -2581,7 +2491,7 @@ refreshAdmin();
 
 
 /* =========================================================
-   EDIT PRODUCT
+EDIT
 ========================================================= */
 
 function editProduct(id){
@@ -2595,12 +2505,10 @@ if(!p)return;
 
 editId = id;
 
-
 document.getElementById(
 "formTitle"
 ).innerText =
 "Edit Product";
-
 
 document.getElementById(
 "pName"
@@ -2609,13 +2517,11 @@ p.name ||
 p.title ||
 "";
 
-
 document.getElementById(
 "pModel"
 ).value =
 p.model ||
 "";
-
 
 document.getElementById(
 "pCategory"
@@ -2623,13 +2529,11 @@ document.getElementById(
 p.category ||
 "";
 
-
 document.getElementById(
 "pPrice"
 ).value =
 p.price ||
 "";
-
 
 document.getElementById(
 "pImage"
@@ -2637,14 +2541,12 @@ document.getElementById(
 p.image ||
 "";
 
-
 document.getElementById(
 "pStock"
 ).value =
 p.stock ||
 p.avail ||
 "In Stock";
-
 
 document.getElementById(
 "pFeatured"
@@ -2658,7 +2560,6 @@ p.featured==="true"
 :
 "false";
 
-
 document.getElementById(
 "pDescription"
 ).value =
@@ -2666,66 +2567,39 @@ p.description ||
 p.desc ||
 "";
 
-
-/*
-Existing image show
-*/
-
 document.getElementById(
 "imagePreview"
 ).src =
 imageURL(p.image);
 
-
-/*
-Reset file input
-*/
-
-let gallery =
+const gallery =
 document.getElementById(
 "galleryImage"
 );
 
-if(gallery){
-
-gallery.value = "";
-
-}
-
-
-document.getElementById(
-"tab-add"
-).classList.add(
-"active"
-);
-
+if(gallery)gallery.value = "";
 
 document.querySelectorAll(
 ".tab"
 ).forEach(
 function(x){
-
-if(x.id!=="tab-add"){
-
-x.classList.remove(
-"active"
-);
-
-}
-
+x.classList.remove("active");
 });
+
+document.getElementById(
+"tab-add"
+).classList.add("active");
 
 }
 
 
 /* =========================================================
-   DELETE
+DELETE
 ========================================================= */
 
 function deleteProduct(id){
 
 if(!loggedIn)return;
-
 
 let p =
 products.find(
@@ -2733,7 +2607,6 @@ x=>x.id===id
 );
 
 if(!p)return;
-
 
 if(
 confirm(
@@ -2748,13 +2621,14 @@ products.filter(
 x=>x.id!==id
 );
 
-
 localStorage.setItem(
 "mi_products",
 JSON.stringify(products)
 );
 
 renderProducts();
+
+showFeaturedProducts();
 
 refreshAdmin();
 
@@ -2764,68 +2638,54 @@ refreshAdmin();
 
 
 /* =========================================================
-   CLEAR FORM
+CLEAR FORM
 ========================================================= */
 
 function clearForm(){
 
 editId = null;
 
-
 document.getElementById(
 "formTitle"
 ).innerText =
 "Add Product";
 
-
 document.getElementById(
 "pName"
 ).value = "";
-
 
 document.getElementById(
 "pModel"
 ).value = "";
 
-
 document.getElementById(
 "pPrice"
 ).value = "";
-
 
 document.getElementById(
 "pImage"
 ).value = "";
 
-
 document.getElementById(
 "pDescription"
 ).value = "";
-
 
 document.getElementById(
 "pStock"
 ).value =
 "In Stock";
 
-
 document.getElementById(
 "pFeatured"
 ).value =
 "false";
-
 
 const gallery =
 document.getElementById(
 "galleryImage"
 );
 
-if(gallery){
-
-gallery.value = "";
-
-}
-
+if(gallery)gallery.value = "";
 
 document.getElementById(
 "imagePreview"
@@ -2836,7 +2696,7 @@ document.getElementById(
 
 
 /* =========================================================
-   IMAGE URL PREVIEW
+IMAGE PREVIEW
 ========================================================= */
 
 function previewImage(){
@@ -2845,7 +2705,6 @@ let url =
 document.getElementById(
 "pImage"
 ).value.trim();
-
 
 if(!url){
 
@@ -2858,7 +2717,6 @@ return;
 
 }
 
-
 document.getElementById(
 "imagePreview"
 ).src =
@@ -2868,7 +2726,7 @@ imageURL(url);
 
 
 /* =========================================================
-   CATEGORY ADD
+CATEGORY
 ========================================================= */
 
 function addCategory(){
@@ -2881,9 +2739,7 @@ document.getElementById(
 let name =
 input.value.trim();
 
-
 if(!name)return;
-
 
 if(
 categories.some(
@@ -2893,23 +2749,18 @@ name.toLowerCase()
 )
 ){
 
-alert(
-"Category already exists."
-);
+alert("Category already exists.");
 
 return;
 
 }
 
-
 categories.push(name);
-
 
 localStorage.setItem(
 "mi_categories",
 JSON.stringify(categories)
 );
-
 
 input.value = "";
 
@@ -2917,33 +2768,28 @@ renderCategories();
 
 refreshAdmin();
 
-alert(
-"Category Added."
-);
+alert("Category Added.");
 
 }
 
 
 /* =========================================================
-   ADMIN REFRESH
+ADMIN REFRESH
 ========================================================= */
 
 function refreshAdmin(){
 
 if(!loggedIn)return;
 
-
 document.getElementById(
 "statProducts"
 ).innerText =
 products.length;
 
-
 document.getElementById(
 "statCategories"
 ).innerText =
 categories.length;
-
 
 document.getElementById(
 "statFeatured"
@@ -2953,7 +2799,6 @@ p =>
 p.featured===true ||
 p.featured==="true"
 ).length;
-
 
 document.getElementById(
 "statStock"
@@ -3000,7 +2845,7 @@ ${escape(p.category)}
 </td>
 
 <td>
-${escape(p.price)}
+${escape(p.price||"Ask for Price")}
 </td>
 
 <td>
@@ -3084,7 +2929,6 @@ p.featured===true ||
 p.featured==="true"
 );
 
-
 document.getElementById(
 "featuredProducts"
 ).innerHTML =
@@ -3108,6 +2952,10 @@ onerror="imgError(this)"
 </div>
 
 <div class="card-body">
+
+<div class="badge-cat">
+⭐ FEATURED
+</div>
 
 <h3>
 ${escape(p.name||p.title)}
@@ -3145,7 +2993,7 @@ No featured products.
 
 
 /* =========================================================
-   FEATURED TOGGLE
+FEATURED TOGGLE
 ========================================================= */
 
 function toggleFeatured(id){
@@ -3157,29 +3005,28 @@ x=>x.id===id
 
 if(!p)return;
 
-
 p.featured =
 !(
 p.featured===true ||
 p.featured==="true"
 );
 
-
 localStorage.setItem(
 "mi_products",
 JSON.stringify(products)
 );
 
-
 renderProducts();
 
 refreshAdmin();
+
+showFeaturedProducts();
 
 }
 
 
 /* =========================================================
-   CART
+CART
 ========================================================= */
 
 function addCart(id){
@@ -3188,7 +3035,6 @@ let found =
 cart.find(
 x=>x.id===id
 );
-
 
 if(found){
 
@@ -3203,12 +3049,10 @@ qty:1
 
 }
 
-
 localStorage.setItem(
 "mi_cart",
 JSON.stringify(cart)
 );
-
 
 updateCart();
 
@@ -3239,7 +3083,6 @@ document.getElementById(
 "cartItems"
 );
 
-
 if(!cart.length){
 
 box.innerHTML =
@@ -3260,7 +3103,6 @@ x=>x.id===item.id
 );
 
 if(!p)return "";
-
 
 return `
 
@@ -3301,7 +3143,6 @@ Remove
 
 }
 
-
 document.getElementById(
 "cartModal"
 ).style.display =
@@ -3317,12 +3158,10 @@ cart.filter(
 x=>x.id!==id
 );
 
-
 localStorage.setItem(
 "mi_cart",
 JSON.stringify(cart)
 );
-
 
 updateCart();
 
@@ -3345,18 +3184,14 @@ function sendWhatsApp(){
 
 if(!cart.length){
 
-alert(
-"Inquiry cart is empty."
-);
+alert("Inquiry cart is empty.");
 
 return;
 
 }
 
-
 let message =
 "Hello MI TRADING COM,%0A%0AI need quotation for:%0A%0A";
-
 
 cart.forEach(
 function(item){
@@ -3381,7 +3216,6 @@ item.qty+
 
 });
 
-
 window.open(
 "https://wa.me/923134854823?text="+message,
 "_blank"
@@ -3391,7 +3225,7 @@ window.open(
 
 
 /* =========================================================
-   SETTINGS
+SETTINGS
 ========================================================= */
 
 function saveSettings(){
@@ -3420,22 +3254,18 @@ document.getElementById(
 
 };
 
-
 localStorage.setItem(
 "mi_settings",
 JSON.stringify(settings)
 );
 
-
-alert(
-"Settings Saved."
-);
+alert("Settings Saved.");
 
 }
 
 
 /* =========================================================
-   ADMIN BUTTONS
+ADMIN BUTTONS
 ========================================================= */
 
 function updateAdminButtons(){
@@ -3458,7 +3288,7 @@ loggedIn
 
 
 /* =========================================================
-   NAVIGATION
+NAVIGATION
 ========================================================= */
 
 function go(id){
@@ -3467,7 +3297,6 @@ let el =
 document.getElementById(id);
 
 if(!el)return;
-
 
 window.scrollTo({
 
@@ -3485,7 +3314,7 @@ behavior:"smooth"
 
 
 /* =========================================================
-   CALL
+CALL
 ========================================================= */
 
 function call(){
@@ -3497,7 +3326,7 @@ window.location.href =
 
 
 /* =========================================================
-   ESCAPE HTML
+ESCAPE
 ========================================================= */
 
 function escape(value){
@@ -3506,36 +3335,17 @@ return String(
 value || ""
 )
 
-.replace(
-/&/g,
-"&amp;"
-)
-
-.replace(
-/</g,
-"&lt;"
-)
-
-.replace(
-/>/g,
-"&gt;"
-)
-
-.replace(
-/"/g,
-"&quot;"
-)
-
-.replace(
-/'/g,
-"&#039;"
-);
+.replace(/&/g,"&amp;")
+.replace(/</g,"&lt;")
+.replace(/>/g,"&gt;")
+.replace(/"/g,"&quot;")
+.replace(/'/g,"&#039;");
 
 }
 
 
 /* =========================================================
-   SEARCH
+SEARCH
 ========================================================= */
 
 document.getElementById(
@@ -3547,7 +3357,7 @@ renderProducts
 
 
 /* =========================================================
-   ENTER LOGIN
+ENTER LOGIN
 ========================================================= */
 
 document.getElementById(
@@ -3557,16 +3367,14 @@ document.getElementById(
 function(e){
 
 if(e.key==="Enter"){
-
 login();
-
 }
 
 });
 
 
 /* =========================================================
-   CLOSE MODALS
+CLOSE MODALS
 ========================================================= */
 
 document.querySelectorAll(
@@ -3591,7 +3399,7 @@ modal.style.display =
 
 
 /* =========================================================
-   LOAD SAVED CATEGORIES
+LOAD SAVED CATEGORIES
 ========================================================= */
 
 let savedCategories =
@@ -3600,7 +3408,6 @@ localStorage.getItem(
 "mi_categories"
 )
 );
-
 
 if(
 Array.isArray(savedCategories)
@@ -3613,12 +3420,46 @@ savedCategories;
 
 
 /* =========================================================
-   INITIALIZE
+LOAD SETTINGS
+========================================================= */
+
+let savedSettings =
+JSON.parse(
+localStorage.getItem(
+"mi_settings"
+)
+);
+
+if(savedSettings){
+
+if(savedSettings.company)
+document.getElementById("companySetting").value =
+savedSettings.company;
+
+if(savedSettings.phone)
+document.getElementById("phoneSetting").value =
+savedSettings.phone;
+
+if(savedSettings.email)
+document.getElementById("emailSetting").value =
+savedSettings.email;
+
+if(savedSettings.address)
+document.getElementById("addressSetting").value =
+savedSettings.address;
+
+}
+
+
+/* =========================================================
+INITIALIZE
 ========================================================= */
 
 renderCategories();
 
 renderProducts();
+
+showFeaturedProducts();
 
 updateCart();
 
