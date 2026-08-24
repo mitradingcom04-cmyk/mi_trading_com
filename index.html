@@ -6,7 +6,8 @@
 
 <title>MI TRADING COM | Industrial & General Supply</title>
 
-<meta name="description" content="MI TRADING COM - Industrial Bearings, CNC Parts, Belts, Pneumatic, Hydraulic, Electrical and Hardware Supplier in Lahore Pakistan">
+<meta name="description"
+content="MI TRADING COM - Industrial Bearings, CNC Parts, Belts, Pneumatic, Hydraulic, Electrical and Hardware Supplier in Lahore Pakistan">
 
 <style>
 :root{
@@ -15,11 +16,14 @@
 --orange:#ff9800;
 --green:#16a34a;
 --red:#dc3545;
+--purple:#7c3aed;
 --bg:#f5f7fb;
 --white:#fff;
 --text:#172033;
 --muted:#6b7280;
 --border:#e5e7eb;
+--dark:#081a34;
+--shadow:0 5px 20px rgba(0,0,0,.08);
 }
 
 *{
@@ -31,7 +35,7 @@ font-family:Arial,Helvetica,sans-serif;
 
 html{
 scroll-behavior:smooth;
-scroll-padding-top:145px;
+scroll-padding-top:150px;
 }
 
 body{
@@ -40,8 +44,21 @@ color:var(--text);
 overflow-x:hidden;
 }
 
-button,input,select,textarea{font:inherit}
-a{text-decoration:none}
+button,input,select,textarea{
+font:inherit;
+}
+
+button{
+cursor:pointer;
+}
+
+a{
+text-decoration:none;
+}
+
+img{
+max-width:100%;
+}
 
 header{
 position:sticky;
@@ -66,7 +83,9 @@ font-weight:900;
 color:#fff;
 }
 
-.logo span{color:var(--orange)}
+.logo span{
+color:var(--orange);
+}
 
 .contact-mini{
 font-size:13px;
@@ -74,12 +93,15 @@ display:flex;
 gap:18px;
 }
 
-.contact-mini a{color:#fff}
+.contact-mini a{
+color:#fff;
+}
 
 .searchbar{
 display:flex;
 padding:9px 5%;
-background:#081a34;
+background:var(--dark);
+gap:5px;
 }
 
 .searchbar input{
@@ -87,7 +109,7 @@ flex:1;
 border:0;
 outline:0;
 padding:13px;
-border-radius:6px 0 0 6px;
+border-radius:6px;
 }
 
 .searchbar button{
@@ -96,8 +118,7 @@ background:var(--orange);
 color:white;
 font-weight:bold;
 padding:0 22px;
-border-radius:0 6px 6px 0;
-cursor:pointer;
+border-radius:6px;
 }
 
 nav{
@@ -108,19 +129,22 @@ overflow-x:auto;
 scrollbar-width:none;
 }
 
-nav::-webkit-scrollbar{display:none}
+nav::-webkit-scrollbar{
+display:none;
+}
 
 nav button{
 border:0;
 background:none;
 color:#fff;
 padding:13px 0;
-cursor:pointer;
 white-space:nowrap;
 font-weight:bold;
 }
 
-nav button:hover{color:var(--orange)}
+nav button:hover{
+color:var(--orange);
+}
 
 .hero{
 background:linear-gradient(135deg,#10264a,#244c84);
@@ -157,6 +181,7 @@ background:var(--orange);
 .blue{background:var(--blue)}
 .dark{background:#374151}
 .red{background:var(--red)}
+.purple{background:var(--purple)}
 
 .section{
 max-width:1400px;
@@ -203,7 +228,7 @@ background:#fff;
 border-radius:10px;
 overflow:hidden;
 border:1px solid var(--border);
-box-shadow:0 3px 10px rgba(0,0,0,.06);
+box-shadow:var(--shadow);
 }
 
 .card-img{
@@ -213,6 +238,8 @@ background:#fafafa;
 display:flex;
 align-items:center;
 justify-content:center;
+position:relative;
+overflow:hidden;
 }
 
 .card-img img{
@@ -221,7 +248,9 @@ height:100%;
 object-fit:contain;
 }
 
-.card-body{padding:15px}
+.card-body{
+padding:15px;
+}
 
 .badge-cat{
 font-size:11px;
@@ -244,7 +273,8 @@ color:var(--muted);
 font-size:13px;
 color:#555;
 line-height:1.5;
-min-height:40px;
+height:40px;
+overflow:hidden;
 margin:8px 0;
 }
 
@@ -261,27 +291,49 @@ font-weight:bold;
 margin-bottom:10px;
 }
 
-.instock{color:var(--green)}
-.outstock{color:var(--red)}
+.instock{
+color:var(--green);
+}
+
+.outstock{
+color:var(--red);
+}
 
 .actions{
 display:flex;
 gap:5px;
+flex-wrap:wrap;
 }
 
 .actions button{
 flex:1;
+min-width:65px;
 border:0;
 padding:8px 4px;
 border-radius:5px;
 color:#fff;
 font-size:12px;
-cursor:pointer;
 }
 
-.details{background:#475569}
-.whatsapp{background:#25d366}
-.call{background:#0d6efd}
+.details{
+background:#475569;
+}
+
+.whatsapp{
+background:#25d366;
+}
+
+.call{
+background:#0d6efd;
+}
+
+.wish{
+background:#be123c;
+}
+
+.compare{
+background:#7c3aed;
+}
 
 .admin-actions{
 display:none;
@@ -295,12 +347,12 @@ border:0;
 padding:7px;
 border-radius:4px;
 color:white;
-cursor:pointer;
 font-size:11px;
 }
 
-.edit{background:#f59e0b}
-.delete{background:#dc3545}
+.edit{
+background:#f59e0b;
+}
 
 footer{
 background:var(--navy);
@@ -326,7 +378,9 @@ line-height:1.8;
 color:#dbe4f0;
 }
 
-footer a{color:#dbe4f0}
+footer a{
+color:#dbe4f0;
+}
 
 .modal{
 display:none;
@@ -349,14 +403,18 @@ border-radius:12px;
 padding:25px;
 }
 
-.login-box{max-width:400px}
+.login-box{
+max-width:400px;
+}
 
 .modal-box h2{
 color:var(--navy);
 margin-bottom:15px;
 }
 
-.field{margin-bottom:12px}
+.field{
+margin-bottom:12px;
+}
 
 .field label{
 display:block;
@@ -387,7 +445,7 @@ overflow:hidden;
 }
 
 .sidebar{
-width:210px;
+width:220px;
 background:#10264a;
 padding:15px;
 }
@@ -401,7 +459,6 @@ padding:12px;
 margin-bottom:5px;
 text-align:left;
 border-radius:5px;
-cursor:pointer;
 font-weight:bold;
 }
 
@@ -417,12 +474,17 @@ overflow:auto;
 padding:20px;
 }
 
-.tab{display:none}
-.tab.active{display:block}
+.tab{
+display:none;
+}
+
+.tab.active{
+display:block;
+}
 
 .stats{
 display:grid;
-grid-template-columns:repeat(4,1fr);
+grid-template-columns:repeat(5,1fr);
 gap:12px;
 margin-bottom:20px;
 }
@@ -440,7 +502,9 @@ font-size:25px;
 color:var(--navy);
 }
 
-.stat small{color:#777}
+.stat small{
+color:#777;
+}
 
 .form-grid{
 display:grid;
@@ -448,7 +512,9 @@ grid-template-columns:1fr 1fr;
 gap:12px;
 }
 
-.full{grid-column:1/-1}
+.full{
+grid-column:1/-1;
+}
 
 .preview{
 width:220px;
@@ -476,13 +542,15 @@ margin-top:6px;
 line-height:1.5;
 }
 
-.table-wrap{overflow:auto}
+.table-wrap{
+overflow:auto;
+}
 
 table{
 width:100%;
 border-collapse:collapse;
 background:white;
-min-width:800px;
+min-width:900px;
 }
 
 th,td{
@@ -515,7 +583,6 @@ border-radius:50%;
 background:var(--orange);
 color:white;
 font-size:23px;
-cursor:pointer;
 box-shadow:0 5px 20px rgba(0,0,0,.3);
 }
 
@@ -547,21 +614,111 @@ text-align:center;
 color:#777;
 }
 
-.featured-title{
+.featured-strip{
+background:white;
+border-top:1px solid var(--border);
+border-bottom:1px solid var(--border);
+}
+
+.filter-bar{
 display:flex;
-align-items:center;
-justify-content:space-between;
 gap:10px;
+flex-wrap:wrap;
 margin-bottom:20px;
 }
 
-.featured-title h2{margin:0}
+.filter-bar select{
+padding:10px;
+border:1px solid var(--border);
+border-radius:6px;
+background:white;
+}
+
+.product-tools{
+display:flex;
+justify-content:space-between;
+align-items:center;
+gap:10px;
+flex-wrap:wrap;
+margin-bottom:20px;
+}
+
+.rating{
+color:#f59e0b;
+font-size:14px;
+}
+
+.review-box{
+border-top:1px solid #eee;
+margin-top:15px;
+padding-top:15px;
+}
+
+.review{
+padding:10px 0;
+border-bottom:1px solid #eee;
+}
+
+.review small{
+color:#777;
+}
+
+.wishlist-active{
+background:#9f1239!important;
+}
+
+.compare-active{
+background:#581c87!important;
+}
+
+.quick-bar{
+display:flex;
+gap:8px;
+flex-wrap:wrap;
+margin:15px 0;
+}
+
+.quick-card{
+background:white;
+padding:15px;
+border:1px solid var(--border);
+border-radius:8px;
+flex:1;
+min-width:180px;
+}
+
+.quick-card strong{
+display:block;
+font-size:20px;
+color:var(--navy);
+}
+
+.order-status{
+font-weight:bold;
+color:var(--orange);
+}
+
+.banner-admin{
+border:2px dashed #ccc;
+padding:15px;
+border-radius:8px;
+margin-top:10px;
+}
+
+.small{
+font-size:12px;
+color:#777;
+}
 
 @media(max-width:700px){
 
-.topbar{padding:11px 4%}
+.topbar{
+padding:11px 4%;
+}
 
-.logo{font-size:21px}
+.logo{
+font-size:21px;
+}
 
 .contact-mini{
 display:block;
@@ -574,30 +731,50 @@ gap:18px;
 padding:0 4%;
 }
 
-.hero{padding:55px 4%}
+.hero{
+padding:55px 4%;
+}
 
-.hero h1{font-size:27px}
+.hero h1{
+font-size:27px;
+}
 
-.section{padding:32px 4%}
+.section{
+padding:32px 4%;
+}
 
 .products{
 grid-template-columns:repeat(2,1fr);
 gap:11px;
 }
 
-.card-img{height:160px}
+.card-img{
+height:160px;
+}
 
-.card-body{padding:10px}
+.card-body{
+padding:10px;
+}
 
-.card h3{font-size:14px}
+.card h3{
+font-size:14px;
+}
 
-.actions{flex-direction:column}
+.actions{
+flex-direction:column;
+}
 
-.stats{grid-template-columns:1fr 1fr}
+.stats{
+grid-template-columns:1fr 1fr;
+}
 
-.form-grid{grid-template-columns:1fr}
+.form-grid{
+grid-template-columns:1fr;
+}
 
-.full{grid-column:auto}
+.full{
+grid-column:auto;
+}
 
 .admin-dashboard{
 flex-direction:column;
@@ -616,7 +793,9 @@ min-width:125px;
 white-space:nowrap;
 }
 
-.dashboard-content{padding:12px}
+.dashboard-content{
+padding:12px;
+}
 
 .preview{
 width:100%;
@@ -638,8 +817,15 @@ MI <span>TRADING COM</span>
 </div>
 
 <div class="contact-mini">
-<a href="tel:03134854823">📞 0313-4854823</a>
-<a href="mailto:mitradingcom04@gmail.com">✉️ mitradingcom04@gmail.com</a>
+
+<a href="tel:03134854823">
+📞 0313-4854823
+</a>
+
+<a href="mailto:mitradingcom04@gmail.com">
+✉️ mitradingcom04@gmail.com
+</a>
+
 </div>
 
 </div>
@@ -652,7 +838,9 @@ type="search"
 placeholder="Search product, model or part number..."
 >
 
-<button onclick="renderProducts()">SEARCH</button>
+<button onclick="renderProducts()">
+SEARCH
+</button>
 
 </div>
 
@@ -660,10 +848,20 @@ placeholder="Search product, model or part number..."
 
 <button onclick="go('home')">Home</button>
 <button onclick="go('products')">Products</button>
-<button onclick="go('featuredCustomers')">Featured</button>
 <button onclick="go('about')">About</button>
 <button onclick="go('contact')">Contact</button>
-<button onclick="openLogin()">Owner Login</button>
+
+<button onclick="showWishlist()">
+❤️ Wishlist
+</button>
+
+<button onclick="showCompare()">
+⚖ Compare
+</button>
+
+<button onclick="openLogin()">
+Owner Login
+</button>
 
 </nav>
 
@@ -672,7 +870,9 @@ placeholder="Search product, model or part number..."
 
 <section id="home" class="hero">
 
-<h1>Industrial Products & General Supply Solutions</h1>
+<h1>
+Industrial Products & General Supply Solutions
+</h1>
 
 <p>
 MI TRADING COM supplies bearings, belts, CNC machine components,
@@ -699,6 +899,18 @@ WhatsApp Inquiry
 </section>
 
 
+<section class="section featured-strip">
+
+<h2>⭐ Featured Products</h2>
+
+<div
+id="featuredPublic"
+class="products"
+></div>
+
+</section>
+
+
 <section class="section">
 
 <h2>Product Categories</h2>
@@ -708,48 +920,76 @@ WhatsApp Inquiry
 </section>
 
 
-<!-- CUSTOMER FEATURED -->
-
-<section id="featuredCustomers" class="section">
-
-<div class="featured-title">
-
-<h2>⭐ Featured Products</h2>
-
-<button class="btn blue" onclick="showFeaturedProducts()">
-Refresh
-</button>
-
-</div>
-
-<p style="color:#777;margin-bottom:20px">
-Our selected featured industrial products.
-</p>
-
-<div id="customerFeaturedList" class="products"></div>
-
-</section>
-
-
 <section id="products" class="section">
 
-<div style="
-display:flex;
-justify-content:space-between;
-align-items:center;
-gap:10px;
-margin-bottom:20px;
-">
+<div class="product-tools">
 
-<h2 style="margin:0">Our Products</h2>
+<h2 style="margin:0">
+Our Products
+</h2>
 
-<button class="btn blue" onclick="allProducts()">
+<button
+class="btn blue"
+onclick="allProducts()"
+>
 All Products
 </button>
 
 </div>
 
-<p id="productCount" style="color:#777;margin-bottom:15px"></p>
+<div class="filter-bar">
+
+<select id="stockFilter" onchange="renderProducts()">
+
+<option value="all">
+All Availability
+</option>
+
+<option value="In Stock">
+In Stock
+</option>
+
+<option value="Out of Stock">
+Out of Stock
+</option>
+
+<option value="Available on Order">
+Available on Order
+</option>
+
+</select>
+
+
+<select id="sortProducts" onchange="renderProducts()">
+
+<option value="default">
+Sort: Default
+</option>
+
+<option value="name">
+Name A-Z
+</option>
+
+<option value="priceLow">
+Price Low-High
+</option>
+
+<option value="priceHigh">
+Price High-Low
+</option>
+
+<option value="featured">
+Featured First
+</option>
+
+</select>
+
+</div>
+
+<p
+id="productCount"
+style="color:#777;margin-bottom:15px"
+></p>
 
 <div id="productList" class="products"></div>
 
@@ -814,7 +1054,9 @@ and applications.
 <div class="card-body">
 <h3>📞 Phone</h3>
 <p>
-<a href="tel:03134854823">0313-4854823</a>
+<a href="tel:03134854823">
+0313-4854823
+</a>
 </p>
 </div>
 </div>
@@ -823,7 +1065,10 @@ and applications.
 <div class="card-body">
 <h3>💬 WhatsApp</h3>
 <p>
-<a target="_blank" href="https://wa.me/923134854823">
+<a
+target="_blank"
+href="https://wa.me/923134854823"
+>
 Chat on WhatsApp
 </a>
 </p>
@@ -874,7 +1119,6 @@ mitradingcom04@gmail.com
 <h3>Quick Links</h3>
 <p><a href="#home">Home</a></p>
 <p><a href="#products">Products</a></p>
-<p><a href="#featuredCustomers">Featured</a></p>
 <p><a href="#about">About</a></p>
 <p><a href="#contact">Contact</a></p>
 </div>
@@ -918,11 +1162,18 @@ placeholder="Enter owner password"
 
 </div>
 
-<p id="loginError" style="color:red;font-size:13px"></p>
+<p
+id="loginError"
+style="color:red;font-size:13px"
+></p>
 
-<button class="btn" onclick="login()">Login</button>
+<button class="btn" onclick="login()">
+Login
+</button>
 
-<button class="btn dark" onclick="closeLogin()">Cancel</button>
+<button class="btn dark" onclick="closeLogin()">
+Cancel
+</button>
 
 </div>
 
@@ -933,7 +1184,7 @@ placeholder="Enter owner password"
 
 <div id="ownerModal" class="modal">
 
-<div class="modal-box" style="max-width:1150px;padding:0;overflow:hidden">
+<div class="modal-box" style="max-width:1250px;padding:0;overflow:hidden">
 
 <div class="admin-dashboard">
 
@@ -957,6 +1208,18 @@ placeholder="Enter owner password"
 
 <button onclick="tab('featured',this)">
 ⭐ Featured
+</button>
+
+<button onclick="tab('orders',this)">
+🧾 Inquiries
+</button>
+
+<button onclick="tab('reviews',this)">
+⭐ Reviews
+</button>
+
+<button onclick="tab('banner',this)">
+🖼 Banner
 </button>
 
 <button onclick="tab('settings',this)">
@@ -1005,9 +1268,39 @@ placeholder="Enter owner password"
 <small>In Stock</small>
 </div>
 
+<div class="stat">
+<strong id="statOrders">0</strong>
+<small>Inquiries</small>
+</div>
+
+</div>
+
+<div class="quick-bar">
+
+<div class="quick-card">
+<strong>✔</strong>
+Products can be added/edited
+</div>
+
+<div class="quick-card">
+<strong>📷</strong>
+Mobile gallery upload
+</div>
+
+<div class="quick-card">
+<strong>❤️</strong>
+Customer wishlist
+</div>
+
+<div class="quick-card">
+<strong>⚖</strong>
+Product comparison
+</div>
+
 </div>
 
 <div class="card">
+
 <div class="card-body">
 
 <h3>Owner Access</h3>
@@ -1015,24 +1308,27 @@ placeholder="Enter owner password"
 <p style="line-height:1.8;color:#555">
 
 ✔ Add products<br>
-✔ Upload pictures directly from mobile gallery<br>
+✔ Upload pictures from mobile gallery<br>
 ✔ Replace product picture while editing<br>
-✔ Picture remains after refresh on this browser<br>
-✔ Add image URLs<br>
+✔ Images remain after refresh<br>
+✔ Image URL support<br>
 ✔ Edit products<br>
 ✔ Delete products<br>
 ✔ Change prices<br>
 ✔ Change stock<br>
 ✔ Manage categories<br>
 ✔ Mark products Featured<br>
-✔ Featured products automatically appear to customers<br>
+✔ Manage customer inquiries<br>
+✔ Manage customer reviews<br>
+✔ Manage website banner<br>
+✔ Website settings<br>
 ✔ Product search<br>
-✔ WhatsApp inquiries<br>
-✔ Manage website contact information
+✔ WhatsApp inquiries
 
 </p>
 
 </div>
+
 </div>
 
 </div>
@@ -1042,7 +1338,9 @@ placeholder="Enter owner password"
 
 <div id="tab-add" class="tab">
 
-<h2 id="formTitle">Add Product</h2>
+<h2 id="formTitle">
+Add Product
+</h2>
 
 <div class="card">
 
@@ -1054,19 +1352,23 @@ placeholder="Enter owner password"
 
 <label>Product Name *</label>
 
-<input id="pName" placeholder="Example: SKF Bearing">
+<input
+id="pName"
+placeholder="Example: SKF Bearing"
+>
 
 </div>
-
 
 <div class="field">
 
 <label>Model / Part Number *</label>
 
-<input id="pModel" placeholder="Example: 6206">
+<input
+id="pModel"
+placeholder="Example: 6206"
+>
 
 </div>
-
 
 <div class="field">
 
@@ -1076,15 +1378,16 @@ placeholder="Enter owner password"
 
 </div>
 
-
 <div class="field">
 
 <label>Price</label>
 
-<input id="pPrice" placeholder="Rs. 960">
+<input
+id="pPrice"
+placeholder="Rs. 960"
+>
 
 </div>
-
 
 <div class="field full">
 
@@ -1092,12 +1395,11 @@ placeholder="Enter owner password"
 
 <input
 id="pImage"
-placeholder="Image URL or gallery image"
+placeholder="Optional image URL"
 oninput="previewImage()"
 >
 
 </div>
-
 
 <div class="field full">
 
@@ -1114,12 +1416,17 @@ onchange="galleryImageUpload(event)"
 
 <div class="upload-info">
 
-Mobile mein <b>Choose File</b> dabayein →
-Gallery/Photos se picture select karein.
+Mobile mein <b>Choose File</b> dabayein aur Gallery/Photos se
+picture select karein.
+
 <br>
-Picture automatically compress hokar product ke saath save hogi.
+
+Picture automatically resize/compress hogi.
+
 <br>
-Website ko image link dene ki zaroorat nahi.
+
+Image ko IndexedDB mein save kiya jayega, is liye normal
+localStorage image-size problem se bachne ki koshish ki gayi hai.
 
 </div>
 
@@ -1135,7 +1442,6 @@ onerror="imgError(this)"
 
 </div>
 
-
 <div class="field">
 
 <label>Availability</label>
@@ -1150,7 +1456,6 @@ onerror="imgError(this)"
 
 </div>
 
-
 <div class="field">
 
 <label>Featured</label>
@@ -1164,6 +1469,27 @@ onerror="imgError(this)"
 
 </div>
 
+<div class="field">
+
+<label>Brand</label>
+
+<input
+id="pBrand"
+placeholder="SKF / NTN / FAG / Generic"
+>
+
+</div>
+
+<div class="field">
+
+<label>Minimum Order Quantity</label>
+
+<input
+id="pMOQ"
+placeholder="Example: 1 Piece"
+>
+
+</div>
 
 <div class="field full">
 
@@ -1178,12 +1504,17 @@ placeholder="Professional product description"
 
 </div>
 
-
-<button class="btn" onclick="saveProduct()">
+<button
+class="btn"
+onclick="saveProduct()"
+>
 💾 Save Product
 </button>
 
-<button class="btn dark" onclick="clearForm()">
+<button
+class="btn dark"
+onclick="clearForm()"
+>
 Clear
 </button>
 
@@ -1211,6 +1542,7 @@ Clear
 <th>Name</th>
 <th>Model</th>
 <th>Category</th>
+<th>Brand</th>
 <th>Price</th>
 <th>Stock</th>
 <th>Featured</th>
@@ -1249,7 +1581,10 @@ placeholder="Example: Oil Seals"
 
 </div>
 
-<button class="btn" onclick="addCategory()">
+<button
+class="btn"
+onclick="addCategory()"
+>
 ➕ Add Category
 </button>
 
@@ -1259,7 +1594,10 @@ placeholder="Example: Oil Seals"
 
 <br>
 
-<div id="adminCategories" class="categories"></div>
+<div
+id="adminCategories"
+class="categories"
+></div>
 
 </div>
 
@@ -1270,11 +1608,75 @@ placeholder="Example: Oil Seals"
 
 <h2>Featured Products</h2>
 
-<p style="color:#777;margin-bottom:15px">
-Products marked as Featured will appear in the customer Featured section.
-</p>
+<div
+id="featuredProducts"
+class="products"
+></div>
 
-<div id="featuredProducts" class="products"></div>
+</div>
+
+
+<!-- ORDERS -->
+
+<div id="tab-orders" class="tab">
+
+<h2>Customer Inquiries</h2>
+
+<div id="adminOrders"></div>
+
+</div>
+
+
+<!-- REVIEWS -->
+
+<div id="tab-reviews" class="tab">
+
+<h2>Customer Reviews</h2>
+
+<div id="adminReviews"></div>
+
+</div>
+
+
+<!-- BANNER -->
+
+<div id="tab-banner" class="tab">
+
+<h2>Website Banner</h2>
+
+<div class="card">
+
+<div class="card-body">
+
+<div class="field">
+
+<label>Hero Heading</label>
+
+<input
+id="bannerTitle"
+value="Industrial Products & General Supply Solutions"
+>
+
+</div>
+
+<div class="field">
+
+<label>Hero Description</label>
+
+<textarea id="bannerText">MI TRADING COM supplies bearings, belts, CNC machine components, linear motion products, pneumatic and hydraulic components, electrical items, industrial tools, hardware and general supplies.</textarea>
+
+</div>
+
+<button
+class="btn"
+onclick="saveBanner()"
+>
+Save Banner
+</button>
+
+</div>
+
+</div>
 
 </div>
 
@@ -1309,7 +1711,10 @@ Products marked as Featured will appear in the customer Featured section.
 <input id="addressSetting" value="Brandreth Road, Lahore, Pakistan">
 </div>
 
-<button class="btn" onclick="saveSettings()">
+<button
+class="btn"
+onclick="saveSettings()"
+>
 Save Settings
 </button>
 
@@ -1321,8 +1726,11 @@ Save Settings
 
 
 </div>
+
 </div>
+
 </div>
+
 </div>
 
 
@@ -1334,7 +1742,10 @@ Save Settings
 
 <div id="details"></div>
 
-<button class="btn dark" onclick="closeDetails()">
+<button
+class="btn dark"
+onclick="closeDetails()"
+>
 Close
 </button>
 
@@ -1353,14 +1764,165 @@ Close
 
 <div id="cartItems"></div>
 
+<div class="field">
+
+<label>Your Name</label>
+
+<input id="customerName" placeholder="Customer name">
+
+</div>
+
+<div class="field">
+
+<label>Phone / WhatsApp</label>
+
+<input id="customerPhone" placeholder="03XX-XXXXXXX">
+
+</div>
+
+<div class="field">
+
+<label>Additional Requirement</label>
+
+<textarea
+id="customerNote"
+placeholder="Quantity, brand, delivery requirement etc."
+></textarea>
+
+</div>
+
 <br>
 
-<button class="btn green" onclick="sendWhatsApp()">
+<button
+class="btn green"
+onclick="sendWhatsApp()"
+>
 Send WhatsApp Inquiry
 </button>
 
-<button class="btn dark" onclick="closeCart()">
+<button
+class="btn blue"
+onclick="saveInquiry()"
+>
+Save Inquiry
+</button>
+
+<button
+class="btn dark"
+onclick="closeCart()"
+>
 Close
+</button>
+
+</div>
+
+</div>
+
+
+<!-- WISHLIST -->
+
+<div id="wishlistModal" class="modal">
+
+<div class="modal-box">
+
+<h2>❤️ My Wishlist</h2>
+
+<div id="wishlistProducts" class="products"></div>
+
+<button
+class="btn dark"
+onclick="closeWishlist()"
+>
+Close
+</button>
+
+</div>
+
+</div>
+
+
+<!-- COMPARE -->
+
+<div id="compareModal" class="modal">
+
+<div class="modal-box">
+
+<h2>⚖ Compare Products</h2>
+
+<div id="compareProducts"></div>
+
+<button
+class="btn dark"
+onclick="closeCompare()"
+>
+Close
+</button>
+
+</div>
+
+</div>
+
+
+<!-- REVIEW -->
+
+<div id="reviewModal" class="modal">
+
+<div class="modal-box">
+
+<h2>⭐ Product Review</h2>
+
+<input type="hidden" id="reviewProductId">
+
+<div class="field">
+
+<label>Your Name</label>
+
+<input
+id="reviewName"
+placeholder="Your name"
+>
+
+</div>
+
+<div class="field">
+
+<label>Rating</label>
+
+<select id="reviewRating">
+
+<option value="5">★★★★★ 5</option>
+<option value="4">★★★★ 4</option>
+<option value="3">★★★ 3</option>
+<option value="2">★★ 2</option>
+<option value="1">★ 1</option>
+
+</select>
+
+</div>
+
+<div class="field">
+
+<label>Review</label>
+
+<textarea
+id="reviewText"
+placeholder="Write your review"
+></textarea>
+
+</div>
+
+<button
+class="btn"
+onclick="submitReview()"
+>
+Submit Review
+</button>
+
+<button
+class="btn dark"
+onclick="closeReview()"
+>
+Cancel
 </button>
 
 </div>
@@ -1371,10 +1933,15 @@ Close
 <script>
 
 /* =========================================================
-MI TRADING COM - PRODUCT SYSTEM
+MI TRADING COM
+PROFESSIONAL SINGLE FILE SYSTEM
 ========================================================= */
 
+
+/* OWNER PASSWORD */
+
 const PASSWORD = "MI@2026";
+
 
 let loggedIn =
 localStorage.getItem("mi_owner") === "true";
@@ -1384,7 +1951,12 @@ let editId = null;
 let activeCategory = "All Products";
 
 
+/* =========================================================
+CATEGORIES
+========================================================= */
+
 let categories = [
+
 "All Products",
 "Bearings",
 "Ball Bearings",
@@ -1410,8 +1982,13 @@ let categories = [
 "Industrial Tools",
 "Hardware",
 "Safety Items"
+
 ];
 
+
+/* =========================================================
+PRODUCTS
+========================================================= */
 
 let products =
 JSON.parse(
@@ -1424,8 +2001,10 @@ name:"Deep Groove Ball Bearing",
 title:"Deep Groove Ball Bearing",
 model:"6206",
 category:"Deep Groove Ball Bearings",
+brand:"SKF",
+moq:"1 Piece",
 price:"Rs. 960",
-image:"https://placehold.co/700x500?text=6206+Bearing",
+image:"",
 description:"High quality industrial deep groove ball bearing.",
 desc:"High quality industrial deep groove ball bearing.",
 stock:"In Stock",
@@ -1439,8 +2018,10 @@ name:"Taper Roller Bearing",
 title:"Taper Roller Bearing",
 model:"30206",
 category:"Taper Roller Bearings",
+brand:"FAG",
+moq:"1 Piece",
 price:"Rs. 1,250",
-image:"https://placehold.co/700x500?text=30206+Bearing",
+image:"",
 description:"Heavy duty taper roller bearing.",
 desc:"Heavy duty taper roller bearing.",
 stock:"In Stock",
@@ -1454,8 +2035,10 @@ name:"Timing Belt",
 title:"Timing Belt",
 model:"XL-100",
 category:"Timing Belts",
+brand:"Industrial",
+moq:"1 Piece",
 price:"Rs. 450",
-image:"https://placehold.co/700x500?text=Timing+Belt",
+image:"",
 description:"Industrial timing belt.",
 desc:"Industrial timing belt.",
 stock:"In Stock",
@@ -1469,8 +2052,10 @@ name:"Pneumatic Fitting",
 title:"Pneumatic Fitting",
 model:"PC-6",
 category:"Pneumatic Fittings",
+brand:"Generic",
+moq:"1 Piece",
 price:"Ask for Price",
-image:"https://placehold.co/700x500?text=Pneumatic+Fitting",
+image:"",
 description:"6mm pneumatic connector.",
 desc:"6mm pneumatic connector.",
 stock:"In Stock",
@@ -1481,10 +2066,204 @@ featured:true
 ];
 
 
+/* =========================================================
+CART / WISHLIST / COMPARE / REVIEWS / ORDERS
+========================================================= */
+
 let cart =
 JSON.parse(
 localStorage.getItem("mi_cart")
 ) || [];
+
+
+let wishlist =
+JSON.parse(
+localStorage.getItem("mi_wishlist")
+) || [];
+
+
+let compareList =
+JSON.parse(
+localStorage.getItem("mi_compare")
+) || [];
+
+
+let reviews =
+JSON.parse(
+localStorage.getItem("mi_reviews")
+) || [];
+
+
+let orders =
+JSON.parse(
+localStorage.getItem("mi_orders")
+) || [];
+
+
+/* =========================================================
+INDEXED DB IMAGE STORAGE
+THIS FIXES MANY LOCALSTORAGE IMAGE PROBLEMS
+========================================================= */
+
+let imageDB = null;
+
+
+function openImageDB(){
+
+return new Promise(
+function(resolve,reject){
+
+if(imageDB){
+
+resolve(imageDB);
+return;
+
+}
+
+let request =
+indexedDB.open(
+"MI_TRADING_COM_IMAGES",
+1
+);
+
+
+request.onupgradeneeded =
+function(event){
+
+let db =
+event.target.result;
+
+if(
+!db.objectStoreNames.contains("images")
+){
+
+db.createObjectStore(
+"images"
+);
+
+}
+
+};
+
+
+request.onsuccess =
+function(event){
+
+imageDB =
+event.target.result;
+
+resolve(imageDB);
+
+};
+
+
+request.onerror =
+function(){
+
+reject(
+request.error
+);
+
+};
+
+});
+
+}
+
+
+async function saveImageBlob(id,blob){
+
+try{
+
+let db =
+await openImageDB();
+
+return new Promise(
+function(resolve,reject){
+
+let tx =
+db.transaction(
+"images",
+"readwrite"
+);
+
+let store =
+tx.objectStore("images");
+
+let req =
+store.put(
+blob,
+String(id)
+);
+
+req.onsuccess =
+()=>resolve(true);
+
+req.onerror =
+()=>reject(req.error);
+
+});
+
+}catch(e){
+
+console.error(e);
+
+return false;
+
+}
+
+}
+
+
+async function getImageBlob(id){
+
+try{
+
+let db =
+await openImageDB();
+
+return new Promise(
+function(resolve){
+
+let tx =
+db.transaction(
+"images",
+"readonly"
+);
+
+let store =
+tx.objectStore("images");
+
+let req =
+store.get(
+String(id)
+);
+
+req.onsuccess =
+function(){
+
+resolve(
+req.result || null
+);
+
+};
+
+req.onerror =
+function(){
+
+resolve(null);
+
+};
+
+});
+
+}catch(e){
+
+return null;
+
+}
+
+}
 
 
 /* =========================================================
@@ -1496,10 +2275,18 @@ function imageURL(url){
 if(!url)
 return "https://placehold.co/700x500?text=MI+TRADING+COM";
 
-url = String(url).trim();
+url =
+String(url).trim();
 
-if(url.startsWith("data:image/"))
+
+if(
+url.startsWith("data:image/")
+){
+
 return url;
+
+}
+
 
 let drive =
 url.match(
@@ -1509,11 +2296,11 @@ url.match(
 if(drive){
 
 return
-"https://drive.google.com/uc?export=view&id="
-+
+"https://drive.google.com/uc?export=view&id="+
 drive[1];
 
 }
+
 
 if(
 url.includes("github.com") &&
@@ -1532,7 +2319,35 @@ return url
 
 }
 
+
 return url;
+
+}
+
+
+/* =========================================================
+LOAD STORED IMAGE
+========================================================= */
+
+async function applyStoredImage(img,id,fallback){
+
+let blob =
+await getImageBlob(id);
+
+if(blob){
+
+let url =
+URL.createObjectURL(blob);
+
+img.src = url;
+
+return;
+
+}
+
+img.src =
+imageURL(fallback);
+
 }
 
 
@@ -1548,11 +2363,12 @@ img.onerror = null;
 
 img.src =
 "https://placehold.co/700x500?text=Image+Not+Available";
+
 }
 
 
 /* =========================================================
-GALLERY IMAGE UPLOAD - FIXED
+GALLERY IMAGE UPLOAD
 ========================================================= */
 
 function galleryImageUpload(event){
@@ -1562,26 +2378,36 @@ event.target.files[0];
 
 if(!file)return;
 
+
 if(!file.type.startsWith("image/")){
 
-alert("Please select an image file.");
+alert(
+"Please select an image file."
+);
 
 event.target.value = "";
 
 return;
+
 }
 
-if(file.size > 10 * 1024 * 1024){
 
-alert("Image 10MB se choti honi chahiye.");
+if(file.size > 20 * 1024 * 1024){
+
+alert(
+"Image 20MB se choti honi chahiye."
+);
 
 event.target.value = "";
 
 return;
+
 }
+
 
 const reader =
 new FileReader();
+
 
 reader.onload =
 function(e){
@@ -1589,34 +2415,43 @@ function(e){
 const img =
 new Image();
 
+
 img.onload =
 function(){
 
-const MAX_WIDTH = 1200;
-const MAX_HEIGHT = 1200;
+const MAX =
+1400;
 
-let width = img.width;
-let height = img.height;
+let width =
+img.width;
 
-if(width > MAX_WIDTH){
+let height =
+img.height;
+
+
+if(width > MAX){
 
 height =
 height *
-(MAX_WIDTH / width);
+(MAX / width);
 
-width = MAX_WIDTH;
+width =
+MAX;
 
 }
 
-if(height > MAX_HEIGHT){
+
+if(height > MAX){
 
 width =
 width *
-(MAX_HEIGHT / height);
+(MAX / height);
 
-height = MAX_HEIGHT;
+height =
+MAX;
 
 }
+
 
 const canvas =
 document.createElement("canvas");
@@ -1627,8 +2462,10 @@ Math.round(width);
 canvas.height =
 Math.round(height);
 
+
 const ctx =
 canvas.getContext("2d");
+
 
 ctx.drawImage(
 img,
@@ -1638,42 +2475,64 @@ canvas.width,
 canvas.height
 );
 
-let compressed =
-canvas.toDataURL(
-"image/jpeg",
-0.75
+
+canvas.toBlob(
+function(blob){
+
+if(!blob){
+
+alert(
+"Image processing failed."
 );
 
-document.getElementById(
-"pImage"
-).value =
-compressed;
+return;
+
+}
+
+
+/*
+Temporary preview
+*/
+
+let url =
+URL.createObjectURL(blob);
 
 document.getElementById(
 "imagePreview"
 ).src =
-compressed;
+url;
+
+
+/*
+Keep blob in JS until product save.
+*/
+
+window.pendingImageBlob =
+blob;
+
+},
+"image/webp",
+0.82
+);
 
 };
+
 
 img.onerror =
 function(){
 
-alert("Image load nahi ho saki.");
+alert(
+"Image load nahi ho saki."
+);
 
 };
+
 
 img.src =
 e.target.result;
 
 };
 
-reader.onerror =
-function(){
-
-alert("Image upload nahi ho saki.");
-
-};
 
 reader.readAsDataURL(file);
 
@@ -1699,7 +2558,7 @@ return `
 class="category ${
 activeCategory===c?"active":""
 }"
-onclick="filterCategory('${escape(c)}')"
+onclick="filterCategory('${escapeAttr(c)}')"
 >
 ${escape(c)}
 </div>
@@ -1720,7 +2579,7 @@ c=>c!=="All Products"
 .map(
 c=>`
 
-<option value="${escape(c)}">
+<option value="${escapeAttr(c)}">
 ${escape(c)}
 </option>
 
@@ -1732,73 +2591,159 @@ ${escape(c)}
 
 
 /* =========================================================
-PRODUCTS
+PRICE NUMBER
 ========================================================= */
 
-function renderProducts(){
+function numericPrice(price){
 
-let search =
-document.getElementById(
-"search"
-).value
-.toLowerCase()
-.trim();
+let n =
+parseFloat(
+String(price||"")
+.replace(/[^0-9.]/g,"")
+);
 
-let list =
-products.filter(
-function(p){
+return isNaN(n)
+?
+999999999
+:
+n;
 
-let categoryOK =
-activeCategory==="All Products" ||
-p.category===activeCategory;
-
-let text =
-(
-(p.name||p.title||"")+" "+
-(p.model||"")+" "+
-(p.category||"")+" "+
-(p.description||p.desc||"")
-)
-.toLowerCase();
-
-return categoryOK &&
-(!search ||
-text.includes(search));
-
-});
-
-
-document.getElementById(
-"productCount"
-).innerText =
-list.length +
-" product(s) found";
-
-
-if(!list.length){
-
-document.getElementById(
-"productList"
-).innerHTML =
-`<div class="empty">
-No products found.
-</div>`;
-
-return;
 }
 
 
-document.getElementById(
-"productList"
-).innerHTML =
+/* =========================================================
+PRODUCT IMAGE HTML
+========================================================= */
 
-list.map(
-function(p){
+function productImageHTML(p,cls=""){
+
+let src =
+imageURL(p.image);
+
+return `
+
+<img
+class="${cls}"
+data-product-image="${p.id}"
+src="${src}"
+alt="${escapeAttr(p.name||p.title)}"
+loading="lazy"
+onerror="imgError(this)"
+>
+
+`;
+
+}
+
+
+async function refreshStoredImages(){
+
+document.querySelectorAll(
+"[data-product-image]"
+).forEach(
+async function(img){
+
+let id =
+img.getAttribute(
+"data-product-image"
+);
+
+let p =
+products.find(
+x=>String(x.id)===String(id)
+);
+
+if(!p)return;
+
+let blob =
+await getImageBlob(id);
+
+if(blob){
+
+img.src =
+URL.createObjectURL(blob);
+
+}
+
+});
+
+}
+
+
+/* =========================================================
+RATING
+========================================================= */
+
+function productRating(id){
+
+let list =
+reviews.filter(
+r=>Number(r.productId)===Number(id)
+);
+
+if(!list.length){
+
+return {
+avg:0,
+count:0
+};
+
+}
+
+let total =
+list.reduce(
+(a,b)=>a+Number(b.rating),
+0
+);
+
+return {
+avg:
+Math.round(
+(total/list.length)*10
+)/10,
+count:list.length
+};
+
+}
+
+
+function ratingHTML(id){
+
+let r =
+productRating(id);
+
+if(!r.count){
+
+return `
+<div class="rating">
+☆☆☆☆☆ No reviews
+</div>
+`;
+
+}
+
+return `
+
+<div class="rating">
+★ ${r.avg} / 5
+(${r.count})
+</div>
+
+`;
+
+}
+
+
+/* =========================================================
+PRODUCT CARD
+========================================================= */
+
+function productCard(p){
 
 let name =
 p.name ||
 p.title ||
-"";
+"Product";
 
 let desc =
 p.description ||
@@ -1808,7 +2753,17 @@ p.desc ||
 let stock =
 p.stock ||
 p.avail ||
-"";
+"In Stock";
+
+let wish =
+wishlist.includes(
+Number(p.id)
+);
+
+let comp =
+compareList.includes(
+Number(p.id)
+);
 
 return `
 
@@ -1816,12 +2771,27 @@ return `
 
 <div class="card-img">
 
-<img
-src="${imageURL(p.image)}"
-alt="${escape(name)}"
-loading="lazy"
-onerror="imgError(this)"
->
+${productImageHTML(p)}
+
+${
+p.featured
+?
+`<span style="
+position:absolute;
+top:8px;
+left:8px;
+background:#ff9800;
+color:#fff;
+padding:5px 8px;
+border-radius:5px;
+font-size:11px;
+font-weight:bold;
+">
+⭐ FEATURED
+</span>`
+:
+""
+}
 
 </div>
 
@@ -1831,11 +2801,25 @@ onerror="imgError(this)"
 ${escape(p.category)}
 </div>
 
-<h3>${escape(name)}</h3>
+<h3>
+${escape(name)}
+</h3>
 
 <div class="model">
 Model: ${escape(p.model)}
 </div>
+
+${
+p.brand
+?
+`<div class="model">
+Brand: ${escape(p.brand)}
+</div>`
+:
+""
+}
+
+${ratingHTML(p.id)}
 
 <div class="desc">
 ${escape(desc)}
@@ -1847,8 +2831,10 @@ ${escape(p.price||"Ask for Price")}
 
 <div class="stock ${
 stock==="In Stock"
-?"instock"
-:"outstock"
+?
+"instock"
+:
+"outstock"
 }">
 ● ${escape(stock)}
 </div>
@@ -1878,6 +2864,39 @@ Call
 
 </div>
 
+<div class="actions">
+
+<button
+class="wish ${
+wish?"wishlist-active":""
+}"
+onclick="toggleWishlist(${p.id})"
+>
+${wish?"❤️":"♡"} Wishlist
+</button>
+
+<button
+class="compare ${
+comp?"compare-active":""
+}"
+onclick="toggleCompare(${p.id})"
+>
+⚖ Compare
+</button>
+
+</div>
+
+<div class="actions">
+
+<button
+class="blue"
+onclick="openReview(${p.id})"
+>
+⭐ Review
+</button>
+
+</div>
+
 <div
 class="admin-actions"
 id="admin-${p.id}"
@@ -1891,7 +2910,7 @@ Edit
 </button>
 
 <button
-class="delete"
+class="red"
 onclick="deleteProduct(${p.id})"
 >
 Delete
@@ -1900,44 +2919,176 @@ Delete
 </div>
 
 </div>
+
 </div>
 
 `;
-
-}).join("");
-
-updateAdminButtons();
 
 }
 
 
 /* =========================================================
-FEATURED CUSTOMER PRODUCTS
+RENDER PRODUCTS
 ========================================================= */
 
-function showFeaturedProducts(){
+function renderProducts(){
 
-const box =
+let search =
 document.getElementById(
-"customerFeaturedList"
-);
+"search"
+).value
+.toLowerCase()
+.trim();
 
-if(!box)return;
 
-const featured =
+let stockFilter =
+document.getElementById(
+"stockFilter"
+).value;
+
+
+let sort =
+document.getElementById(
+"sortProducts"
+).value;
+
+
+let list =
 products.filter(
 function(p){
 
-return (
-p.featured === true ||
-p.featured === "true"
-);
+let categoryOK =
+activeCategory==="All Products" ||
+p.category===activeCategory;
+
+
+let text =
+(
+(p.name||p.title||"")+" "+
+(p.model||"")+" "+
+(p.category||"")+" "+
+(p.brand||"")+" "+
+(p.description||p.desc||"")
+)
+.toLowerCase();
+
+
+let searchOK =
+!search ||
+text.includes(search);
+
+
+let stockOK =
+stockFilter==="all" ||
+(p.stock||p.avail)===stockFilter;
+
+
+return
+categoryOK &&
+searchOK &&
+stockOK;
 
 });
 
-if(!featured.length){
 
-box.innerHTML =
+if(sort==="name"){
+
+list.sort(
+(a,b)=>
+String(a.name||a.title)
+.localeCompare(
+String(b.name||b.title)
+)
+);
+
+}
+
+if(sort==="priceLow"){
+
+list.sort(
+(a,b)=>
+numericPrice(a.price)-
+numericPrice(b.price)
+);
+
+}
+
+if(sort==="priceHigh"){
+
+list.sort(
+(a,b)=>
+numericPrice(b.price)-
+numericPrice(a.price)
+);
+
+}
+
+if(sort==="featured"){
+
+list.sort(
+(a,b)=>
+Number(b.featured)-
+Number(a.featured)
+);
+
+}
+
+
+document.getElementById(
+"productCount"
+).innerText =
+list.length+
+" product(s) found";
+
+
+if(!list.length){
+
+document.getElementById(
+"productList"
+).innerHTML =
+`
+<div class="empty">
+No products found.
+</div>
+`;
+
+return;
+
+}
+
+
+document.getElementById(
+"productList"
+).innerHTML =
+list.map(productCard).join("");
+
+
+updateAdminButtons();
+
+refreshStoredImages();
+
+}
+
+
+/* =========================================================
+FEATURED PUBLIC
+========================================================= */
+
+function renderFeaturedPublic(){
+
+let list =
+products.filter(
+p=>
+p.featured===true ||
+p.featured==="true"
+);
+
+
+if(!list.length){
+
+document.getElementById(
+"featuredPublic"
+).innerHTML =
 `
 <div class="empty">
 No featured products available.
@@ -1945,100 +3096,19 @@ No featured products available.
 `;
 
 return;
+
 }
 
-box.innerHTML =
 
-featured.map(
-function(p){
+document.getElementById(
+"featuredPublic"
+).innerHTML =
+list.slice(0,8)
+.map(productCard)
+.join("");
 
-let name =
-p.name ||
-p.title ||
-"";
 
-let desc =
-p.description ||
-p.desc ||
-"";
-
-return `
-
-<div class="card">
-
-<div class="card-img">
-
-<img
-src="${imageURL(p.image)}"
-alt="${escape(name)}"
-loading="lazy"
-onerror="imgError(this)"
->
-
-</div>
-
-<div class="card-body">
-
-<div class="badge-cat">
-⭐ FEATURED • ${escape(p.category)}
-</div>
-
-<h3>
-${escape(name)}
-</h3>
-
-<div class="model">
-Model: ${escape(p.model)}
-</div>
-
-<div class="desc">
-${escape(desc)}
-</div>
-
-<div class="price">
-${escape(p.price||"Ask for Price")}
-</div>
-
-<div class="stock ${
-(p.stock||p.avail)==="In Stock"
-?"instock"
-:"outstock"
-}">
-● ${escape(p.stock||p.avail||"Available")}
-</div>
-
-<div class="actions">
-
-<button
-class="details"
-onclick="details(${p.id})"
->
-Details
-</button>
-
-<button
-class="whatsapp"
-onclick="addCart(${p.id})"
->
-Inquiry
-</button>
-
-<button
-class="call"
-onclick="call()"
->
-Call
-</button>
-
-</div>
-
-</div>
-
-</div>
-
-`;
-
-}).join("");
+refreshStoredImages();
 
 }
 
@@ -2055,11 +3125,7 @@ renderCategories();
 
 renderProducts();
 
-document.getElementById(
-"products"
-).scrollIntoView({
-behavior:"smooth"
-});
+go("products");
 
 }
 
@@ -2088,24 +3154,54 @@ function details(id){
 
 let p =
 products.find(
-x=>x.id===id
+x=>Number(x.id)===Number(id)
 );
 
 if(!p)return;
+
+
+let r =
+productRating(id);
+
+
+let reviewHTML =
+reviews.filter(
+x=>Number(x.productId)===Number(id)
+)
+.map(
+x=>`
+
+<div class="review">
+
+<b>
+${escape(x.name)}
+</b>
+
+<div class="rating">
+${"★".repeat(Number(x.rating))}
+${"☆".repeat(5-Number(x.rating))}
+</div>
+
+<p>
+${escape(x.text)}
+</p>
+
+<small>
+${escape(x.date||"")}
+</small>
+
+</div>
+
+`
+)
+.join("");
+
 
 document.getElementById(
 "details"
 ).innerHTML = `
 
-<img
-src="${imageURL(p.image)}"
-style="
-width:100%;
-max-height:350px;
-object-fit:contain;
-"
-onerror="imgError(this)"
->
+${productImageHTML(p)}
 
 <h2>
 ${escape(p.name||p.title)}
@@ -2122,6 +3218,16 @@ ${escape(p.category)}
 </p>
 
 <p>
+<b>Brand:</b>
+${escape(p.brand||"Not specified")}
+</p>
+
+<p>
+<b>MOQ:</b>
+${escape(p.moq||"As required")}
+</p>
+
+<p>
 <b>Price:</b>
 ${escape(p.price||"Ask for Price")}
 </p>
@@ -2131,12 +3237,21 @@ ${escape(p.price||"Ask for Price")}
 ${escape(p.stock||p.avail)}
 </p>
 
+${ratingHTML(id)}
+
 <p style="
 margin:15px 0;
 line-height:1.7;
 ">
 ${escape(p.description||p.desc)}
 </p>
+
+<button
+class="btn green"
+onclick="addCart(${p.id});closeDetails()"
+>
+Add Inquiry
+</button>
 
 <a
 class="btn green"
@@ -2149,6 +3264,16 @@ href="https://wa.me/923134854823?text=${encodeURIComponent(
 WhatsApp Inquiry
 </a>
 
+<div class="review-box">
+
+<h3>
+Customer Reviews
+</h3>
+
+${reviewHTML || "<p class='small'>No reviews yet.</p>"}
+
+</div>
+
 `;
 
 document.getElementById(
@@ -2156,15 +3281,35 @@ document.getElementById(
 ).style.display =
 "flex";
 
-}
+
+/* Recently viewed */
+
+let recent =
+JSON.parse(
+localStorage.getItem("mi_recent")
+) || [];
 
 
-function closeDetails(){
+recent =
+recent.filter(
+x=>Number(x)!==Number(id)
+);
 
-document.getElementById(
-"detailsModal"
-).style.display =
-"none";
+recent.unshift(
+Number(id)
+);
+
+recent =
+recent.slice(0,10);
+
+
+localStorage.setItem(
+"mi_recent",
+JSON.stringify(recent)
+);
+
+
+refreshStoredImages();
 
 }
 
@@ -2212,9 +3357,10 @@ document.getElementById(
 "loginPassword"
 ).value;
 
-if(password === PASSWORD){
 
-loggedIn = true;
+if(password===PASSWORD){
+
+loggedIn=true;
 
 localStorage.setItem(
 "mi_owner",
@@ -2248,6 +3394,10 @@ document.getElementById(
 ).style.display =
 "flex";
 
+loadSettings();
+
+loadBanner();
+
 refreshAdmin();
 
 }
@@ -2265,7 +3415,7 @@ document.getElementById(
 
 function logout(){
 
-loggedIn = false;
+loggedIn=false;
 
 localStorage.removeItem(
 "mi_owner"
@@ -2275,7 +3425,9 @@ closeOwner();
 
 updateAdminButtons();
 
-alert("Owner Logout Successful.");
+alert(
+"Owner Logout Successful."
+);
 
 }
 
@@ -2291,6 +3443,7 @@ x=>x.classList.remove("active")
 document.getElementById(
 "tab-"+id
 ).classList.add("active");
+
 
 document.querySelectorAll(
 ".sidebar button"
@@ -2309,70 +3462,86 @@ refreshAdmin();
 SAVE PRODUCT
 ========================================================= */
 
-function saveProduct(){
+async function saveProduct(){
 
 if(!loggedIn){
 
-alert("Owner Login Required.");
-
-return;
-
-}
-
-let name =
-document.getElementById(
-"pName"
-).value.trim();
-
-let model =
-document.getElementById(
-"pModel"
-).value.trim();
-
-let category =
-document.getElementById(
-"pCategory"
-).value;
-
-let price =
-document.getElementById(
-"pPrice"
-).value.trim();
-
-let image =
-document.getElementById(
-"pImage"
-).value.trim();
-
-let stock =
-document.getElementById(
-"pStock"
-).value;
-
-let featured =
-document.getElementById(
-"pFeatured"
-).value === "true";
-
-let description =
-document.getElementById(
-"pDescription"
-).value.trim();
-
-if(!name || !model){
-
 alert(
-"Product Name and Model are required."
+"Owner Login Required."
 );
 
 return;
 
 }
 
-if(!image){
 
-image =
-"https://placehold.co/700x500?text=MI+TRADING+COM";
+let name =
+document.getElementById(
+"pName"
+).value.trim();
+
+
+let model =
+document.getElementById(
+"pModel"
+).value.trim();
+
+
+let category =
+document.getElementById(
+"pCategory"
+).value;
+
+
+let price =
+document.getElementById(
+"pPrice"
+).value.trim();
+
+
+let image =
+document.getElementById(
+"pImage"
+).value.trim();
+
+
+let stock =
+document.getElementById(
+"pStock"
+).value;
+
+
+let featured =
+document.getElementById(
+"pFeatured"
+).value==="true";
+
+
+let brand =
+document.getElementById(
+"pBrand"
+).value.trim();
+
+
+let moq =
+document.getElementById(
+"pMOQ"
+).value.trim();
+
+
+let description =
+document.getElementById(
+"pDescription"
+).value.trim();
+
+
+if(!name||!model){
+
+alert(
+"Product Name and Model are required."
+);
+
+return;
 
 }
 
@@ -2383,32 +3552,54 @@ if(editId){
 
 let p =
 products.find(
-x=>x.id===editId
+x=>Number(x.id)===Number(editId)
 );
 
 if(!p)return;
 
-p.name = name;
-p.title = name;
-p.model = model;
-p.category = category;
-p.price = price || "Ask for Price";
 
-if(image){
-p.image = image;
-}
-
-p.stock = stock;
-p.avail = stock;
-p.featured = featured;
+p.name=name;
+p.title=name;
+p.model=model;
+p.category=category;
+p.price=price||"Ask for Price";
+p.stock=stock;
+p.avail=stock;
+p.featured=featured;
+p.brand=brand;
+p.moq=moq;
 
 p.description =
 description ||
 "Industrial product supplied by MI TRADING COM.";
 
-p.desc = p.description;
+p.desc=p.description;
 
-alert("Product Updated Successfully.");
+
+/*
+NEW GALLERY IMAGE
+*/
+
+if(window.pendingImageBlob){
+
+await saveImageBlob(
+p.id,
+window.pendingImageBlob
+);
+
+p.image="";
+
+window.pendingImageBlob=null;
+
+}else if(image){
+
+p.image=image;
+
+}
+
+alert(
+"Product Updated Successfully."
+);
 
 }
 
@@ -2417,9 +3608,13 @@ alert("Product Updated Successfully.");
 
 else{
 
-products.push({
+let id =
+Date.now();
 
-id:Date.now(),
+
+let p={
+
+id:id,
 
 name:name,
 
@@ -2429,11 +3624,15 @@ model:model,
 
 category:category,
 
-price:
-price ||
-"Ask for Price",
+brand:brand,
 
-image:image,
+moq:moq,
+
+price:
+price||"Ask for Price",
+
+image:
+image||"",
 
 stock:stock,
 
@@ -2442,48 +3641,59 @@ avail:stock,
 featured:featured,
 
 description:
-description ||
+description||
 "Industrial product supplied by MI TRADING COM.",
 
 desc:
-description ||
+description||
 "Industrial product supplied by MI TRADING COM."
 
-});
+};
 
-alert("Product Added Successfully.");
+
+products.push(p);
+
+
+/*
+SAVE GALLERY BLOB
+*/
+
+if(window.pendingImageBlob){
+
+await saveImageBlob(
+id,
+window.pendingImageBlob
+);
+
+window.pendingImageBlob=null;
 
 }
 
 
-/* SAVE */
+alert(
+"Product Added Successfully."
+);
 
-try{
+}
+
+
+/*
+Save product database
+*/
 
 localStorage.setItem(
 "mi_products",
 JSON.stringify(products)
 );
 
-}catch(error){
 
-alert(
-"Image storage full hai. Picture thori choti karein."
-);
-
-console.error(error);
-
-return;
-
-}
-
-editId = null;
+editId=null;
 
 clearForm();
 
 renderProducts();
 
-showFeaturedProducts();
+renderFeaturedPublic();
 
 refreshAdmin();
 
@@ -2491,68 +3701,68 @@ refreshAdmin();
 
 
 /* =========================================================
-EDIT
+EDIT PRODUCT
 ========================================================= */
 
-function editProduct(id){
+async function editProduct(id){
 
 let p =
 products.find(
-x=>x.id===id
+x=>Number(x.id)===Number(id)
 );
 
 if(!p)return;
 
-editId = id;
+editId=id;
+
 
 document.getElementById(
 "formTitle"
 ).innerText =
 "Edit Product";
 
+
 document.getElementById(
 "pName"
 ).value =
-p.name ||
-p.title ||
-"";
+p.name||p.title||"";
+
 
 document.getElementById(
 "pModel"
 ).value =
-p.model ||
-"";
+p.model||"";
+
 
 document.getElementById(
 "pCategory"
 ).value =
-p.category ||
-"";
+p.category||"";
+
 
 document.getElementById(
 "pPrice"
 ).value =
-p.price ||
-"";
+p.price||"";
+
 
 document.getElementById(
 "pImage"
 ).value =
-p.image ||
-"";
+p.image||"";
+
 
 document.getElementById(
 "pStock"
 ).value =
-p.stock ||
-p.avail ||
-"In Stock";
+p.stock||p.avail||"In Stock";
+
 
 document.getElementById(
 "pFeatured"
 ).value =
 (
-p.featured===true ||
+p.featured===true||
 p.featured==="true"
 )
 ?
@@ -2560,34 +3770,72 @@ p.featured==="true"
 :
 "false";
 
+
+document.getElementById(
+"pBrand"
+).value =
+p.brand||"";
+
+
+document.getElementById(
+"pMOQ"
+).value =
+p.moq||"";
+
+
 document.getElementById(
 "pDescription"
 ).value =
-p.description ||
-p.desc ||
-"";
+p.description||p.desc||"";
 
+
+let img =
 document.getElementById(
 "imagePreview"
-).src =
-imageURL(p.image);
-
-const gallery =
-document.getElementById(
-"galleryImage"
 );
 
-if(gallery)gallery.value = "";
+let blob =
+await getImageBlob(id);
+
+if(blob){
+
+img.src =
+URL.createObjectURL(blob);
+
+}else{
+
+img.src =
+imageURL(p.image);
+
+}
+
+
+window.pendingImageBlob=null;
+
+document.getElementById(
+"galleryImage"
+).value="";
+
+
+activateTab("add");
+
+}
+
+
+/* =========================================================
+ACTIVATE ADD TAB
+========================================================= */
+
+function activateTab(id){
 
 document.querySelectorAll(
 ".tab"
 ).forEach(
-function(x){
-x.classList.remove("active");
-});
+x=>x.classList.remove("active")
+);
 
 document.getElementById(
-"tab-add"
+"tab-"+id
 ).classList.add("active");
 
 }
@@ -2601,34 +3849,36 @@ function deleteProduct(id){
 
 if(!loggedIn)return;
 
+
 let p =
 products.find(
-x=>x.id===id
+x=>Number(x.id)===Number(id)
 );
 
 if(!p)return;
 
+
 if(
 confirm(
-"Delete "+
-(p.name||p.title)+
-"?"
+"Delete "+(p.name||p.title)+"?"
 )
 ){
 
 products =
 products.filter(
-x=>x.id!==id
+x=>Number(x.id)!==Number(id)
 );
+
 
 localStorage.setItem(
 "mi_products",
 JSON.stringify(products)
 );
 
+
 renderProducts();
 
-showFeaturedProducts();
+renderFeaturedPublic();
 
 refreshAdmin();
 
@@ -2643,60 +3893,57 @@ CLEAR FORM
 
 function clearForm(){
 
-editId = null;
+editId=null;
+
+window.pendingImageBlob=null;
+
 
 document.getElementById(
 "formTitle"
 ).innerText =
 "Add Product";
 
-document.getElementById(
-"pName"
-).value = "";
 
-document.getElementById(
-"pModel"
-).value = "";
+[
+"pName",
+"pModel",
+"pPrice",
+"pImage",
+"pDescription",
+"pBrand",
+"pMOQ"
+].forEach(
+id=>{
+document.getElementById(id).value="";
+}
+);
 
-document.getElementById(
-"pPrice"
-).value = "";
-
-document.getElementById(
-"pImage"
-).value = "";
-
-document.getElementById(
-"pDescription"
-).value = "";
 
 document.getElementById(
 "pStock"
-).value =
-"In Stock";
+).value="In Stock";
+
 
 document.getElementById(
 "pFeatured"
-).value =
-"false";
+).value="false";
 
-const gallery =
-document.getElementById(
-"galleryImage"
-);
-
-if(gallery)gallery.value = "";
 
 document.getElementById(
 "imagePreview"
-).src =
+).src=
 "https://placehold.co/500x350?text=Product+Image";
+
+
+document.getElementById(
+"galleryImage"
+).value="";
 
 }
 
 
 /* =========================================================
-IMAGE PREVIEW
+IMAGE URL PREVIEW
 ========================================================= */
 
 function previewImage(){
@@ -2706,27 +3953,29 @@ document.getElementById(
 "pImage"
 ).value.trim();
 
+
 if(!url){
 
 document.getElementById(
 "imagePreview"
-).src =
+).src=
 "https://placehold.co/500x350?text=Product+Image";
 
 return;
 
 }
 
+
 document.getElementById(
 "imagePreview"
-).src =
+).src=
 imageURL(url);
 
 }
 
 
 /* =========================================================
-CATEGORY
+CATEGORY ADD
 ========================================================= */
 
 function addCategory(){
@@ -2739,36 +3988,81 @@ document.getElementById(
 let name =
 input.value.trim();
 
+
 if(!name)return;
+
 
 if(
 categories.some(
-x =>
-x.toLowerCase() ===
+x=>
+x.toLowerCase()===
 name.toLowerCase()
 )
 ){
 
-alert("Category already exists.");
+alert(
+"Category already exists."
+);
 
 return;
 
 }
 
+
 categories.push(name);
+
 
 localStorage.setItem(
 "mi_categories",
 JSON.stringify(categories)
 );
 
-input.value = "";
+
+input.value="";
 
 renderCategories();
 
 refreshAdmin();
 
-alert("Category Added.");
+alert(
+"Category Added."
+);
+
+}
+
+
+/* =========================================================
+FEATURED TOGGLE
+========================================================= */
+
+function toggleFeatured(id){
+
+let p =
+products.find(
+x=>Number(x.id)===Number(id)
+);
+
+if(!p)return;
+
+
+p.featured =
+!(
+p.featured===true||
+p.featured==="true"
+);
+
+
+localStorage.setItem(
+"mi_products",
+JSON.stringify(products)
+);
+
+
+renderProducts();
+
+renderFeaturedPublic();
+
+refreshAdmin();
 
 }
 
@@ -2777,43 +4071,51 @@ alert("Category Added.");
 ADMIN REFRESH
 ========================================================= */
 
-function refreshAdmin(){
+async function refreshAdmin(){
 
 if(!loggedIn)return;
 
+
 document.getElementById(
 "statProducts"
-).innerText =
+).innerText=
 products.length;
+
 
 document.getElementById(
 "statCategories"
-).innerText =
+).innerText=
 categories.length;
+
 
 document.getElementById(
 "statFeatured"
-).innerText =
+).innerText=
 products.filter(
-p =>
-p.featured===true ||
+p=>p.featured===true||
 p.featured==="true"
 ).length;
 
+
 document.getElementById(
 "statStock"
-).innerText =
+).innerText=
 products.filter(
-p =>
-(p.stock||p.avail)==="In Stock"
+p=>(p.stock||p.avail)==="In Stock"
 ).length;
+
+
+document.getElementById(
+"statOrders"
+).innerText=
+orders.length;
 
 
 /* TABLE */
 
 document.getElementById(
 "adminProducts"
-).innerHTML =
+).innerHTML=
 
 products.map(
 function(p){
@@ -2824,11 +4126,7 @@ return `
 
 <td>
 
-<img
-class="table-img"
-src="${imageURL(p.image)}"
-onerror="imgError(this)"
->
+${productImageHTML(p,"table-img")}
 
 </td>
 
@@ -2845,7 +4143,11 @@ ${escape(p.category)}
 </td>
 
 <td>
-${escape(p.price||"Ask for Price")}
+${escape(p.brand||"-")}
+</td>
+
+<td>
+${escape(p.price)}
 </td>
 
 <td>
@@ -2854,7 +4156,7 @@ ${escape(p.stock||p.avail)}
 
 <td>
 ${
-p.featured===true ||
+p.featured===true||
 p.featured==="true"
 ?
 "⭐ Yes"
@@ -2902,19 +4204,18 @@ onclick="toggleFeatured(${p.id})"
 
 document.getElementById(
 "adminCategories"
-).innerHTML =
+).innerHTML=
 
 categories
 .filter(
 x=>x!=="All Products"
 )
 .map(
-x=>`
-
+x=>
+`
 <div class="category">
 ${escape(x)}
 </div>
-
 `
 )
 .join("");
@@ -2922,105 +4223,33 @@ ${escape(x)}
 
 /* FEATURED */
 
-let featured =
+let featured=
 products.filter(
-p =>
-p.featured===true ||
+p=>p.featured===true||
 p.featured==="true"
 );
+
 
 document.getElementById(
 "featuredProducts"
-).innerHTML =
+).innerHTML=
 
 featured.length
-
 ?
-
-featured.map(
-p=>`
-
-<div class="card">
-
-<div class="card-img">
-
-<img
-src="${imageURL(p.image)}"
-onerror="imgError(this)"
->
-
-</div>
-
-<div class="card-body">
-
-<div class="badge-cat">
-⭐ FEATURED
-</div>
-
-<h3>
-${escape(p.name||p.title)}
-</h3>
-
-<div class="model">
-${escape(p.model)}
-</div>
-
-<div class="price">
-${escape(p.price)}
-</div>
-
-<button
-class="btn red"
-onclick="toggleFeatured(${p.id})"
->
-Remove Featured
-</button>
-
-</div>
-
-</div>
-
-`
-).join("")
-
+featured.map(productCard).join("")
 :
-
-`<div class="empty">
+`
+<div class="empty">
 No featured products.
-</div>`;
+</div>
+`;
 
-}
 
+renderOrdersAdmin();
 
-/* =========================================================
-FEATURED TOGGLE
-========================================================= */
+renderReviewsAdmin();
 
-function toggleFeatured(id){
-
-let p =
-products.find(
-x=>x.id===id
-);
-
-if(!p)return;
-
-p.featured =
-!(
-p.featured===true ||
-p.featured==="true"
-);
-
-localStorage.setItem(
-"mi_products",
-JSON.stringify(products)
-);
-
-renderProducts();
-
-refreshAdmin();
-
-showFeaturedProducts();
+refreshStoredImages();
 
 }
 
@@ -3033,8 +4262,9 @@ function addCart(id){
 
 let found =
 cart.find(
-x=>x.id===id
+x=>Number(x.id)===Number(id)
 );
+
 
 if(found){
 
@@ -3043,16 +4273,18 @@ found.qty++;
 }else{
 
 cart.push({
-id:id,
+id:Number(id),
 qty:1
 });
 
 }
 
+
 localStorage.setItem(
 "mi_cart",
 JSON.stringify(cart)
 );
+
 
 updateCart();
 
@@ -3067,9 +4299,9 @@ function updateCart(){
 
 document.getElementById(
 "cartCount"
-).innerText =
+).innerText=
 cart.reduce(
-(a,b)=>a+b.qty,
+(a,b)=>a+Number(b.qty),
 0
 );
 
@@ -3083,26 +4315,30 @@ document.getElementById(
 "cartItems"
 );
 
+
 if(!cart.length){
 
-box.innerHTML =
-`<div class="empty">
+box.innerHTML=
+`
+<div class="empty">
 Inquiry cart is empty.
-</div>`;
+</div>
+`;
 
 }else{
 
-box.innerHTML =
+box.innerHTML=
 
 cart.map(
 function(item){
 
 let p =
 products.find(
-x=>x.id===item.id
+x=>Number(x.id)===Number(item.id)
 );
 
 if(!p)return "";
+
 
 return `
 
@@ -3122,7 +4358,23 @@ ${escape(p.model)}
 
 <br>
 
-Qty: ${item.qty}
+Quantity:
+
+<button
+onclick="changeQty(${p.id},-1)"
+>
+−
+</button>
+
+<b>
+${item.qty}
+</b>
+
+<button
+onclick="changeQty(${p.id},1)"
+>
++
+</button>
 
 </div>
 
@@ -3143,10 +4395,46 @@ Remove
 
 }
 
+
 document.getElementById(
 "cartModal"
-).style.display =
-"flex";
+).style.display="flex";
+
+}
+
+
+function changeQty(id,change){
+
+let item=
+cart.find(
+x=>Number(x.id)===Number(id)
+);
+
+if(!item)return;
+
+
+item.qty += change;
+
+
+if(item.qty<=0){
+
+cart =
+cart.filter(
+x=>Number(x.id)!==Number(id)
+);
+
+}
+
+
+localStorage.setItem(
+"mi_cart",
+JSON.stringify(cart)
+);
+
+
+updateCart();
+
+openCart();
 
 }
 
@@ -3155,13 +4443,15 @@ function removeCart(id){
 
 cart =
 cart.filter(
-x=>x.id!==id
+x=>Number(x.id)!==Number(id)
 );
+
 
 localStorage.setItem(
 "mi_cart",
 JSON.stringify(cart)
 );
+
 
 updateCart();
 
@@ -3174,47 +4464,99 @@ function closeCart(){
 
 document.getElementById(
 "cartModal"
-).style.display =
-"none";
+).style.display="none";
 
 }
 
+
+/* =========================================================
+WHATSAPP
+========================================================= */
 
 function sendWhatsApp(){
 
 if(!cart.length){
 
-alert("Inquiry cart is empty.");
+alert(
+"Inquiry cart is empty."
+);
 
 return;
 
 }
 
-let message =
-"Hello MI TRADING COM,%0A%0AI need quotation for:%0A%0A";
+
+let name=
+document.getElementById(
+"customerName"
+).value.trim();
+
+
+let phone=
+document.getElementById(
+"customerPhone"
+).value.trim();
+
+
+let note=
+document.getElementById(
+"customerNote"
+).value.trim();
+
+
+let message=
+"Hello MI TRADING COM,%0A%0A";
+
+if(name)
+message+=
+"Customer: "+
+encodeURIComponent(name)+
+"%0A";
+
+if(phone)
+message+=
+"Phone: "+
+encodeURIComponent(phone)+
+"%0A";
+
+
+message+="%0ARequired Products:%0A";
+
 
 cart.forEach(
 function(item){
 
-let p =
+let p=
 products.find(
-x=>x.id===item.id
+x=>Number(x.id)===Number(item.id)
 );
 
 if(p){
 
-message +=
+message+=
 "• "+
-(p.name||p.title)+
-" - "+
-p.model+
-" x "+
+encodeURIComponent(
+(p.name||p.title)
+)+
+" | Model: "+
+encodeURIComponent(p.model)+
+" | Qty: "+
 item.qty+
 "%0A";
 
 }
 
 });
+
+
+if(note){
+
+message+=
+"%0ANote: "+
+encodeURIComponent(note);
+
+}
+
 
 window.open(
 "https://wa.me/923134854823?text="+message,
@@ -3225,247 +4567,281 @@ window.open(
 
 
 /* =========================================================
-SETTINGS
+SAVE INQUIRY
 ========================================================= */
 
-function saveSettings(){
+function saveInquiry(){
 
-let settings = {
+if(!cart.length){
 
-company:
+alert(
+"Inquiry cart is empty."
+);
+
+return;
+
+}
+
+
+let customer=
 document.getElementById(
-"companySetting"
-).value,
+"customerName"
+).value.trim() ||
+"Website Customer";
 
-phone:
-document.getElementById(
-"phoneSetting"
-).value,
 
-email:
+let phone=
 document.getElementById(
-"emailSetting"
-).value,
+"customerPhone"
+).value.trim();
 
-address:
+
+let note=
 document.getElementById(
-"addressSetting"
-).value
+"customerNote"
+).value.trim();
+
+
+let order={
+
+id:Date.now(),
+
+customer:customer,
+
+phone:phone,
+
+note:note,
+
+date:new Date().toLocaleString(),
+
+status:"New",
+
+items:cart.map(
+x=>({
+
+id:x.id,
+qty:x.qty
+
+})
+)
 
 };
 
+
+orders.unshift(order);
+
+
 localStorage.setItem(
-"mi_settings",
-JSON.stringify(settings)
-);
-
-alert("Settings Saved.");
-
-}
-
-
-/* =========================================================
-ADMIN BUTTONS
-========================================================= */
-
-function updateAdminButtons(){
-
-document.querySelectorAll(
-".admin-actions"
-).forEach(
-function(el){
-
-el.style.display =
-loggedIn
-?
-"flex"
-:
-"none";
-
-});
-
-}
-
-
-/* =========================================================
-NAVIGATION
-========================================================= */
-
-function go(id){
-
-let el =
-document.getElementById(id);
-
-if(!el)return;
-
-window.scrollTo({
-
-top:
-el.offsetTop -
-document.querySelector(
-"header"
-).offsetHeight,
-
-behavior:"smooth"
-
-});
-
-}
-
-
-/* =========================================================
-CALL
-========================================================= */
-
-function call(){
-
-window.location.href =
-"tel:03134854823";
-
-}
-
-
-/* =========================================================
-ESCAPE
-========================================================= */
-
-function escape(value){
-
-return String(
-value || ""
-)
-
-.replace(/&/g,"&amp;")
-.replace(/</g,"&lt;")
-.replace(/>/g,"&gt;")
-.replace(/"/g,"&quot;")
-.replace(/'/g,"&#039;");
-
-}
-
-
-/* =========================================================
-SEARCH
-========================================================= */
-
-document.getElementById(
-"search"
-).addEventListener(
-"input",
-renderProducts
+"mi_orders",
+JSON.stringify(orders)
 );
 
 
-/* =========================================================
-ENTER LOGIN
-========================================================= */
-
-document.getElementById(
-"loginPassword"
-).addEventListener(
-"keydown",
-function(e){
-
-if(e.key==="Enter"){
-login();
-}
-
-});
-
-
-/* =========================================================
-CLOSE MODALS
-========================================================= */
-
-document.querySelectorAll(
-".modal"
-).forEach(
-function(modal){
-
-modal.addEventListener(
-"click",
-function(e){
-
-if(e.target===modal){
-
-modal.style.display =
-"none";
-
-}
-
-});
-
-});
-
-
-/* =========================================================
-LOAD SAVED CATEGORIES
-========================================================= */
-
-let savedCategories =
-JSON.parse(
-localStorage.getItem(
-"mi_categories"
-)
+alert(
+"Inquiry saved successfully."
 );
 
-if(
-Array.isArray(savedCategories)
-){
-
-categories =
-savedCategories;
-
 }
 
 
 /* =========================================================
-LOAD SETTINGS
+WISHLIST
 ========================================================= */
 
-let savedSettings =
-JSON.parse(
-localStorage.getItem(
-"mi_settings"
-)
+function toggleWishlist(id){
+
+id=Number(id);
+
+
+if(wishlist.includes(id)){
+
+wishlist=
+wishlist.filter(
+x=>Number(x)!==id
 );
 
-if(savedSettings){
+}else{
 
-if(savedSettings.company)
-document.getElementById("companySetting").value =
-savedSettings.company;
-
-if(savedSettings.phone)
-document.getElementById("phoneSetting").value =
-savedSettings.phone;
-
-if(savedSettings.email)
-document.getElementById("emailSetting").value =
-savedSettings.email;
-
-if(savedSettings.address)
-document.getElementById("addressSetting").value =
-savedSettings.address;
+wishlist.push(id);
 
 }
 
 
-/* =========================================================
-INITIALIZE
-========================================================= */
+localStorage.setItem(
+"mi_wishlist",
+JSON.stringify(wishlist)
+);
 
-renderCategories();
 
 renderProducts();
 
-showFeaturedProducts();
+renderFeaturedPublic();
 
-updateCart();
+}
 
-updateAdminButtons();
 
-</script>
+function showWishlist(){
 
-</body>
-</html>
+let list=
+products.filter(
+p=>wishlist.includes(
+Number(p.id)
+)
+);
+
+
+document.getElementById(
+"wishlistProducts"
+).innerHTML=
+
+list.length
+?
+list.map(productCard).join("")
+:
+`
+<div class="empty">
+Your wishlist is empty.
+</div>
+`;
+
+
+document.getElementById(
+"wishlistModal"
+).style.display="flex";
+
+
+refreshStoredImages();
+
+}
+
+
+function closeWishlist(){
+
+document.getElementById(
+"wishlistModal"
+).style.display="none";
+
+}
+
+
+/* =========================================================
+COMPARE
+========================================================= */
+
+function toggleCompare(id){
+
+id=Number(id);
+
+
+if(compareList.includes(id)){
+
+compareList=
+compareList.filter(
+x=>Number(x)!==id
+);
+
+}else{
+
+if(compareList.length>=4){
+
+alert(
+"Maximum 4 products can be compared."
+);
+
+return;
+
+}
+
+compareList.push(id);
+
+}
+
+
+localStorage.setItem(
+"mi_compare",
+JSON.stringify(compareList)
+);
+
+
+renderProducts();
+
+}
+
+
+function showCompare(){
+
+let list=
+products.filter(
+p=>compareList.includes(
+Number(p.id)
+)
+);
+
+
+if(!list.length){
+
+document.getElementById(
+"compareProducts"
+).innerHTML=
+`
+<div class="empty">
+No products selected for comparison.
+</div>
+`;
+
+}else{
+
+document.getElementById(
+"compareProducts"
+).innerHTML=`
+
+<div class="table-wrap">
+
+<table>
+
+<thead>
+
+<tr>
+
+<th>Feature</th>
+
+${list.map(
+p=>
+`
+<th>
+${escape(p.name||p.title)}
+</th>
+`
+).join("")}
+
+</tr>
+
+</thead>
+
+<tbody>
+
+<tr>
+
+<td>Model</td>
+
+${list.map(
+p=>
+`<td>${escape(p.model)}</td>`
+).join("")}
+
+</tr>
+
+<tr>
+
+<td>Category</td>
+
+${list.map(
+p=>
+`<td>${escape(p.category)}</td>`
+).join("")}
+
+</tr>
+
+<tr>
+
+<td>
