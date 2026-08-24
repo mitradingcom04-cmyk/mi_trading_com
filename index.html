@@ -3,255 +3,1907 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>MI TRADING COM - Industrial & General Supply Solutions</title>
+
 <meta name="description" content="MI TRADING COM - Leading supplier of Bearings, CNC Parts, Belts, Pneumatic, Hydraulic, Electrical and Industrial Hardware in Lahore, Pakistan">
+
 <meta property="og:title" content="MI TRADING COM - Industrial Products">
 <meta property="og:description" content="Industrial Bearings, CNC, Pneumatic, Hydraulic Products Supplier in Lahore">
+
 <style>
-:root{--navy:#1a2a4c; --orange:#ff9800; --bg:#f5f7fa; --card:#fff; --text:#333;}
-*{margin:0; padding:0; box-sizing:border-box; font-family:'Segoe UI',Arial,sans-serif;}
-body{background:var(--bg); color:var(--text);}
-header{background:var(--navy); color:white; position:sticky; top:0; z-index:1000; box-shadow:0 2px 10px rgba(0,0,0,0.1);}
-.header-top{display:flex; justify-content:space-between; align-items:center; padding:12px 5%; flex-wrap:wrap;}
-.logo{font-size:26px; font-weight:bold; color:var(--orange);}
-.contact-mini{font-size:13px; text-align:right;}
-.contact-mini a{color:white; text-decoration:none; display:block;}
-.search-wrap{display:flex; padding:10px 5%; background:#0f1a30;}
-.search-wrap input{flex:1; padding:12px; border:none; border-radius:4px 0 0 4px; font-size:15px;}
-.search-wrap button{padding:12px 20px; background:var(--orange); border:none; color:white; border-radius:0 4px 4px 0; cursor:pointer; font-weight:bold;}
-nav{display:flex; gap:20px; padding:0 5%;}
-nav button{background:none; border:none; color:white; padding:12px 0; cursor:pointer; font-size:14px;}
-nav button.active{border-bottom:2px solid var(--orange);}
-.hero{background:linear-gradient(135deg,var(--navy),#2c3e6b); color:white; padding:60px 5%; text-align:center;}
-.hero h1{font-size:36px; margin-bottom:15px;}
-.hero p{font-size:16px; max-width:700px; margin:0 auto 25px;}
-.btn{padding:12px 25px; background:var(--orange); color:white; border:none; border-radius:4px; cursor:pointer; font-weight:bold; margin:5px; text-decoration:none; display:inline-block;}
-.btn-outline{background:transparent; border:2px solid white;}
-.container{max-width:1300px; margin:30px auto; padding:0 5%;}
-.categories{display:grid; grid-template-columns:repeat(auto-fit,minmax(160px,1fr)); gap:15px; margin:30px 0;}
-.cat-card{background:var(--card); padding:20px; border-radius:8px; text-align:center; cursor:pointer; box-shadow:0 2px 5px rgba(0,0,0,0.08); transition:0.3s;}
-.cat-card:hover{transform:translateY(-3px); box-shadow:0 5px 15px rgba(0,0,0,0.15);}
-.cat-card.active{border:2px solid var(--orange);}
-.products{display:grid; grid-template-columns:repeat(auto-fit,minmax(260px,1fr)); gap:20px;}
-.card{background:var(--card); border-radius:8px; overflow:hidden; box-shadow:0 2px 8px rgba(0,0,0,0.08); transition:0.3s;}
-.card:hover{transform:translateY(-5px);}
-.card img{width:100%; height:200px; object-fit:contain; background:#fafafa;}
-.card-body{padding:15px;}
-.card-title{font-weight:bold; font-size:16px; margin-bottom:5px;}
-.card-model{color:#666; font-size:13px; margin-bottom:8px;}
-.card-desc{font-size:13px; color:#555; height:40px; overflow:hidden; margin-bottom:10px;}
-.card-price{color:#e91e63; font-size:18px; font-weight:bold; margin-bottom:10px;}
-.card-actions{display:flex; gap:8px; flex-wrap:wrap;}
-.card-actions a{flex:1; text-align:center; padding:8px; font-size:12px; border-radius:4px; text-decoration:none; color:white;}
-.whatsapp{background:#25D366;}
-.call{background:#007bff;}
-.details{background:#6c757d;}
-.admin-btn{background:#dc3545; color:white; border:none; padding:5px 10px; font-size:11px; border-radius:3px; cursor:pointer; margin:3px;}
-.admin-panel{background:var(--card); padding:20px; border-radius:8px; margin:20px 0; display:none;}
-.admin-panel input, .admin-panel select, .admin-panel textarea{width:100%; padding:8px; margin:8px 0; border:1px solid #ddd; border-radius:4px;}
-footer{background:var(--navy); color:white; padding:40px 5%; margin-top:50px;}
-.footer-grid{display:grid; grid-template-columns:repeat(auto-fit,minmax(250px,1fr)); gap:30px;}
-footer a{color:#ddd; text-decoration:none;}
-.modal{display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.7); z-index:2000; align-items:center; justify-content:center;}
-.modal-content{background:white; padding:30px; border-radius:8px; max-width:600px; width:90%; max-height:90vh; overflow-y:auto;}
-@media(max-width:768px){.hero h1{font-size:24px;} nav{overflow-x:auto;}}
+
+:root{
+--navy:#1a2a4c;
+--orange:#ff9800;
+--bg:#f5f7fa;
+--card:#fff;
+--text:#333;
+}
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Segoe UI',Arial,sans-serif;
+}
+
+body{
+background:var(--bg);
+color:var(--text);
+}
+
+header{
+background:var(--navy);
+color:white;
+position:sticky;
+top:0;
+z-index:1000;
+box-shadow:0 2px 10px rgba(0,0,0,.1);
+}
+
+.header-top{
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:12px 5%;
+flex-wrap:wrap;
+}
+
+.logo{
+font-size:26px;
+font-weight:bold;
+color:var(--orange);
+}
+
+.contact-mini{
+font-size:13px;
+text-align:right;
+}
+
+.contact-mini a{
+color:white;
+text-decoration:none;
+display:block;
+}
+
+.search-wrap{
+display:flex;
+padding:10px 5%;
+background:#0f1a30;
+}
+
+.search-wrap input{
+flex:1;
+padding:12px;
+border:none;
+border-radius:4px 0 0 4px;
+font-size:15px;
+}
+
+.search-wrap button{
+padding:12px 20px;
+background:var(--orange);
+border:none;
+color:white;
+border-radius:0 4px 4px 0;
+cursor:pointer;
+font-weight:bold;
+}
+
+nav{
+display:flex;
+gap:20px;
+padding:0 5%;
+overflow-x:auto;
+}
+
+nav button{
+background:none;
+border:none;
+color:white;
+padding:12px 0;
+cursor:pointer;
+font-size:14px;
+white-space:nowrap;
+}
+
+nav button.active{
+border-bottom:2px solid var(--orange);
+}
+
+.hero{
+background:linear-gradient(135deg,var(--navy),#2c3e6b);
+color:white;
+padding:60px 5%;
+text-align:center;
+}
+
+.hero h1{
+font-size:36px;
+margin-bottom:15px;
+}
+
+.hero p{
+font-size:16px;
+max-width:700px;
+margin:0 auto 25px;
+}
+
+.btn{
+padding:12px 25px;
+background:var(--orange);
+color:white;
+border:none;
+border-radius:4px;
+cursor:pointer;
+font-weight:bold;
+margin:5px;
+text-decoration:none;
+display:inline-block;
+}
+
+.btn-outline{
+background:transparent;
+border:2px solid white;
+}
+
+.container{
+max-width:1300px;
+margin:30px auto;
+padding:0 5%;
+}
+
+.categories{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(160px,1fr));
+gap:15px;
+margin:30px 0;
+}
+
+.cat-card{
+background:var(--card);
+padding:20px;
+border-radius:8px;
+text-align:center;
+cursor:pointer;
+box-shadow:0 2px 5px rgba(0,0,0,.08);
+transition:.3s;
+}
+
+.cat-card:hover{
+transform:translateY(-3px);
+box-shadow:0 5px 15px rgba(0,0,0,.15);
+}
+
+.cat-card.active{
+border:2px solid var(--orange);
+}
+
+.products{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+gap:20px;
+}
+
+.card{
+background:var(--card);
+border-radius:8px;
+overflow:hidden;
+box-shadow:0 2px 8px rgba(0,0,0,.08);
+transition:.3s;
+}
+
+.card:hover{
+transform:translateY(-5px);
+}
+
+.card img{
+width:100%;
+height:200px;
+object-fit:contain;
+background:#fafafa;
+}
+
+.card-body{
+padding:15px;
+}
+
+.card-title{
+font-weight:bold;
+font-size:16px;
+margin-bottom:5px;
+}
+
+.card-model{
+color:#666;
+font-size:13px;
+margin-bottom:8px;
+}
+
+.card-desc{
+font-size:13px;
+color:#555;
+height:40px;
+overflow:hidden;
+margin-bottom:10px;
+}
+
+.card-price{
+color:#e91e63;
+font-size:18px;
+font-weight:bold;
+margin-bottom:10px;
+}
+
+.card-actions{
+display:flex;
+gap:8px;
+flex-wrap:wrap;
+}
+
+.card-actions a{
+flex:1;
+text-align:center;
+padding:8px;
+font-size:12px;
+border-radius:4px;
+text-decoration:none;
+color:white;
+}
+
+.whatsapp{
+background:#25D366;
+}
+
+.call{
+background:#007bff;
+}
+
+.details{
+background:#6c757d;
+}
+
+.admin-btn{
+background:#dc3545;
+color:white;
+border:none;
+padding:7px 10px;
+font-size:11px;
+border-radius:3px;
+cursor:pointer;
+margin:3px;
+display:none;
+}
+
+.admin-panel{
+background:var(--card);
+padding:20px;
+border-radius:8px;
+margin:20px 0;
+display:none;
+box-shadow:0 3px 12px rgba(0,0,0,.1);
+border:2px solid var(--orange);
+}
+
+.admin-panel h3{
+margin-bottom:10px;
+color:var(--navy);
+}
+
+.admin-panel input,
+.admin-panel select,
+.admin-panel textarea{
+width:100%;
+padding:10px;
+margin:8px 0;
+border:1px solid #ddd;
+border-radius:4px;
+}
+
+.admin-panel textarea{
+min-height:100px;
+resize:vertical;
+}
+
+.owner-badge{
+display:none;
+background:#198754;
+color:white;
+padding:8px 12px;
+border-radius:20px;
+font-size:12px;
+margin:10px 5%;
+}
+
+footer{
+background:var(--navy);
+color:white;
+padding:40px 5%;
+margin-top:50px;
+}
+
+.footer-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:30px;
+}
+
+footer a{
+color:#ddd;
+text-decoration:none;
+}
+
+.modal{
+display:none;
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:rgba(0,0,0,.7);
+z-index:2000;
+align-items:center;
+justify-content:center;
+}
+
+.modal-content{
+background:white;
+padding:30px;
+border-radius:8px;
+max-width:600px;
+width:90%;
+max-height:90vh;
+overflow-y:auto;
+}
+
+/* OWNER LOGIN */
+
+#ownerLogin{
+display:none;
+position:fixed;
+inset:0;
+background:rgba(0,0,0,.85);
+z-index:9999;
+align-items:center;
+justify-content:center;
+}
+
+.login-box{
+background:white;
+padding:30px;
+border-radius:12px;
+width:90%;
+max-width:400px;
+text-align:center;
+box-shadow:0 10px 40px rgba(0,0,0,.3);
+}
+
+.login-box h2{
+color:var(--navy);
+margin-bottom:8px;
+}
+
+.login-box p{
+color:#666;
+margin-bottom:20px;
+}
+
+.login-box input{
+width:100%;
+padding:13px;
+border:1px solid #ddd;
+border-radius:5px;
+font-size:15px;
+margin-bottom:10px;
+}
+
+.login-error{
+color:red!important;
+font-size:13px;
+min-height:18px;
+}
+
+.owner-tools{
+display:none;
+margin:15px 0;
+padding:15px;
+background:#eef7ff;
+border-radius:8px;
+}
+
+.owner-tools button{
+padding:9px 14px;
+border:none;
+border-radius:5px;
+cursor:pointer;
+margin:4px;
+font-weight:bold;
+}
+
+.logout-btn{
+background:#dc3545;
+color:white;
+}
+
+.close-login{
+background:#666;
+color:white;
+}
+
+@media(max-width:768px){
+
+.hero h1{
+font-size:24px;
+}
+
+.header-top{
+gap:10px;
+}
+
+.logo{
+font-size:21px;
+}
+
+.contact-mini{
+font-size:11px;
+}
+
+nav{
+gap:15px;
+}
+
+.products{
+grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+}
+
+}
+
 </style>
 </head>
+
 <body>
 
+<!-- OWNER LOGIN -->
+
+<div id="ownerLogin">
+
+<div class="login-box">
+
+<h2>MI TRADING COM</h2>
+
+<p>Owner / Admin Login</p>
+
+<input
+type="password"
+id="ownerPassword"
+placeholder="Enter Owner Password"
+autocomplete="off"
+>
+
+<button class="btn" onclick="ownerLogin()">
+Login
+</button>
+
+<button class="btn close-login" onclick="closeOwnerLogin()">
+Cancel
+</button>
+
+<p id="loginError" class="login-error"></p>
+
+</div>
+
+</div>
+
+
 <header>
-  <div class="header-top">
-    <div class="logo">MI TRADING COM</div>
-    <div class="contact-mini">
-      <a href="tel:03134854823">📞 0313-4854823</a>
-      <a href="mailto:mitradingcom04@gmail.com">✉️ mitradingcom04@gmail.com</a>
-    </div>
-  </div>
-  <div class="search-wrap">
-    <input type="text" id="searchInput" placeholder="Search product name, model, bearing number...">
-    <button onclick="searchProducts()">Search</button>
-  </div>
-  <nav>
-    <button class="active" onclick="showSection('home')">Home</button>
-    <button onclick="showSection('products')">Products</button>
-    <button onclick="showSection('about')">About</button>
-    <button onclick="showSection('contact')">Contact</button>
-    <button onclick="toggleAdmin()">Admin Panel</button>
-  </nav>
+
+<div class="header-top">
+
+<div class="logo">
+MI TRADING COM
+</div>
+
+<div class="contact-mini">
+
+<a href="tel:03134854823">
+📞 0313-4854823
+</a>
+
+<a href="mailto:mitradingcom04@gmail.com">
+✉️ mitradingcom04@gmail.com
+</a>
+
+</div>
+
+</div>
+
+
+<div class="search-wrap">
+
+<input
+type="text"
+id="searchInput"
+placeholder="Search product name, model, bearing number..."
+>
+
+<button onclick="searchProducts()">
+Search
+</button>
+
+</div>
+
+
+<nav>
+
+<button class="active" onclick="showSection('home')">
+Home
+</button>
+
+<button onclick="showSection('products')">
+Products
+</button>
+
+<button onclick="showSection('about')">
+About
+</button>
+
+<button onclick="showSection('contact')">
+Contact
+</button>
+
+<button onclick="openOwnerLogin()">
+Owner Login
+</button>
+
+</nav>
+
 </header>
 
+
+<!-- OWNER STATUS -->
+
+<div id="ownerBadge" class="owner-badge">
+✅ OWNER MODE ACTIVE — You can manage your website
+</div>
+
+
 <section id="home" class="hero">
-  <h1>Industrial Products & General Supply Solutions</h1>
-  <p>MI TRADING COM supplies industrial bearings, belts, CNC machine components, pneumatic and hydraulic products, electrical items, tools, hardware and general industrial supplies.</p>
-  <a href="#products" class="btn">Explore Products</a>
-  <a href="https://wa.me/923134854823?text=Hello%20MI%20TRADING%20COM" class="btn btn-outline" target="_blank">WhatsApp Inquiry</a>
+
+<h1>
+Industrial Products & General Supply Solutions
+</h1>
+
+<p>
+MI TRADING COM supplies industrial bearings, belts, CNC machine components, pneumatic and hydraulic products, electrical items, tools, hardware and general industrial supplies.
+</p>
+
+<a href="#products" class="btn">
+Explore Products
+</a>
+
+<a
+href="https://wa.me/923134854823?text=Hello%20MI%20TRADING%20COM"
+class="btn btn-outline"
+target="_blank"
+>
+WhatsApp Inquiry
+</a>
+
 </section>
+
 
 <div class="container">
-  <div id="adminPanel" class="admin-panel">
-    <h3>Manage Products</h3>
-    <input type="text" id="pTitle" placeholder="Product Title">
-    <input type="text" id="pModel" placeholder="Model / Part Number">
-    <select id="pCategory"></select>
-    <input type="text" id="pPrice" placeholder="Price e.g. Rs. 960">
-    <input type="text" id="pImage" placeholder="Image URL">
-    <textarea id="pDesc" placeholder="Description"></textarea>
-    <select id="pAvail"><option>In Stock</option><option>Out of Stock</option></select>
-    <button class="btn" onclick="addProduct()">Add Product</button>
-  </div>
 
-  <h2>Product Categories</h2>
-  <div class="categories" id="categoryList"></div>
 
-  <h2 id="products">Our Products</h2>
-  <div class="products" id="productList"></div>
+<!-- ADMIN PANEL -->
+
+<div id="adminPanel" class="admin-panel">
+
+<h3>🔐 Owner Product Management</h3>
+
+<p style="font-size:13px;color:#666;margin-bottom:15px;">
+Only the website owner can use these controls.
+</p>
+
+
+<input
+type="text"
+id="pTitle"
+placeholder="Product Title"
+>
+
+
+<input
+type="text"
+id="pModel"
+placeholder="Model / Part Number"
+>
+
+
+<select id="pCategory">
+</select>
+
+
+<input
+type="text"
+id="pPrice"
+placeholder="Price e.g. Rs. 960"
+>
+
+
+<input
+type="text"
+id="pImage"
+placeholder="Image URL"
+>
+
+
+<textarea
+id="pDesc"
+placeholder="Product Description"
+></textarea>
+
+
+<select id="pAvail">
+
+<option>In Stock</option>
+
+<option>Out of Stock</option>
+
+</select>
+
+
+<button
+class="btn"
+onclick="addProduct()"
+>
+➕ Add Product
+</button>
+
+
+<button
+class="btn"
+style="background:#6c757d"
+onclick="clearProductForm()"
+>
+Clear
+</button>
+
+
 </div>
+
+
+<!-- OWNER TOOLS -->
+
+<div id="ownerTools" class="owner-tools">
+
+<strong>Owner Controls:</strong>
+
+<button
+style="background:#198754;color:white"
+onclick="openProductManager()"
+>
+Manage Products
+</button>
+
+<button
+style="background:#0d6efd;color:white"
+onclick="scrollToCategories()"
+>
+Categories
+</button>
+
+<button
+class="logout-btn"
+onclick="ownerLogout()"
+>
+Logout
+</button>
+
+</div>
+
+
+<h2>
+Product Categories
+</h2>
+
+<div
+class="categories"
+id="categoryList"
+></div>
+
+
+<h2 id="products">
+Our Products
+</h2>
+
+<div
+class="products"
+id="productList"
+></div>
+
+</div>
+
 
 <section id="about" class="container">
-  <h2>About MI TRADING COM</h2>
-  <p>MI TRADING COM is a Lahore-based industrial and general order supplier providing a wide range of mechanical, electrical, CNC, pneumatic, hydraulic and hardware products. The company helps businesses source industrial products according to their required specifications, quantities and applications.</p>
+
+<h2>
+About MI TRADING COM
+</h2>
+
+<p>
+MI TRADING COM is a Lahore-based industrial and general order supplier providing a wide range of mechanical, electrical, CNC, pneumatic, hydraulic and hardware products. The company helps businesses source industrial products according to their required specifications, quantities and applications.
+</p>
+
 </section>
+
 
 <section id="contact" class="container">
-  <h2>Contact Us</h2>
-  <p><b>Address:</b> Brandreth Road, Lahore, Pakistan</p>
-  <p><b>Phone:</b> <a href="tel:03134854823">0313-4854823</a></p>
-  <p><b>WhatsApp:</b> <a href="https://wa.me/923134854823" target="_blank">923134854823</a></p>
-  <p><b>Email:</b> <a href="mailto:mitradingcom04@gmail.com">mitradingcom04@gmail.com</a></p>
-  <a href="https://wa.me/923134854823" class="btn whatsapp" target="_blank">WhatsApp</a>
-  <a href="tel:03134854823" class="btn call">Call Now</a>
-  <a href="mailto:mitradingcom04@gmail.com" class="btn">Email</a>
+
+<h2>
+Contact Us
+</h2>
+
+<p>
+<b>Address:</b>
+Brandreth Road, Lahore, Pakistan
+</p>
+
+<p>
+<b>Phone:</b>
+<a href="tel:03134854823">
+0313-4854823
+</a>
+</p>
+
+<p>
+<b>WhatsApp:</b>
+<a
+href="https://wa.me/923134854823"
+target="_blank"
+>
+923134854823
+</a>
+</p>
+
+<p>
+<b>Email:</b>
+<a href="mailto:mitradingcom04@gmail.com">
+mitradingcom04@gmail.com
+</a>
+</p>
+
+
+<a
+href="https://wa.me/923134854823"
+class="btn whatsapp"
+target="_blank"
+>
+WhatsApp
+</a>
+
+<a
+href="tel:03134854823"
+class="btn call"
+>
+Call Now
+</a>
+
+<a
+href="mailto:mitradingcom04@gmail.com"
+class="btn"
+>
+Email
+</a>
+
 </section>
 
-<footer>
-  <div class="footer-grid">
-    <div>
-      <h3>MI TRADING COM</h3>
-      <p>Industrial & General Order Supplier</p>
-      <p>Brandreth Road, Lahore, Pakistan</p>
-    </div>
-    <div>
-      <h3>Contact</h3>
-      <p>Phone: 0313-4854823</p>
-      <p>Email: mitradingcom04@gmail.com</p>
-    </div>
-    <div>
-      <h3>Quick Links</h3>
-      <a href="#home">Home</a><br>
-      <a href="#products">Products</a><br>
-      <a href="#about">About</a><br>
-      <a href="#contact">Contact</a>
-    </div>
-  </div>
-  <p style="text-align:center; margin-top:20px;">© 2026 MI TRADING COM. All Rights Reserved.</p>
-</footer>
 
-<div id="productModal" class="modal" onclick="closeModal()">
-  <div class="modal-content" onclick="event.stopPropagation()"></div>
+<footer>
+
+<div class="footer-grid">
+
+<div>
+
+<h3>
+MI TRADING COM
+</h3>
+
+<p>
+Industrial & General Order Supplier
+</p>
+
+<p>
+Brandreth Road, Lahore, Pakistan
+</p>
+
 </div>
 
-<script>
-let products = JSON.parse(localStorage.getItem('mitProducts')) || [
-  {id:1,title:"Deep Groove Ball Bearing",model:"6206",category:"Bearings",price:"Rs. 960",image:"https://m.media-amazon.com/images/I/61KjZQp8Y-L._AC_SL1500_.jpg",desc:"High quality steel bearing. Size: 30x62x16mm",avail:"In Stock"},
-  {id:2,title:"Taper Roller Bearing",model:"30206",category:"Taper Roller Bearings",price:"Rs. 1250",image:"https://m.media-amazon.com/images/I/61vBzQZQZ-L._AC_SL1500_.jpg",desc:"Heavy duty for automotive. Size: 30x62x17.25mm",avail:"In Stock"},
-  {id:3,title:"Timing Belt",model:"XL-100",category:"Timing Belts",price:"Rs. 450",image:"https://m.media-amazon.com/images/I/71vBzQZQZ-L._AC_SL1500_.jpg",desc:"Industrial timing belt for machinery",avail:"In Stock"},
-  {id:4,title:"Pneumatic Fitting",model:"PC-6mm",category:"Pneumatic Fittings",price:"Ask for Price",image:"https://m.media-amazon.com/images/I/61vBzQZQZ-L._AC_SL1500_.jpg",desc:"Straight pneumatic connector 6mm",avail:"In Stock"},
-];
-let categories = ["All Products","Bearings","Ball Bearings","Deep Groove Ball Bearings","Taper Roller Bearings","Needle Roller Bearings","Pillow Block Bearings","Belts","Timing Belts","V-Belts","Pneumatic Fittings","Hydraulic Fittings","CNC Machine Parts","Electrical Items","Industrial Tools","Hardware"];
-let currentFilter = "All Products";
 
-function saveProducts(){localStorage.setItem('mitProducts',JSON.stringify(products));}
+<div>
+
+<h3>
+Contact
+</h3>
+
+<p>
+Phone: 0313-4854823
+</p>
+
+<p>
+Email: mitradingcom04@gmail.com
+</p>
+
+</div>
+
+
+<div>
+
+<h3>
+Quick Links
+</h3>
+
+<a href="#home">
+Home
+</a>
+<br>
+
+<a href="#products">
+Products
+</a>
+<br>
+
+<a href="#about">
+About
+</a>
+<br>
+
+<a href="#contact">
+Contact
+</a>
+
+</div>
+
+</div>
+
+
+<p style="text-align:center;margin-top:20px;">
+© 2026 MI TRADING COM. All Rights Reserved.
+</p>
+
+</footer>
+
+
+<!-- PRODUCT MODAL -->
+
+<div
+id="productModal"
+class="modal"
+onclick="closeModal()"
+>
+
+<div
+class="modal-content"
+onclick="event.stopPropagation()"
+>
+</div>
+
+</div>
+
+
+<script>
+
+/* =========================================
+   MI TRADING COM PRODUCT DATABASE
+========================================= */
+
+let products =
+JSON.parse(localStorage.getItem('mitProducts')) || [
+
+{
+id:1,
+title:"Deep Groove Ball Bearing",
+model:"6206",
+category:"Bearings",
+price:"Rs. 960",
+image:"https://m.media-amazon.com/images/I/61KjZQp8Y-L._AC_SL1500_.jpg",
+desc:"High quality steel bearing. Size: 30x62x16mm",
+avail:"In Stock"
+},
+
+{
+id:2,
+title:"Taper Roller Bearing",
+model:"30206",
+category:"Taper Roller Bearings",
+price:"Rs. 1250",
+image:"https://m.media-amazon.com/images/I/61vBzQZQZ-L._AC_SL1500_.jpg",
+desc:"Heavy duty for automotive. Size: 30x62x17.25mm",
+avail:"In Stock"
+},
+
+{
+id:3,
+title:"Timing Belt",
+model:"XL-100",
+category:"Timing Belts",
+price:"Rs. 450",
+image:"https://m.media-amazon.com/images/I/71vBzQZQZ-L._AC_SL1500_.jpg",
+desc:"Industrial timing belt for machinery",
+avail:"In Stock"
+},
+
+{
+id:4,
+title:"Pneumatic Fitting",
+model:"PC-6mm",
+category:"Pneumatic Fittings",
+price:"Ask for Price",
+image:"https://m.media-amazon.com/images/I/61vBzQZQZ-L._AC_SL1500_.jpg",
+desc:"Straight pneumatic connector 6mm",
+avail:"In Stock"
+}
+
+];
+
+
+let categories = [
+
+"All Products",
+
+"Bearings",
+
+"Ball Bearings",
+
+"Deep Groove Ball Bearings",
+
+"Taper Roller Bearings",
+
+"Needle Roller Bearings",
+
+"Pillow Block Bearings",
+
+"Belts",
+
+"Timing Belts",
+
+"V-Belts",
+
+"Pneumatic Fittings",
+
+"Hydraulic Fittings",
+
+"CNC Machine Parts",
+
+"Electrical Items",
+
+"Industrial Tools",
+
+"Hardware"
+
+];
+
+
+let currentFilter =
+"All Products";
+
+
+/* =========================================
+   OWNER LOGIN
+========================================= */
+
+const OWNER_PASSWORD = "MI@2026";
+
+
+let ownerLoggedIn =
+sessionStorage.getItem("miOwnerLoggedIn") === "true";
+
+
+function openOwnerLogin(){
+
+if(ownerLoggedIn){
+
+showOwnerControls();
+
+return;
+
+}
+
+document.getElementById("ownerLogin").style.display="flex";
+
+document.getElementById("ownerPassword").focus();
+
+}
+
+
+function closeOwnerLogin(){
+
+document.getElementById("ownerLogin").style.display="none";
+
+document.getElementById("ownerPassword").value="";
+
+document.getElementById("loginError").innerText="";
+
+}
+
+
+function ownerLogin(){
+
+let password =
+document.getElementById("ownerPassword").value;
+
+
+if(password === OWNER_PASSWORD){
+
+ownerLoggedIn=true;
+
+sessionStorage.setItem(
+"miOwnerLoggedIn",
+"true"
+);
+
+closeOwnerLogin();
+
+showOwnerControls();
+
+alert(
+"Owner Login Successful!"
+);
+
+}
+
+else{
+
+document.getElementById("loginError").innerText =
+"Incorrect password. Please try again.";
+
+}
+
+}
+
+
+function ownerLogout(){
+
+ownerLoggedIn=false;
+
+sessionStorage.removeItem(
+"miOwnerLoggedIn"
+);
+
+hideOwnerControls();
+
+alert(
+"Owner Logout Successful."
+);
+
+}
+
+
+/* =========================================
+   OWNER CONTROLS
+========================================= */
+
+function showOwnerControls(){
+
+document.getElementById(
+"adminPanel"
+).style.display="block";
+
+
+document.getElementById(
+"ownerTools"
+).style.display="block";
+
+
+document.getElementById(
+"ownerBadge"
+).style.display="block";
+
+
+document.querySelectorAll(
+".admin-btn"
+).forEach(function(button){
+
+button.style.display="inline-block";
+
+});
+
+}
+
+
+function hideOwnerControls(){
+
+document.getElementById(
+"adminPanel"
+).style.display="none";
+
+
+document.getElementById(
+"ownerTools"
+).style.display="none";
+
+
+document.getElementById(
+"ownerBadge"
+).style.display="none";
+
+
+document.querySelectorAll(
+".admin-btn"
+).forEach(function(button){
+
+button.style.display="none";
+
+});
+
+}
+
+
+function protectAdminControls(){
+
+if(ownerLoggedIn){
+
+showOwnerControls();
+
+}
+
+else{
+
+hideOwnerControls();
+
+}
+
+}
+
+
+/* =========================================
+   PRODUCT SAVE
+========================================= */
+
+function saveProducts(){
+
+localStorage.setItem(
+"mitProducts",
+JSON.stringify(products)
+);
+
+}
+
+
+/* =========================================
+   CATEGORIES
+========================================= */
 
 function renderCategories(){
-  let html = '';
-  categories.forEach(cat=>{
-    html += `<div class="cat-card ${currentFilter==cat?'active':''}" onclick="filterCategory('${cat}')">${cat}</div>`;
-  });
-  document.getElementById('categoryList').innerHTML = html;
-  document.getElementById('pCategory').innerHTML = categories.filter(c=>c!="All Products").map(c=>`<option>${c}</option>`).join('');
+
+let html="";
+
+
+categories.forEach(function(cat){
+
+html += `
+
+<div
+class="cat-card ${currentFilter==cat?'active':''}"
+onclick="filterCategory('${cat}')"
+>
+
+${cat}
+
+</div>
+
+`;
+
+});
+
+
+document.getElementById(
+"categoryList"
+).innerHTML=html;
+
+
+document.getElementById(
+"pCategory"
+).innerHTML =
+
+categories
+.filter(function(c){
+
+return c!="All Products";
+
+})
+.map(function(c){
+
+return `<option>${c}</option>`;
+
+})
+.join("");
+
 }
+
+
+/* =========================================
+   PRODUCTS
+========================================= */
 
 function renderProducts(){
-  let filtered = products.filter(p=>{
-    let matchCat = currentFilter=="All Products" || p.category==currentFilter;
-    let search = document.getElementById('searchInput').value.toLowerCase();
-    let matchSearch = p.title.toLowerCase().includes(search) || p.model.toLowerCase().includes(search) || p.desc.toLowerCase().includes(search) || p.category.toLowerCase().includes(search);
-    return matchCat && matchSearch;
-  });
-  let html = '';
-  filtered.forEach(p=>{
-    html += `<div class="card">
-      <img src="${p.image}" alt="${p.title}">
-      <div class="card-body">
-        <div class="card-title">${p.title}</div>
-        <div class="card-model">Model: ${p.model}</div>
-        <div class="card-desc">${p.desc}</div>
-        <div class="card-price">${p.price}</div>
-        <div style="font-size:12px; color:green; margin-bottom:10px;">${p.avail}</div>
-        <div class="card-actions">
-          <a href="#" class="details" onclick="showDetails(${p.id})">View Details</a>
-          <a href="https://wa.me/923134854823?text=Hello%20MI%20TRADING%20COM,%20I%20am%20interested%20in%20${encodeURIComponent(p.title+' '+p.model)}" class="whatsapp" target="_blank">WhatsApp</a>
-        </div>
-        <button class="admin-btn" onclick="editProduct(${p.id})">Edit</button>
-        <button class="admin-btn" onclick="deleteProduct(${p.id})">Delete</button>
-      </div>
-    </div>`;
-  });
-  document.getElementById('productList').innerHTML = html || '<p>No products found</p>';
+
+let searchValue =
+document.getElementById(
+"searchInput"
+).value.toLowerCase();
+
+
+let filtered =
+products.filter(function(p){
+
+let matchCat =
+currentFilter=="All Products" ||
+p.category==currentFilter;
+
+
+let matchSearch =
+
+p.title.toLowerCase()
+.includes(searchValue)
+
+||
+
+p.model.toLowerCase()
+.includes(searchValue)
+
+||
+
+p.desc.toLowerCase()
+.includes(searchValue)
+
+||
+
+p.category.toLowerCase()
+.includes(searchValue);
+
+
+return matchCat && matchSearch;
+
+});
+
+
+let html="";
+
+
+filtered.forEach(function(p){
+
+html += `
+
+<div class="card">
+
+<img
+src="${p.image}"
+alt="${p.title}"
+onerror="this.src='https://via.placeholder.com/600x400?text=MI+TRADING+COM'"
+>
+
+
+<div class="card-body">
+
+<div class="card-title">
+${p.title}
+</div>
+
+
+<div class="card-model">
+Model: ${p.model}
+</div>
+
+
+<div class="card-desc">
+${p.desc}
+</div>
+
+
+<div class="card-price">
+${p.price}
+</div>
+
+
+<div style="
+font-size:12px;
+color:${p.avail=="In Stock"?"green":"red"};
+margin-bottom:10px;
+">
+
+${p.avail}
+
+</div>
+
+
+<div class="card-actions">
+
+
+<a
+href="#"
+class="details"
+onclick="showDetails(${p.id});return false;"
+>
+View Details
+</a>
+
+
+<a
+href="https://wa.me/923134854823?text=Hello%20MI%20TRADING%20COM,%20I%20am%20interested%20in%20${encodeURIComponent(p.title+' '+p.model)}"
+class="whatsapp"
+target="_blank"
+>
+WhatsApp
+</a>
+
+
+</div>
+
+
+<button
+class="admin-btn"
+onclick="editProduct(${p.id})"
+>
+✏️ Edit
+</button>
+
+
+<button
+class="admin-btn"
+onclick="deleteProduct(${p.id})"
+>
+🗑️ Delete
+</button>
+
+
+</div>
+
+</div>
+
+`;
+
+});
+
+
+document.getElementById(
+"productList"
+).innerHTML =
+html || "<p>No products found</p>";
+
+
+protectAdminControls();
+
 }
 
-function searchProducts(){renderProducts();}
-document.getElementById('searchInput').addEventListener('keyup', searchProducts);
 
-function filterCategory(cat){currentFilter=cat; renderCategories(); renderProducts();}
+/* =========================================
+   SEARCH
+========================================= */
+
+function searchProducts(){
+
+renderProducts();
+
+}
+
+
+document.getElementById(
+"searchInput"
+).addEventListener(
+"keyup",
+searchProducts
+);
+
+
+/* =========================================
+   FILTER
+========================================= */
+
+function filterCategory(cat){
+
+currentFilter=cat;
+
+renderCategories();
+
+renderProducts();
+
+}
+
+
+/* =========================================
+   PRODUCT DETAILS
+========================================= */
 
 function showDetails(id){
-  let p = products.find(x=>x.id==id);
-  document.querySelector('#productModal .modal-content').innerHTML = `
-    <img src="${p.image}" style="width:100%; max-height:300px; object-fit:contain;">
-    <h2>${p.title}</h2>
-    <p><b>Model:</b> ${p.model}</p>
-    <p><b>Category:</b> ${p.category}</p>
-    <p><b>Price:</b> ${p.price}</p>
-    <p><b>Availability:</b> ${p.avail}</p>
-    <p>${p.desc}</p>
-    <a href="https://wa.me/923134854823?text=Hello%20MI%20TRADING%20COM,%20I%20am%20interested%20in%20${encodeURIComponent(p.title+' '+p.model)}" class="btn whatsapp" target="_blank">WhatsApp Inquiry</a>
-    <a href="tel:03134854823" class="btn call">Call</a>
-    <button class="btn" onclick="closeModal()">Close</button>
-  `;
-  document.getElementById('productModal').style.display='flex';
-}
-function closeModal(){document.getElementById('productModal').style.display='none';}
 
-function toggleAdmin(){let p=document.getElementById('adminPanel'); p.style.display=p.style.display=='block'?'none':'block';}
+let p =
+products.find(function(x){
+
+return x.id==id;
+
+});
+
+
+if(!p) return;
+
+
+document.querySelector(
+"#productModal .modal-content"
+).innerHTML = `
+
+<img
+src="${p.image}"
+style="
+width:100%;
+max-height:300px;
+object-fit:contain;
+"
+onerror="this.src='https://via.placeholder.com/600x400?text=MI+TRADING+COM'"
+>
+
+
+<h2>${p.title}</h2>
+
+<p>
+<b>Model:</b>
+${p.model}
+</p>
+
+<p>
+<b>Category:</b>
+${p.category}
+</p>
+
+<p>
+<b>Price:</b>
+${p.price}
+</p>
+
+<p>
+<b>Availability:</b>
+${p.avail}
+</p>
+
+<p>
+${p.desc}
+</p>
+
+
+<a
+href="https://wa.me/923134854823?text=Hello%20MI%20TRADING%20COM,%20I%20am%20interested%20in%20${encodeURIComponent(p.title+' '+p.model)}"
+class="btn whatsapp"
+target="_blank"
+>
+WhatsApp Inquiry
+</a>
+
+
+<a
+href="tel:03134854823"
+class="btn call"
+>
+Call
+</a>
+
+
+<button
+class="btn"
+onclick="closeModal()"
+>
+Close
+</button>
+
+`;
+
+document.getElementById(
+"productModal"
+).style.display="flex";
+
+}
+
+
+function closeModal(){
+
+document.getElementById(
+"productModal"
+).style.display="none";
+
+}
+
+
+/* =========================================
+   ADD PRODUCT
+========================================= */
+
 function addProduct(){
-  let id = Date.now();
-  products.push({
-    id:id,
-    title:document.getElementById('pTitle').value,
-    model:document.getElementById('pModel').value,
-    category:document.getElementById('pCategory').value,
-    price:document.getElementById('pPrice').value,
-    image:document.getElementById('pImage').value,
-    desc:document.getElementById('pDesc').value,
-    avail:document.getElementById('pAvail').value
-  });
-  saveProducts(); renderProducts();
-  alert('Product Added');
-}
-function deleteProduct(id){products=products.filter(p=>p.id!=id); saveProducts(); renderProducts();}
-function editProduct(id){
-  let p=products.find(x=>x.id==id);
-  let newPrice=prompt("New Price:",p.price);
-  if(newPrice){p.price=newPrice; saveProducts(); renderProducts();}
-}
-function showSection(id){
-  document.querySelectorAll('section').forEach(s=>s.style.display='none');
-  document.getElementById(id).style.display='block';
-  window.scrollTo(0,0);
+
+if(!ownerLoggedIn){
+
+alert(
+"Owner login required."
+);
+
+return;
+
 }
 
-renderCategories(); renderProducts();
+
+let title =
+document.getElementById("pTitle").value.trim();
+
+let model =
+document.getElementById("pModel").value.trim();
+
+let category =
+document.getElementById("pCategory").value;
+
+let price =
+document.getElementById("pPrice").value.trim();
+
+let image =
+document.getElementById("pImage").value.trim();
+
+let desc =
+document.getElementById("pDesc").value.trim();
+
+let avail =
+document.getElementById("pAvail").value;
+
+
+if(!title || !model){
+
+alert(
+"Please enter Product Title and Model."
+);
+
+return;
+
+}
+
+
+products.push({
+
+id:Date.now(),
+
+title:title,
+
+model:model,
+
+category:category,
+
+price:price || "Ask for Price",
+
+image:image || "https://via.placeholder.com/600x400?text=MI+TRADING+COM",
+
+desc:desc || "Industrial product supplied by MI TRADING COM.",
+
+avail:avail
+
+});
+
+
+saveProducts();
+
+renderProducts();
+
+clearProductForm();
+
+
+alert(
+"Product Added Successfully!"
+);
+
+}
+
+
+/* =========================================
+   CLEAR FORM
+========================================= */
+
+function clearProductForm(){
+
+document.getElementById("pTitle").value="";
+
+document.getElementById("pModel").value="";
+
+document.getElementById("pPrice").value="";
+
+document.getElementById("pImage").value="";
+
+document.getElementById("pDesc").value="";
+
+document.getElementById("pAvail").value="In Stock";
+
+}
+
+
+/* =========================================
+   DELETE PRODUCT
+========================================= */
+
+function deleteProduct(id){
+
+if(!ownerLoggedIn){
+
+alert(
+"Owner login required."
+);
+
+return;
+
+}
+
+
+let p =
+products.find(function(x){
+
+return x.id==id;
+
+});
+
+
+if(!p) return;
+
+
+let confirmDelete =
+confirm(
+"Delete this product?\n\n"+p.title
+);
+
+
+if(!confirmDelete)
+return;
+
+
+products =
+products.filter(function(x){
+
+return x.id!=id;
+
+});
+
+
+saveProducts();
+
+renderProducts();
+
+
+alert(
+"Product Deleted."
+);
+
+}
+
+
+/* =========================================
+   EDIT PRODUCT
+========================================= */
+
+function editProduct(id){
+
+if(!ownerLoggedIn){
+
+alert(
+"Owner login required."
+);
+
+return;
+
+}
+
+
+let p =
+products.find(function(x){
+
+return x.id==id;
+
+});
+
+
+if(!p) return;
+
+
+/* PRODUCT TITLE */
+
+let title =
+prompt(
+"Product Title:",
+p.title
+);
+
+if(title===null)
+return;
+
+
+/* MODEL */
+
+let model =
+prompt(
+"Model / Part Number:",
+p.model
+);
+
+if(model===null)
+return;
+
+
+/* PRICE */
+
+let price =
+prompt(
+"Price:",
+p.price
+);
+
+if(price===null)
+return;
+
+
+/* DESCRIPTION */
+
+let desc =
+prompt(
+"Description:",
+p.desc
+);
+
+if(desc===null)
+return;
+
+
+/* IMAGE */
+
+let image =
+prompt(
+"Image URL:",
+p.image
+);
+
+if(image===null)
+return;
+
+
+/* AVAILABILITY */
+
+let avail =
+confirm(
+"Click OK for IN STOCK.\nClick Cancel for OUT OF STOCK."
+)
+?
+"In Stock"
+:
+"Out of Stock";
+
+
+p.title=title;
+
+p.model=model;
+
+p.price=price;
+
+p.desc=desc;
+
+p.image=image;
+
+p.avail=avail;
+
+
+saveProducts();
+
+renderProducts();
+
+
+alert(
+"Product Updated Successfully!"
+);
+
+}
+
+
+/* =========================================
+   OWNER PRODUCT MANAGER
+========================================= */
+
+function openProductManager(){
+
+if(!ownerLoggedIn){
+
+openOwnerLogin();
+
+return;
+
+}
+
+
+document.getElementById(
+"adminPanel"
+).style.display="block";
+
+
+document.getElementById(
+"adminPanel"
+).scrollIntoView({
+behavior:"smooth"
+});
+
+}
+
+
+/* =========================================
+   SCROLL CATEGORY
+========================================= */
+
+function scrollToCategories(){
+
+document.getElementById(
+"categoryList"
+).scrollIntoView({
+behavior:"smooth"
+});
+
+}
+
+
+/* =========================================
+   NAVIGATION
+========================================= */
+
+function showSection(id){
+
+document.querySelectorAll(
+"section"
+).forEach(function(s){
+
+s.style.display="none";
+
+});
+
+
+document.getElementById(
+id
+).style.display="block";
+
+
+window.scrollTo(
+0,
+0
+);
+
+}
+
+
+/* =========================================
+   ENTER KEY LOGIN
+========================================= */
+
+document.getElementById(
+"ownerPassword"
+).addEventListener(
+"keydown",
+function(event){
+
+if(event.key==="Enter"){
+
+ownerLogin();
+
+}
+
+});
+
+
+/* =========================================
+   START WEBSITE
+========================================= */
+
+renderCategories();
+
+renderProducts();
+
+protectAdminControls();
+
 </script>
+
 </body>
 </html>
