@@ -1,296 +1,428 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>MI TRADING COM - Industrial & General Order Supplier</title>
-  <style>
-    :root {
-      --primary: #0a2540;
-      --secondary: #0071e3;
-      --accent: #25d366;
-      --light-bg: #f8f9fa;
-      --dark-text: #2d3748;
-      --border-color: #e2e8f0;
-    }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MI Trading Co. | Industrial & CNC Machinery Solutions</title>
+    <!-- Google Fonts & FontAwesome -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        :root {
+            --primary: #0b2545;
+            --accent: #134074;
+            --highlight: #0077b6;
+            --light-bg: #f8f9fa;
+            --card-bg: #ffffff;
+            --text-dark: #1d2d44;
+            --text-muted: #6c757d;
+            --border-color: #e9ecef;
+        }
 
-    * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
-    body { background-color: #f4f6f8; color: var(--dark-text); line-height: 1.6; }
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Inter', sans-serif;
+        }
 
-    /* Top Announcement Bar */
-    .top-bar {
-      background-color: var(--primary);
-      color: #fff;
-      padding: 8px 5%;
-      font-size: 13px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      flex-wrap: wrap;
-    }
-    .top-bar a { color: #fff; text-decoration: none; margin-left: 15px; }
+        body {
+            background-color: var(--light-bg);
+            color: var(--text-dark);
+            line-height: 1.6;
+        }
 
-    /* Header & Navigation */
-    header { background: #fff; border-bottom: 1px solid var(--border-color); sticky: top; position: sticky; top: 0; z-index: 1000; box-shadow: 0 2px 5px rgba(0,0,0,0.05); }
-    .header-main { display: flex; justify-content: space-between; align-items: center; padding: 15px 5%; gap: 20px; flex-wrap: wrap; }
-    .logo { font-size: 24px; font-weight: 800; color: var(--primary); text-decoration: none; }
-    .logo span { color: var(--secondary); }
+        /* Top Bar */
+        .top-bar {
+            background-color: var(--primary);
+            color: #fff;
+            padding: 8px 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 0.85rem;
+        }
 
-    .search-box { display: flex; flex: 1; max-width: 500px; border: 2px solid var(--secondary); border-radius: 6px; overflow: hidden; }
-    .search-box select { padding: 10px; border: none; background: #f1f3f5; font-size: 13px; outline: none; border-right: 1px solid var(--border-color); }
-    .search-box input { flex: 1; padding: 10px; border: none; outline: none; font-size: 14px; }
-    .search-box button { background: var(--secondary); color: white; border: none; padding: 0 20px; cursor: pointer; font-weight: bold; }
+        .top-bar a {
+            color: #8d99ae;
+            text-decoration: none;
+            margin-left: 15px;
+        }
 
-    .header-actions { display: flex; gap: 15px; }
-    .btn-whatsapp { background-color: var(--accent); color: white; padding: 8px 16px; border-radius: 5px; text-decoration: none; font-weight: bold; display: flex; align-items: center; gap: 6px; }
+        .top-bar a:hover {
+            color: #fff;
+        }
 
-    /* Navigation Bar */
-    nav { background: #1a365d; }
-    .nav-links { display: flex; list-style: none; padding: 0 5%; }
-    .nav-links li { position: relative; }
-    .nav-links a { color: white; text-decoration: none; padding: 12px 18px; display: block; font-size: 14px; font-weight: 500; }
-    .nav-links a:hover { background: var(--secondary); }
+        /* Header / Navbar */
+        header {
+            background: #ffffff;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            padding: 15px 5%;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
 
-    /* Hero Banner Slider */
-    .hero-slider { background: linear-gradient(rgba(10,37,64,0.8), rgba(10,37,64,0.8)), url('https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&w=1200&q=80'); background-size: cover; background-position: center; color: white; padding: 80px 5%; text-align: center; }
-    .hero-slider h1 { font-size: 38px; margin-bottom: 15px; }
-    .hero-slider p { font-size: 18px; max-width: 700px; margin: 0 auto 25px; color: #e2e8f0; }
-    .btn-hero { background: var(--secondary); color: white; padding: 12px 28px; text-decoration: none; border-radius: 5px; font-weight: bold; font-size: 16px; display: inline-block; }
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
 
-    /* Section Styling */
-    .container { padding: 40px 5%; }
-    .section-title { font-size: 24px; color: var(--primary); margin-bottom: 20px; border-bottom: 3px solid var(--secondary); display: inline-block; padding-bottom: 5px; }
+        .brand-logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
 
-    /* Category Cards Grid */
-    .categories-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 15px; margin-bottom: 40px; }
-    .cat-card { background: white; border: 1px solid var(--border-color); border-radius: 8px; padding: 20px; text-align: center; text-decoration: none; color: var(--dark-text); transition: 0.3s; }
-    .cat-card:hover { transform: translateY(-5px); box-shadow: 0 5px 15px rgba(0,0,0,0.1); border-color: var(--secondary); }
-    .cat-icon { font-size: 32px; margin-bottom: 10px; }
+        .search-box {
+            flex: 1;
+            max-width: 500px;
+            position: relative;
+        }
 
-    /* Product Grid */
-    .products-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 20px; }
-    .product-card { background: white; border: 1px solid var(--border-color); border-radius: 8px; overflow: hidden; display: flex; flex-direction: column; justify-content: space-between; transition: 0.3s; }
-    .product-card:hover { box-shadow: 0 4px 12px rgba(0,0,0,0.1); }
-    .product-badge { background: #edf2f7; color: var(--primary); font-size: 11px; font-weight: bold; padding: 4px 8px; border-radius: 4px; display: inline-block; margin: 15px 15px 0; width: fit-content; }
-    .product-info { padding: 15px; flex: 1; }
-    .product-title { font-size: 16px; color: var(--primary); margin-bottom: 8px; }
-    .product-desc { font-size: 13px; color: #64748b; margin-bottom: 15px; }
-    .btn-inquire { display: block; text-align: center; background: var(--accent); color: white; text-decoration: none; padding: 10px; font-weight: bold; font-size: 13px; border-radius: 4px; margin: 0 15px 15px; }
+        .search-box input {
+            width: 100%;
+            padding: 10px 15px 10px 40px;
+            border: 1px solid #ced4da;
+            border-radius: 25px;
+            outline: none;
+            transition: all 0.3s;
+        }
 
-    /* Footer */
-    footer { background: var(--primary); color: white; padding: 40px 5% 20px; margin-top: 50px; }
-    .footer-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 30px; margin-bottom: 30px; }
-    .footer-col h4 { font-size: 16px; margin-bottom: 15px; color: var(--secondary); border-bottom: 1px solid #2d3748; padding-bottom: 8px; }
-    .footer-col p, .footer-col li { font-size: 13px; color: #cbd5e1; margin-bottom: 8px; list-style: none; }
-    .footer-col a { color: #cbd5e1; text-decoration: none; }
-    .footer-bottom { text-align: center; padding-top: 20px; border-top: 1px solid #2d3748; font-size: 12px; color: #94a3b8; }
+        .search-box input:focus {
+            border-color: var(--highlight);
+            box-shadow: 0 0 5px rgba(0, 119, 182, 0.3);
+        }
 
-    @media (max-width: 768px) {
-      .header-main { flex-direction: column; align-items: stretch; }
-      .nav-links { overflow-x: auto; white-space: nowrap; }
-    }
-  </style>
+        .search-box i {
+            position: absolute;
+            left: 15px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: var(--text-muted);
+        }
+
+        /* Hero Banner */
+        .hero {
+            background: linear-gradient(135deg, #0b2545 0%, #134074 100%);
+            color: white;
+            padding: 40px 5%;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .hero h1 {
+            font-size: 2.2rem;
+            margin-bottom: 10px;
+        }
+
+        .hero p {
+            color: #e0e1dd;
+            font-size: 1rem;
+        }
+
+        /* Main Catalog Layout */
+        .container {
+            max-width: 1300px;
+            margin: 0 auto;
+            padding: 0 20px 50px 20px;
+        }
+
+        .section-title {
+            font-size: 1.5rem;
+            margin-bottom: 25px;
+            border-left: 4px solid var(--highlight);
+            padding-left: 12px;
+            color: var(--primary);
+        }
+
+        /* Product Grid */
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 25px;
+        }
+
+        .product-card {
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            overflow: hidden;
+            transition: transform 0.2s, box-shadow 0.2s;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .product-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+        }
+
+        /* White Background Image Container */
+        .img-wrapper {
+            background-color: #ffffff;
+            height: 200px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 15px;
+            border-bottom: 1px solid #f1f1f1;
+        }
+
+        .img-wrapper img {
+            max-height: 100%;
+            max-width: 100%;
+            object-fit: contain;
+            mix-blend-mode: multiply; /* Ensures background looks seamless */
+        }
+
+        .product-details {
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            flex: 1;
+        }
+
+        .product-title {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: var(--primary);
+            margin-bottom: 8px;
+        }
+
+        .product-desc {
+            font-size: 0.88rem;
+            color: var(--text-muted);
+            margin-bottom: 15px;
+            flex: 1;
+        }
+
+        .rate-container {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-top: 10px;
+            padding-top: 10px;
+            border-top: 1px dashed var(--border-color);
+        }
+
+        .rate-label {
+            font-size: 0.8rem;
+            color: var(--text-muted);
+        }
+
+        .editable-price {
+            font-weight: 700;
+            color: #d90429;
+            border: 1px dashed #ced4da;
+            padding: 2px 8px;
+            border-radius: 4px;
+            outline: none;
+            background: #fff5f5;
+        }
+
+        .editable-price:focus {
+            background: #ffffff;
+            border-color: var(--highlight);
+        }
+
+        .btn-inquire {
+            display: block;
+            width: 100%;
+            text-align: center;
+            background-color: var(--primary);
+            color: white;
+            padding: 10px;
+            border-radius: 5px;
+            text-decoration: none;
+            margin-top: 15px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            transition: background 0.2s;
+        }
+
+        .btn-inquire:hover {
+            background-color: var(--highlight);
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--primary);
+            color: white;
+            text-align: center;
+            padding: 30px;
+            margin-top: 50px;
+            font-size: 0.9rem;
+        }
+
+        footer a {
+            color: #4ea8de;
+            text-decoration: none;
+        }
+    </style>
 </head>
 <body>
 
-  <!-- Top Announcement Bar -->
-  <div class="top-bar">
-    <div>📍 Brandreth Road, Lahore, Pakistan | 🕒 Mon - Sat: 10:00 AM - 7:00 PM</div>
-    <div>
-      📞 0313-4854823 | ✉ mitrafingcom04@gmail.com
-    </div>
-  </div>
-
-  <!-- Main Header -->
-  <header>
-    <div class="header-main">
-      <a href="#" class="logo">MI <span>TRADING COM</span></a>
-      <div class="search-box">
-        <select id="categorySelect" onchange="filterProducts()">
-          <option value="all">All Categories</option>
-          <option value="Bearings">Bearings</option>
-          <option value="Belts">Belts & Pulleys</option>
-          <option value="CNC">CNC Parts</option>
-          <option value="Linear">Linear Motion</option>
-          <option value="Pneumatic">Pneumatic</option>
-          <option value="Hydraulic">Hydraulic</option>
-          <option value="Electrical">Electrical</option>
-          <option value="Tools">Tools & Hardware</option>
-        </select>
-        <input type="text" id="searchInput" placeholder="Search part number, size or product..." onkeyup="filterProducts()">
-        <button onclick="filterProducts()">Search</button>
-      </div>
-      <div class="header-actions">
-        <a href="https://wa.me/923134854823?text=Assalam-o-Alaikum%2C%20I%20want%20a%20quotation%20from%20MI%20TRADING%20COM." class="btn-whatsapp" target="_blank">
-          💬 WhatsApp Quote
-        </a>
-      </div>
-    </div>
-    
-    <nav>
-      <ul class="nav-links">
-        <li><a href="#home">Home</a></li>
-        <li><a href="#categories">Categories</a></li>
-        <li><a href="#products">Products Catalog</a></li>
-        <li><a href="#about">About Us</a></li>
-        <li><a href="#contact">Contact</a></li>
-      </ul>
-    </nav>
-  </header>
-
-  <!-- Hero Section -->
-  <section class="hero-slider" id="home">
-    <h1>Industrial & General Order Supplier</h1>
-    <p>Complete Bearings, CNC Components, Linear Motion, Pneumatic & Hydraulic Solutions Under One Roof.</p>
-    <a href="#products" class="btn-hero">Explore Catalog</a>
-  </section>
-
-  <!-- Categories Section -->
-  <div class="container" id="categories">
-    <h2 class="section-title">Product Categories</h2>
-    <div class="categories-grid">
-      <div class="cat-card">
-        <div class="cat-icon">⚙️</div>
-        <h3>Bearings</h3>
-      </div>
-      <div class="cat-card">
-        <div class="cat-icon">🔄</div>
-        <h3>Belts & Pulleys</h3>
-      </div>
-      <div class="cat-card">
-        <div class="cat-icon">🛠️</div>
-        <h3>CNC Machine Parts</h3>
-      </div>
-      <div class="cat-card">
-        <div class="cat-icon">📏</div>
-        <h3>Linear Motion</h3>
-      </div>
-      <div class="cat-card">
-        <div class="cat-icon">💨</div>
-        <h3>Pneumatic</h3>
-      </div>
-      <div class="cat-card">
-        <div class="cat-icon">💧</div>
-        <h3>Hydraulic</h3>
-      </div>
-    </div>
-  </div>
-
-  <!-- Products Section -->
-  <div class="container" id="products">
-    <h2 class="section-title">Featured Products Catalog</h2>
-    <div class="products-grid" id="productList">
-      
-      <div class="product-card" data-category="Bearings">
-        <span class="product-badge">BEARINGS</span>
-        <div class="product-info">
-          <h3 class="product-title">Deep Groove Ball Bearings</h3>
-          <p class="product-desc">General-purpose bearings suitable for machinery, motors, and industrial applications.</p>
+    <!-- Top Info Bar -->
+    <div class="top-bar">
+        <div><i class="fa-solid fa-envelope"></i> mitradingcom04@gmail.com</div>
+        <div>
+            <i class="fa-solid fa-location-dot"></i> Lahore, Pakistan
+            <a href="https://wa.me/923000000000" target="_blank"><i class="fa-brands fa-whatsapp"></i> Inquire on WhatsApp</a>
         </div>
-        <a href="https://wa.me/923134854823?text=Quotation%20req:%20Deep%20Groove%20Ball%20Bearings" class="btn-inquire" target="_blank">Ask Price on WhatsApp</a>
-      </div>
-
-      <div class="product-card" data-category="Bearings">
-        <span class="product-badge">BEARINGS</span>
-        <div class="product-info">
-          <h3 class="product-title">Roller Bearings & Needle Bearings</h3>
-          <p class="product-desc">High-load cylindrical, taper, and needle roller bearings for heavy machinery.</p>
-        </div>
-        <a href="https://wa.me/923134854823?text=Quotation%20req:%20Roller%20Bearings" class="btn-inquire" target="_blank">Ask Price on WhatsApp</a>
-      </div>
-
-      <div class="product-card" data-category="CNC">
-        <span class="product-badge">CNC PARTS</span>
-        <div class="product-info">
-          <h3 class="product-title">CNC Precision Ball Screws</h3>
-          <p class="product-desc">SFU, DFU series precision motion ball screws, nuts, and end supports (BK/BF).</p>
-        </div>
-        <a href="https://wa.me/923134854823?text=Quotation%20req:%20CNC%20Ball%20Screws" class="btn-inquire" target="_blank">Ask Price on WhatsApp</a>
-      </div>
-
-      <div class="product-card" data-category="Linear">
-        <span class="product-badge">LINEAR MOTION</span>
-        <div class="product-info">
-          <h3 class="product-title">Linear Guide Rails & Blocks</h3>
-          <p class="product-desc">HGH, HGW, EGH series linear guide rails, carriage blocks, and shaft supports.</p>
-        </div>
-        <a href="https://wa.me/923134854823?text=Quotation%20req:%20Linear%20Guideways" class="btn-inquire" target="_blank">Ask Price on WhatsApp</a>
-      </div>
-
-      <div class="product-card" data-category="Belts">
-        <span class="product-badge">BELTS</span>
-        <div class="product-info">
-          <h3 class="product-title">Industrial Timing & V-Belts</h3>
-          <p class="product-desc">Power transmission belts and custom pulleys for high-torque mechanical setups.</p>
-        </div>
-        <a href="https://wa.me/923134854823?text=Quotation%20req:%20Timing%20and%20V-Belts" class="btn-inquire" target="_blank">Ask Price on WhatsApp</a>
-      </div>
-
-      <div class="product-card" data-category="Pneumatic">
-        <span class="product-badge">PNEUMATIC</span>
-        <div class="product-info">
-          <h3 class="product-title">Pneumatic Fittings & Cylinders</h3>
-          <p class="product-desc">Air-line accessories, solenoid valves, tubing, and industrial pneumatic fittings.</p>
-        </div>
-        <a href="https://wa.me/923134854823?text=Quotation%20req:%20Pneumatic%20Items" class="btn-inquire" target="_blank">Ask Price on WhatsApp</a>
-      </div>
-
     </div>
-  </div>
 
-  <!-- About Section -->
-  <div class="container" id="about" style="background: white; border-radius: 8px; margin-bottom: 30px;">
-    <h2 class="section-title">About MI TRADING COM</h2>
-    <p>MI TRADING COM is a Lahore-based premier industrial and general order supplier located at Brandreth Road. We specialize in sourcing mechanical components, ball bearings, CNC automation parts, pneumatic and hydraulic solutions for manufacturing industries across Pakistan.</p>
-  </div>
+    <!-- Navigation & Search -->
+    <header>
+        <div class="nav-container">
+            <div class="brand-logo">
+                <i class="fa-solid fa-gears"></i> MI TRADING CO.
+            </div>
+            <div class="search-box">
+                <i class="fa-solid fa-magnifying-glass"></i>
+                <input type="text" id="searchInput" onkeyup="filterProducts()" placeholder="Search bearings, ball screws, laser parts...">
+            </div>
+        </div>
+    </header>
 
-  <!-- Footer -->
-  <footer id="contact">
-    <div class="footer-grid">
-      <div class="footer-col">
-        <h4>MI TRADING COM</h4>
-        <p>Your trusted partner for industrial parts, hardware, and general order supplies.</p>
-      </div>
-      <div class="footer-col">
-        <h4>Product Range</h4>
-        <li><a href="#products">Bearings & Units</a></li>
-        <li><a href="#products">Linear Motion Rails</a></li>
-        <li><a href="#products">CNC Ball Screws</a></li>
-        <li><a href="#products">Pneumatic Valves & Fittings</a></li>
-      </div>
-      <div class="footer-col">
-        <h4>Contact Us</h4>
-        <p>📍 Brandreth Road, Lahore, Pakistan</p>
-        <p>📞 0313-4854823</p>
-        <p>✉ mitrafingcom04@gmail.com</p>
-      </div>
+    <!-- Hero Section -->
+    <section class="hero">
+        <h1>Industrial Bearings & CNC Components</h1>
+        <p>Complete Linear Motion Solutions, Laser Accessories & Automation Hardware</p>
+    </section>
+
+    <!-- Main Content Grid -->
+    <div class="container">
+        <h2 class="section-title">Product Catalog</h2>
+        <div class="product-grid" id="productGrid">
+
+            <!-- Product 1 -->
+            <div class="product-card" data-title="LM Linear Motion Bearings LME LMF LMK">
+                <div class="img-wrapper">
+                    <img src="https://via.placeholder.com/300x300/ffffff/0b2545?text=LM+Linear+Bearing" alt="Linear Bearings">
+                </div>
+                <div class="product-details">
+                    <div class="product-title">Linear Motion Bearings (LM, LME, LMF, LMK)</div>
+                    <div class="product-desc">Complete range of standard and flange linear motion bearings for high-precision shafts.</div>
+                    <div class="rate-container">
+                        <span class="rate-label">Unit Rate (PKR):</span>
+                        <span class="editable-price" contenteditable="true">Call for Price</span>
+                    </div>
+                    <a href="mailto:mitradingcom04@gmail.com?subject=Inquiry: LM Bearings" class="btn-inquire">Send Inquiry</a>
+                </div>
+            </div>
+
+            <!-- Product 2 -->
+            <div class="product-card" data-title="SFU Ball Screws High Precision CNC Threaded Rods">
+                <div class="img-wrapper">
+                    <img src="https://via.placeholder.com/300x300/ffffff/0b2545?text=SFU+Ball+Screw" alt="Ball Screw">
+                </div>
+                <div class="product-details">
+                    <div class="product-title">High Precision SFU Ball Screws</div>
+                    <div class="product-desc">Precision ball screw assemblies with single/double nut for smooth transmission in CNC machinery.</div>
+                    <div class="rate-container">
+                        <span class="rate-label">Unit Rate (PKR):</span>
+                        <span class="editable-price" contenteditable="true">Editable Rate</span>
+                    </div>
+                    <a href="mailto:mitradingcom04@gmail.com?subject=Inquiry: Ball Screws" class="btn-inquire">Send Inquiry</a>
+                </div>
+            </div>
+
+            <!-- Product 3 -->
+            <div class="product-card" data-title="Linear Guide Ways Rails Blocks HGH HGW">
+                <div class="img-wrapper">
+                    <img src="https://via.placeholder.com/300x300/ffffff/0b2545?text=Linear+Guide+Rail" alt="Linear Guide Rails">
+                </div>
+                <div class="product-details">
+                    <div class="product-title">Linear Guide Ways & Blocks (HGH/HGW)</div>
+                    <div class="product-desc">Heavy-load linear guide rails and carriage blocks matching international standard dimensions.</div>
+                    <div class="rate-container">
+                        <span class="rate-label">Unit Rate (PKR):</span>
+                        <span class="editable-price" contenteditable="true">Editable Rate</span>
+                    </div>
+                    <a href="mailto:mitradingcom04@gmail.com?subject=Inquiry: Linear Guide Ways" class="btn-inquire">Send Inquiry</a>
+                </div>
+            </div>
+
+            <!-- Product 4 -->
+            <div class="product-card" data-title="Fiber Laser Nozzles D32 D28 Raytools BOCI">
+                <div class="img-wrapper">
+                    <img src="https://via.placeholder.com/300x300/ffffff/0b2545?text=Fiber+Laser+Nozzles" alt="Laser Nozzles">
+                </div>
+                <div class="product-details">
+                    <div class="product-title">Fiber Laser Nozzles (D32H15M14 / D28)</div>
+                    <div class="product-desc">Single and double layer high-speed fiber laser cutting nozzles for Raytools, BOCI, and WSX heads.</div>
+                    <div class="rate-container">
+                        <span class="rate-label">Unit Rate (PKR):</span>
+                        <span class="editable-price" contenteditable="true">Editable Rate</span>
+                    </div>
+                    <a href="mailto:mitradingcom04@gmail.com?subject=Inquiry: Laser Nozzles" class="btn-inquire">Send Inquiry</a>
+                </div>
+            </div>
+
+            <!-- Product 5 -->
+            <div class="product-card" data-title="644907 Hydraulic Oil Pump Needle Roller Bearings">
+                <div class="img-wrapper">
+                    <img src="https://via.placeholder.com/300x300/ffffff/0b2545?text=644907+Pump+Bearing" alt="Hydraulic Pump Bearings">
+                </div>
+                <div class="product-details">
+                    <div class="product-title">644907 Hydraulic Oil Pump Bearing</div>
+                    <div class="product-desc">Precision needle roller bearing for high radial load capacity in compact hydraulic gear pumps.</div>
+                    <div class="rate-container">
+                        <span class="rate-label">Unit Rate (PKR):</span>
+                        <span class="editable-price" contenteditable="true">1,000.00</span>
+                    </div>
+                    <a href="mailto:mitradingcom04@gmail.com?subject=Inquiry: 644907 Bearing" class="btn-inquire">Send Inquiry</a>
+                </div>
+            </div>
+
+            <!-- Product 6 -->
+            <div class="product-card" data-title="DIY Automation Aluminium Extrusions Stepper Motors Pulleys Belts">
+                <div class="img-wrapper">
+                    <img src="https://via.placeholder.com/300x300/ffffff/0b2545?text=DIY+Automation+Parts" alt="DIY Automation Hardware">
+                </div>
+                <div class="product-details">
+                    <div class="product-title">DIY Automation & CNC Extrusions</div>
+                    <div class="product-desc">Aluminium profile extrusions, GT2 timing belts, pulleys, flexible couplings, and stepper motors.</div>
+                    <div class="rate-container">
+                        <span class="rate-label">Unit Rate (PKR):</span>
+                        <span class="editable-price" contenteditable="true">Editable Rate</span>
+                    </div>
+                    <a href="mailto:mitradingcom04@gmail.com?subject=Inquiry: DIY Hardware" class="btn-inquire">Send Inquiry</a>
+                </div>
+            </div>
+
+        </div>
     </div>
-    <div class="footer-bottom">
-      &copy; 2026 MI TRADING COM. All Rights Reserved. | Industrial Supplier Lahore
-    </div>
-  </footer>
 
-  <script>
-    function filterProducts() {
-      var category = document.getElementById("categorySelect").value.toLowerCase();
-      var search = document.getElementById("searchInput").value.toLowerCase();
-      var products = document.getElementsByClassName("product-card");
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2026 MI TRADING CO. All Rights Reserved.</p>
+        <p>Contact: <a href="mailto:mitradingcom04@gmail.com">mitradingcom04@gmail.com</a> | Lahore, Pakistan</p>
+    </footer>
 
-      for (var i = 0; i < products.length; i++) {
-        var pCategory = products[i].getAttribute("data-category").toLowerCase();
-        var pTitle = products[i].getElementsByClassName("product-title")[0].innerText.toLowerCase();
-        var pDesc = products[i].getElementsByClassName("product-desc")[0].innerText.toLowerCase();
+    <!-- Search Filtering Script -->
+    <script>
+        function filterProducts() {
+            let input = document.getElementById('searchInput').value.toLowerCase();
+            let cards = document.getElementsByClassName('product-card');
 
-        var matchesCategory = (category === "all" || pCategory.includes(category));
-        var matchesSearch = (pTitle.includes(search) || pDesc.includes(search));
-
-        if (matchesCategory && matchesSearch) {
-          products[i].style.display = "flex";
-        } else {
-          products[i].style.display = "none";
+            for (let i = 0; i < cards.length; i++) {
+                let title = cards[i].getAttribute('data-title').toLowerCase();
+                if (title.includes(input)) {
+                    cards[i].style.display = "";
+                } else {
+                    cards[i].style.display = "none";
+                }
+            }
         }
-      }
-    }
-  </script>
+    </script>
 </body>
 </html>
