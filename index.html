@@ -3,426 +3,186 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MI Trading Co. | Industrial & CNC Machinery Solutions</title>
-    <!-- Google Fonts & FontAwesome -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    
+    <title>MI Trading Co - Bearings Catalog</title>
     <style>
-        :root {
-            --primary: #0b2545;
-            --accent: #134074;
-            --highlight: #0077b6;
-            --light-bg: #f8f9fa;
-            --card-bg: #ffffff;
-            --text-dark: #1d2d44;
-            --text-muted: #6c757d;
-            --border-color: #e9ecef;
-        }
-
         * {
             box-sizing: border-box;
             margin: 0;
             padding: 0;
-            font-family: 'Inter', sans-serif;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         }
-
         body {
-            background-color: var(--light-bg);
-            color: var(--text-dark);
-            line-height: 1.6;
+            background-color: #f4f6f9;
+            color: #333;
+            padding: 20px;
         }
-
-        /* Top Bar */
-        .top-bar {
-            background-color: var(--primary);
-            color: #fff;
-            padding: 8px 5%;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            font-size: 0.85rem;
-        }
-
-        .top-bar a {
-            color: #8d99ae;
-            text-decoration: none;
-            margin-left: 15px;
-        }
-
-        .top-bar a:hover {
-            color: #fff;
-        }
-
-        /* Header / Navbar */
         header {
-            background: #ffffff;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
-            padding: 15px 5%;
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-        }
-
-        .nav-container {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            gap: 20px;
-            flex-wrap: wrap;
-        }
-
-        .brand-logo {
-            font-size: 1.5rem;
-            font-weight: 700;
-            color: var(--primary);
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-
-        .search-box {
-            flex: 1;
-            max-width: 500px;
-            position: relative;
-        }
-
-        .search-box input {
-            width: 100%;
-            padding: 10px 15px 10px 40px;
-            border: 1px solid #ced4da;
-            border-radius: 25px;
-            outline: none;
-            transition: all 0.3s;
-        }
-
-        .search-box input:focus {
-            border-color: var(--highlight);
-            box-shadow: 0 0 5px rgba(0, 119, 182, 0.3);
-        }
-
-        .search-box i {
-            position: absolute;
-            left: 15px;
-            top: 50%;
-            transform: translateY(-50%);
-            color: var(--text-muted);
-        }
-
-        /* Hero Banner */
-        .hero {
-            background: linear-gradient(135deg, #0b2545 0%, #134074 100%);
-            color: white;
-            padding: 40px 5%;
             text-align: center;
             margin-bottom: 30px;
+            padding: 20px;
+            background: #002b49;
+            color: white;
+            border-radius: 8px;
         }
-
-        .hero h1 {
-            font-size: 2.2rem;
-            margin-bottom: 10px;
+        header h1 {
+            font-size: 28px;
+            letter-spacing: 1px;
         }
-
-        .hero p {
-            color: #e0e1dd;
-            font-size: 1rem;
+        header p {
+            font-size: 14px;
+            color: #ffcc00;
+            margin-top: 5px;
         }
-
-        /* Main Catalog Layout */
-        .container {
-            max-width: 1300px;
-            margin: 0 auto;
-            padding: 0 20px 50px 20px;
+        .status {
+            text-align: center;
+            font-size: 18px;
+            font-weight: bold;
+            margin: 20px 0;
+            color: #555;
         }
-
-        .section-title {
-            font-size: 1.5rem;
-            margin-bottom: 25px;
-            border-left: 4px solid var(--highlight);
-            padding-left: 12px;
-            color: var(--primary);
-        }
-
-        /* Product Grid */
         .product-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-            gap: 25px;
+            grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+            gap: 20px;
+            max-width: 1200px;
+            margin: 0 auto;
         }
-
-        .product-card {
-            background: var(--card-bg);
-            border: 1px solid var(--border-color);
+        .card {
+            background: #fff;
             border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.08);
             overflow: hidden;
-            transition: transform 0.2s, box-shadow 0.2s;
             display: flex;
             flex-direction: column;
+            transition: transform 0.2s;
         }
-
-        .product-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+        .card:hover {
+            transform: translateY(-4px);
         }
-
-        /* White Background Image Container */
-        .img-wrapper {
-            background-color: #ffffff;
-            height: 200px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            padding: 15px;
-            border-bottom: 1px solid #f1f1f1;
-        }
-
-        .img-wrapper img {
-            max-height: 100%;
-            max-width: 100%;
-            object-fit: contain;
-            mix-blend-mode: multiply; /* Ensures background looks seamless */
-        }
-
-        .product-details {
-            padding: 20px;
-            display: flex;
-            flex-direction: column;
-            flex: 1;
-        }
-
-        .product-title {
-            font-size: 1.1rem;
-            font-weight: 600;
-            color: var(--primary);
-            margin-bottom: 8px;
-        }
-
-        .product-desc {
-            font-size: 0.88rem;
-            color: var(--text-muted);
-            margin-bottom: 15px;
-            flex: 1;
-        }
-
-        .rate-container {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            margin-top: 10px;
-            padding-top: 10px;
-            border-top: 1px dashed var(--border-color);
-        }
-
-        .rate-label {
-            font-size: 0.8rem;
-            color: var(--text-muted);
-        }
-
-        .editable-price {
-            font-weight: 700;
-            color: #d90429;
-            border: 1px dashed #ced4da;
-            padding: 2px 8px;
-            border-radius: 4px;
-            outline: none;
-            background: #fff5f5;
-        }
-
-        .editable-price:focus {
-            background: #ffffff;
-            border-color: var(--highlight);
-        }
-
-        .btn-inquire {
-            display: block;
+        .card img {
             width: 100%;
-            text-align: center;
-            background-color: var(--primary);
-            color: white;
+            height: 200px;
+            object-fit: contain;
+            background-color: #fff;
             padding: 10px;
-            border-radius: 5px;
-            text-decoration: none;
-            margin-top: 15px;
-            font-size: 0.9rem;
-            font-weight: 600;
-            transition: background 0.2s;
+            border-bottom: 1px solid #eee;
         }
-
-        .btn-inquire:hover {
-            background-color: var(--highlight);
+        .card-body {
+            padding: 15px;
+            display: flex;
+            flex-direction: column;
+            flex-grow: 1;
         }
-
-        /* Footer */
-        footer {
-            background-color: var(--primary);
-            color: white;
-            text-align: center;
-            padding: 30px;
-            margin-top: 50px;
-            font-size: 0.9rem;
+        .card-title {
+            font-size: 16px;
+            font-weight: 700;
+            color: #002b49;
+            margin-bottom: 8px;
+            height: 42px;
+            overflow: hidden;
         }
-
-        footer a {
-            color: #4ea8de;
-            text-decoration: none;
+        .card-price {
+            font-size: 18px;
+            color: #d9534f;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+        .card-desc {
+            font-size: 12px;
+            color: #666;
+            line-height: 1.4;
+            max-height: 80px;
+            overflow-y: auto;
+            margin-bottom: 12px;
+            border-top: 1px dashed #ddd;
+            padding-top: 8px;
+        }
+        .card-code {
+            font-size: 11px;
+            background: #eef2f5;
+            padding: 4px 8px;
+            border-radius: 4px;
+            color: #444;
+            word-break: break-all;
+            margin-top: auto;
         }
     </style>
 </head>
 <body>
 
-    <!-- Top Info Bar -->
-    <div class="top-bar">
-        <div><i class="fa-solid fa-envelope"></i> mitradingcom04@gmail.com</div>
-        <div>
-            <i class="fa-solid fa-location-dot"></i> Lahore, Pakistan
-            <a href="https://wa.me/923000000000" target="_blank"><i class="fa-brands fa-whatsapp"></i> Inquire on WhatsApp</a>
-        </div>
-    </div>
-
-    <!-- Navigation & Search -->
     <header>
-        <div class="nav-container">
-            <div class="brand-logo">
-                <i class="fa-solid fa-gears"></i> MI TRADING CO.
-            </div>
-            <div class="search-box">
-                <i class="fa-solid fa-magnifying-glass"></i>
-                <input type="text" id="searchInput" onkeyup="filterProducts()" placeholder="Search bearings, ball screws, laser parts...">
-            </div>
-        </div>
+        <h1>MI TRADING CO</h1>
+        <p>Industrial Bearings Catalog</p>
     </header>
 
-    <!-- Hero Section -->
-    <section class="hero">
-        <h1>Industrial Bearings & CNC Components</h1>
-        <p>Complete Linear Motion Solutions, Laser Accessories & Automation Hardware</p>
-    </section>
+    <div id="status" class="status">Loading Bearings...</div>
 
-    <!-- Main Content Grid -->
-    <div class="container">
-        <h2 class="section-title">Product Catalog</h2>
-        <div class="product-grid" id="productGrid">
+    <div id="product-container" class="product-grid"></div>
 
-            <!-- Product 1 -->
-            <div class="product-card" data-title="LM Linear Motion Bearings LME LMF LMK">
-                <div class="img-wrapper">
-                    <img src="https://via.placeholder.com/300x300/ffffff/0b2545?text=LM+Linear+Bearing" alt="Linear Bearings">
-                </div>
-                <div class="product-details">
-                    <div class="product-title">Linear Motion Bearings (LM, LME, LMF, LMK)</div>
-                    <div class="product-desc">Complete range of standard and flange linear motion bearings for high-precision shafts.</div>
-                    <div class="rate-container">
-                        <span class="rate-label">Unit Rate (PKR):</span>
-                        <span class="editable-price" contenteditable="true">Call for Price</span>
-                    </div>
-                    <a href="mailto:mitradingcom04@gmail.com?subject=Inquiry: LM Bearings" class="btn-inquire">Send Inquiry</a>
-                </div>
-            </div>
-
-            <!-- Product 2 -->
-            <div class="product-card" data-title="SFU Ball Screws High Precision CNC Threaded Rods">
-                <div class="img-wrapper">
-                    <img src="https://via.placeholder.com/300x300/ffffff/0b2545?text=SFU+Ball+Screw" alt="Ball Screw">
-                </div>
-                <div class="product-details">
-                    <div class="product-title">High Precision SFU Ball Screws</div>
-                    <div class="product-desc">Precision ball screw assemblies with single/double nut for smooth transmission in CNC machinery.</div>
-                    <div class="rate-container">
-                        <span class="rate-label">Unit Rate (PKR):</span>
-                        <span class="editable-price" contenteditable="true">Editable Rate</span>
-                    </div>
-                    <a href="mailto:mitradingcom04@gmail.com?subject=Inquiry: Ball Screws" class="btn-inquire">Send Inquiry</a>
-                </div>
-            </div>
-
-            <!-- Product 3 -->
-            <div class="product-card" data-title="Linear Guide Ways Rails Blocks HGH HGW">
-                <div class="img-wrapper">
-                    <img src="https://via.placeholder.com/300x300/ffffff/0b2545?text=Linear+Guide+Rail" alt="Linear Guide Rails">
-                </div>
-                <div class="product-details">
-                    <div class="product-title">Linear Guide Ways & Blocks (HGH/HGW)</div>
-                    <div class="product-desc">Heavy-load linear guide rails and carriage blocks matching international standard dimensions.</div>
-                    <div class="rate-container">
-                        <span class="rate-label">Unit Rate (PKR):</span>
-                        <span class="editable-price" contenteditable="true">Editable Rate</span>
-                    </div>
-                    <a href="mailto:mitradingcom04@gmail.com?subject=Inquiry: Linear Guide Ways" class="btn-inquire">Send Inquiry</a>
-                </div>
-            </div>
-
-            <!-- Product 4 -->
-            <div class="product-card" data-title="Fiber Laser Nozzles D32 D28 Raytools BOCI">
-                <div class="img-wrapper">
-                    <img src="https://via.placeholder.com/300x300/ffffff/0b2545?text=Fiber+Laser+Nozzles" alt="Laser Nozzles">
-                </div>
-                <div class="product-details">
-                    <div class="product-title">Fiber Laser Nozzles (D32H15M14 / D28)</div>
-                    <div class="product-desc">Single and double layer high-speed fiber laser cutting nozzles for Raytools, BOCI, and WSX heads.</div>
-                    <div class="rate-container">
-                        <span class="rate-label">Unit Rate (PKR):</span>
-                        <span class="editable-price" contenteditable="true">Editable Rate</span>
-                    </div>
-                    <a href="mailto:mitradingcom04@gmail.com?subject=Inquiry: Laser Nozzles" class="btn-inquire">Send Inquiry</a>
-                </div>
-            </div>
-
-            <!-- Product 5 -->
-            <div class="product-card" data-title="644907 Hydraulic Oil Pump Needle Roller Bearings">
-                <div class="img-wrapper">
-                    <img src="https://via.placeholder.com/300x300/ffffff/0b2545?text=644907+Pump+Bearing" alt="Hydraulic Pump Bearings">
-                </div>
-                <div class="product-details">
-                    <div class="product-title">644907 Hydraulic Oil Pump Bearing</div>
-                    <div class="product-desc">Precision needle roller bearing for high radial load capacity in compact hydraulic gear pumps.</div>
-                    <div class="rate-container">
-                        <span class="rate-label">Unit Rate (PKR):</span>
-                        <span class="editable-price" contenteditable="true">1,000.00</span>
-                    </div>
-                    <a href="mailto:mitradingcom04@gmail.com?subject=Inquiry: 644907 Bearing" class="btn-inquire">Send Inquiry</a>
-                </div>
-            </div>
-
-            <!-- Product 6 -->
-            <div class="product-card" data-title="DIY Automation Aluminium Extrusions Stepper Motors Pulleys Belts">
-                <div class="img-wrapper">
-                    <img src="https://via.placeholder.com/300x300/ffffff/0b2545?text=DIY+Automation+Parts" alt="DIY Automation Hardware">
-                </div>
-                <div class="product-details">
-                    <div class="product-title">DIY Automation & CNC Extrusions</div>
-                    <div class="product-desc">Aluminium profile extrusions, GT2 timing belts, pulleys, flexible couplings, and stepper motors.</div>
-                    <div class="rate-container">
-                        <span class="rate-label">Unit Rate (PKR):</span>
-                        <span class="editable-price" contenteditable="true">Editable Rate</span>
-                    </div>
-                    <a href="mailto:mitradingcom04@gmail.com?subject=Inquiry: DIY Hardware" class="btn-inquire">Send Inquiry</a>
-                </div>
-            </div>
-
-        </div>
-    </div>
-
-    <!-- Footer -->
-    <footer>
-        <p>&copy; 2026 MI TRADING CO. All Rights Reserved.</p>
-        <p>Contact: <a href="mailto:mitradingcom04@gmail.com">mitradingcom04@gmail.com</a> | Lahore, Pakistan</p>
-    </footer>
-
-    <!-- Search Filtering Script -->
     <script>
-        function filterProducts() {
-            let input = document.getElementById('searchInput').value.toLowerCase();
-            let cards = document.getElementsByClassName('product-card');
+        const API_URL = 'https://abdultraders.pk/products.json?limit=250';
+        const FALLBACK_IMAGE = 'https://via.placeholder.com/250x200?text=Bearing+Image';
 
-            for (let i = 0; i < cards.length; i++) {
-                let title = cards[i].getAttribute('data-title').toLowerCase();
-                if (title.includes(input)) {
-                    cards[i].style.display = "";
-                } else {
-                    cards[i].style.display = "none";
+        async function fetchBearings() {
+            const statusDiv = document.getElementById('status');
+            const container = document.getElementById('product-container');
+
+            try {
+                const response = await fetch(API_URL);
+                if (!response.ok) throw new Error('Failed to fetch data');
+                
+                const data = await response.json();
+                const products = data.products || [];
+
+                // Filter bearing related products
+                const bearings = products.filter(item => {
+                    const title = item.title.toLowerCase();
+                    return title.includes('bearing') || title.includes('sleeve') || title.includes('lmk') || title.includes('block');
+                });
+
+                if (bearings.length === 0) {
+                    statusDiv.innerHTML = 'No bearings found.';
+                    return;
                 }
+
+                statusDiv.style.display = 'none';
+                container.innerHTML = '';
+
+                bearings.forEach(item => {
+                    // Extract Details
+                    const title = item.title || 'Bearing Item';
+                    const imageSrc = (item.images && item.images.length > 0) ? item.images[0].src : FALLBACK_IMAGE;
+                    const price = (item.variants && item.variants[0]) ? `Rs. ${item.variants[0].price}` : 'N/A';
+                    const sku = (item.variants && item.variants[0] && item.variants[0].sku) ? item.variants[0].sku : `ID: ${item.id}`;
+                    
+                    // Clean HTML tags from description
+                    const tmp = document.createElement('DIV');
+                    tmp.innerHTML = item.body_html || 'No description available.';
+                    const cleanDesc = tmp.textContent || tmp.innerText || '';
+
+                    // Create Card HTML
+                    const card = document.createElement('div');
+                    card.className = 'card';
+                    card.innerHTML = `
+                        <img src="${imageSrc}" alt="${title}" onerror="this.onerror=null;this.src='${FALLBACK_IMAGE}';">
+                        <div class="card-body">
+                            <div class="card-title">${title}</div>
+                            <div class="card-price">${price}</div>
+                            <div class="card-desc">${cleanDesc}</div>
+                            <div class="card-code"><strong>Code/SKU:</strong> ${sku}</div>
+                        </div>
+                    `;
+                    container.appendChild(card);
+                });
+
+            } catch (error) {
+                console.error('Error fetching data:', error);
+                statusDiv.innerHTML = 'Failed to load images and bearings. Please refresh.';
             }
         }
+
+        // Run fetch on page load
+        fetchBearings();
     </script>
 </body>
-</html> 
+</html>
