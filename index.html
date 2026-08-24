@@ -1,489 +1,1179 @@
-<!-- =========================================================
-     MI TRADING COM — PROFESSIONAL OWNER PRODUCT MANAGEMENT
-     ADD THIS CODE JUST BEFORE </body>
-     YOUR EXISTING FEATURED PRODUCTS WILL NOT BE DELETED.
-========================================================= -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+
+<title>MI TRADING COM | Industrial & General Supply</title>
+
+<meta name="description" content="MI TRADING COM - Industrial Bearings, CNC Parts, Belts, Pneumatic, Hydraulic, Electrical and Hardware Supplier in Lahore Pakistan">
 
 <style>
-/* PROFESSIONAL OWNER PANEL */
+:root{
+--navy:#10264a;
+--blue:#0d6efd;
+--orange:#ff9800;
+--green:#16a34a;
+--red:#dc3545;
+--bg:#f5f7fb;
+--white:#fff;
+--text:#172033;
+--muted:#6b7280;
+--border:#e5e7eb;
+}
 
-#professionalOwnerPanel{
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Arial,Helvetica,sans-serif;
+}
+
+html{
+scroll-behavior:smooth;
+scroll-padding-top:145px;
+}
+
+body{
+background:var(--bg);
+color:var(--text);
+overflow-x:hidden;
+}
+
+button,input,select,textarea{
+font:inherit;
+}
+
+a{
+text-decoration:none;
+}
+
+header{
+position:sticky;
+top:0;
+z-index:1000;
+background:var(--navy);
+color:#fff;
+box-shadow:0 3px 15px rgba(0,0,0,.2);
+}
+
+.topbar{
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:13px 5%;
+gap:15px;
+}
+
+.logo{
+font-size:27px;
+font-weight:900;
+color:#fff;
+}
+
+.logo span{
+color:var(--orange);
+}
+
+.contact-mini{
+font-size:13px;
+display:flex;
+gap:18px;
+}
+
+.contact-mini a{
+color:#fff;
+}
+
+.searchbar{
+display:flex;
+padding:9px 5%;
+background:#081a34;
+}
+
+.searchbar input{
+flex:1;
+border:0;
+outline:0;
+padding:13px;
+border-radius:6px 0 0 6px;
+}
+
+.searchbar button{
+border:0;
+background:var(--orange);
+color:white;
+font-weight:bold;
+padding:0 22px;
+border-radius:0 6px 6px 0;
+cursor:pointer;
+}
+
+nav{
+display:flex;
+gap:25px;
+padding:0 5%;
+overflow-x:auto;
+scrollbar-width:none;
+}
+
+nav::-webkit-scrollbar{
+display:none;
+}
+
+nav button{
+border:0;
+background:none;
+color:#fff;
+padding:13px 0;
+cursor:pointer;
+white-space:nowrap;
+font-weight:bold;
+}
+
+nav button:hover{
+color:var(--orange);
+}
+
+.hero{
+background:linear-gradient(135deg,#10264a,#244c84);
+color:#fff;
+text-align:center;
+padding:70px 5%;
+}
+
+.hero h1{
+font-size:40px;
+margin-bottom:18px;
+}
+
+.hero p{
+max-width:850px;
+margin:auto;
+line-height:1.7;
+color:#e6edf7;
+}
+
+.btn{
+display:inline-block;
+border:0;
+border-radius:6px;
+padding:11px 18px;
+margin:5px;
+cursor:pointer;
+font-weight:bold;
+color:#fff;
+background:var(--orange);
+}
+
+.green{background:var(--green)}
+.blue{background:var(--blue)}
+.dark{background:#374151}
+.red{background:var(--red)}
+
+.section{
+max-width:1400px;
+margin:auto;
+padding:40px 5%;
+}
+
+.section h2{
+color:var(--navy);
+margin-bottom:20px;
+}
+
+.categories{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(155px,1fr));
+gap:14px;
+}
+
+.category{
+background:#fff;
+border:1px solid var(--border);
+padding:20px 10px;
+border-radius:9px;
+text-align:center;
+font-weight:bold;
+cursor:pointer;
+transition:.2s;
+}
+
+.category:hover,
+.category.active{
+border-color:var(--orange);
+transform:translateY(-3px);
+}
+
+.products{
+display:grid;
+grid-template-columns:repeat(auto-fill,minmax(240px,1fr));
+gap:20px;
+}
+
+.card{
+background:#fff;
+border-radius:10px;
+overflow:hidden;
+border:1px solid var(--border);
+box-shadow:0 3px 10px rgba(0,0,0,.06);
+}
+
+.card-img{
+width:100%;
+height:210px;
+background:#fafafa;
+display:flex;
+align-items:center;
+justify-content:center;
+}
+
+.card-img img{
+width:100%;
+height:100%;
+object-fit:contain;
+}
+
+.card-body{
+padding:15px;
+}
+
+.badge-cat{
+font-size:11px;
+color:var(--blue);
+font-weight:bold;
+text-transform:uppercase;
+}
+
+.card h3{
+font-size:17px;
+margin:6px 0;
+}
+
+.model{
+font-size:13px;
+color:var(--muted);
+}
+
+.desc{
+font-size:13px;
+color:#555;
+line-height:1.5;
+height:40px;
+overflow:hidden;
+margin:8px 0;
+}
+
+.price{
+font-size:18px;
+font-weight:bold;
+color:#e11d48;
+margin:8px 0;
+}
+
+.stock{
+font-size:12px;
+font-weight:bold;
+margin-bottom:10px;
+}
+
+.instock{
+color:var(--green);
+}
+
+.outstock{
+color:var(--red);
+}
+
+.actions{
+display:flex;
+gap:5px;
+}
+
+.actions button{
+flex:1;
+border:0;
+padding:8px 4px;
+border-radius:5px;
+color:#fff;
+font-size:12px;
+cursor:pointer;
+}
+
+.details{
+background:#475569;
+}
+
+.whatsapp{
+background:#25d366;
+}
+
+.call{
+background:#0d6efd;
+}
+
+.admin-actions{
+display:none;
+margin-top:7px;
+gap:5px;
+}
+
+.admin-actions button{
+flex:1;
+border:0;
+padding:7px;
+border-radius:4px;
+color:white;
+cursor:pointer;
+font-size:11px;
+}
+
+.edit{
+background:#f59e0b;
+}
+
+.delete{
+background:#dc3545;
+}
+
+footer{
+background:var(--navy);
+color:white;
+padding:45px 5%;
+}
+
+.footer-grid{
+max-width:1400px;
+margin:auto;
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+gap:30px;
+}
+
+footer h3{
+color:var(--orange);
+margin-bottom:10px;
+}
+
+footer p{
+line-height:1.8;
+color:#dbe4f0;
+}
+
+footer a{
+color:#dbe4f0;
+}
+
+.modal{
 display:none;
 position:fixed;
 inset:0;
-z-index:99999;
+z-index:9999;
 background:rgba(0,0,0,.78);
 align-items:center;
 justify-content:center;
 padding:15px;
 }
 
-.owner-dashboard{
+.modal-box{
+background:white;
 width:100%;
-max-width:1100px;
-height:92vh;
-background:#f5f7fb;
-border-radius:14px;
+max-width:900px;
+max-height:92vh;
+overflow:auto;
+border-radius:12px;
+padding:25px;
+}
+
+.login-box{
+max-width:400px;
+}
+
+.modal-box h2{
+color:var(--navy);
+margin-bottom:15px;
+}
+
+.field{
+margin-bottom:12px;
+}
+
+.field label{
+display:block;
+font-weight:bold;
+font-size:13px;
+margin-bottom:5px;
+}
+
+.field input,
+.field select,
+.field textarea{
+width:100%;
+padding:11px;
+border:1px solid #d5d9df;
+border-radius:6px;
+outline:0;
+}
+
+.field textarea{
+min-height:100px;
+resize:vertical;
+}
+
+.admin-dashboard{
+display:flex;
+height:85vh;
 overflow:hidden;
-display:flex;
-flex-direction:column;
-box-shadow:0 20px 60px rgba(0,0,0,.35);
 }
 
-.owner-head{
+.sidebar{
+width:210px;
 background:#10264a;
-color:white;
-padding:16px 20px;
-display:flex;
-justify-content:space-between;
-align-items:center;
-gap:15px;
+padding:15px;
 }
 
-.owner-head h2{
-margin:0;
-color:white;
-}
-
-.owner-head button{
+.sidebar button{
+width:100%;
 border:0;
-background:#dc3545;
+background:transparent;
 color:white;
-padding:9px 15px;
+padding:12px;
+margin-bottom:5px;
+text-align:left;
 border-radius:5px;
 cursor:pointer;
 font-weight:bold;
 }
 
-.owner-layout{
-display:flex;
+.sidebar button:hover,
+.sidebar button.active{
+background:var(--orange);
+}
+
+.dashboard-content{
 flex:1;
-min-height:0;
-}
-
-.owner-sidebar{
-width:220px;
-background:#fff;
-border-right:1px solid #ddd;
-padding:15px;
-}
-
-.owner-sidebar button{
-display:block;
-width:100%;
-border:0;
-background:white;
-padding:12px;
-margin-bottom:7px;
-text-align:left;
-border-radius:6px;
-cursor:pointer;
-font-weight:bold;
-color:#26364d;
-}
-
-.owner-sidebar button:hover,
-.owner-sidebar button.active{
-background:#10264a;
-color:white;
-}
-
-.owner-content{
-flex:1;
+background:#f5f7fb;
 overflow:auto;
-padding:22px;
+padding:20px;
 }
 
-.owner-section{
+.tab{
 display:none;
 }
 
-.owner-section.active{
+.tab.active{
 display:block;
 }
 
-.owner-stats{
+.stats{
 display:grid;
 grid-template-columns:repeat(4,1fr);
 gap:12px;
 margin-bottom:20px;
 }
 
-.owner-stat{
+.stat{
 background:white;
 padding:18px;
-border-radius:9px;
-border:1px solid #e5e7eb;
+border-radius:8px;
+border:1px solid var(--border);
 }
 
-.owner-stat strong{
+.stat strong{
 display:block;
 font-size:25px;
-color:#10264a;
+color:var(--navy);
 }
 
-.owner-stat span{
-font-size:12px;
+.stat small{
 color:#777;
 }
 
-.owner-form{
-background:white;
-padding:20px;
-border-radius:10px;
-border:1px solid #ddd;
-}
-
-.owner-form-grid{
+.form-grid{
 display:grid;
 grid-template-columns:1fr 1fr;
 gap:12px;
 }
 
-.owner-field{
-margin-bottom:10px;
-}
-
-.owner-field label{
-display:block;
-font-size:13px;
-font-weight:bold;
-margin-bottom:5px;
-}
-
-.owner-field input,
-.owner-field select,
-.owner-field textarea{
-width:100%;
-padding:11px;
-border:1px solid #d5d9df;
-border-radius:6px;
-outline:none;
-}
-
-.owner-field textarea{
-min-height:100px;
-resize:vertical;
-}
-
-.owner-full{
+.full{
 grid-column:1/-1;
 }
 
-.owner-preview{
+.preview{
 width:180px;
-height:130px;
+height:120px;
+background:#fafafa;
 border:2px dashed #ccc;
-border-radius:8px;
+margin-top:8px;
 display:flex;
 align-items:center;
 justify-content:center;
-overflow:hidden;
-background:#fafafa;
-margin-top:8px;
 }
 
-.owner-preview img{
+.preview img{
 width:100%;
 height:100%;
 object-fit:contain;
 }
 
-.owner-table{
+.table-wrap{
+overflow:auto;
+}
+
+table{
 width:100%;
 border-collapse:collapse;
 background:white;
+min-width:800px;
 }
 
-.owner-table th,
-.owner-table td{
-padding:10px;
+th,td{
+padding:9px;
 border-bottom:1px solid #eee;
+font-size:12px;
 text-align:left;
-font-size:13px;
 }
 
-.owner-table th{
-background:#10264a;
-color:white;
+th{
+background:var(--navy);
+color:#fff;
 }
 
-.owner-product-img{
+.table-img{
 width:55px;
 height:45px;
 object-fit:contain;
-background:#fafafa;
-border-radius:5px;
 }
 
-.owner-action{
+.cart{
+position:fixed;
+right:18px;
+bottom:18px;
+z-index:3000;
+width:58px;
+height:58px;
 border:0;
-padding:6px 9px;
-border-radius:4px;
-cursor:pointer;
+border-radius:50%;
+background:var(--orange);
 color:white;
+font-size:23px;
+cursor:pointer;
+box-shadow:0 5px 20px rgba(0,0,0,.3);
+}
+
+.cart-count{
+position:absolute;
+right:-2px;
+top:-3px;
+background:red;
+border-radius:50%;
+width:21px;
+height:21px;
 font-size:11px;
-margin:2px;
+display:flex;
+align-items:center;
+justify-content:center;
 }
 
-.owner-edit{
-background:#f59e0b;
+.cart-item{
+display:flex;
+justify-content:space-between;
+gap:10px;
+padding:12px 0;
+border-bottom:1px solid #eee;
 }
 
-.owner-delete{
-background:#dc3545;
+.empty{
+padding:35px;
+text-align:center;
+color:#777;
 }
 
-.owner-feature{
-background:#198754;
+@media(max-width:700px){
+
+.topbar{
+padding:11px 4%;
 }
 
-.owner-hide{
-background:#6c757d;
+.logo{
+font-size:21px;
 }
 
-.owner-notice{
-background:#fff8e1;
-border:1px solid #ffd54f;
-padding:12px;
-border-radius:7px;
-font-size:13px;
-margin-bottom:15px;
+.contact-mini{
+display:block;
+font-size:10px;
+text-align:right;
 }
 
-@media(max-width:750px){
+nav{
+gap:18px;
+padding:0 4%;
+}
 
-.owner-layout{
+.hero{
+padding:55px 4%;
+}
+
+.hero h1{
+font-size:27px;
+}
+
+.section{
+padding:32px 4%;
+}
+
+.products{
+grid-template-columns:repeat(2,1fr);
+gap:11px;
+}
+
+.card-img{
+height:160px;
+}
+
+.card-body{
+padding:10px;
+}
+
+.card h3{
+font-size:14px;
+}
+
+.actions{
 flex-direction:column;
 }
 
-.owner-sidebar{
+.stats{
+grid-template-columns:1fr 1fr;
+}
+
+.form-grid{
+grid-template-columns:1fr;
+}
+
+.full{
+grid-column:auto;
+}
+
+.admin-dashboard{
+flex-direction:column;
+height:90vh;
+}
+
+.sidebar{
 width:100%;
 display:flex;
 overflow-x:auto;
 gap:5px;
 }
 
-.owner-sidebar button{
-min-width:130px;
-margin:0;
+.sidebar button{
+min-width:125px;
+white-space:nowrap;
 }
 
-.owner-stats{
-grid-template-columns:1fr 1fr;
-}
-
-.owner-form-grid{
-grid-template-columns:1fr;
-}
-
-.owner-full{
-grid-column:auto;
-}
-
-.owner-content{
+.dashboard-content{
 padding:12px;
-}
-
-.owner-table{
-min-width:750px;
 }
 
 }
 </style>
+</head>
 
+<body>
 
-<!-- =========================================================
-     OWNER DASHBOARD
-========================================================= -->
+<header>
 
-<div id="professionalOwnerPanel">
+<div class="topbar">
 
-<div class="owner-dashboard">
-
-<div class="owner-head">
-
-<div>
-<h2>MI TRADING COM — Owner Dashboard</h2>
-<small>Professional Website Management</small>
+<div class="logo">
+MI <span>TRADING COM</span>
 </div>
 
-<button onclick="closeProfessionalOwner()">
+<div class="contact-mini">
+<a href="tel:03134854823">📞 0313-4854823</a>
+<a href="mailto:mitradingcom04@gmail.com">✉️ mitradingcom04@gmail.com</a>
+</div>
+
+</div>
+
+<div class="searchbar">
+
+<input
+id="search"
+type="search"
+placeholder="Search product, model or part number..."
+>
+
+<button onclick="renderProducts()">
+SEARCH
+</button>
+
+</div>
+
+<nav>
+
+<button onclick="go('home')">Home</button>
+<button onclick="go('products')">Products</button>
+<button onclick="go('about')">About</button>
+<button onclick="go('contact')">Contact</button>
+<button onclick="openLogin()">Owner Login</button>
+
+</nav>
+
+</header>
+
+
+<section id="home" class="hero">
+
+<h1>
+Industrial Products & General Supply Solutions
+</h1>
+
+<p>
+MI TRADING COM supplies bearings, belts, CNC machine components,
+linear motion products, pneumatic and hydraulic components,
+electrical items, industrial tools, hardware and general supplies.
+</p>
+
+<div style="margin-top:25px">
+
+<a href="#products" class="btn">
+Explore Products
+</a>
+
+<a
+class="btn green"
+target="_blank"
+href="https://wa.me/923134854823?text=Hello%20MI%20TRADING%20COM"
+>
+WhatsApp Inquiry
+</a>
+
+</div>
+
+</section>
+
+
+<section class="section">
+
+<h2>Product Categories</h2>
+
+<div id="categories" class="categories"></div>
+
+</section>
+
+
+<section id="products" class="section">
+
+<div style="
+display:flex;
+justify-content:space-between;
+align-items:center;
+gap:10px;
+margin-bottom:20px;
+">
+
+<h2 style="margin:0">
+Our Products
+</h2>
+
+<button
+class="btn blue"
+onclick="allProducts()"
+>
+All Products
+</button>
+
+</div>
+
+<p
+id="productCount"
+style="color:#777;margin-bottom:15px"
+></p>
+
+<div id="productList" class="products"></div>
+
+</section>
+
+
+<section id="about" class="section">
+
+<h2>About MI TRADING COM</h2>
+
+<div class="products">
+
+<div class="card">
+<div class="card-body">
+<h3>Industrial Supply</h3>
+<p>
+Professional industrial and general order supplier for businesses
+and industries.
+</p>
+</div>
+</div>
+
+<div class="card">
+<div class="card-body">
+<h3>Wide Product Range</h3>
+<p>
+Bearings, belts, CNC parts, linear motion, pneumatic, hydraulic,
+electrical, tools and hardware.
+</p>
+</div>
+</div>
+
+<div class="card">
+<div class="card-body">
+<h3>Professional Service</h3>
+<p>
+Products sourced according to required specifications, quantities
+and applications.
+</p>
+</div>
+</div>
+
+</div>
+
+</section>
+
+
+<section id="contact" class="section">
+
+<h2>Contact Us</h2>
+
+<div class="products">
+
+<div class="card">
+<div class="card-body">
+<h3>📍 Address</h3>
+<p>Brandreth Road, Lahore, Pakistan</p>
+</div>
+</div>
+
+<div class="card">
+<div class="card-body">
+<h3>📞 Phone</h3>
+<p>
+<a href="tel:03134854823">
+0313-4854823
+</a>
+</p>
+</div>
+</div>
+
+<div class="card">
+<div class="card-body">
+<h3>💬 WhatsApp</h3>
+<p>
+<a
+target="_blank"
+href="https://wa.me/923134854823"
+>
+Chat on WhatsApp
+</a>
+</p>
+</div>
+</div>
+
+<div class="card">
+<div class="card-body">
+<h3>✉️ Email</h3>
+<p>
+<a href="mailto:mitradingcom04@gmail.com">
+mitradingcom04@gmail.com
+</a>
+</p>
+</div>
+</div>
+
+</div>
+
+</section>
+
+
+<footer>
+
+<div class="footer-grid">
+
+<div>
+<h3>MI TRADING COM</h3>
+<p>Industrial & General Order Supplier</p>
+<p>Brandreth Road, Lahore, Pakistan</p>
+</div>
+
+<div>
+<h3>Products</h3>
+<p>Bearings</p>
+<p>CNC Parts</p>
+<p>Linear Motion</p>
+<p>Pneumatic & Hydraulic</p>
+</div>
+
+<div>
+<h3>Contact</h3>
+<p>0313-4854823</p>
+<p>mitradingcom04@gmail.com</p>
+</div>
+
+<div>
+<h3>Quick Links</h3>
+<p><a href="#home">Home</a></p>
+<p><a href="#products">Products</a></p>
+<p><a href="#about">About</a></p>
+<p><a href="#contact">Contact</a></p>
+</div>
+
+</div>
+
+<p style="text-align:center;margin-top:30px">
+© 2026 MI TRADING COM. All Rights Reserved.
+</p>
+
+</footer>
+
+
+<button class="cart" onclick="openCart()">
+🛒
+<span id="cartCount" class="cart-count">0</span>
+</button>
+
+
+<!-- LOGIN -->
+
+<div id="loginModal" class="modal">
+
+<div class="modal-box login-box">
+
+<h2>MI TRADING COM</h2>
+
+<p style="color:#777;margin-bottom:15px">
+Owner / Admin Login
+</p>
+
+<div class="field">
+
+<label>Password</label>
+
+<input
+id="loginPassword"
+type="password"
+placeholder="Enter owner password"
+>
+
+</div>
+
+<p
+id="loginError"
+style="color:red;font-size:13px"
+></p>
+
+<button class="btn" onclick="login()">
+Login
+</button>
+
+<button class="btn dark" onclick="closeLogin()">
+Cancel
+</button>
+
+</div>
+
+</div>
+
+
+<!-- OWNER DASHBOARD -->
+
+<div id="ownerModal" class="modal">
+
+<div class="modal-box" style="max-width:1150px;padding:0;overflow:hidden">
+
+<div class="admin-dashboard">
+
+<div class="sidebar">
+
+<button
+class="active"
+onclick="tab('dashboard',this)"
+>
+📊 Dashboard
+</button>
+
+<button
+onclick="tab('add',this)"
+>
+➕ Add Product
+</button>
+
+<button
+onclick="tab('manage',this)"
+>
+📦 Manage Products
+</button>
+
+<button
+onclick="tab('categoriesAdmin',this)"
+>
+📁 Categories
+</button>
+
+<button
+onclick="tab('featured',this)"
+>
+⭐ Featured
+</button>
+
+<button
+onclick="tab('settings',this)"
+>
+⚙️ Settings
+</button>
+
+<button onclick="logout()">
+🚪 Logout
+</button>
+
+<button onclick="closeOwner()">
 ✕ Close
 </button>
 
 </div>
 
 
-<div class="owner-layout">
-
-<div class="owner-sidebar">
-
-<button
-class="active"
-onclick="ownerTab('dashboard',this)"
->
-📊 Dashboard
-</button>
-
-<button
-onclick="ownerTab('addProduct',this)"
->
-➕ Add Product
-</button>
-
-<button
-onclick="ownerTab('productsManager',this)"
->
-📦 Manage Products
-</button>
-
-<button
-onclick="ownerTab('categoriesManager',this)"
->
-📁 Categories
-</button>
-
-<button
-onclick="ownerTab('featuredManager',this)"
->
-⭐ Featured Products
-</button>
-
-<button
-onclick="ownerTab('settingsManager',this)"
->
-⚙️ Website Settings
-</button>
-
-<button
-onclick="ownerLogoutProfessional()"
->
-🚪 Logout
-</button>
-
-</div>
-
-
-<div class="owner-content">
+<div class="dashboard-content">
 
 
 <!-- DASHBOARD -->
 
-<div
-id="owner-dashboard"
-class="owner-section active"
->
+<div id="tab-dashboard" class="tab active">
 
-<h2>Dashboard</h2>
+<h2>Owner Dashboard</h2>
 
-<br>
+<div class="stats">
 
-<div class="owner-stats">
-
-<div class="owner-stat">
+<div class="stat">
 <strong id="statProducts">0</strong>
-<span>Total Products</span>
+<small>Total Products</small>
 </div>
 
-<div class="owner-stat">
+<div class="stat">
 <strong id="statCategories">0</strong>
-<span>Categories</span>
+<small>Categories</small>
 </div>
 
-<div class="owner-stat">
+<div class="stat">
 <strong id="statFeatured">0</strong>
-<span>Featured Products</span>
+<small>Featured</small>
 </div>
 
-<div class="owner-stat">
+<div class="stat">
 <strong id="statStock">0</strong>
-<span>Products In Stock</span>
+<small>In Stock</small>
 </div>
 
 </div>
 
-<div class="owner-notice">
-<b>Owner Access:</b>
-You can add new products, edit existing products, delete products,
-change images, prices, categories, stock status and featured status.
-Your existing featured products are preserved.
+<div class="card">
+<div class="card-body">
+
+<h3>Owner Access</h3>
+
+<p style="line-height:1.8;color:#555">
+
+✔ Add unlimited products<br>
+✔ Upload gallery images<br>
+✔ Add image URLs<br>
+✔ Edit products<br>
+✔ Delete products<br>
+✔ Change prices<br>
+✔ Change stock<br>
+✔ Manage categories<br>
+✔ Mark products Featured<br>
+✔ Product search<br>
+✔ WhatsApp inquiries<br>
+✔ Manage website contact information
+
+</p>
+
+</div>
 </div>
 
 </div>
 
 
-<!-- ADD PRODUCT -->
+<!-- ADD -->
 
-<div
-id="owner-addProduct"
-class="owner-section"
->
+<div id="tab-add" class="tab">
 
-<h2 id="ownerFormTitle">
-Add New Product
+<h2 id="formTitle">
+Add Product
 </h2>
 
-<br>
+<div class="card">
 
-<div class="owner-form">
+<div class="card-body">
 
-<div class="owner-form-grid">
+<div class="form-grid">
 
-<div class="owner-field">
+<div class="field">
+
 <label>Product Name *</label>
+
 <input
-id="ownerProductName"
-placeholder="Example: SKF Deep Groove Bearing"
+id="pName"
+placeholder="Example: SKF Bearing"
 >
+
 </div>
 
 
-<div class="owner-field">
+<div class="field">
+
 <label>Model / Part Number *</label>
+
 <input
-id="ownerProductModel"
+id="pModel"
 placeholder="Example: 6206"
 >
+
 </div>
 
 
-<div class="owner-field">
+<div class="field">
+
 <label>Category *</label>
 
-<select id="ownerProductCategory">
-</select>
+<select id="pCategory"></select>
 
 </div>
 
 
-<div class="owner-field">
+<div class="field">
+
 <label>Price</label>
 
 <input
-id="ownerProductPrice"
-placeholder="Example: Rs. 960"
+id="pPrice"
+placeholder="Rs. 960"
 >
 
 </div>
 
 
-<div class="owner-field owner-full">
+<div class="field full">
 
 <label>Image URL</label>
 
 <input
-id="ownerProductImage"
-placeholder="Paste direct image URL here"
-oninput="ownerPreviewUrl()"
+id="pImage"
+placeholder="Paste direct image URL"
+oninput="previewImage()"
 >
 
-<div class="owner-preview">
+<div class="preview">
 
 <img
-id="ownerImagePreview"
+id="imagePreview"
 src="https://placehold.co/500x350?text=Product+Image"
-onerror="this.src='https://placehold.co/500x350?text=Invalid+Image'"
 >
 
 </div>
@@ -491,27 +1181,27 @@ onerror="this.src='https://placehold.co/500x350?text=Invalid+Image'"
 </div>
 
 
-<div class="owner-field owner-full">
+<div class="field full">
 
 <label>
-OR Upload Image From Phone/Gallery
+OR Select Image From Gallery
 </label>
 
 <input
 type="file"
-id="ownerImageFile"
+id="galleryImage"
 accept="image/*"
-onchange="ownerGalleryImage(event)"
+onchange="galleryImageUpload(event)"
 >
 
 </div>
 
 
-<div class="owner-field">
+<div class="field">
 
 <label>Availability</label>
 
-<select id="ownerProductStock">
+<select id="pStock">
 
 <option>In Stock</option>
 <option>Out of Stock</option>
@@ -522,32 +1212,27 @@ onchange="ownerGalleryImage(event)"
 </div>
 
 
-<div class="owner-field">
+<div class="field">
 
-<label>Featured Product?</label>
+<label>Featured</label>
 
-<select id="ownerProductFeatured">
+<select id="pFeatured">
 
-<option value="false">
-No
-</option>
-
-<option value="true">
-Yes
-</option>
+<option value="false">No</option>
+<option value="true">Yes</option>
 
 </select>
 
 </div>
 
 
-<div class="owner-field owner-full">
+<div class="field full">
 
 <label>Description</label>
 
 <textarea
-id="ownerProductDescription"
-placeholder="Professional product description..."
+id="pDescription"
+placeholder="Professional product description"
 ></textarea>
 
 </div>
@@ -557,14 +1242,14 @@ placeholder="Professional product description..."
 
 <button
 class="btn"
-onclick="ownerSaveProduct()"
+onclick="saveProduct()"
 >
 💾 Save Product
 </button>
 
 <button
-class="btn btn-dark"
-onclick="ownerClearForm()"
+class="btn dark"
+onclick="clearForm()"
 >
 Clear
 </button>
@@ -573,40 +1258,35 @@ Clear
 
 </div>
 
+</div>
 
-<!-- PRODUCTS MANAGER -->
 
-<div
-id="owner-productsManager"
-class="owner-section"
->
+<!-- MANAGE -->
+
+<div id="tab-manage" class="tab">
 
 <h2>Manage Products</h2>
 
-<br>
+<div class="table-wrap">
 
-<div style="overflow:auto">
-
-<table class="owner-table">
+<table>
 
 <thead>
 
 <tr>
-
 <th>Image</th>
-<th>Product</th>
+<th>Name</th>
 <th>Model</th>
 <th>Category</th>
 <th>Price</th>
 <th>Stock</th>
 <th>Featured</th>
-<th>Actions</th>
-
+<th>Action</th>
 </tr>
 
 </thead>
 
-<tbody id="ownerProductsTable"></tbody>
+<tbody id="adminProducts"></tbody>
 
 </table>
 
@@ -617,23 +1297,20 @@ class="owner-section"
 
 <!-- CATEGORIES -->
 
-<div
-id="owner-categoriesManager"
-class="owner-section"
->
+<div id="tab-categoriesAdmin" class="tab">
 
 <h2>Category Management</h2>
 
-<br>
+<div class="card">
 
-<div class="owner-form">
+<div class="card-body">
 
-<div class="owner-field">
+<div class="field">
 
 <label>New Category</label>
 
 <input
-id="ownerNewCategory"
+id="newCategory"
 placeholder="Example: Oil Seals"
 >
 
@@ -641,17 +1318,19 @@ placeholder="Example: Oil Seals"
 
 <button
 class="btn"
-onclick="ownerAddCategory()"
+onclick="addCategory()"
 >
 ➕ Add Category
 </button>
 
 </div>
 
+</div>
+
 <br>
 
 <div
-id="ownerCategoryList"
+id="adminCategories"
 class="categories"
 ></div>
 
@@ -660,22 +1339,12 @@ class="categories"
 
 <!-- FEATURED -->
 
-<div
-id="owner-featuredManager"
-class="owner-section"
->
+<div id="tab-featured" class="tab">
 
 <h2>Featured Products</h2>
 
-<br>
-
-<div class="owner-notice">
-Products marked as <b>Featured</b> can be highlighted on your website.
-Your existing products are not removed.
-</div>
-
 <div
-id="ownerFeaturedList"
+id="featuredProducts"
 class="products"
 ></div>
 
@@ -684,85 +1353,114 @@ class="products"
 
 <!-- SETTINGS -->
 
-<div
-id="owner-settingsManager"
-class="owner-section"
->
+<div id="tab-settings" class="tab">
 
 <h2>Website Settings</h2>
 
-<br>
+<div class="card">
 
-<div class="owner-form">
+<div class="card-body">
 
-<div class="owner-field">
-
+<div class="field">
 <label>Company Name</label>
-
 <input
-id="settingCompany"
+id="companySetting"
 value="MI TRADING COM"
 >
-
 </div>
 
-<div class="owner-field">
-
+<div class="field">
 <label>Phone</label>
-
 <input
-id="settingPhone"
+id="phoneSetting"
 value="0313-4854823"
 >
-
 </div>
 
-<div class="owner-field">
-
+<div class="field">
 <label>Email</label>
-
 <input
-id="settingEmail"
+id="emailSetting"
 value="mitradingcom04@gmail.com"
 >
-
 </div>
 
-<div class="owner-field">
-
+<div class="field">
 <label>Address</label>
-
 <input
-id="settingAddress"
+id="addressSetting"
 value="Brandreth Road, Lahore, Pakistan"
 >
-
 </div>
 
 <button
 class="btn"
-onclick="saveOwnerSettings()"
+onclick="saveSettings()"
 >
-💾 Save Settings
+Save Settings
 </button>
 
 </div>
 
+</div>
+
+</div>
+
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+
+<!-- DETAILS -->
+
+<div id="detailsModal" class="modal">
+
+<div class="modal-box">
+
+<div id="details"></div>
+
+<button
+class="btn dark"
+onclick="closeDetails()"
+>
+Close
+</button>
+
+</div>
+
+</div>
+
+
+<!-- CART -->
+
+<div id="cartModal" class="modal">
+
+<div class="modal-box">
+
+<h2>Inquiry Cart</h2>
+
+<div id="cartItems"></div>
+
 <br>
 
-<div class="owner-notice">
-<strong>Important:</strong>
-Because your website is hosted on GitHub Pages without a server/database,
-owner changes are stored in the browser. For permanent changes visible to
-every visitor, products must eventually be stored in a database/backend.
-</div>
+<button
+class="btn green"
+onclick="sendWhatsApp()"
+>
+Send WhatsApp Inquiry
+</button>
 
-</div>
-
-
-</div>
-
-</div>
+<button
+class="btn dark"
+onclick="closeCart()"
+>
+Close
+</button>
 
 </div>
 
@@ -771,363 +1469,379 @@ every visitor, products must eventually be stored in a database/backend.
 
 <script>
 
-/* =========================================================
-   PROFESSIONAL OWNER SYSTEM
-   PRESERVES EXISTING PRODUCTS
-========================================================= */
+/* =====================================================
+   IMPORTANT:
+   Existing featured products are NOT replaced.
+   If old localStorage products exist, they are loaded.
+===================================================== */
+
+const PASSWORD="MI@2026";
+
+let loggedIn=
+localStorage.getItem("mi_owner")==="true";
+
+let editId=null;
+
+let activeCategory="All Products";
 
 
-/*
- IMPORTANT:
- This code uses the existing "products" array from your website.
- It does NOT replace your existing featured products.
-*/
+let categories=[
+"All Products",
+"Bearings",
+"Ball Bearings",
+"Deep Groove Ball Bearings",
+"Taper Roller Bearings",
+"Needle Roller Bearings",
+"Cylindrical Roller Bearings",
+"Pillow Block Bearings",
+"Linear Motion",
+"Linear Bearings",
+"Linear Guideways",
+"Ball Screws",
+"CNC Ball Screws",
+"CNC Machine Parts",
+"Timing Belts",
+"V-Belts",
+"Industrial Belts",
+"Pneumatic Fittings",
+"Pneumatic Components",
+"Hydraulic Fittings",
+"Hydraulic Components",
+"Electrical Items",
+"Industrial Tools",
+"Hardware",
+"Safety Items"
+];
 
 
-let professionalEditingId = null;
+/* LOAD EXISTING PRODUCTS */
+
+let products=
+JSON.parse(
+localStorage.getItem("mi_products")
+) || [
+
+/* EXISTING FEATURED PRODUCTS */
+{
+id:1,
+name:"Deep Groove Ball Bearing",
+title:"Deep Groove Ball Bearing",
+model:"6206",
+category:"Deep Groove Ball Bearings",
+price:"Rs. 960",
+image:"https://placehold.co/700x500?text=6206+Bearing",
+description:"High quality industrial deep groove ball bearing.",
+desc:"High quality industrial deep groove ball bearing.",
+stock:"In Stock",
+avail:"In Stock",
+featured:true
+},
+
+{
+id:2,
+name:"Taper Roller Bearing",
+title:"Taper Roller Bearing",
+model:"30206",
+category:"Taper Roller Bearings",
+price:"Rs. 1,250",
+image:"https://placehold.co/700x500?text=30206+Bearing",
+description:"Heavy duty taper roller bearing.",
+desc:"Heavy duty taper roller bearing.",
+stock:"In Stock",
+avail:"In Stock",
+featured:true
+},
+
+{
+id:3,
+name:"Timing Belt",
+title:"Timing Belt",
+model:"XL-100",
+category:"Timing Belts",
+price:"Rs. 450",
+image:"https://placehold.co/700x500?text=Timing+Belt",
+description:"Industrial timing belt.",
+desc:"Industrial timing belt.",
+stock:"In Stock",
+avail:"In Stock",
+featured:true
+},
+
+{
+id:4,
+name:"Pneumatic Fitting",
+title:"Pneumatic Fitting",
+model:"PC-6",
+category:"Pneumatic Fittings",
+price:"Ask for Price",
+image:"https://placehold.co/700x500?text=Pneumatic+Fitting",
+description:"6mm pneumatic connector.",
+desc:"6mm pneumatic connector.",
+stock:"In Stock",
+avail:"In Stock",
+featured:true
+}
+
+];
 
 
-/* ---------------------------------------------------------
-   OPEN OWNER DASHBOARD
---------------------------------------------------------- */
+let cart=
+JSON.parse(
+localStorage.getItem("mi_cart")
+) || [];
 
-function openProfessionalOwner(){
+
+/* IMAGE URL */
+
+function imageURL(url){
+
+if(!url)
+return "https://placehold.co/700x500?text=MI+TRADING+COM";
+
+url=String(url).trim();
+
+
+/* Google Drive */
+
+let drive=
+url.match(/drive\.google\.com\/file\/d\/([^/]+)/);
+
+if(drive){
+
+return
+"https://drive.google.com/uc?export=view&id="+drive[1];
+
+}
+
+
+/* GitHub */
 
 if(
-typeof ownerLoggedIn !== "undefined" &&
-ownerLoggedIn
+url.includes("github.com") &&
+url.includes("/blob/")
 ){
 
-document.getElementById(
-"professionalOwnerPanel"
-).style.display="flex";
-
-ownerRefreshDashboard();
-
-return;
-
-}
-
-
-/* Existing login system */
-
-if(typeof openLogin === "function"){
-
-openLogin();
-
-return;
+return url
+.replace(
+"https://github.com/",
+"https://raw.githubusercontent.com/"
+)
+.replace("/blob/","/");
 
 }
 
 
-/* Existing login alternative */
-
-if(typeof openOwnerLogin === "function"){
-
-openOwnerLogin();
-
-return;
-
-}
+return url;
 
 }
 
 
-/* ---------------------------------------------------------
-   CLOSE
---------------------------------------------------------- */
+function imgError(img){
 
-function closeProfessionalOwner(){
+img.onerror=null;
+
+img.src=
+"https://placehold.co/700x500?text=Image+Not+Available";
+
+}
+
+
+/* CATEGORIES */
+
+function renderCategories(){
 
 document.getElementById(
-"professionalOwnerPanel"
-).style.display="none";
+"categories"
+).innerHTML=
 
-}
+categories.map(function(c){
 
+return `
 
-/* ---------------------------------------------------------
-   TAB
---------------------------------------------------------- */
+<div
+class="category ${
+activeCategory===c?"active":""
+}"
+onclick="filterCategory('${escape(c)}')"
+>
+${escape(c)}
+</div>
 
-function ownerTab(id,button){
-
-document.querySelectorAll(
-".owner-section"
-).forEach(function(section){
-
-section.classList.remove("active");
-
-});
-
-
-let target =
-document.getElementById(
-"owner-"+id
-);
-
-if(target){
-
-target.classList.add("active");
-
-}
-
-
-document.querySelectorAll(
-".owner-sidebar button"
-).forEach(function(btn){
-
-btn.classList.remove("active");
-
-});
-
-
-if(button){
-
-button.classList.add("active");
-
-}
-
-
-ownerRefreshDashboard();
-
-}
-
-
-/* ---------------------------------------------------------
-   DASHBOARD
---------------------------------------------------------- */
-
-function ownerRefreshDashboard(){
-
-if(typeof products === "undefined"){
-
-return;
-
-}
-
-
-document.getElementById(
-"statProducts"
-).innerText =
-products.length;
-
-
-document.getElementById(
-"statCategories"
-).innerText =
-typeof categories !== "undefined"
-?
-categories.length
-:
-0;
-
-
-let featured =
-products.filter(function(p){
-
-return p.featured === true ||
-p.featured === "true";
-
-});
-
-
-document.getElementById(
-"statFeatured"
-).innerText =
-featured.length;
-
-
-let stock =
-products.filter(function(p){
-
-return p.stock === "In Stock" ||
-p.avail === "In Stock";
-
-});
-
-
-document.getElementById(
-"statStock"
-).innerText =
-stock.length;
-
-
-ownerFillCategories();
-
-ownerRenderProducts();
-
-ownerRenderFeatured();
-
-ownerRenderCategoryManager();
-
-}
-
-
-/* ---------------------------------------------------------
-   CATEGORY SELECT
---------------------------------------------------------- */
-
-function ownerFillCategories(){
-
-let select =
-document.getElementById(
-"ownerProductCategory"
-);
-
-if(!select) return;
-
-let cats =
-typeof categories !== "undefined"
-?
-categories.filter(function(c){
-
-return c !== "All Products";
-
-})
-:
-[];
-
-
-select.innerHTML =
-cats.map(function(c){
-
-return `<option value="${ownerEscape(c)}">
-${ownerEscape(c)}
-</option>`;
+`;
 
 }).join("");
 
-}
 
-
-/* ---------------------------------------------------------
-   ADD CATEGORY
---------------------------------------------------------- */
-
-function ownerAddCategory(){
-
-let input =
 document.getElementById(
-"ownerNewCategory"
-);
+"pCategory"
+).innerHTML=
 
-let name =
-input.value.trim();
-
-if(!name){
-
-alert("Enter category name.");
-
-return;
-
-}
-
-
-if(typeof categories === "undefined"){
-
-return;
+categories
+.filter(c=>c!=="All Products")
+.map(c=>`
+<option value="${escape(c)}">
+${escape(c)}
+</option>
+`)
+.join("");
 
 }
 
 
-let exists =
-categories.some(function(c){
+/* PRODUCTS */
 
-return c.toLowerCase() ===
-name.toLowerCase();
+function renderProducts(){
+
+let search=
+document.getElementById(
+"search"
+).value
+.toLowerCase()
+.trim();
+
+
+let list=
+products.filter(function(p){
+
+let categoryOK=
+activeCategory==="All Products" ||
+p.category===activeCategory;
+
+let text=
+(
+(p.name||p.title||"")+" "+
+(p.model||"")+" "+
+(p.category||"")+" "+
+(p.description||p.desc||"")
+)
+.toLowerCase();
+
+return categoryOK &&
+(!search || text.includes(search));
 
 });
 
 
-if(exists){
-
-alert("Category already exists.");
-
-return;
-
-}
-
-
-categories.push(name);
-
-
-/*
- Save custom categories separately.
- This doesn't touch existing products.
-*/
-
-localStorage.setItem(
-"mi_custom_categories",
-JSON.stringify(
-categories
-)
-);
-
-
-input.value="";
-
-ownerFillCategories();
-
-ownerRenderCategoryManager();
-
-if(typeof renderCategories === "function"){
-
-renderCategories();
-
-}
-
-alert("Category added.");
-
-}
-
-
-/* ---------------------------------------------------------
-   CATEGORY LIST
---------------------------------------------------------- */
-
-function ownerRenderCategoryManager(){
-
-let box =
 document.getElementById(
-"ownerCategoryList"
-);
+"productCount"
+).innerText=
+list.length+" product(s) found";
 
-if(!box ||
-typeof categories === "undefined")
+
+if(!list.length){
+
+document.getElementById(
+"productList"
+).innerHTML=
+`<div class="empty">No products found.</div>`;
+
 return;
 
+}
 
-box.innerHTML =
-categories
-.filter(function(c){
 
-return c !== "All Products";
+document.getElementById(
+"productList"
+).innerHTML=
 
-})
-.map(function(cat){
+list.map(function(p){
 
-let productCount =
-products.filter(function(p){
-
-return p.category === cat;
-
-}).length;
+let name=p.name||p.title;
+let desc=p.description||p.desc||"";
+let stock=p.stock||p.avail||"";
 
 
 return `
 
-<div class="category">
+<div class="card">
 
-<div>${ownerEscape(cat)}</div>
+<div class="card-img">
 
-<small style="
-display:block;
-color:#777;
-margin-top:5px;
-">
-${productCount} Products
-</small>
+<img
+src="${imageURL(p.image)}"
+alt="${escape(name)}"
+loading="lazy"
+onerror="imgError(this)"
+>
+
+</div>
+
+<div class="card-body">
+
+<div class="badge-cat">
+${escape(p.category)}
+</div>
+
+<h3>
+${escape(name)}
+</h3>
+
+<div class="model">
+Model: ${escape(p.model)}
+</div>
+
+<div class="desc">
+${escape(desc)}
+</div>
+
+<div class="price">
+${escape(p.price||"Ask for Price")}
+</div>
+
+<div class="stock ${
+stock==="In Stock"?
+"instock":"outstock"
+}">
+● ${escape(stock)}
+</div>
+
+<div class="actions">
+
+<button
+class="details"
+onclick="details(${p.id})"
+>
+Details
+</button>
+
+<button
+class="whatsapp"
+onclick="addCart(${p.id})"
+>
+Inquiry
+</button>
+
+<button
+class="call"
+onclick="call()"
+>
+Call
+</button>
+
+</div>
+
+<div
+class="admin-actions"
+id="admin-${p.id}"
+>
+
+<button
+class="edit"
+onclick="editProduct(${p.id})"
+>
+Edit
+</button>
+
+<button
+class="delete"
+onclick="deleteProduct(${p.id})"
+>
+Delete
+</button>
+
+</div>
+
+</div>
 
 </div>
 
@@ -1135,175 +1849,284 @@ ${productCount} Products
 
 }).join("");
 
+updateAdminButtons();
+
 }
 
 
-/* ---------------------------------------------------------
-   PRODUCT TABLE
---------------------------------------------------------- */
+/* FILTER */
 
-function ownerRenderProducts(){
+function filterCategory(c){
 
-let table =
+activeCategory=c;
+
+renderCategories();
+renderProducts();
+
 document.getElementById(
-"ownerProductsTable"
-);
+"products"
+).scrollIntoView({
+behavior:"smooth"
+});
 
-if(!table ||
-typeof products === "undefined")
-return;
-
-
-table.innerHTML =
-products.map(function(p){
-
-let image =
-typeof getImageUrl === "function"
-?
-getImageUrl(p.image)
-:
-p.image;
+}
 
 
-return `
+function allProducts(){
 
-<tr>
+activeCategory="All Products";
 
-<td>
+document.getElementById("search").value="";
+
+renderCategories();
+renderProducts();
+
+}
+
+
+/* DETAILS */
+
+function details(id){
+
+let p=
+products.find(x=>x.id===id);
+
+if(!p)return;
+
+document.getElementById(
+"details"
+).innerHTML=`
 
 <img
-class="owner-product-img"
-src="${ownerEscape(image)}"
-onerror="this.src='https://placehold.co/100x80?text=Image'"
+src="${imageURL(p.image)}"
+style="
+width:100%;
+max-height:350px;
+object-fit:contain;
+"
+onerror="imgError(this)"
 >
 
-</td>
+<h2>
+${escape(p.name||p.title)}
+</h2>
 
-<td>
-<b>${ownerEscape(p.name || p.title)}</b>
-</td>
+<p><b>Model:</b> ${escape(p.model)}</p>
+<p><b>Category:</b> ${escape(p.category)}</p>
+<p><b>Price:</b> ${escape(p.price)}</p>
+<p><b>Stock:</b> ${escape(p.stock||p.avail)}</p>
 
-<td>
-${ownerEscape(p.model || "")}
-</td>
+<p style="
+margin:15px 0;
+line-height:1.7;
+">
+${escape(p.description||p.desc)}
+</p>
 
-<td>
-${ownerEscape(p.category || "")}
-</td>
-
-<td>
-${ownerEscape(p.price || "Ask for Price")}
-</td>
-
-<td>
-${ownerEscape(p.stock || p.avail || "")}
-</td>
-
-<td>
-${
-p.featured === true ||
-p.featured === "true"
-?
-"⭐ Yes"
-:
-"No"
-}
-</td>
-
-<td>
-
-<button
-class="owner-action owner-edit"
-onclick="ownerEditProduct(${p.id})"
+<a
+class="btn green"
+target="_blank"
+href="https://wa.me/923134854823?text=${encodeURIComponent(
+"Hello MI TRADING COM, I am interested in "+
+(p.name||p.title)+" "+p.model
+)}"
 >
-Edit
-</button>
-
-<button
-class="owner-action owner-feature"
-onclick="ownerToggleFeatured(${p.id})"
->
-⭐
-</button>
-
-<button
-class="owner-action owner-delete"
-onclick="ownerDeleteProduct(${p.id})"
->
-Delete
-</button>
-
-</td>
-
-</tr>
+WhatsApp Inquiry
+</a>
 
 `;
 
-}).join("");
+document.getElementById(
+"detailsModal"
+).style.display="flex";
 
 }
 
 
-/* ---------------------------------------------------------
-   ADD PRODUCT
---------------------------------------------------------- */
+function closeDetails(){
 
-function ownerSaveProduct(){
+document.getElementById(
+"detailsModal"
+).style.display="none";
 
-if(
-typeof ownerLoggedIn !== "undefined" &&
-!ownerLoggedIn
-){
+}
 
-alert("Owner login required.");
+
+/* LOGIN */
+
+function openLogin(){
+
+if(loggedIn){
+
+openOwner();
+
+return;
+
+}
+
+document.getElementById(
+"loginModal"
+).style.display="flex";
+
+}
+
+
+function closeLogin(){
+
+document.getElementById(
+"loginModal"
+).style.display="none";
+
+document.getElementById(
+"loginPassword"
+).value="";
+
+}
+
+
+function login(){
+
+let password=
+document.getElementById(
+"loginPassword"
+).value;
+
+if(password===PASSWORD){
+
+loggedIn=true;
+
+localStorage.setItem(
+"mi_owner",
+"true"
+);
+
+closeLogin();
+
+openOwner();
+
+}else{
+
+document.getElementById(
+"loginError"
+).innerText=
+"Incorrect password.";
+
+}
+
+}
+
+
+/* OWNER */
+
+function openOwner(){
+
+document.getElementById(
+"ownerModal"
+).style.display="flex";
+
+refreshAdmin();
+
+}
+
+
+function closeOwner(){
+
+document.getElementById(
+"ownerModal"
+).style.display="none";
+
+}
+
+
+function logout(){
+
+loggedIn=false;
+
+localStorage.removeItem(
+"mi_owner"
+);
+
+closeOwner();
+
+updateAdminButtons();
+
+alert("Owner Logout Successful.");
+
+}
+
+
+function tab(id,btn){
+
+document.querySelectorAll(
+".tab"
+).forEach(x=>
+x.classList.remove("active")
+);
+
+document.getElementById(
+"tab-"+id
+).classList.add("active");
+
+document.querySelectorAll(
+".sidebar button"
+).forEach(x=>
+x.classList.remove("active")
+);
+
+btn.classList.add("active");
+
+refreshAdmin();
+
+}
+
+
+/* SAVE PRODUCT */
+
+function saveProduct(){
+
+if(!loggedIn){
+
+alert("Owner Login Required.");
 
 return;
 
 }
 
 
-let name =
-document.getElementById(
-"ownerProductName"
-).value.trim();
+let name=
+document.getElementById("pName")
+.value.trim();
 
-let model =
-document.getElementById(
-"ownerProductModel"
-).value.trim();
+let model=
+document.getElementById("pModel")
+.value.trim();
 
-let category =
-document.getElementById(
-"ownerProductCategory"
-).value;
+let category=
+document.getElementById("pCategory")
+.value;
 
-let price =
-document.getElementById(
-"ownerProductPrice"
-).value.trim();
+let price=
+document.getElementById("pPrice")
+.value.trim();
 
-let image =
-document.getElementById(
-"ownerProductImage"
-).value.trim();
+let image=
+document.getElementById("pImage")
+.value.trim();
 
-let description =
-document.getElementById(
-"ownerProductDescription"
-).value.trim();
+let stock=
+document.getElementById("pStock")
+.value;
 
-let stock =
-document.getElementById(
-"ownerProductStock"
-).value;
+let featured=
+document.getElementById("pFeatured")
+.value==="true";
 
-let featured =
-document.getElementById(
-"ownerProductFeatured"
-).value === "true";
+let description=
+document.getElementById("pDescription")
+.value.trim();
 
 
-if(!name || !model){
+if(!name||!model){
 
 alert(
 "Product Name and Model are required."
@@ -1314,410 +2137,600 @@ return;
 }
 
 
-if(
-professionalEditingId !== null
-){
+if(editId){
 
-let p =
-products.find(function(x){
+let p=
+products.find(x=>x.id===editId);
 
-return x.id === professionalEditingId;
+if(p){
 
-});
+p.name=name;
+p.title=name;
+p.model=model;
+p.category=category;
+p.price=price||"Ask for Price";
+p.image=image||p.image;
+p.stock=stock;
+p.avail=stock;
+p.featured=featured;
+p.description=description||"Industrial product supplied by MI TRADING COM.";
+p.desc=p.description;
 
+}
 
-if(!p) return;
-
-
-/*
- Update only this product.
- Existing products remain unchanged.
-*/
-
-p.name = name;
-p.model = model;
-p.category = category;
-p.price = price || "Ask for Price";
-p.image = image ||
-"https://placehold.co/700x500?text=MI+TRADING+COM";
-p.description =
-description ||
-"Industrial product supplied by MI TRADING COM.";
-p.stock = stock;
-p.featured = featured;
-
-
-/* Compatibility with your old product code */
-
-p.title = name;
-p.avail = stock;
-
-alert("Product updated successfully.");
+alert("Product Updated Successfully.");
 
 }else{
-
-
-/*
- NEW PRODUCT
-*/
 
 products.push({
 
 id:Date.now(),
 
 name:name,
-
 title:name,
-
 model:model,
-
 category:category,
-
-price:
-price ||
-"Ask for Price",
+price:price||"Ask for Price",
 
 image:
-image ||
+image||
 "https://placehold.co/700x500?text=MI+TRADING+COM",
 
+stock:stock,
+avail:stock,
+
+featured:featured,
+
 description:
-description ||
+description||
 "Industrial product supplied by MI TRADING COM.",
 
 desc:
-description ||
-"Industrial product supplied by MI TRADING COM.",
-
-stock:stock,
-
-avail:stock,
-
-featured:featured
+description||
+"Industrial product supplied by MI TRADING COM."
 
 });
 
-
-alert("New product added successfully.");
+alert("Product Added Successfully.");
 
 }
 
-
-/*
- Save without deleting existing products
-*/
 
 localStorage.setItem(
 "mi_products",
 JSON.stringify(products)
 );
 
+editId=null;
 
-professionalEditingId=null;
-
-ownerClearForm();
-
-ownerRefreshDashboard();
-
-
-/*
- Refresh your original website product renderer
-*/
-
-if(typeof renderProducts === "function"){
+clearForm();
 
 renderProducts();
 
-}
-
-if(typeof renderCategories === "function"){
-
-renderCategories();
-
-}
+refreshAdmin();
 
 }
 
 
-/* ---------------------------------------------------------
-   EDIT PRODUCT
---------------------------------------------------------- */
+/* EDIT */
 
-function ownerEditProduct(id){
+function editProduct(id){
 
-let p =
-products.find(function(x){
+let p=
+products.find(x=>x.id===id);
 
-return x.id === id;
+if(!p)return;
+
+editId=id;
+
+document.getElementById(
+"formTitle"
+).innerText="Edit Product";
+
+document.getElementById("pName")
+.value=p.name||p.title||"";
+
+document.getElementById("pModel")
+.value=p.model||"";
+
+document.getElementById("pCategory")
+.value=p.category||"";
+
+document.getElementById("pPrice")
+.value=p.price||"";
+
+document.getElementById("pImage")
+.value=p.image||"";
+
+document.getElementById("pStock")
+.value=p.stock||p.avail||"In Stock";
+
+document.getElementById("pFeatured")
+.value=
+p.featured===true||
+p.featured==="true"
+?"true":"false";
+
+document.getElementById("pDescription")
+.value=p.description||p.desc||"";
+
+previewImage();
+
+document.getElementById(
+"tab-add"
+).classList.add("active");
+
+document.querySelectorAll(".tab")
+.forEach(function(x){
+
+if(x.id!=="tab-add")
+x.classList.remove("active");
 
 });
 
-
-if(!p) return;
-
-
-professionalEditingId=id;
-
-
-document.getElementById(
-"ownerFormTitle"
-).innerText =
-"Edit Product";
-
-
-document.getElementById(
-"ownerProductName"
-).value =
-p.name || p.title || "";
-
-
-document.getElementById(
-"ownerProductModel"
-).value =
-p.model || "";
-
-
-document.getElementById(
-"ownerProductCategory"
-).value =
-p.category || "";
-
-
-document.getElementById(
-"ownerProductPrice"
-).value =
-p.price || "";
-
-
-document.getElementById(
-"ownerProductImage"
-).value =
-p.image || "";
-
-
-document.getElementById(
-"ownerProductDescription"
-).value =
-p.description ||
-p.desc ||
-"";
-
-
-document.getElementById(
-"ownerProductStock"
-).value =
-p.stock ||
-p.avail ||
-"In Stock";
-
-
-document.getElementById(
-"ownerProductFeatured"
-).value =
-(
-p.featured === true ||
-p.featured === "true"
-)
-?
-"true"
-:
-"false";
-
-
-ownerPreviewUrl();
-
-
-ownerTab(
-"addProduct",
-document.querySelectorAll(
-".owner-sidebar button"
-)[1]
-);
-
 }
 
 
-/* ---------------------------------------------------------
-   DELETE PRODUCT
---------------------------------------------------------- */
+/* DELETE */
 
-function ownerDeleteProduct(id){
+function deleteProduct(id){
 
-let p =
-products.find(function(x){
+if(!loggedIn){
 
-return x.id === id;
+return;
 
-});
+}
 
+let p=
+products.find(x=>x.id===id);
 
-if(!p) return;
-
+if(!p)return;
 
 if(
-!confirm(
-"Delete this product?\n\n" +
-(p.name || p.title)
+confirm(
+"Delete "+(p.name||p.title)+"?"
 )
 ){
 
-return;
-
-}
-
-
-products =
-products.filter(function(x){
-
-return x.id !== id;
-
-});
-
+products=
+products.filter(x=>x.id!==id);
 
 localStorage.setItem(
 "mi_products",
 JSON.stringify(products)
 );
 
-
-ownerRefreshDashboard();
-
-
-if(typeof renderProducts === "function"){
-
 renderProducts();
-
-}
-
-
-alert("Product deleted.");
-
-}
-
-
-/* ---------------------------------------------------------
-   FEATURED TOGGLE
---------------------------------------------------------- */
-
-function ownerToggleFeatured(id){
-
-let p =
-products.find(function(x){
-
-return x.id === id;
-
-});
-
-
-if(!p) return;
-
-
-p.featured =
-!(
-p.featured === true ||
-p.featured === "true"
-);
-
-
-localStorage.setItem(
-"mi_products",
-JSON.stringify(products)
-);
-
-
-ownerRefreshDashboard();
-
-
-if(typeof renderProducts === "function"){
-
-renderProducts();
+refreshAdmin();
 
 }
 
 }
 
 
-/* ---------------------------------------------------------
-   FEATURED LIST
---------------------------------------------------------- */
+/* CLEAR */
 
-function ownerRenderFeatured(){
+function clearForm(){
 
-let box =
+editId=null;
+
 document.getElementById(
-"ownerFeaturedList"
+"formTitle"
+).innerText="Add Product";
+
+document.getElementById("pName").value="";
+document.getElementById("pModel").value="";
+document.getElementById("pPrice").value="";
+document.getElementById("pImage").value="";
+document.getElementById("pDescription").value="";
+document.getElementById("pStock").value="In Stock";
+document.getElementById("pFeatured").value="false";
+
+document.getElementById(
+"imagePreview"
+).src=
+"https://placehold.co/500x350?text=Product+Image";
+
+}
+
+
+/* IMAGE URL PREVIEW */
+
+function previewImage(){
+
+let url=
+document.getElementById(
+"pImage"
+).value.trim();
+
+document.getElementById(
+"imagePreview"
+).src=
+imageURL(url);
+
+}
+
+
+/* GALLERY IMAGE */
+
+function galleryImageUpload(event){
+
+let file=
+event.target.files[0];
+
+if(!file)return;
+
+let reader=
+new FileReader();
+
+reader.onload=function(e){
+
+document.getElementById(
+"pImage"
+).value=e.target.result;
+
+document.getElementById(
+"imagePreview"
+).src=e.target.result;
+
+};
+
+reader.readAsDataURL(file);
+
+}
+
+
+/* CATEGORY ADD */
+
+function addCategory(){
+
+let input=
+document.getElementById(
+"newCategory"
 );
 
-if(!box) return;
+let name=
+input.value.trim();
 
+if(!name)return;
 
-let featured =
-products.filter(function(p){
+if(
+categories.some(
+x=>x.toLowerCase()===name.toLowerCase()
+)
+){
 
-return p.featured === true ||
-p.featured === "true";
-
-});
-
-
-if(!featured.length){
-
-box.innerHTML =
-`<div class="empty">
-No featured products selected.
-</div>`;
+alert("Category already exists.");
 
 return;
 
 }
 
+categories.push(name);
 
-box.innerHTML =
-featured.map(function(p){
+localStorage.setItem(
+"mi_categories",
+JSON.stringify(categories)
+);
 
-let image =
-typeof getImageUrl === "function"
-?
-getImageUrl(p.image)
-:
-p.image;
+input.value="";
 
+renderCategories();
+
+refreshAdmin();
+
+alert("Category Added.");
+
+}
+
+
+/* ADMIN REFRESH */
+
+function refreshAdmin(){
+
+if(!loggedIn)return;
+
+
+document.getElementById(
+"statProducts"
+).innerText=
+products.length;
+
+document.getElementById(
+"statCategories"
+).innerText=
+categories.length;
+
+document.getElementById(
+"statFeatured"
+).innerText=
+products.filter(
+p=>p.featured===true||
+p.featured==="true"
+).length;
+
+document.getElementById(
+"statStock"
+).innerText=
+products.filter(
+p=>(p.stock||p.avail)==="In Stock"
+).length;
+
+
+/* TABLE */
+
+document.getElementById(
+"adminProducts"
+).innerHTML=
+
+products.map(function(p){
 
 return `
 
-<div class="product">
+<tr>
 
-<div class="product-image">
+<td>
 
 <img
-src="${ownerEscape(image)}"
-onerror="this.src='https://placehold.co/700x500?text=Product'"
+class="table-img"
+src="${imageURL(p.image)}"
+onerror="imgError(this)"
+>
+
+</td>
+
+<td>
+${escape(p.name||p.title)}
+</td>
+
+<td>
+${escape(p.model)}
+</td>
+
+<td>
+${escape(p.category)}
+</td>
+
+<td>
+${escape(p.price)}
+</td>
+
+<td>
+${escape(p.stock||p.avail)}
+</td>
+
+<td>
+${
+p.featured===true||
+p.featured==="true"
+?"⭐ Yes":"No"
+}
+</td>
+
+<td>
+
+<button
+class="btn"
+style="padding:6px;font-size:11px"
+onclick="editProduct(${p.id})"
+>
+Edit
+</button>
+
+<button
+class="btn red"
+style="padding:6px;font-size:11px"
+onclick="deleteProduct(${p.id})"
+>
+Delete
+</button>
+
+<button
+class="btn green"
+style="padding:6px;font-size:11px"
+onclick="toggleFeatured(${p.id})"
+>
+⭐
+</button>
+
+</td>
+
+</tr>
+
+`;
+
+}).join("");
+
+
+/* CATEGORIES */
+
+document.getElementById(
+"adminCategories"
+).innerHTML=
+
+categories
+.filter(x=>x!=="All Products")
+.map(x=>`
+
+<div class="category">
+${escape(x)}
+</div>
+
+`).join("");
+
+
+/* FEATURED */
+
+let featured=
+products.filter(
+p=>p.featured===true||
+p.featured==="true"
+);
+
+
+document.getElementById(
+"featuredProducts"
+).innerHTML=
+
+featured.length
+?
+featured.map(p=>`
+
+<div class="card">
+
+<div class="card-img">
+
+<img
+src="${imageURL(p.image)}"
+onerror="imgError(this)"
 >
 
 </div>
 
-<div class="product-body">
+<div class="card-body">
 
-<div class="product-title">
-${ownerEscape(p.name || p.title)}
+<h3>
+${escape(p.name||p.title)}
+</h3>
+
+<div class="model">
+${escape(p.model)}
 </div>
 
-<div class="product-model">
-${ownerEscape(p.model || "")}
-</div>
-
-<div class="product-price">
-${ownerEscape(p.price || "")}
+<div class="price">
+${escape(p.price)}
 </div>
 
 <button
-class="btn btn-red"
-onclick="ownerToggleFeatured(${p.id})"
+class="btn red"
+onclick="toggleFeatured(${p.id})"
 >
 Remove Featured
 </button>
 
 </div>
+
+</div>
+
+`).join("")
+:
+`<div class="empty">No featured products.</div>`;
+
+}
+
+
+/* FEATURED TOGGLE */
+
+function toggleFeatured(id){
+
+let p=
+products.find(x=>x.id===id);
+
+if(!p)return;
+
+p.featured=
+!(
+p.featured===true||
+p.featured==="true"
+);
+
+localStorage.setItem(
+"mi_products",
+JSON.stringify(products)
+);
+
+renderProducts();
+refreshAdmin();
+
+}
+
+
+/* CART */
+
+function addCart(id){
+
+let found=
+cart.find(x=>x.id===id);
+
+if(found){
+
+found.qty++;
+
+}else{
+
+cart.push({
+id:id,
+qty:1
+});
+
+}
+
+localStorage.setItem(
+"mi_cart",
+JSON.stringify(cart)
+);
+
+updateCart();
+
+alert("Product added to inquiry cart.");
+
+}
+
+
+function updateCart(){
+
+document.getElementById(
+"cartCount"
+).innerText=
+cart.reduce(
+(a,b)=>a+b.qty,
+0
+);
+
+}
+
+
+function openCart(){
+
+let box=
+document.getElementById(
+"cartItems"
+);
+
+if(!cart.length){
+
+box.innerHTML=
+`<div class="empty">Inquiry cart is empty.</div>`;
+
+}else{
+
+box.innerHTML=
+cart.map(function(item){
+
+let p=
+products.find(x=>x.id===item.id);
+
+if(!p)return "";
+
+return `
+
+<div class="cart-item">
+
+<div>
+<b>${escape(p.name||p.title)}</b>
+<br>
+<small>${escape(p.model)}</small>
+<br>
+Qty: ${item.qty}
+</div>
+
+<button
+class="btn red"
+style="padding:5px"
+onclick="removeCart(${p.id})"
+>
+Remove
+</button>
 
 </div>
 
@@ -1727,209 +2740,162 @@ Remove Featured
 
 }
 
-
-/* ---------------------------------------------------------
-   IMAGE URL PREVIEW
---------------------------------------------------------- */
-
-function ownerPreviewUrl(){
-
-let input =
 document.getElementById(
-"ownerProductImage"
+"cartModal"
+).style.display="flex";
+
+}
+
+
+function removeCart(id){
+
+cart=
+cart.filter(x=>x.id!==id);
+
+localStorage.setItem(
+"mi_cart",
+JSON.stringify(cart)
 );
 
-let preview =
+updateCart();
+openCart();
+
+}
+
+
+function closeCart(){
+
 document.getElementById(
-"ownerImagePreview"
-);
+"cartModal"
+).style.display="none";
 
-if(!input || !preview) return;
-
-
-let url =
-input.value.trim();
+}
 
 
-if(!url){
+function sendWhatsApp(){
 
-preview.src =
-"https://placehold.co/500x350?text=Product+Image";
+if(!cart.length){
+
+alert("Inquiry cart is empty.");
 
 return;
 
 }
 
+let message=
+"Hello MI TRADING COM,%0A%0AI need quotation for:%0A%0A";
 
-let finalUrl =
-typeof getImageUrl === "function"
-?
-getImageUrl(url)
-:
-url;
+cart.forEach(function(item){
 
+let p=
+products.find(x=>x.id===item.id);
 
-preview.src=finalUrl;
+if(p){
 
-preview.onerror=function(){
+message+=
+"• "+
+(p.name||p.title)+
+" - "+
+p.model+
+" x "+
+item.qty+
+"%0A";
 
-this.src =
-"https://placehold.co/500x350?text=Invalid+Image";
+}
 
-};
+});
+
+window.open(
+"https://wa.me/923134854823?text="+message,
+"_blank"
+);
 
 }
 
 
-/* ---------------------------------------------------------
-   GALLERY IMAGE
---------------------------------------------------------- */
+/* SETTINGS */
 
-function ownerGalleryImage(event){
-
-let file =
-event.target.files[0];
-
-if(!file) return;
-
-
-/*
- Convert gallery image into Data URL.
- This lets the product show without an external URL.
-*/
-
-let reader =
-new FileReader();
-
-
-reader.onload=function(e){
-
-let data =
-e.target.result;
-
-
-document.getElementById(
-"ownerProductImage"
-).value =
-data;
-
-
-document.getElementById(
-"ownerImagePreview"
-).src =
-data;
-
-};
-
-
-reader.readAsDataURL(file);
-
-}
-
-
-/* ---------------------------------------------------------
-   CLEAR FORM
---------------------------------------------------------- */
-
-function ownerClearForm(){
-
-professionalEditingId=null;
-
-
-document.getElementById(
-"ownerFormTitle"
-).innerText =
-"Add New Product";
-
-
-document.getElementById(
-"ownerProductName"
-).value="";
-
-document.getElementById(
-"ownerProductModel"
-).value="";
-
-document.getElementById(
-"ownerProductPrice"
-).value="";
-
-document.getElementById(
-"ownerProductImage"
-).value="";
-
-document.getElementById(
-"ownerProductDescription"
-).value="";
-
-document.getElementById(
-"ownerProductStock"
-).value="In Stock";
-
-document.getElementById(
-"ownerProductFeatured"
-).value="false";
-
-
-document.getElementById(
-"ownerImagePreview"
-).src =
-"https://placehold.co/500x350?text=Product+Image";
-
-}
-
-
-/* ---------------------------------------------------------
-   WEBSITE SETTINGS
---------------------------------------------------------- */
-
-function saveOwnerSettings(){
+function saveSettings(){
 
 let settings={
 
 company:
-document.getElementById(
-"settingCompany"
-).value,
+document.getElementById("companySetting").value,
 
 phone:
-document.getElementById(
-"settingPhone"
-).value,
+document.getElementById("phoneSetting").value,
 
 email:
-document.getElementById(
-"settingEmail"
-).value,
+document.getElementById("emailSetting").value,
 
 address:
-document.getElementById(
-"settingAddress"
-).value
+document.getElementById("addressSetting").value
 
 };
 
-
 localStorage.setItem(
-"mi_site_settings",
+"mi_settings",
 JSON.stringify(settings)
 );
 
-
-alert(
-"Settings saved in this browser."
-);
+alert("Settings Saved.");
 
 }
 
 
-/* ---------------------------------------------------------
-   ESCAPE
---------------------------------------------------------- */
+/* ADMIN BUTTONS */
 
-function ownerEscape(value){
+function updateAdminButtons(){
 
-return String(value || "")
+document.querySelectorAll(
+".admin-actions"
+).forEach(function(el){
+
+el.style.display=
+loggedIn?"flex":"none";
+
+});
+
+}
+
+
+/* NAV */
+
+function go(id){
+
+let el=
+document.getElementById(id);
+
+if(!el)return;
+
+window.scrollTo({
+
+top:
+el.offsetTop-
+document.querySelector("header").offsetHeight,
+
+behavior:"smooth"
+
+});
+
+}
+
+
+/* CALL */
+
+function call(){
+
+window.location.href=
+"tel:03134854823";
+
+}
+
+
+/* ESCAPE */
+
+function escape(value){
+
+return String(value||"")
 .replace(/&/g,"&amp;")
 .replace(/</g,"&lt;")
 .replace(/>/g,"&gt;")
@@ -1939,135 +2905,79 @@ return String(value || "")
 }
 
 
-/* ---------------------------------------------------------
-   PROFESSIONAL LOGOUT
---------------------------------------------------------- */
+/* SEARCH */
 
-function ownerLogoutProfessional(){
-
-if(
-typeof ownerLogout === "function"
-){
-
-ownerLogout();
-
-}
-
-if(
-typeof logout === "function"
-){
-
-logout();
-
-}
-
-localStorage.removeItem("mi_owner");
-
-closeProfessionalOwner();
-
-alert("Owner logged out.");
-
-}
-
-
-/* ---------------------------------------------------------
-   CONNECT EXISTING OWNER LOGIN BUTTON
---------------------------------------------------------- */
-
-document.addEventListener(
-"DOMContentLoaded",
-function(){
-
-/*
- Keep existing featured products and existing login.
- Replace/attach an Owner Dashboard button.
-*/
-
-let navButtons =
-document.querySelectorAll("nav button");
-
-
-navButtons.forEach(function(btn){
-
-if(
-btn.innerText
-.toLowerCase()
-.includes("owner")
-){
-
-btn.onclick=function(){
-
-openProfessionalOwner();
-
-};
-
-}
-
-});
-
-
-/*
- If existing owner is already logged in,
- make dashboard available.
-*/
-
-if(
-typeof ownerLoggedIn !== "undefined" &&
-ownerLoggedIn
-){
-
-}
-
-});
-
-
-</script>
-
-
-<!-- =========================================================
-     OPTIONAL: ADD THIS BUTTON INSIDE YOUR EXISTING OWNER TOOLS
-     IF YOU WANT A DIRECT DASHBOARD BUTTON
-========================================================= -->
-
-<script>
-
-function addProfessionalDashboardButton(){
-
-let tools =
-document.getElementById("ownerTools");
-
-if(!tools) return;
-
-if(
 document.getElementById(
-"professionalDashboardButton"
-)
-) return;
-
-
-let btn =
-document.createElement("button");
-
-btn.id =
-"professionalDashboardButton";
-
-btn.innerHTML =
-"📊 Professional Dashboard";
-
-btn.style.cssText =
-"background:#10264a;color:white;padding:9px 14px;border:0;border-radius:5px;cursor:pointer;margin:4px;font-weight:bold;";
-
-btn.onclick =
-openProfessionalOwner;
-
-tools.appendChild(btn);
-
-}
-
-
-setTimeout(
-addProfessionalDashboardButton,
-500
+"search"
+).addEventListener(
+"input",
+renderProducts
 );
 
+
+/* ENTER LOGIN */
+
+document.getElementById(
+"loginPassword"
+).addEventListener(
+"keydown",
+function(e){
+
+if(e.key==="Enter"){
+login();
+}
+
+});
+
+
+/* CLOSE MODALS */
+
+document.querySelectorAll(
+".modal"
+).forEach(function(modal){
+
+modal.addEventListener(
+"click",
+function(e){
+
+if(e.target===modal){
+
+modal.style.display="none";
+
+}
+
+});
+
+});
+
+
+/* LOAD SAVED CUSTOM CATEGORIES */
+
+let savedCategories=
+JSON.parse(
+localStorage.getItem("mi_categories")
+);
+
+if(
+Array.isArray(savedCategories)
+){
+
+categories=savedCategories;
+
+}
+
+
+/* INITIALIZE */
+
+renderCategories();
+
+renderProducts();
+
+updateCart();
+
+updateAdminButtons();
+
 </script>
+
+</body>
+</html>
