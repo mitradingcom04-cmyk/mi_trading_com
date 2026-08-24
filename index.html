@@ -3,2188 +3,255 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>MI TRADING COM | Industrial Products & General Supply</title>
-
-<meta name="description" content="MI TRADING COM - Industrial bearings, belts, CNC machine parts, pneumatic, hydraulic, electrical items, tools and general industrial supplies in Lahore, Pakistan.">
-
-<meta name="keywords" content="MI Trading COM, bearings Lahore, industrial bearings, CNC parts, pneumatic, hydraulic, belts, industrial tools">
-
-<meta name="author" content="MI TRADING COM">
-
-<meta property="og:title" content="MI TRADING COM">
-<meta property="og:description" content="Industrial Products & General Supply Solutions">
-<meta property="og:type" content="website">
-
+<title>MI TRADING COM - Industrial & General Supply Solutions</title>
+<meta name="description" content="MI TRADING COM - Leading supplier of Bearings, CNC Parts, Belts, Pneumatic, Hydraulic, Electrical and Industrial Hardware in Lahore, Pakistan">
+<meta property="og:title" content="MI TRADING COM - Industrial Products">
+<meta property="og:description" content="Industrial Bearings, CNC, Pneumatic, Hydraulic Products Supplier in Lahore">
 <style>
-:root{
-  --blue:#0756a5;
-  --blue2:#0b74d1;
-  --navy:#071a2f;
-  --light:#f5f8fc;
-  --white:#fff;
-  --text:#17202a;
-  --muted:#667085;
-  --border:#e4e9f0;
-  --green:#159447;
-  --danger:#d92d20;
-  --shadow:0 10px 30px rgba(0,30,70,.08);
-}
-
-*{
-  box-sizing:border-box;
-  margin:0;
-  padding:0;
-}
-
-html{
-  scroll-behavior:smooth;
-}
-
-body{
-  font-family:Arial,Helvetica,sans-serif;
-  background:var(--light);
-  color:var(--text);
-  line-height:1.6;
-}
-
-a{
-  text-decoration:none;
-  color:inherit;
-}
-
-button,input,textarea,select{
-  font:inherit;
-}
-
-.container{
-  width:min(1180px,92%);
-  margin:auto;
-}
-
-/* TOP BAR */
-
-.topbar{
-  background:var(--navy);
-  color:#fff;
-  font-size:13px;
-}
-
-.topbar-inner{
-  min-height:38px;
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-  gap:15px;
-}
-
-.top-contact{
-  display:flex;
-  gap:20px;
-  flex-wrap:wrap;
-}
-
-/* HEADER */
-
-header{
-  background:#fff;
-  position:sticky;
-  top:0;
-  z-index:1000;
-  box-shadow:0 3px 18px rgba(0,0,0,.07);
-}
-
-.header-inner{
-  min-height:76px;
-  display:flex;
-  align-items:center;
-  gap:25px;
-}
-
-.logo{
-  font-size:24px;
-  font-weight:900;
-  color:var(--blue);
-  white-space:nowrap;
-}
-
-.logo span{
-  display:block;
-  color:var(--navy);
-  font-size:10px;
-  letter-spacing:2px;
-  font-weight:700;
-}
-
-nav{
-  display:flex;
-  gap:22px;
-  margin-left:auto;
-}
-
-nav a{
-  font-weight:700;
-  font-size:14px;
-}
-
-nav a:hover{
-  color:var(--blue2);
-}
-
-.mobile-menu{
-  display:none;
-  border:0;
-  background:none;
-  font-size:28px;
-}
-
-/* SEARCH */
-
-.header-search{
-  width:330px;
-  position:relative;
-}
-
-.header-search input{
-  width:100%;
-  padding:13px 45px 13px 16px;
-  border:1px solid var(--border);
-  border-radius:8px;
-  outline:none;
-}
-
-.header-search button{
-  position:absolute;
-  right:4px;
-  top:4px;
-  height:40px;
-  width:40px;
-  border:0;
-  border-radius:6px;
-  background:var(--blue);
-  color:#fff;
-}
-
-/* HERO */
-
-.hero{
-  background:
-  linear-gradient(110deg,rgba(4,28,52,.96),rgba(7,74,137,.90)),
-  url("https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&w=1800&q=80")
-  center/cover;
-  color:#fff;
-  padding:100px 0;
-}
-
-.hero-content{
-  max-width:760px;
-}
-
-.badge{
-  display:inline-block;
-  padding:7px 12px;
-  background:rgba(255,255,255,.13);
-  border:1px solid rgba(255,255,255,.2);
-  border-radius:30px;
-  margin-bottom:20px;
-  font-size:13px;
-}
-
-.hero h1{
-  font-size:clamp(38px,6vw,65px);
-  line-height:1.05;
-  margin-bottom:22px;
-}
-
-.hero p{
-  font-size:18px;
-  color:#e8f1fa;
-  max-width:700px;
-}
-
-.hero-buttons{
-  display:flex;
-  gap:12px;
-  margin-top:30px;
-  flex-wrap:wrap;
-}
-
-/* BUTTONS */
-
-.btn{
-  border:0;
-  padding:12px 18px;
-  border-radius:8px;
-  cursor:pointer;
-  font-weight:800;
-  display:inline-flex;
-  align-items:center;
-  justify-content:center;
-  gap:8px;
-}
-
-.btn-primary{
-  background:var(--blue2);
-  color:#fff;
-}
-
-.btn-primary:hover{
-  background:#095ca8;
-}
-
-.btn-light{
-  background:#fff;
-  color:var(--navy);
-}
-
-.btn-whatsapp{
-  background:var(--green);
-  color:#fff;
-}
-
-.btn-danger{
-  background:var(--danger);
-  color:#fff;
-}
-
-.btn-dark{
-  background:var(--navy);
-  color:#fff;
-}
-
-/* SECTION */
-
-section{
-  padding:75px 0;
-}
-
-.section-head{
-  text-align:center;
-  max-width:750px;
-  margin:0 auto 40px;
-}
-
-.section-head h2{
-  font-size:34px;
-  margin-bottom:10px;
-}
-
-.section-head p{
-  color:var(--muted);
-}
-
-/* CATEGORIES */
-
-.categories{
-  display:grid;
-  grid-template-columns:repeat(5,1fr);
-  gap:15px;
-}
-
-.category{
-  background:#fff;
-  border:1px solid var(--border);
-  padding:24px 15px;
-  border-radius:12px;
-  text-align:center;
-  cursor:pointer;
-  transition:.2s;
-}
-
-.category:hover{
-  transform:translateY(-4px);
-  box-shadow:var(--shadow);
-  border-color:#bdd5ee;
-}
-
-.category-icon{
-  width:52px;
-  height:52px;
-  border-radius:50%;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  background:#eaf3fc;
-  color:var(--blue);
-  font-size:24px;
-  margin:0 auto 12px;
-}
-
-.category h3{
-  font-size:16px;
-}
-
-.category p{
-  color:var(--muted);
-  font-size:12px;
-}
-
-/* PRODUCTS */
-
-.products-section{
-  background:#fff;
-}
-
-.product-tools{
-  display:flex;
-  gap:12px;
-  margin-bottom:28px;
-  flex-wrap:wrap;
-}
-
-.product-tools input,
-.product-tools select{
-  padding:13px 14px;
-  border:1px solid var(--border);
-  border-radius:8px;
-  outline:none;
-  background:#fff;
-}
-
-.product-tools input{
-  flex:1;
-  min-width:230px;
-}
-
-.product-tools select{
-  min-width:190px;
-}
-
-.product-grid{
-  display:grid;
-  grid-template-columns:repeat(4,1fr);
-  gap:20px;
-}
-
-.product-card{
-  background:#fff;
-  border:1px solid var(--border);
-  border-radius:13px;
-  overflow:hidden;
-  box-shadow:0 5px 20px rgba(0,30,70,.04);
-  transition:.2s;
-}
-
-.product-card:hover{
-  transform:translateY(-4px);
-  box-shadow:var(--shadow);
-}
-
-.product-image{
-  height:225px;
-  background:#fff;
-  padding:18px;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-}
-
-.product-image img{
-  width:100%;
-  height:100%;
-  object-fit:contain;
-}
-
-.product-info{
-  padding:18px;
-}
-
-.product-category{
-  color:var(--blue);
-  font-size:11px;
-  font-weight:800;
-  text-transform:uppercase;
-  letter-spacing:.5px;
-}
-
-.product-title{
-  font-size:18px;
-  margin:5px 0;
-}
-
-.product-model{
-  font-size:13px;
-  color:var(--muted);
-}
-
-.product-desc{
-  color:var(--muted);
-  font-size:13px;
-  margin:10px 0;
-}
-
-.price{
-  font-size:20px;
-  font-weight:900;
-  color:var(--navy);
-  margin:10px 0;
-}
-
-.availability{
-  font-size:12px;
-  font-weight:800;
-  color:var(--green);
-}
-
-.product-actions{
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:8px;
-  margin-top:15px;
-}
-
-.product-actions .btn{
-  font-size:12px;
-  padding:10px 7px;
-}
-
-.admin-actions{
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:8px;
-  margin-top:8px;
-}
-
-/* WHY */
-
-.why{
-  background:#f4f8fc;
-}
-
-.why-grid{
-  display:grid;
-  grid-template-columns:repeat(3,1fr);
-  gap:20px;
-}
-
-.why-card{
-  background:#fff;
-  padding:28px;
-  border-radius:12px;
-  border:1px solid var(--border);
-}
-
-.why-card h3{
-  margin-bottom:8px;
-}
-
-.why-card p{
-  color:var(--muted);
-  font-size:14px;
-}
-
-/* ABOUT */
-
-.about-grid{
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:50px;
-  align-items:center;
-}
-
-.about-box{
-  background:var(--navy);
-  color:#fff;
-  border-radius:16px;
-  padding:45px;
-}
-
-.about-box h3{
-  font-size:30px;
-  margin-bottom:15px;
-}
-
-.about-text p{
-  color:var(--muted);
-  margin-bottom:15px;
-}
-
-/* CONTACT */
-
-.contact{
-  background:#071a2f;
-  color:#fff;
-}
-
-.contact-grid{
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:40px;
-}
-
-.contact-info p{
-  margin:13px 0;
-  color:#d5e1ed;
-}
-
-.contact-buttons{
-  display:flex;
-  gap:10px;
-  flex-wrap:wrap;
-  margin-top:25px;
-}
-
-.contact-box{
-  background:rgba(255,255,255,.06);
-  border:1px solid rgba(255,255,255,.12);
-  padding:30px;
-  border-radius:14px;
-}
-
-/* FOOTER */
-
-footer{
-  background:#04111f;
-  color:#fff;
-  padding:40px 0 20px;
-}
-
-.footer-grid{
-  display:grid;
-  grid-template-columns:2fr 1fr 1fr;
-  gap:35px;
-}
-
-.footer-title{
-  font-size:20px;
-  font-weight:900;
-  margin-bottom:12px;
-}
-
-.footer-grid p,
-.footer-grid a{
-  color:#aebdca;
-  font-size:14px;
-}
-
-.footer-links{
-  display:flex;
-  flex-direction:column;
-  gap:8px;
-}
-
-.copyright{
-  border-top:1px solid rgba(255,255,255,.1);
-  margin-top:30px;
-  padding-top:20px;
-  text-align:center;
-  color:#8494a3;
-  font-size:12px;
-}
-
-/* MODAL */
-
-.modal{
-  position:fixed;
-  inset:0;
-  background:rgba(0,0,0,.65);
-  z-index:2000;
-  display:none;
-  align-items:center;
-  justify-content:center;
-  padding:20px;
-}
-
-.modal.active{
-  display:flex;
-}
-
-.modal-box{
-  width:min(850px,100%);
-  max-height:90vh;
-  overflow:auto;
-  background:#fff;
-  border-radius:15px;
-  padding:25px;
-  position:relative;
-}
-
-.close{
-  position:absolute;
-  right:18px;
-  top:12px;
-  border:0;
-  background:none;
-  font-size:28px;
-  cursor:pointer;
-}
-
-.detail-grid{
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:30px;
-  align-items:center;
-}
-
-.detail-image{
-  height:350px;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-}
-
-.detail-image img{
-  width:100%;
-  height:100%;
-  object-fit:contain;
-}
-
-/* ADMIN */
-
-.admin{
-  background:#f1f4f8;
-}
-
-.admin-panel{
-  background:#fff;
-  padding:25px;
-  border-radius:14px;
-  box-shadow:var(--shadow);
-}
-
-.admin-login{
-  display:flex;
-  gap:10px;
-  flex-wrap:wrap;
-  margin-bottom:20px;
-}
-
-.admin-login input{
-  padding:12px;
-  border:1px solid var(--border);
-  border-radius:7px;
-}
-
-.admin-content{
-  display:none;
-}
-
-.admin-content.active{
-  display:block;
-}
-
-.form-grid{
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:15px;
-}
-
-.form-group{
-  display:flex;
-  flex-direction:column;
-  gap:6px;
-}
-
-.form-group.full{
-  grid-column:1/-1;
-}
-
-.form-group input,
-.form-group textarea,
-.form-group select{
-  padding:12px;
-  border:1px solid var(--border);
-  border-radius:7px;
-  outline:none;
-}
-
-.form-group textarea{
-  min-height:110px;
-  resize:vertical;
-}
-
-.admin-product-list{
-  margin-top:30px;
-  display:grid;
-  gap:10px;
-}
-
-.admin-row{
-  border:1px solid var(--border);
-  padding:12px;
-  border-radius:8px;
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-  gap:10px;
-}
-
-/* EMPTY */
-
-.no-results{
-  grid-column:1/-1;
-  text-align:center;
-  padding:60px;
-  color:var(--muted);
-}
-
-/* RESPONSIVE */
-
-@media(max-width:1050px){
-  .product-grid{
-    grid-template-columns:repeat(3,1fr);
-  }
-
-  .categories{
-    grid-template-columns:repeat(3,1fr);
-  }
-
-  .header-search{
-    width:240px;
-  }
-}
-
-@media(max-width:800px){
-  .header-inner{
-    flex-wrap:wrap;
-    padding:12px 0;
-  }
-
-  nav{
-    display:none;
-    width:100%;
-    flex-direction:column;
-    gap:0;
-    order:5;
-  }
-
-  nav.active{
-    display:flex;
-  }
-
-  nav a{
-    padding:12px 0;
-    border-top:1px solid var(--border);
-  }
-
-  .mobile-menu{
-    display:block;
-    margin-left:auto;
-  }
-
-  .header-search{
-    order:4;
-    width:100%;
-  }
-
-  .product-grid{
-    grid-template-columns:repeat(2,1fr);
-  }
-
-  .categories{
-    grid-template-columns:repeat(2,1fr);
-  }
-
-  .why-grid{
-    grid-template-columns:1fr 1fr;
-  }
-
-  .about-grid,
-  .contact-grid{
-    grid-template-columns:1fr;
-  }
-
-  .footer-grid{
-    grid-template-columns:1fr 1fr;
-  }
-
-  .detail-grid{
-    grid-template-columns:1fr;
-  }
-}
-
-@media(max-width:520px){
-  section{
-    padding:55px 0;
-  }
-
-  .hero{
-    padding:70px 0;
-  }
-
-  .product-grid{
-    grid-template-columns:1fr;
-  }
-
-  .categories{
-    grid-template-columns:1fr 1fr;
-  }
-
-  .why-grid{
-    grid-template-columns:1fr;
-  }
-
-  .footer-grid{
-    grid-template-columns:1fr;
-  }
-
-  .top-contact{
-    justify-content:center;
-  }
-
-  .topbar-inner{
-    justify-content:center;
-  }
-
-  .form-grid{
-    grid-template-columns:1fr;
-  }
-
-  .form-group.full{
-    grid-column:auto;
-  }
-}
+:root{--navy:#1a2a4c; --orange:#ff9800; --bg:#f5f7fa; --card:#fff; --text:#333;}
+*{margin:0; padding:0; box-sizing:border-box; font-family:'Segoe UI',Arial,sans-serif;}
+body{background:var(--bg); color:var(--text);}
+header{background:var(--navy); color:white; position:sticky; top:0; z-index:1000; box-shadow:0 2px 10px rgba(0,0,0,0.1);}
+.header-top{display:flex; justify-content:space-between; align-items:center; padding:12px 5%; flex-wrap:wrap;}
+.logo{font-size:26px; font-weight:bold; color:var(--orange);}
+.contact-mini{font-size:13px; text-align:right;}
+.contact-mini a{color:white; text-decoration:none; display:block;}
+.search-wrap{display:flex; padding:10px 5%; background:#0f1a30;}
+.search-wrap input{flex:1; padding:12px; border:none; border-radius:4px 0 0 4px; font-size:15px;}
+.search-wrap button{padding:12px 20px; background:var(--orange); border:none; color:white; border-radius:0 4px 4px 0; cursor:pointer; font-weight:bold;}
+nav{display:flex; gap:20px; padding:0 5%;}
+nav button{background:none; border:none; color:white; padding:12px 0; cursor:pointer; font-size:14px;}
+nav button.active{border-bottom:2px solid var(--orange);}
+.hero{background:linear-gradient(135deg,var(--navy),#2c3e6b); color:white; padding:60px 5%; text-align:center;}
+.hero h1{font-size:36px; margin-bottom:15px;}
+.hero p{font-size:16px; max-width:700px; margin:0 auto 25px;}
+.btn{padding:12px 25px; background:var(--orange); color:white; border:none; border-radius:4px; cursor:pointer; font-weight:bold; margin:5px; text-decoration:none; display:inline-block;}
+.btn-outline{background:transparent; border:2px solid white;}
+.container{max-width:1300px; margin:30px auto; padding:0 5%;}
+.categories{display:grid; grid-template-columns:repeat(auto-fit,minmax(160px,1fr)); gap:15px; margin:30px 0;}
+.cat-card{background:var(--card); padding:20px; border-radius:8px; text-align:center; cursor:pointer; box-shadow:0 2px 5px rgba(0,0,0,0.08); transition:0.3s;}
+.cat-card:hover{transform:translateY(-3px); box-shadow:0 5px 15px rgba(0,0,0,0.15);}
+.cat-card.active{border:2px solid var(--orange);}
+.products{display:grid; grid-template-columns:repeat(auto-fit,minmax(260px,1fr)); gap:20px;}
+.card{background:var(--card); border-radius:8px; overflow:hidden; box-shadow:0 2px 8px rgba(0,0,0,0.08); transition:0.3s;}
+.card:hover{transform:translateY(-5px);}
+.card img{width:100%; height:200px; object-fit:contain; background:#fafafa;}
+.card-body{padding:15px;}
+.card-title{font-weight:bold; font-size:16px; margin-bottom:5px;}
+.card-model{color:#666; font-size:13px; margin-bottom:8px;}
+.card-desc{font-size:13px; color:#555; height:40px; overflow:hidden; margin-bottom:10px;}
+.card-price{color:#e91e63; font-size:18px; font-weight:bold; margin-bottom:10px;}
+.card-actions{display:flex; gap:8px; flex-wrap:wrap;}
+.card-actions a{flex:1; text-align:center; padding:8px; font-size:12px; border-radius:4px; text-decoration:none; color:white;}
+.whatsapp{background:#25D366;}
+.call{background:#007bff;}
+.details{background:#6c757d;}
+.admin-btn{background:#dc3545; color:white; border:none; padding:5px 10px; font-size:11px; border-radius:3px; cursor:pointer; margin:3px;}
+.admin-panel{background:var(--card); padding:20px; border-radius:8px; margin:20px 0; display:none;}
+.admin-panel input, .admin-panel select, .admin-panel textarea{width:100%; padding:8px; margin:8px 0; border:1px solid #ddd; border-radius:4px;}
+footer{background:var(--navy); color:white; padding:40px 5%; margin-top:50px;}
+.footer-grid{display:grid; grid-template-columns:repeat(auto-fit,minmax(250px,1fr)); gap:30px;}
+footer a{color:#ddd; text-decoration:none;}
+.modal{display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.7); z-index:2000; align-items:center; justify-content:center;}
+.modal-content{background:white; padding:30px; border-radius:8px; max-width:600px; width:90%; max-height:90vh; overflow-y:auto;}
+@media(max-width:768px){.hero h1{font-size:24px;} nav{overflow-x:auto;}}
 </style>
 </head>
-
 <body>
 
-<!-- TOP BAR -->
-<div class="topbar">
-  <div class="container topbar-inner">
-    <div>Industrial & General Order Supplier</div>
-    <div class="top-contact">
-      <span>📞 0313-4854823</span>
-      <span>✉ mitradingcom04@gmail.com</span>
-    </div>
-  </div>
-</div>
-
-<!-- HEADER -->
 <header>
-  <div class="container header-inner">
-
-    <a href="#home" class="logo">
-      MI TRADING COM
-      <span>INDUSTRIAL SUPPLY SOLUTIONS</span>
-    </a>
-
-    <div class="header-search">
-      <input id="headerSearch" type="search"
-        placeholder="Search bearings, CNC, belts...">
-      <button onclick="runSearch()">⌕</button>
+  <div class="header-top">
+    <div class="logo">MI TRADING COM</div>
+    <div class="contact-mini">
+      <a href="tel:03134854823">📞 0313-4854823</a>
+      <a href="mailto:mitradingcom04@gmail.com">✉️ mitradingcom04@gmail.com</a>
     </div>
-
-    <button class="mobile-menu" onclick="toggleMenu()">☰</button>
-
-    <nav id="nav">
-      <a href="#home">Home</a>
-      <a href="#categories">Categories</a>
-      <a href="#products">Products</a>
-      <a href="#about">About Us</a>
-      <a href="#contact">Contact</a>
-    </nav>
-
   </div>
+  <div class="search-wrap">
+    <input type="text" id="searchInput" placeholder="Search product name, model, bearing number...">
+    <button onclick="searchProducts()">Search</button>
+  </div>
+  <nav>
+    <button class="active" onclick="showSection('home')">Home</button>
+    <button onclick="showSection('products')">Products</button>
+    <button onclick="showSection('about')">About</button>
+    <button onclick="showSection('contact')">Contact</button>
+    <button onclick="toggleAdmin()">Admin Panel</button>
+  </nav>
 </header>
 
-<!-- HERO -->
-<section class="hero" id="home">
-  <div class="container">
-    <div class="hero-content">
-
-      <span class="badge">Industrial B2B Supply • Lahore, Pakistan</span>
-
-      <h1>Industrial Products & General Supply Solutions</h1>
-
-      <p>
-        MI TRADING COM supplies industrial bearings, belts,
-        CNC machine components, pneumatic and hydraulic products,
-        electrical items, tools, hardware and general industrial supplies.
-      </p>
-
-      <div class="hero-buttons">
-        <a href="#products" class="btn btn-primary">
-          Explore Products
-        </a>
-
-        <a class="btn btn-whatsapp"
-           href="https://wa.me/923134854823?text=Hello%20MI%20TRADING%20COM%2C%20I%20want%20to%20inquire%20about%20your%20products."
-           target="_blank">
-          WhatsApp Inquiry
-        </a>
-      </div>
-
-    </div>
-  </div>
+<section id="home" class="hero">
+  <h1>Industrial Products & General Supply Solutions</h1>
+  <p>MI TRADING COM supplies industrial bearings, belts, CNC machine components, pneumatic and hydraulic products, electrical items, tools, hardware and general industrial supplies.</p>
+  <a href="#products" class="btn">Explore Products</a>
+  <a href="https://wa.me/923134854823?text=Hello%20MI%20TRADING%20COM" class="btn btn-outline" target="_blank">WhatsApp Inquiry</a>
 </section>
 
-<!-- CATEGORIES -->
-<section id="categories">
-  <div class="container">
-
-    <div class="section-head">
-      <h2>Product Categories</h2>
-      <p>
-        Browse our industrial product range by category.
-      </p>
-    </div>
-
-    <div class="categories" id="categoryGrid"></div>
-
-  </div>
-</section>
-
-<!-- PRODUCTS -->
-<section class="products-section" id="products">
-
-  <div class="container">
-
-    <div class="section-head">
-      <h2>Industrial Product Catalog</h2>
-      <p>
-        Search by product name, model, part number or category.
-      </p>
-    </div>
-
-    <div class="product-tools">
-
-      <input
-        id="productSearch"
-        type="search"
-        placeholder="Search product, model, bearing number..."
-        oninput="renderProducts()">
-
-      <select id="categoryFilter" onchange="renderProducts()">
-        <option value="All">All Products</option>
-      </select>
-
-      <button class="btn btn-dark" onclick="clearFilters()">
-        Clear
-      </button>
-
-    </div>
-
-    <div class="product-grid" id="productGrid"></div>
-
-  </div>
-</section>
-
-<!-- WHY -->
-<section class="why">
-  <div class="container">
-
-    <div class="section-head">
-      <h2>Why Choose MI TRADING COM?</h2>
-      <p>
-        Professional industrial supply support for businesses and customers.
-      </p>
-    </div>
-
-    <div class="why-grid">
-
-      <div class="why-card">
-        <h3>Wide Product Range</h3>
-        <p>
-          Industrial and general supply products under one platform.
-        </p>
-      </div>
-
-      <div class="why-card">
-        <h3>Competitive Pricing</h3>
-        <p>
-          Competitive rates according to product, quantity and requirement.
-        </p>
-      </div>
-
-      <div class="why-card">
-        <h3>Industrial Supply Support</h3>
-        <p>
-          Support customers in finding products according to specifications.
-        </p>
-      </div>
-
-      <div class="why-card">
-        <h3>Fast Response</h3>
-        <p>
-          Quick communication through WhatsApp and phone.
-        </p>
-      </div>
-
-      <div class="why-card">
-        <h3>Clear Product Information</h3>
-        <p>
-          Clear product names, specifications and descriptions.
-        </p>
-      </div>
-
-      <div class="why-card">
-        <h3>Lahore-Based Supply</h3>
-        <p>
-          Serving industrial and commercial customers in Lahore and beyond.
-        </p>
-      </div>
-
-    </div>
-  </div>
-</section>
-
-<!-- ABOUT -->
-<section id="about">
-
-  <div class="container about-grid">
-
-    <div class="about-text">
-
-      <div class="section-head" style="text-align:left;margin:0 0 20px">
-        <h2>About MI TRADING COM</h2>
-      </div>
-
-      <p>
-        MI TRADING COM is a Lahore-based industrial and general order
-        supplier providing a wide range of mechanical, electrical,
-        CNC, pneumatic, hydraulic and hardware products.
-      </p>
-
-      <p>
-        We help businesses source industrial products according to
-        their required specifications, quantities and applications.
-      </p>
-
-      <p>
-        Our objective is to make industrial product sourcing easier,
-        faster and more convenient through a professional online catalog.
-      </p>
-
-    </div>
-
-    <div class="about-box">
-
-      <h3>Industrial Supply Made Simple</h3>
-
-      <p>
-        Search a product, check its details and contact MI TRADING COM
-        directly for price and availability.
-      </p>
-
-      <br>
-
-      <a href="#products" class="btn btn-light">
-        Browse Products
-      </a>
-
-    </div>
-
+<div class="container">
+  <div id="adminPanel" class="admin-panel">
+    <h3>Manage Products</h3>
+    <input type="text" id="pTitle" placeholder="Product Title">
+    <input type="text" id="pModel" placeholder="Model / Part Number">
+    <select id="pCategory"></select>
+    <input type="text" id="pPrice" placeholder="Price e.g. Rs. 960">
+    <input type="text" id="pImage" placeholder="Image URL">
+    <textarea id="pDesc" placeholder="Description"></textarea>
+    <select id="pAvail"><option>In Stock</option><option>Out of Stock</option></select>
+    <button class="btn" onclick="addProduct()">Add Product</button>
   </div>
 
+  <h2>Product Categories</h2>
+  <div class="categories" id="categoryList"></div>
+
+  <h2 id="products">Our Products</h2>
+  <div class="products" id="productList"></div>
+</div>
+
+<section id="about" class="container">
+  <h2>About MI TRADING COM</h2>
+  <p>MI TRADING COM is a Lahore-based industrial and general order supplier providing a wide range of mechanical, electrical, CNC, pneumatic, hydraulic and hardware products. The company helps businesses source industrial products according to their required specifications, quantities and applications.</p>
 </section>
 
-<!-- CONTACT -->
-<section class="contact" id="contact">
-
-  <div class="container contact-grid">
-
-    <div class="contact-info">
-
-      <h2>Contact MI TRADING COM</h2>
-
-      <p>
-        📍 <strong>Address:</strong><br>
-        Brandreth Road, Lahore, Pakistan
-      </p>
-
-      <p>
-        📞 <strong>Phone / WhatsApp:</strong><br>
-        0313-4854823
-      </p>
-
-      <p>
-        ✉ <strong>Email:</strong><br>
-        mitradingcom04@gmail.com
-      </p>
-
-      <div class="contact-buttons">
-
-        <a class="btn btn-whatsapp"
-           href="https://wa.me/923134854823"
-           target="_blank">
-          WhatsApp
-        </a>
-
-        <a class="btn btn-light"
-           href="tel:03134854823">
-          Call
-        </a>
-
-        <a class="btn btn-light"
-           href="mailto:mitradingcom04@gmail.com">
-          Email
-        </a>
-
-      </div>
-
-    </div>
-
-    <div class="contact-box">
-
-      <h3>Need an Industrial Product?</h3>
-
-      <p style="margin-top:10px;color:#cbd7e3">
-        Send us the product name, model, quantity or requirement.
-        Our team can respond with availability and pricing.
-      </p>
-
-      <br>
-
-      <a class="btn btn-whatsapp"
-         target="_blank"
-         href="https://wa.me/923134854823?text=Hello%20MI%20TRADING%20COM%2C%20I%20need%20an%20industrial%20product.%20Please%20help%20me.">
-        Send Requirement on WhatsApp
-      </a>
-
-    </div>
-
-  </div>
-
+<section id="contact" class="container">
+  <h2>Contact Us</h2>
+  <p><b>Address:</b> Brandreth Road, Lahore, Pakistan</p>
+  <p><b>Phone:</b> <a href="tel:03134854823">0313-4854823</a></p>
+  <p><b>WhatsApp:</b> <a href="https://wa.me/923134854823" target="_blank">923134854823</a></p>
+  <p><b>Email:</b> <a href="mailto:mitradingcom04@gmail.com">mitradingcom04@gmail.com</a></p>
+  <a href="https://wa.me/923134854823" class="btn whatsapp" target="_blank">WhatsApp</a>
+  <a href="tel:03134854823" class="btn call">Call Now</a>
+  <a href="mailto:mitradingcom04@gmail.com" class="btn">Email</a>
 </section>
 
-<!-- ADMIN -->
-<section class="admin" id="admin">
-
-  <div class="container">
-
-    <div class="section-head">
-      <h2>Manage Products</h2>
-      <p>
-        Browser-based product management for the GitHub Pages version.
-      </p>
-    </div>
-
-    <div class="admin-panel">
-
-      <div class="admin-login">
-
-        <input
-          type="password"
-          id="adminPassword"
-          placeholder="Admin password">
-
-        <button class="btn btn-dark" onclick="adminLogin()">
-          Open Admin
-        </button>
-
-      </div>
-
-      <div id="adminContent" class="admin-content">
-
-        <h3 id="formHeading">Add Product</h3>
-
-        <br>
-
-        <form id="productForm">
-
-          <input type="hidden" id="editId">
-
-          <div class="form-grid">
-
-            <div class="form-group">
-              <label>Product Title</label>
-              <input id="fTitle" required>
-            </div>
-
-            <div class="form-group">
-              <label>Model / Part Number</label>
-              <input id="fModel">
-            </div>
-
-            <div class="form-group">
-              <label>Category</label>
-              <select id="fCategory"></select>
-            </div>
-
-            <div class="form-group">
-              <label>Price</label>
-              <input id="fPrice" placeholder="Rs. 960 / Ask for Price">
-            </div>
-
-            <div class="form-group">
-              <label>Availability</label>
-              <select id="fAvailability">
-                <option>In Stock</option>
-                <option>Available on Order</option>
-                <option>Ask for Availability</option>
-              </select>
-            </div>
-
-            <div class="form-group">
-              <label>Image URL</label>
-              <input id="fImage"
-                placeholder="https://example.com/product.jpg">
-            </div>
-
-            <div class="form-group full">
-              <label>Description</label>
-              <textarea id="fDescription"></textarea>
-            </div>
-
-          </div>
-
-          <br>
-
-          <button class="btn btn-primary" type="submit">
-            Save Product
-          </button>
-
-          <button
-            class="btn btn-dark"
-            type="button"
-            onclick="resetForm()">
-            New Product
-          </button>
-
-        </form>
-
-        <div class="admin-product-list" id="adminProductList"></div>
-
-      </div>
-
-    </div>
-
-  </div>
-
-</section>
-
-<!-- FOOTER -->
 <footer>
-
-  <div class="container">
-
-    <div class="footer-grid">
-
-      <div>
-
-        <div class="footer-title">
-          MI TRADING COM
-        </div>
-
-        <p>
-          Industrial & General Order Supplier
-        </p>
-
-        <p style="margin-top:10px">
-          Brandreth Road, Lahore, Pakistan
-        </p>
-
-        <p>
-          0313-4854823
-        </p>
-
-        <p>
-          mitradingcom04@gmail.com
-        </p>
-
-      </div>
-
-      <div>
-
-        <div class="footer-title">
-          Quick Links
-        </div>
-
-        <div class="footer-links">
-          <a href="#home">Home</a>
-          <a href="#products">Products</a>
-          <a href="#categories">Categories</a>
-          <a href="#about">About</a>
-          <a href="#contact">Contact</a>
-        </div>
-
-      </div>
-
-      <div>
-
-        <div class="footer-title">
-          Contact
-        </div>
-
-        <div class="footer-links">
-          <a href="tel:03134854823">Call Us</a>
-          <a href="mailto:mitradingcom04@gmail.com">Email Us</a>
-          <a href="https://wa.me/923134854823" target="_blank">
-            WhatsApp
-          </a>
-        </div>
-
-      </div>
-
+  <div class="footer-grid">
+    <div>
+      <h3>MI TRADING COM</h3>
+      <p>Industrial & General Order Supplier</p>
+      <p>Brandreth Road, Lahore, Pakistan</p>
     </div>
-
-    <div class="copyright">
-      © 2026 MI TRADING COM. All Rights Reserved.
+    <div>
+      <h3>Contact</h3>
+      <p>Phone: 0313-4854823</p>
+      <p>Email: mitradingcom04@gmail.com</p>
     </div>
-
+    <div>
+      <h3>Quick Links</h3>
+      <a href="#home">Home</a><br>
+      <a href="#products">Products</a><br>
+      <a href="#about">About</a><br>
+      <a href="#contact">Contact</a>
+    </div>
   </div>
-
+  <p style="text-align:center; margin-top:20px;">© 2026 MI TRADING COM. All Rights Reserved.</p>
 </footer>
 
-<!-- PRODUCT MODAL -->
-<div class="modal" id="productModal">
-
-  <div class="modal-box">
-
-    <button class="close" onclick="closeModal()">×</button>
-
-    <div id="modalContent"></div>
-
-  </div>
-
+<div id="productModal" class="modal" onclick="closeModal()">
+  <div class="modal-content" onclick="event.stopPropagation()"></div>
 </div>
 
 <script>
-
-/* =========================================================
-   MI TRADING COM PRODUCT DATABASE
-   Browser LocalStorage based
-========================================================= */
-
-const categories = [
-  "Bearings",
-  "Belts",
-  "CNC",
-  "Linear Motion",
-  "Pneumatic",
-  "Hydraulic",
-  "Electrical",
-  "Tools",
-  "Hardware"
+let products = JSON.parse(localStorage.getItem('mitProducts')) || [
+  {id:1,title:"Deep Groove Ball Bearing",model:"6206",category:"Bearings",price:"Rs. 960",image:"https://m.media-amazon.com/images/I/61KjZQp8Y-L._AC_SL1500_.jpg",desc:"High quality steel bearing. Size: 30x62x16mm",avail:"In Stock"},
+  {id:2,title:"Taper Roller Bearing",model:"30206",category:"Taper Roller Bearings",price:"Rs. 1250",image:"https://m.media-amazon.com/images/I/61vBzQZQZ-L._AC_SL1500_.jpg",desc:"Heavy duty for automotive. Size: 30x62x17.25mm",avail:"In Stock"},
+  {id:3,title:"Timing Belt",model:"XL-100",category:"Timing Belts",price:"Rs. 450",image:"https://m.media-amazon.com/images/I/71vBzQZQZ-L._AC_SL1500_.jpg",desc:"Industrial timing belt for machinery",avail:"In Stock"},
+  {id:4,title:"Pneumatic Fitting",model:"PC-6mm",category:"Pneumatic Fittings",price:"Ask for Price",image:"https://m.media-amazon.com/images/I/61vBzQZQZ-L._AC_SL1500_.jpg",desc:"Straight pneumatic connector 6mm",avail:"In Stock"},
 ];
+let categories = ["All Products","Bearings","Ball Bearings","Deep Groove Ball Bearings","Taper Roller Bearings","Needle Roller Bearings","Pillow Block Bearings","Belts","Timing Belts","V-Belts","Pneumatic Fittings","Hydraulic Fittings","CNC Machine Parts","Electrical Items","Industrial Tools","Hardware"];
+let currentFilter = "All Products";
 
-/*
-  Independent bearing image sources.
-  These can be replaced from Admin panel at any time.
-*/
+function saveProducts(){localStorage.setItem('mitProducts',JSON.stringify(products));}
 
-const defaultProducts = [
-
-  {
-    id:1,
-    title:"6206 Deep Groove Ball Bearing",
-    model:"6206",
-    category:"Bearings",
-    price:"Rs. 960",
-    image:"https://commons.wikimedia.org/wiki/Special:FilePath/Bearing.jpg",
-    description:"Deep groove ball bearing suitable for a wide range of industrial rotating applications.",
-    availability:"In Stock"
-  },
-
-  {
-    id:2,
-    title:"6202 Deep Groove Ball Bearing",
-    model:"6202",
-    category:"Bearings",
-    price:"Rs. 360",
-    image:"https://commons.wikimedia.org/wiki/Special:FilePath/Ball%20bearing.jpg",
-    description:"Compact deep groove bearing for industrial machinery and rotating applications.",
-    availability:"In Stock"
-  },
-
-  {
-    id:3,
-    title:"6208 Deep Groove Ball Bearing",
-    model:"6208",
-    category:"Bearings",
-    price:"Rs. 1,550",
-    image:"https://commons.wikimedia.org/wiki/Special:FilePath/Bearing%20image.jpg",
-    description:"Industrial deep groove ball bearing for general machinery applications.",
-    availability:"In Stock"
-  },
-
-  {
-    id:4,
-    title:"6310 Industrial Ball Bearing",
-    model:"6310",
-    category:"Bearings",
-    price:"Rs. 4,600",
-    image:"https://commons.wikimedia.org/wiki/Special:FilePath/Ballbearing.JPG",
-    description:"Industrial ball bearing suitable for machinery and high-load rotating applications.",
-    availability:"Available on Order"
-  },
-
-  {
-    id:5,
-    title:"Needle Roller Bearing",
-    model:"NRB",
-    category:"Bearings",
-    price:"Ask for Price",
-    image:"https://commons.wikimedia.org/wiki/Special:FilePath/Bearing%20image.jpg",
-    description:"Needle roller bearing for applications requiring compact radial bearing arrangements.",
-    availability:"Available on Order"
-  },
-
-  {
-    id:6,
-    title:"Timing Belt",
-    model:"TIMING-BELT",
-    category:"Belts",
-    price:"Ask for Price",
-    image:"https://images.unsplash.com/photo-1581094794329-c8112a89af12?auto=format&fit=crop&w=900&q=80",
-    description:"Industrial timing belt solutions for machinery and power transmission applications.",
-    availability:"Available on Order"
-  },
-
-  {
-    id:7,
-    title:"V-Belt",
-    model:"V-BELT",
-    category:"Belts",
-    price:"Ask for Price",
-    image:"https://images.unsplash.com/photo-1537462715879-360eeb61a0ad?auto=format&fit=crop&w=900&q=80",
-    description:"Industrial V-belt suitable for power transmission systems.",
-    availability:"Available on Order"
-  },
-
-  {
-    id:8,
-    title:"Linear Guideway",
-    model:"LG-01",
-    category:"Linear Motion",
-    price:"Ask for Price",
-    image:"https://images.unsplash.com/photo-1565610222536-ef125c59da2e?auto=format&fit=crop&w=900&q=80",
-    description:"Linear motion component for CNC and industrial automation applications.",
-    availability:"Available on Order"
-  },
-
-  {
-    id:9,
-    title:"Pneumatic Fitting",
-    model:"PF-01",
-    category:"Pneumatic",
-    price:"Ask for Price",
-    image:"https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?auto=format&fit=crop&w=900&q=80",
-    description:"Industrial pneumatic fitting for compressed air systems.",
-    availability:"In Stock"
-  },
-
-  {
-    id:10,
-    title:"Hydraulic Fitting",
-    model:"HF-01",
-    category:"Hydraulic",
-    price:"Ask for Price",
-    image:"https://images.unsplash.com/photo-1586864387967-d02ef85d93e8?auto=format&fit=crop&w=900&q=80",
-    description:"Hydraulic fitting suitable for industrial hydraulic systems.",
-    availability:"Available on Order"
-  },
-
-  {
-    id:11,
-    title:"CNC Machine Component",
-    model:"CNC-01",
-    category:"CNC",
-    price:"Ask for Price",
-    image:"https://images.unsplash.com/photo-1565439377075-1f8e1d8c2c1f?auto=format&fit=crop&w=900&q=80",
-    description:"CNC machine component for industrial machining applications.",
-    availability:"Available on Order"
-  },
-
-  {
-    id:12,
-    title:"Industrial Hand Tool",
-    model:"TOOL-01",
-    category:"Tools",
-    price:"Ask for Price",
-    image:"https://images.unsplash.com/photo-1530124566582-a618bc2615dc?auto=format&fit=crop&w=900&q=80",
-    description:"Industrial hand tool suitable for workshop and maintenance requirements.",
-    availability:"In Stock"
-  }
-
-];
-
-let products = JSON.parse(
-  localStorage.getItem("miTradingProducts")
-) || defaultProducts;
-
-
-/* =========================================================
-   INIT
-========================================================= */
-
-function init(){
-
-  buildCategories();
-
-  renderProducts();
-
-  populateAdminCategories();
-
-  renderAdminProducts();
-
+function renderCategories(){
+  let html = '';
+  categories.forEach(cat=>{
+    html += `<div class="cat-card ${currentFilter==cat?'active':''}" onclick="filterCategory('${cat}')">${cat}</div>`;
+  });
+  document.getElementById('categoryList').innerHTML = html;
+  document.getElementById('pCategory').innerHTML = categories.filter(c=>c!="All Products").map(c=>`<option>${c}</option>`).join('');
 }
-
-init();
-
-
-/* =========================================================
-   CATEGORIES
-========================================================= */
-
-function buildCategories(){
-
-  const grid = document.getElementById("categoryGrid");
-
-  grid.innerHTML = categories.map(cat => `
-
-    <div class="category"
-         onclick="selectCategory('${cat}')">
-
-      <div class="category-icon">
-        ${categoryIcon(cat)}
-      </div>
-
-      <h3>${cat}</h3>
-
-      <p>
-        Browse ${cat.toLowerCase()} products
-      </p>
-
-    </div>
-
-  `).join("");
-
-  const filter =
-    document.getElementById("categoryFilter");
-
-  filter.innerHTML =
-    `<option value="All">All Products</option>` +
-    categories.map(c =>
-      `<option value="${c}">${c}</option>`
-    ).join("");
-
-}
-
-
-function populateAdminCategories(){
-
-  const select =
-    document.getElementById("fCategory");
-
-  select.innerHTML =
-    categories.map(c =>
-      `<option value="${c}">${c}</option>`
-    ).join("");
-
-}
-
-
-function categoryIcon(cat){
-
-  const icons = {
-
-    "Bearings":"⚙",
-    "Belts":"〰",
-    "CNC":"⚙",
-    "Linear Motion":"↔",
-    "Pneumatic":"◉",
-    "Hydraulic":"◌",
-    "Electrical":"⚡",
-    "Tools":"🔧",
-    "Hardware":"▣"
-
-  };
-
-  return icons[cat] || "●";
-
-}
-
-
-/* =========================================================
-   PRODUCT SEARCH / FILTER
-========================================================= */
 
 function renderProducts(){
-
-  const grid =
-    document.getElementById("productGrid");
-
-  const search =
-    document.getElementById("productSearch")
-      .value
-      .toLowerCase()
-      .trim();
-
-  const category =
-    document.getElementById("categoryFilter").value;
-
-  const filtered =
-    products.filter(p => {
-
-      const text = (
-
-        p.title + " " +
-        p.model + " " +
-        p.category + " " +
-        p.description + " " +
-        p.price
-
-      ).toLowerCase();
-
-      const searchMatch =
-        !search || text.includes(search);
-
-      const categoryMatch =
-        category === "All" ||
-        p.category === category;
-
-      return searchMatch && categoryMatch;
-
-    });
-
-  if(!filtered.length){
-
-    grid.innerHTML = `
-      <div class="no-results">
-        <h3>No products found</h3>
-        <p>Try another product name, model or category.</p>
+  let filtered = products.filter(p=>{
+    let matchCat = currentFilter=="All Products" || p.category==currentFilter;
+    let search = document.getElementById('searchInput').value.toLowerCase();
+    let matchSearch = p.title.toLowerCase().includes(search) || p.model.toLowerCase().includes(search) || p.desc.toLowerCase().includes(search) || p.category.toLowerCase().includes(search);
+    return matchCat && matchSearch;
+  });
+  let html = '';
+  filtered.forEach(p=>{
+    html += `<div class="card">
+      <img src="${p.image}" alt="${p.title}">
+      <div class="card-body">
+        <div class="card-title">${p.title}</div>
+        <div class="card-model">Model: ${p.model}</div>
+        <div class="card-desc">${p.desc}</div>
+        <div class="card-price">${p.price}</div>
+        <div style="font-size:12px; color:green; margin-bottom:10px;">${p.avail}</div>
+        <div class="card-actions">
+          <a href="#" class="details" onclick="showDetails(${p.id})">View Details</a>
+          <a href="https://wa.me/923134854823?text=Hello%20MI%20TRADING%20COM,%20I%20am%20interested%20in%20${encodeURIComponent(p.title+' '+p.model)}" class="whatsapp" target="_blank">WhatsApp</a>
+        </div>
+        <button class="admin-btn" onclick="editProduct(${p.id})">Edit</button>
+        <button class="admin-btn" onclick="deleteProduct(${p.id})">Delete</button>
       </div>
-    `;
-
-    return;
-  }
-
-  grid.innerHTML =
-    filtered.map(productCard).join("");
-
+    </div>`;
+  });
+  document.getElementById('productList').innerHTML = html || '<p>No products found</p>';
 }
 
+function searchProducts(){renderProducts();}
+document.getElementById('searchInput').addEventListener('keyup', searchProducts);
 
-function productCard(p){
-
-  return `
-
-  <article class="product-card">
-
-    <div class="product-image">
-
-      <img
-        src="${escapeAttr(p.image)}"
-        alt="${escapeAttr(p.title)}"
-        loading="lazy"
-        onerror="this.src='https://commons.wikimedia.org/wiki/Special:FilePath/Bearing.jpg'">
-
-    </div>
-
-    <div class="product-info">
-
-      <div class="product-category">
-        ${escapeHTML(p.category)}
-      </div>
-
-      <h3 class="product-title">
-        ${escapeHTML(p.title)}
-      </h3>
-
-      <div class="product-model">
-        Model: ${escapeHTML(p.model || "N/A")}
-      </div>
-
-      <p class="product-desc">
-        ${escapeHTML(p.description)}
-      </p>
-
-      <div class="price">
-        ${escapeHTML(p.price || "Ask for Price")}
-      </div>
-
-      <div class="availability">
-        ● ${escapeHTML(p.availability)}
-      </div>
-
-      <div class="product-actions">
-
-        <button
-          class="btn btn-dark"
-          onclick="showDetails(${p.id})">
-          Details
-        </button>
-
-        <a
-          class="btn btn-whatsapp"
-          target="_blank"
-          href="${whatsappLink(p)}">
-          WhatsApp
-        </a>
-
-      </div>
-
-    </div>
-
-  </article>
-
-  `;
-
-}
-
-
-/* =========================================================
-   PRODUCT DETAILS
-========================================================= */
+function filterCategory(cat){currentFilter=cat; renderCategories(); renderProducts();}
 
 function showDetails(id){
-
-  const p =
-    products.find(x => x.id === id);
-
-  if(!p) return;
-
-  document.getElementById("modalContent").innerHTML = `
-
-    <div class="detail-grid">
-
-      <div class="detail-image">
-
-        <img
-          src="${escapeAttr(p.image)}"
-          alt="${escapeAttr(p.title)}">
-
-      </div>
-
-      <div>
-
-        <div class="product-category">
-          ${escapeHTML(p.category)}
-        </div>
-
-        <h2>
-          ${escapeHTML(p.title)}
-        </h2>
-
-        <p class="product-model">
-          Model / Part Number:
-          <strong>${escapeHTML(p.model)}</strong>
-        </p>
-
-        <br>
-
-        <p>
-          ${escapeHTML(p.description)}
-        </p>
-
-        <div class="price">
-          ${escapeHTML(p.price)}
-        </div>
-
-        <div class="availability">
-          ● ${escapeHTML(p.availability)}
-        </div>
-
-        <br>
-
-        <div class="hero-buttons">
-
-          <a
-            class="btn btn-whatsapp"
-            target="_blank"
-            href="${whatsappLink(p)}">
-            WhatsApp Inquiry
-          </a>
-
-          <a
-            class="btn btn-dark"
-            href="tel:03134854823">
-            Call
-          </a>
-
-          <a
-            class="btn btn-primary"
-            href="mailto:mitradingcom04@gmail.com">
-            Email
-          </a>
-
-        </div>
-
-      </div>
-
-    </div>
-
+  let p = products.find(x=>x.id==id);
+  document.querySelector('#productModal .modal-content').innerHTML = `
+    <img src="${p.image}" style="width:100%; max-height:300px; object-fit:contain;">
+    <h2>${p.title}</h2>
+    <p><b>Model:</b> ${p.model}</p>
+    <p><b>Category:</b> ${p.category}</p>
+    <p><b>Price:</b> ${p.price}</p>
+    <p><b>Availability:</b> ${p.avail}</p>
+    <p>${p.desc}</p>
+    <a href="https://wa.me/923134854823?text=Hello%20MI%20TRADING%20COM,%20I%20am%20interested%20in%20${encodeURIComponent(p.title+' '+p.model)}" class="btn whatsapp" target="_blank">WhatsApp Inquiry</a>
+    <a href="tel:03134854823" class="btn call">Call</a>
+    <button class="btn" onclick="closeModal()">Close</button>
   `;
-
-  document
-    .getElementById("productModal")
-    .classList.add("active");
-
+  document.getElementById('productModal').style.display='flex';
 }
+function closeModal(){document.getElementById('productModal').style.display='none';}
 
-
-function closeModal(){
-
-  document
-    .getElementById("productModal")
-    .classList.remove("active");
-
-}
-
-
-document
-  .getElementById("productModal")
-  .addEventListener("click",function(e){
-
-    if(e.target === this){
-      closeModal();
-    }
-
+function toggleAdmin(){let p=document.getElementById('adminPanel'); p.style.display=p.style.display=='block'?'none':'block';}
+function addProduct(){
+  let id = Date.now();
+  products.push({
+    id:id,
+    title:document.getElementById('pTitle').value,
+    model:document.getElementById('pModel').value,
+    category:document.getElementById('pCategory').value,
+    price:document.getElementById('pPrice').value,
+    image:document.getElementById('pImage').value,
+    desc:document.getElementById('pDesc').value,
+    avail:document.getElementById('pAvail').value
   });
-
-
-/* =========================================================
-   WHATSAPP
-========================================================= */
-
-function whatsappLink(p){
-
-  const message =
-    `Hello MI TRADING COM, I am interested in ${p.title} (${p.model}). Please send me price and availability.`;
-
-  return "https://wa.me/923134854823?text=" +
-    encodeURIComponent(message);
-
+  saveProducts(); renderProducts();
+  alert('Product Added');
 }
-
-
-/* =========================================================
-   SEARCH FROM HEADER
-========================================================= */
-
-function runSearch(){
-
-  const value =
-    document.getElementById("headerSearch").value;
-
-  document.getElementById("productSearch").value = value;
-
-  document.getElementById("categoryFilter").value = "All";
-
-  renderProducts();
-
-  document
-    .getElementById("products")
-    .scrollIntoView({
-      behavior:"smooth"
-    });
-
-}
-
-
-document
-  .getElementById("headerSearch")
-  .addEventListener("keydown",function(e){
-
-    if(e.key === "Enter"){
-      runSearch();
-    }
-
-  });
-
-
-function clearFilters(){
-
-  document.getElementById("productSearch").value = "";
-
-  document.getElementById("headerSearch").value = "";
-
-  document.getElementById("categoryFilter").value = "All";
-
-  renderProducts();
-
-}
-
-
-function selectCategory(category){
-
-  document.getElementById("categoryFilter").value =
-    category;
-
-  document.getElementById("productSearch").value = "";
-
-  renderProducts();
-
-  document
-    .getElementById("products")
-    .scrollIntoView({
-      behavior:"smooth"
-    });
-
-}
-
-
-/* =========================================================
-   ADMIN
-========================================================= */
-
-/*
-  CHANGE THIS PASSWORD BEFORE USING THE SITE.
-
-  NOTE:
-  A static GitHub Pages site cannot provide secure server-side
-  authentication. This is a browser-side convenience lock only.
-*/
-
-const ADMIN_PASSWORD = "MI2026";
-
-function adminLogin(){
-
-  const password =
-    document.getElementById("adminPassword").value;
-
-  if(password === ADMIN_PASSWORD){
-
-    document
-      .getElementById("adminContent")
-      .classList.add("active");
-
-    document
-      .getElementById("adminPassword")
-      .value = "";
-
-    renderAdminProducts();
-
-  }else{
-
-    alert("Incorrect admin password.");
-
-  }
-
-}
-
-
-document
-  .getElementById("productForm")
-  .addEventListener("submit",function(e){
-
-    e.preventDefault();
-
-    const id =
-      document.getElementById("editId").value;
-
-    const product = {
-
-      id:id ? Number(id) : Date.now(),
-
-      title:
-        document.getElementById("fTitle").value.trim(),
-
-      model:
-        document.getElementById("fModel").value.trim(),
-
-      category:
-        document.getElementById("fCategory").value,
-
-      price:
-        document.getElementById("fPrice").value.trim()
-        || "Ask for Price",
-
-      image:
-        document.getElementById("fImage").value.trim(),
-
-      description:
-        document.getElementById("fDescription").value.trim(),
-
-      availability:
-        document.getElementById("fAvailability").value
-
-    };
-
-    if(!product.image){
-
-      product.image =
-        "https://commons.wikimedia.org/wiki/Special:FilePath/Bearing.jpg";
-
-    }
-
-    if(id){
-
-      products =
-        products.map(p =>
-          p.id === Number(id)
-            ? product
-            : p
-        );
-
-    }else{
-
-      products.push(product);
-
-    }
-
-    saveProducts();
-
-    resetForm();
-
-    renderProducts();
-
-    renderAdminProducts();
-
-    alert("Product saved successfully.");
-
-  });
-
-
+function deleteProduct(id){products=products.filter(p=>p.id!=id); saveProducts(); renderProducts();}
 function editProduct(id){
-
-  const p =
-    products.find(x => x.id === id);
-
-  if(!p) return;
-
-  document.getElementById("editId").value = p.id;
-
-  document.getElementById("fTitle").value = p.title;
-
-  document.getElementById("fModel").value = p.model;
-
-  document.getElementById("fCategory").value = p.category;
-
-  document.getElementById("fPrice").value = p.price;
-
-  document.getElementById("fImage").value = p.image;
-
-  document.getElementById("fDescription").value =
-    p.description;
-
-  document.getElementById("fAvailability").value =
-    p.availability;
-
-  document.getElementById("formHeading").textContent =
-    "Edit Product";
-
-  document
-    .getElementById("admin")
-    .scrollIntoView({
-      behavior:"smooth"
-    });
-
+  let p=products.find(x=>x.id==id);
+  let newPrice=prompt("New Price:",p.price);
+  if(newPrice){p.price=newPrice; saveProducts(); renderProducts();}
+}
+function showSection(id){
+  document.querySelectorAll('section').forEach(s=>s.style.display='none');
+  document.getElementById(id).style.display='block';
+  window.scrollTo(0,0);
 }
 
-
-function deleteProduct(id){
-
-  if(!confirm(
-    "Are you sure you want to delete this product?"
-  )) return;
-
-  products =
-    products.filter(p => p.id !== id);
-
-  saveProducts();
-
-  renderProducts();
-
-  renderAdminProducts();
-
-}
-
-
-function resetForm(){
-
-  document.getElementById("productForm").reset();
-
-  document.getElementById("editId").value = "";
-
-  document.getElementById("formHeading").textContent =
-    "Add Product";
-
-  document.getElementById("fCategory").value =
-    categories[0];
-
-}
-
-
-function renderAdminProducts(){
-
-  const box =
-    document.getElementById("adminProductList");
-
-  if(!box) return;
-
-  box.innerHTML = products.map(p => `
-
-    <div class="admin-row">
-
-      <div>
-
-        <strong>
-          ${escapeHTML(p.title)}
-        </strong>
-
-        <div style="font-size:12px;color:#667085">
-          ${escapeHTML(p.model)}
-          •
-          ${escapeHTML(p.price)}
-        </div>
-
-      </div>
-
-      <div style="display:flex;gap:7px;flex-wrap:wrap">
-
-        <button
-          class="btn btn-dark"
-          onclick="editProduct(${p.id})">
-          Edit
-        </button>
-
-        <button
-          class="btn btn-danger"
-          onclick="deleteProduct(${p.id})">
-          Delete
-        </button>
-
-      </div>
-
-    </div>
-
-  `).join("");
-
-}
-
-
-function saveProducts(){
-
-  localStorage.setItem(
-    "miTradingProducts",
-    JSON.stringify(products)
-  );
-
-}
-
-
-/* =========================================================
-   MOBILE MENU
-========================================================= */
-
-function toggleMenu(){
-
-  document
-    .getElementById("nav")
-    .classList.toggle("active");
-
-}
-
-
-/* =========================================================
-   SECURITY / HTML ESCAPING
-========================================================= */
-
-function escapeHTML(value){
-
-  return String(value ?? "")
-    .replace(/&/g,"&amp;")
-    .replace(/</g,"&lt;")
-    .replace(/>/g,"&gt;")
-    .replace(/"/g,"&quot;")
-    .replace(/'/g,"&#039;");
-
-}
-
-
-function escapeAttr(value){
-
-  return String(value ?? "")
-    .replace(/"/g,"&quot;")
-    .replace(/</g,"&lt;")
-    .replace(/>/g,"&gt;");
-
-}
-
+renderCategories(); renderProducts();
 </script>
-
 </body>
 </html>
