@@ -722,6 +722,8 @@ height:180px;
 
 }
 </style>
+<script src="https://www.gstatic.com/firebasejs/10.13.2/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.13.2/firebase-firestore-compat.js"></script>
 </head>
 <body>
 
@@ -978,6 +980,23 @@ height:180px;
    new password and replace the value below. */
 const PASSWORD_HASH = "0e9b19cf5d45df84fc729e4d1937bc2688e571d33b7038dfe2e7b8dc343da369";
 
+/* =========================================================
+   FIREBASE — real shared database, works on any real host
+========================================================= */
+
+const firebaseConfig = {
+apiKey: "AIzaSyAAeCNQFD5MdKORM4Icxc4HEJhQF1TmRVg",
+authDomain: "mi-trading-com.firebaseapp.com",
+projectId: "mi-trading-com",
+storageBucket: "mi-trading-com.firebasestorage.app",
+messagingSenderId: "885197273463",
+appId: "1:885197273463:web:6cb0fae956ad728e9ac972",
+measurementId: "G-ETZW9027X8"
+};
+
+firebase.initializeApp(firebaseConfig);
+const db = firebase.firestore();
+
 async function hashText(text){
 const enc = new TextEncoder().encode(text);
 const buf = await crypto.subtle.digest("SHA-256", enc);
@@ -1014,43 +1033,59 @@ document.getElementById("syncbar").classList.toggle("show", on);
 }
 
 /* =========================================================
-   STORAGE HELPERS (shared = visible to all visitors)
+   STORAGE HELPERS
+   Shared data (products, categories, settings) → Firestore,
+   visible to every visitor of the real hosted site.
+   Personal data (cart, login) → localStorage, per device.
 ========================================================= */
 
-async function loadShared(key, fallback){
+async function saveProductsToCloud(list){
 try{
-const r = await window.storage.get(key, true);
-return r ? JSON.parse(r.value) : fallback;
-}catch(e){
-return fallback;
-}
-}
-
-async function saveShared(key, value){
-try{
-await window.storage.set(key, JSON.stringify(value), true);
+await db.collection("mi_meta").doc("products").set({ list: list });
 return true;
 }catch(e){
-console.error("Storage error:", e);
-alert("Save nahi ho saka — dobara koshish karein. (Agar image bohat bari hai to choti picture upload karein.)");
+console.error("Firestore save error:", e);
+alert("Save nahi ho saka — internet check karein aur dobara koshish karein. (Agar image bohat bari hai to choti picture upload karein.)");
 return false;
 }
 }
 
-async function loadPersonal(key, fallback){
+async function saveCategoriesToCloud(list){
 try{
-const r = await window.storage.get(key, false);
-return r ? JSON.parse(r.value) : fallback;
+await db.collection("mi_meta").doc("categories").set({ list: list });
+return true;
+}catch(e){
+console.error("Firestore save error:", e);
+alert("Save nahi ho saka — internet check karein aur dobara koshish karein.");
+return false;
+}
+}
+
+async function saveSettingsToCloud(obj){
+try{
+await db.collection("mi_meta").doc("settings").set(obj);
+return true;
+}catch(e){
+console.error("Firestore save error:", e);
+alert("Settings save nahi ho sakin — internet check karein.");
+return false;
+}
+}
+
+function loadPersonal(key, fallback){
+try{
+const raw = localStorage.getItem(key);
+return raw ? JSON.parse(raw) : fallback;
 }catch(e){
 return fallback;
 }
 }
 
-async function savePersonal(key, value){
+function savePersonal(key, value){
 try{
-await window.storage.set(key, JSON.stringify(value), false);
+localStorage.setItem(key, JSON.stringify(value));
 }catch(e){
-console.error("Storage error:", e);
+console.error("Local storage error:", e);
 }
 }
 
@@ -1395,7 +1430,7 @@ desc: description || "Industrial product supplied by MI TRADING COM."
 }
 
 showSync(true);
-const ok = await saveShared("mi_products", products);
+const ok = await saveProductsToCloud(products);
 showSync(false);
 
 if(!ok) return;
@@ -1452,7 +1487,7 @@ if(!p) return;
 if(confirm("Delete "+(p.name||p.title)+"?")){
 products = products.filter(x=>x.id!==id);
 showSync(true);
-await saveShared("mi_products", products);
+await saveProductsToCloud(products);
 showSync(false);
 renderProducts();
 refreshAdmin();
@@ -1509,7 +1544,7 @@ return;
 
 categories.push(name);
 showSync(true);
-await saveShared("mi_categories", categories);
+await saveCategoriesToCloud(categories);
 showSync(false);
 
 input.value = "";
@@ -1576,7 +1611,7 @@ if(!p) return;
 p.featured = !(p.featured===true || p.featured==="true");
 
 showSync(true);
-await saveShared("mi_products", products);
+await saveProductsToCloud(products);
 showSync(false);
 
 renderProducts();
@@ -1665,7 +1700,7 @@ address: document.getElementById("addressSetting").value
 };
 
 showSync(true);
-await saveShared("mi_settings", settings);
+await saveSettingsToCloud(settings);
 showSync(false);
 
 alert("Settings Saved.");
@@ -1728,31 +1763,54 @@ if(e.target===modal) modal.style.display = "none";
 });
 
 /* =========================================================
-   INITIALIZE — load everything from SHARED storage so
-   every visitor sees the owner's real product list.
+   INITIALIZE — real-time listeners on Firestore so every
+   visitor's page updates live the moment the owner adds,
+   edits, or deletes a product — no refresh needed.
 ========================================================= */
+
+let firstProductsLoad = true;
+let firstCategoriesLoad = true;
 
 async function init(){
 showSync(true);
 
-const [savedProducts, savedCategories, savedOwner, savedCart] = await Promise.all([
-loadShared("mi_products", DEFAULT_PRODUCTS),
-loadShared("mi_categories", DEFAULT_CATEGORIES),
-loadPersonal("mi_owner", false),
-loadPersonal("mi_cart", [])
-]);
-
-products = Array.isArray(savedProducts) && savedProducts.length ? savedProducts : DEFAULT_PRODUCTS;
-categories = Array.isArray(savedCategories) && savedCategories.length ? savedCategories : DEFAULT_CATEGORIES;
-loggedIn = savedOwner === true;
-cart = Array.isArray(savedCart) ? savedCart : [];
-
-showSync(false);
-
-renderCategories();
-renderProducts();
+loggedIn = loadPersonal("mi_owner", false) === true;
+cart = loadPersonal("mi_cart", []);
 updateCart();
 updateAdminButtons();
+
+// PRODUCTS — real-time listener
+db.collection("mi_meta").doc("products").onSnapshot(async function(docSnap){
+if(docSnap.exists && Array.isArray(docSnap.data().list) && docSnap.data().list.length){
+products = docSnap.data().list;
+}else if(firstProductsLoad){
+// nothing in the cloud yet — seed it with the starting products
+products = DEFAULT_PRODUCTS;
+try{ await db.collection("mi_meta").doc("products").set({ list: DEFAULT_PRODUCTS }); }catch(e){}
+}
+firstProductsLoad = false;
+renderProducts();
+refreshAdmin();
+showSync(false);
+}, function(err){
+console.error("Products listener error:", err);
+showSync(false);
+});
+
+// CATEGORIES — real-time listener
+db.collection("mi_meta").doc("categories").onSnapshot(async function(docSnap){
+if(docSnap.exists && Array.isArray(docSnap.data().list) && docSnap.data().list.length){
+categories = docSnap.data().list;
+}else if(firstCategoriesLoad){
+categories = DEFAULT_CATEGORIES;
+try{ await db.collection("mi_meta").doc("categories").set({ list: DEFAULT_CATEGORIES }); }catch(e){}
+}
+firstCategoriesLoad = false;
+renderCategories();
+refreshAdmin();
+}, function(err){
+console.error("Categories listener error:", err);
+});
 }
 
 init();
