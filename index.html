@@ -1,51 +1,25 @@
-<head>
-<!-- Favicon - Browser Tab wala chota icon -->
-<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='15' fill='%2310264a'/><text x='50' y='65' font-family='Arial' font-size='45' font-weight='900' fill='%23ff9800' text-anchor='middle'>MI</text></svg>" type="image/svg+xml">
-
-<style>
-/* Header Logo ke liye */
-.logo-icon {
-    display: inline-block;
-    width: 40px;
-    height: 40px;
-    background: #10264a;
-    border-radius: 8px;
-    color: #ff9800;
-    font-weight: 900;
-    font-size: 22px;
-    text-align: center;
-    line-height: 40px;
-    margin-right: 8px;
-    vertical-align: middle;
-}
-</style>
-</head>
-
-<body>
-<header>
- <div class="topbar"> 
-    <div class="logo">
-        <span class="logo-icon">MI</span>
-        TRADING <span>COM</span>
-    </div> 
-    <div class="contact-mini">...</div> 
- </div>
-</header>
 <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1.0">
+
 <title>MI TRADING COM | Industrial Bearings, CNC Parts & General Supply - Lahore</title>
+
 <meta name="description" content="MI TRADING COM - Industrial Bearings, CNC Machine Parts, Belts, Pneumatic, Hydraulic, Electrical Items and Hardware Supplier in Lahore, Pakistan. Brandreth Road, Lahore.">
 <meta name="keywords" content="bearings Lahore, CNC parts Pakistan, industrial supply Lahore, pneumatic fittings, hydraulic components, timing belts, Brandreth Road industrial supplier">
+<meta name="robots" content="index,follow">
+
 <meta property="og:title" content="MI TRADING COM | Industrial & General Supply">
 <meta property="og:description" content="Industrial Bearings, CNC Parts, Belts, Pneumatic, Hydraulic, Electrical and Hardware Supplier in Lahore, Pakistan.">
 <meta property="og:type" content="website">
-<meta name="robots" content="index, follow">
+
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='15' fill='%2310264a'/><text x='50' y='65' font-family='Arial' font-size='45' font-weight='900' fill='%23ff9800' text-anchor='middle'>MI</text></svg>">
+
 <style>
 :root{
 --navy:#10264a;
+--navy2:#081a34;
 --blue:#0d6efd;
 --orange:#ff9800;
 --green:#16a34a;
@@ -55,6 +29,7 @@
 --text:#172033;
 --muted:#6b7280;
 --border:#e5e7eb;
+--shadow:0 5px 20px rgba(0,0,0,.08);
 }
 
 *{
@@ -66,7 +41,7 @@ font-family:Arial,Helvetica,sans-serif;
 
 html{
 scroll-behavior:smooth;
-scroll-padding-top:145px;
+scroll-padding-top:150px;
 }
 
 body{
@@ -81,6 +56,11 @@ font:inherit;
 
 a{
 text-decoration:none;
+color:inherit;
+}
+
+button{
+cursor:pointer;
 }
 
 header{
@@ -88,42 +68,66 @@ position:sticky;
 top:0;
 z-index:1000;
 background:var(--navy);
-color:#fff;
-box-shadow:0 3px 15px rgba(0,0,0,.2);
+color:white;
+box-shadow:0 3px 15px rgba(0,0,0,.25);
 }
 
 .topbar{
 display:flex;
 justify-content:space-between;
 align-items:center;
-padding:13px 5%;
+padding:12px 5%;
 gap:15px;
 }
 
 .logo{
 font-size:27px;
 font-weight:900;
-color:#fff;
+white-space:nowrap;
+display:flex;
+align-items:center;
 }
 
-.logo span{
+.logo-icon{
+display:inline-flex;
+align-items:center;
+justify-content:center;
+width:40px;
+height:40px;
+background:#fff;
+border-radius:8px;
+color:var(--navy);
+font-size:20px;
+font-weight:900;
+margin-right:8px;
+}
+
+.logo-main{
+color:white;
+}
+
+.logo-accent{
 color:var(--orange);
 }
 
 .contact-mini{
-font-size:13px;
 display:flex;
 gap:18px;
+font-size:13px;
 }
 
 .contact-mini a{
-color:#fff;
+color:white;
+}
+
+.contact-mini a:hover{
+color:var(--orange);
 }
 
 .searchbar{
 display:flex;
 padding:9px 5%;
-background:#081a34;
+background:var(--navy2);
 }
 
 .searchbar input{
@@ -131,7 +135,8 @@ flex:1;
 border:0;
 outline:0;
 padding:13px;
-border-radius:6px 0 0 6px;
+border-radius:7px 0 0 7px;
+font-size:15px;
 }
 
 .searchbar button{
@@ -140,8 +145,7 @@ background:var(--orange);
 color:white;
 font-weight:bold;
 padding:0 22px;
-border-radius:0 6px 6px 0;
-cursor:pointer;
+border-radius:0 7px 7px 0;
 }
 
 nav{
@@ -159,11 +163,10 @@ display:none;
 nav button{
 border:0;
 background:none;
-color:#fff;
+color:white;
 padding:13px 0;
-cursor:pointer;
-white-space:nowrap;
 font-weight:bold;
+white-space:nowrap;
 }
 
 nav button:hover{
@@ -171,34 +174,46 @@ color:var(--orange);
 }
 
 .hero{
-background:linear-gradient(135deg,#10264a,#244c84);
-color:#fff;
+background:
+linear-gradient(135deg,rgba(16,38,74,.97),rgba(36,76,132,.94));
+color:white;
 text-align:center;
-padding:70px 5%;
+padding:75px 5%;
 }
 
 .hero h1{
-font-size:40px;
+font-size:42px;
 margin-bottom:18px;
+line-height:1.2;
 }
 
 .hero p{
-max-width:850px;
+max-width:900px;
 margin:auto;
-line-height:1.7;
+line-height:1.8;
 color:#e6edf7;
+font-size:16px;
+}
+
+.hero-actions{
+margin-top:28px;
 }
 
 .btn{
 display:inline-block;
 border:0;
-border-radius:6px;
+border-radius:7px;
 padding:11px 18px;
-margin:5px;
-cursor:pointer;
+margin:4px;
 font-weight:bold;
-color:#fff;
+color:white;
 background:var(--orange);
+transition:.2s;
+}
+
+.btn:hover{
+transform:translateY(-2px);
+filter:brightness(.96);
 }
 
 .green{background:var(--green)}
@@ -209,12 +224,25 @@ background:var(--orange);
 .section{
 max-width:1400px;
 margin:auto;
-padding:40px 5%;
+padding:45px 5%;
+}
+
+.section-title{
+display:flex;
+align-items:center;
+justify-content:space-between;
+gap:15px;
+flex-wrap:wrap;
+margin-bottom:22px;
 }
 
 .section h2{
 color:var(--navy);
 margin-bottom:20px;
+}
+
+.section-title h2{
+margin:0;
 }
 
 .categories{
@@ -224,20 +252,22 @@ gap:14px;
 }
 
 .category{
-background:#fff;
+background:white;
 border:1px solid var(--border);
-padding:20px 10px;
+padding:19px 10px;
 border-radius:9px;
 text-align:center;
 font-weight:bold;
 cursor:pointer;
 transition:.2s;
+box-shadow:0 2px 6px rgba(0,0,0,.03);
 }
 
 .category:hover,
 .category.active{
 border-color:var(--orange);
 transform:translateY(-3px);
+box-shadow:var(--shadow);
 }
 
 .products{
@@ -247,11 +277,15 @@ gap:20px;
 }
 
 .card{
-background:#fff;
+background:white;
 border-radius:10px;
 overflow:hidden;
 border:1px solid var(--border);
 box-shadow:0 3px 10px rgba(0,0,0,.06);
+}
+
+.card-img-wrap{
+position:relative;
 }
 
 .card-img{
@@ -282,7 +316,7 @@ text-transform:uppercase;
 
 .card h3{
 font-size:17px;
-margin:6px 0;
+margin:7px 0;
 }
 
 .model{
@@ -328,11 +362,11 @@ gap:5px;
 .actions button{
 flex:1;
 border:0;
-padding:8px 4px;
+padding:9px 4px;
 border-radius:5px;
-color:#fff;
+color:white;
 font-size:12px;
-cursor:pointer;
+font-weight:bold;
 }
 
 .details{
@@ -349,8 +383,8 @@ background:#0d6efd;
 
 .admin-actions{
 display:none;
-margin-top:7px;
 gap:5px;
+margin-top:7px;
 }
 
 .admin-actions button{
@@ -359,7 +393,6 @@ border:0;
 padding:7px;
 border-radius:4px;
 color:white;
-cursor:pointer;
 font-size:11px;
 }
 
@@ -367,23 +400,61 @@ font-size:11px;
 background:#f59e0b;
 }
 
-.delete{
-background:#dc3545;
-}
-
 .featured-badge{
 position:absolute;
+left:8px;
+top:8px;
+z-index:2;
 background:var(--orange);
-color:#fff;
+color:white;
 font-size:10px;
 font-weight:bold;
-padding:3px 8px;
+padding:4px 8px;
 border-radius:5px;
-margin:8px;
 }
 
-.card-img-wrap{
-position:relative;
+.featured-section{
+background:#eef4fb;
+}
+
+.info-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+gap:18px;
+}
+
+.info-card{
+background:white;
+border:1px solid var(--border);
+border-radius:10px;
+padding:22px;
+box-shadow:0 3px 10px rgba(0,0,0,.05);
+}
+
+.info-card h3{
+color:var(--navy);
+margin-bottom:10px;
+}
+
+.info-card p{
+line-height:1.7;
+color:#555;
+}
+
+.brands{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(150px,1fr));
+gap:12px;
+}
+
+.brand{
+background:white;
+border:1px solid var(--border);
+border-radius:8px;
+padding:18px;
+text-align:center;
+font-weight:900;
+color:var(--navy);
 }
 
 footer{
@@ -402,7 +473,7 @@ gap:30px;
 
 footer h3{
 color:var(--orange);
-margin-bottom:10px;
+margin-bottom:12px;
 }
 
 footer p{
@@ -412,6 +483,10 @@ color:#dbe4f0;
 
 footer a{
 color:#dbe4f0;
+}
+
+footer a:hover{
+color:var(--orange);
 }
 
 .modal{
@@ -445,7 +520,7 @@ margin-bottom:15px;
 }
 
 .field{
-margin-bottom:12px;
+margin-bottom:13px;
 }
 
 .field label{
@@ -465,6 +540,12 @@ border-radius:6px;
 outline:0;
 }
 
+.field input:focus,
+.field select:focus,
+.field textarea:focus{
+border-color:var(--blue);
+}
+
 .field textarea{
 min-height:100px;
 resize:vertical;
@@ -477,9 +558,10 @@ overflow:hidden;
 }
 
 .sidebar{
-width:210px;
-background:#10264a;
+width:215px;
+background:var(--navy);
 padding:15px;
+flex-shrink:0;
 }
 
 .sidebar button{
@@ -491,7 +573,6 @@ padding:12px;
 margin-bottom:5px;
 text-align:left;
 border-radius:5px;
-cursor:pointer;
 font-weight:bold;
 }
 
@@ -583,7 +664,7 @@ table{
 width:100%;
 border-collapse:collapse;
 background:white;
-min-width:800px;
+min-width:850px;
 }
 
 th,td{
@@ -595,7 +676,7 @@ text-align:left;
 
 th{
 background:var(--navy);
-color:#fff;
+color:white;
 }
 
 .table-img{
@@ -616,7 +697,6 @@ border-radius:50%;
 background:var(--orange);
 color:white;
 font-size:23px;
-cursor:pointer;
 box-shadow:0 5px 20px rgba(0,0,0,.3);
 }
 
@@ -637,6 +717,7 @@ justify-content:center;
 .cart-item{
 display:flex;
 justify-content:space-between;
+align-items:center;
 gap:10px;
 padding:12px 0;
 border-bottom:1px solid #eee;
@@ -646,11 +727,12 @@ border-bottom:1px solid #eee;
 padding:35px;
 text-align:center;
 color:#777;
+grid-column:1/-1;
 }
 
 .syncbar{
-background:#0d6efd;
-color:#fff;
+background:var(--blue);
+color:white;
 text-align:center;
 font-size:12px;
 padding:6px;
@@ -661,20 +743,66 @@ display:none;
 display:block;
 }
 
+.notice{
+background:#fff8e7;
+border:1px solid #ffd477;
+padding:13px;
+border-radius:7px;
+margin-bottom:15px;
+font-size:13px;
+line-height:1.6;
+}
+
+.floating-wa{
+position:fixed;
+left:18px;
+bottom:18px;
+z-index:3000;
+width:55px;
+height:55px;
+border-radius:50%;
+background:#25d366;
+color:white;
+display:flex;
+align-items:center;
+justify-content:center;
+font-size:25px;
+box-shadow:0 5px 18px rgba(0,0,0,.25);
+}
+
 @media(max-width:700px){
 
 .topbar{
-padding:11px 4%;
+padding:10px 4%;
 }
 
 .logo{
-font-size:21px;
+font-size:20px;
+}
+
+.logo-icon{
+width:34px;
+height:34px;
+font-size:17px;
 }
 
 .contact-mini{
 display:block;
 font-size:10px;
 text-align:right;
+line-height:1.7;
+}
+
+.searchbar{
+padding:8px 4%;
+}
+
+.searchbar input{
+padding:11px;
+}
+
+.searchbar button{
+padding:0 14px;
 }
 
 nav{
@@ -687,7 +815,11 @@ padding:55px 4%;
 }
 
 .hero h1{
-font-size:27px;
+font-size:28px;
+}
+
+.hero p{
+font-size:14px;
 }
 
 .section{
@@ -753,101 +885,331 @@ width:100%;
 height:180px;
 }
 
+.floating-wa{
+left:14px;
+bottom:14px;
+}
+
+.cart{
+right:14px;
+bottom:14px;
+}
+
+}
+
+@media(max-width:380px){
+.products{
+grid-template-columns:1fr;
+}
 }
 </style>
+
 <script src="https://www.gstatic.com/firebasejs/10.13.2/firebase-app-compat.js"></script>
 <script src="https://www.gstatic.com/firebasejs/10.13.2/firebase-firestore-compat.js"></script>
 </head>
+
 <body>
 
 <div id="syncbar" class="syncbar">Syncing...</div>
 
 <header>
+
 <div class="topbar">
-<div class="logo">MI <span>TRADING COM</span></div>
+
+<div class="logo">
+<span class="logo-icon">MI</span>
+<span class="logo-main">TRADING <span class="logo-accent">COM</span></span>
+</div>
+
 <div class="contact-mini">
 <a href="tel:03134854823">📞 0313-4854823</a>
 <a href="mailto:mitradingcom04@gmail.com">✉️ mitradingcom04@gmail.com</a>
 </div>
+
 </div>
+
 <div class="searchbar">
-<input id="search" type="search" placeholder="Search product, model or part number...">
+<input id="search" type="search" placeholder="Search product, model, part number or category...">
 <button onclick="renderProducts()">SEARCH</button>
 </div>
+
 <nav>
 <button onclick="go('home')">Home</button>
 <button onclick="go('products')">Products</button>
+<button onclick="go('categoriesSection')">Categories</button>
 <button onclick="go('about')">About</button>
 <button onclick="go('contact')">Contact</button>
 <button onclick="openLogin()">Owner Login</button>
 </nav>
+
 </header>
 
+
 <section id="home" class="hero">
+
 <h1>Industrial Products & General Supply Solutions</h1>
-<p>MI TRADING COM supplies bearings, belts, CNC machine components, linear motion products, pneumatic and hydraulic components, electrical items, industrial tools, hardware and general supplies.</p>
-<div style="margin-top:25px">
+
+<p>
+MI TRADING COM is a professional industrial and general order supplier
+based in Brandreth Road, Lahore. We supply bearings, belts, CNC machine
+components, linear motion products, pneumatic and hydraulic components,
+electrical items, industrial tools, hardware and safety products.
+</p>
+
+<div class="hero-actions">
+
 <a href="#products" class="btn">Explore Products</a>
-<a class="btn green" target="_blank" href="https://wa.me/923134854823?text=Hello%20MI%20TRADING%20COM">WhatsApp Inquiry</a>
+
+<a target="_blank"
+href="https://wa.me/923134854823?text=Hello%20MI%20TRADING%20COM"
+class="btn green">
+💬 WhatsApp Inquiry
+</a>
+
+<a href="tel:03134854823" class="btn blue">
+📞 Call Now
+</a>
+
 </div>
+
 </section>
+
+
+<section id="categoriesSection" class="section">
+
+<div class="section-title">
+<h2>Product Categories</h2>
+</div>
+
+<div id="categories" class="categories"></div>
+
+</section>
+
 
 <section class="section">
-<h2>Product Categories</h2>
-<div id="categories" class="categories"></div>
+
+<div class="section-title">
+<h2>Why Choose MI TRADING COM?</h2>
+</div>
+
+<div class="info-grid">
+
+<div class="info-card">
+<h3>🏭 Industrial Supply</h3>
+<p>Reliable sourcing of industrial products according to required specifications and applications.</p>
+</div>
+
+<div class="info-card">
+<h3>📦 Wide Product Range</h3>
+<p>Bearings, belts, CNC parts, linear motion, pneumatic, hydraulic, electrical items, tools and hardware.</p>
+</div>
+
+<div class="info-card">
+<h3>🔎 Requirement Based</h3>
+<p>Share your model, part number, quantity or picture and we can help identify the required product.</p>
+</div>
+
+<div class="info-card">
+<h3>💬 Easy Inquiry</h3>
+<p>Select multiple products and send one quotation request directly through WhatsApp.</p>
+</div>
+
+</div>
+
 </section>
+
+
+<section class="section featured-section">
+
+<div class="section-title">
+<h2>⭐ Featured Products</h2>
+</div>
+
+<div id="featuredStrip" class="products"></div>
+
+</section>
+
 
 <section id="products" class="section">
-<div style="display:flex;justify-content:space-between;align-items:center;gap:10px;margin-bottom:20px;flex-wrap:wrap">
-<h2 style="margin:0">Our Products</h2>
-<h2 style="margin:0;font-size:16px;color:var(--orange)" id="featuredHeading">⭐ Featured Products</h2>
-<button class="btn blue" onclick="allProducts()">All Products</button>
-</div>
 
-<div id="featuredStrip" class="products" style="margin-bottom:30px"></div>
+<div class="section-title">
+
+<h2>Our Products</h2>
+
+<button class="btn blue" onclick="allProducts()">
+View All Products
+</button>
+
+</div>
 
 <p id="productCount" style="color:#777;margin-bottom:15px"></p>
+
 <div id="productList" class="products"></div>
+
 </section>
+
+
+<section class="section">
+
+<div class="section-title">
+<h2>Industries We Serve</h2>
+</div>
+
+<div class="brands">
+
+<div class="brand">Textile Industry</div>
+<div class="brand">Steel Industry</div>
+<div class="brand">Cement Industry</div>
+<div class="brand">Packaging</div>
+<div class="brand">Plastic Industry</div>
+<div class="brand">Printing</div>
+<div class="brand">Automotive</div>
+<div class="brand">Pharmaceutical</div>
+<div class="brand">Manufacturing</div>
+<div class="brand">CNC Workshops</div>
+
+</div>
+
+</section>
+
+
+<section class="section">
+
+<div class="section-title">
+<h2>Product Brands</h2>
+</div>
+
+<div class="notice">
+We supply products according to availability and customer requirements.
+Brand availability may vary by product and stock.
+</div>
+
+<div class="brands">
+
+<div class="brand">SKF</div>
+<div class="brand">FAG</div>
+<div class="brand">INA</div>
+<div class="brand">NTN</div>
+<div class="brand">NSK</div>
+<div class="brand">KOYO</div>
+<div class="brand">Timken</div>
+<div class="brand">Gates</div>
+<div class="brand">Optibelt</div>
+<div class="brand">SMC</div>
+<div class="brand">Festo</div>
+<div class="brand">Parker</div>
+<div class="brand">Siemens</div>
+<div class="brand">Schneider</div>
+<div class="brand">ABB</div>
+
+</div>
+
+</section>
+
 
 <section id="about" class="section">
+
 <h2>About MI TRADING COM</h2>
-<div class="products">
-<div class="card"><div class="card-body"><h3>Industrial Supply</h3><p>Professional industrial and general order supplier for businesses and industries.</p></div></div>
-<div class="card"><div class="card-body"><h3>Wide Product Range</h3><p>Bearings, belts, CNC parts, linear motion, pneumatic, hydraulic, electrical, tools and hardware.</p></div></div>
-<div class="card"><div class="card-body"><h3>Professional Service</h3><p>Products sourced according to required specifications, quantities and applications.</p></div></div>
+
+<div class="info-grid">
+
+<div class="info-card">
+<h3>Professional Supplier</h3>
+<p>
+MI TRADING COM provides industrial and general order supply services
+for businesses, workshops and industries.
+</p>
 </div>
+
+<div class="info-card">
+<h3>Industrial Products</h3>
+<p>
+Our product range includes bearings, belts, CNC machine parts,
+linear motion products, pneumatic and hydraulic components,
+electrical items, tools and hardware.
+</p>
+</div>
+
+<div class="info-card">
+<h3>Customer Support</h3>
+<p>
+Send us your required model, part number, quantity or product picture
+for quotation and availability.
+</p>
+</div>
+
+</div>
+
 </section>
+
 
 <section id="contact" class="section">
-<h2>Contact Us</h2>
-<div class="products">
-<div class="card"><div class="card-body"><h3>📍 Address</h3><p>Brandreth Road, Lahore, Pakistan</p></div></div>
-<div class="card"><div class="card-body"><h3>📞 Phone</h3><p><a href="tel:03134854823">0313-4854823</a></p></div></div>
-<div class="card"><div class="card-body"><h3>💬 WhatsApp</h3><p><a target="_blank" href="https://wa.me/923134854823">Chat on WhatsApp</a></p></div></div>
-<div class="card"><div class="card-body"><h3>✉️ Email</h3><p><a href="mailto:mitradingcom04@gmail.com">mitradingcom04@gmail.com</a></p></div></div>
+
+<h2>Contact MI TRADING COM</h2>
+
+<div class="info-grid">
+
+<div class="info-card">
+<h3>📍 Address</h3>
+<p>Brandreth Road, Lahore, Pakistan</p>
 </div>
+
+<div class="info-card">
+<h3>📞 Phone</h3>
+<p>
+<a href="tel:03134854823">0313-4854823</a>
+</p>
+</div>
+
+<div class="info-card">
+<h3>💬 WhatsApp</h3>
+<p>
+<a target="_blank"
+href="https://wa.me/923134854823">
+Chat on WhatsApp
+</a>
+</p>
+</div>
+
+<div class="info-card">
+<h3>✉️ Email</h3>
+<p>
+<a href="mailto:mitradingcom04@gmail.com">
+mitradingcom04@gmail.com
+</a>
+</p>
+</div>
+
+</div>
+
 </section>
 
+
 <footer>
+
 <div class="footer-grid">
+
 <div>
 <h3>MI TRADING COM</h3>
 <p>Industrial & General Order Supplier</p>
 <p>Brandreth Road, Lahore, Pakistan</p>
 </div>
+
 <div>
 <h3>Products</h3>
 <p>Bearings</p>
+<p>Belts</p>
 <p>CNC Parts</p>
 <p>Linear Motion</p>
 <p>Pneumatic & Hydraulic</p>
 </div>
+
 <div>
 <h3>Contact</h3>
 <p>0313-4854823</p>
 <p>mitradingcom04@gmail.com</p>
 </div>
+
 <div>
 <h3>Quick Links</h3>
 <p><a href="#home">Home</a></p>
@@ -855,998 +1217,2552 @@ height:180px;
 <p><a href="#about">About</a></p>
 <p><a href="#contact">Contact</a></p>
 </div>
+
 </div>
-<p style="text-align:center;margin-top:30px">© 2026 MI TRADING COM. All Rights Reserved.</p>
+
+<p style="text-align:center;margin-top:30px">
+© 2026 MI TRADING COM. All Rights Reserved.
+</p>
+
 </footer>
 
-<button class="cart" onclick="openCart()">🛒<span id="cartCount" class="cart-count">0</span></button>
+
+<a class="floating-wa"
+target="_blank"
+href="https://wa.me/923134854823?text=Hello%20MI%20TRADING%20COM">
+💬
+</a>
+
+<button class="cart" onclick="openCart()">
+🛒
+<span id="cartCount" class="cart-count">0</span>
+</button>
+
 
 <!-- LOGIN -->
+
 <div id="loginModal" class="modal">
+
 <div class="modal-box login-box">
+
 <h2>MI TRADING COM</h2>
-<p style="color:#777;margin-bottom:15px">Owner / Admin Login</p>
-<div class="field"><label>Password</label><input id="loginPassword" type="password" placeholder="Enter owner password"></div>
+
+<p style="color:#777;margin-bottom:15px">
+Owner / Admin Login
+</p>
+
+<div class="field">
+
+<label>Password</label>
+
+<input
+id="loginPassword"
+type="password"
+placeholder="Enter owner password">
+
+</div>
+
 <p id="loginError" style="color:red;font-size:13px"></p>
+
 <button class="btn" onclick="login()">Login</button>
+
 <button class="btn dark" onclick="closeLogin()">Cancel</button>
+
 </div>
+
 </div>
+
 
 <!-- OWNER DASHBOARD -->
+
 <div id="ownerModal" class="modal">
-<div class="modal-box" style="max-width:1150px;padding:0;overflow:hidden">
+
+<div class="modal-box"
+style="max-width:1150px;padding:0;overflow:hidden">
+
 <div class="admin-dashboard">
+
 <div class="sidebar">
-<button class="active" onclick="tab('dashboard',this)">📊 Dashboard</button>
-<button onclick="tab('add',this)">➕ Add Product</button>
-<button onclick="tab('manage',this)">📦 Manage Products</button>
-<button onclick="tab('categoriesAdmin',this)">📁 Categories</button>
-<button onclick="tab('featured',this)">⭐ Featured</button>
-<button onclick="tab('settings',this)">⚙️ Settings</button>
-<button onclick="logout()">🚪 Logout</button>
-<button onclick="closeOwner()">✕ Close</button>
+
+<button class="active"
+onclick="tab('dashboard',this)">
+📊 Dashboard
+</button>
+
+<button onclick="tab('add',this)">
+➕ Add Product
+</button>
+
+<button onclick="tab('manage',this)">
+📦 Manage Products
+</button>
+
+<button onclick="tab('categoriesAdmin',this)">
+📁 Categories
+</button>
+
+<button onclick="tab('featured',this)">
+⭐ Featured
+</button>
+
+<button onclick="tab('settings',this)">
+⚙️ Settings
+</button>
+
+<button onclick="logout()">
+🚪 Logout
+</button>
+
+<button onclick="closeOwner()">
+✕ Close
+</button>
+
 </div>
+
+
 <div class="dashboard-content">
 
+
 <div id="tab-dashboard" class="tab active">
+
 <h2>Owner Dashboard</h2>
+
 <div class="stats">
-<div class="stat"><strong id="statProducts">0</strong><small>Total Products</small></div>
-<div class="stat"><strong id="statCategories">0</strong><small>Categories</small></div>
-<div class="stat"><strong id="statFeatured">0</strong><small>Featured</small></div>
-<div class="stat"><strong id="statStock">0</strong><small>In Stock</small></div>
+
+<div class="stat">
+<strong id="statProducts">0</strong>
+<small>Total Products</small>
 </div>
-<div class="card"><div class="card-body">
-<h3>Owner Access</h3>
-<p style="line-height:1.8;color:#555">
-✔ Add unlimited products<br>
-✔ Upload pictures directly from mobile gallery<br>
-✔ Replace product picture while editing<br>
-✔ Products are visible to every visitor of the site (shared, live database)<br>
-✔ Add image URLs if required<br>
+
+<div class="stat">
+<strong id="statCategories">0</strong>
+<small>Categories</small>
+</div>
+
+<div class="stat">
+<strong id="statFeatured">0</strong>
+<small>Featured</small>
+</div>
+
+<div class="stat">
+<strong id="statStock">0</strong>
+<small>In Stock</small>
+</div>
+
+</div>
+
+<div class="card">
+
+<div class="card-body">
+
+<h3>Owner Controls</h3>
+
+<p style="line-height:1.9;color:#555;margin-top:10px">
+
+✔ Add products<br>
+✔ Upload product pictures from mobile gallery<br>
 ✔ Edit products<br>
 ✔ Delete products<br>
 ✔ Change prices<br>
-✔ Change stock<br>
+✔ Change stock status<br>
 ✔ Manage categories<br>
-✔ Mark products Featured (shown to customers on homepage)<br>
+✔ Mark products Featured<br>
 ✔ Product search<br>
 ✔ WhatsApp inquiries<br>
 ✔ Manage website contact information
+
 </p>
-</div></div>
+
 </div>
+
+</div>
+
+</div>
+
+
+<!-- ADD PRODUCT -->
 
 <div id="tab-add" class="tab">
+
 <h2 id="formTitle">Add Product</h2>
-<div class="card"><div class="card-body">
+
+<div class="card">
+
+<div class="card-body">
+
 <div class="form-grid">
-<div class="field"><label>Product Name *</label><input id="pName" placeholder="Example: SKF Bearing"></div>
-<div class="field"><label>Model / Part Number *</label><input id="pModel" placeholder="Example: 6206"></div>
-<div class="field"><label>Category *</label><select id="pCategory"></select></div>
-<div class="field"><label>Price</label><input id="pPrice" placeholder="Rs. 960"></div>
-<div class="field full"><label>Image URL — Optional</label><input id="pImage" placeholder="Optional — Gallery se picture upload karna ho to neeche select karein" oninput="previewImage()"></div>
+
+<div class="field">
+
+<label>Product Name *</label>
+
+<input
+id="pName"
+placeholder="Example: SKF Bearing">
+
+</div>
+
+
+<div class="field">
+
+<label>Model / Part Number *</label>
+
+<input
+id="pModel"
+placeholder="Example: 6206">
+
+</div>
+
+
+<div class="field">
+
+<label>Category *</label>
+
+<select id="pCategory"></select>
+
+</div>
+
+
+<div class="field">
+
+<label>Price</label>
+
+<input
+id="pPrice"
+placeholder="Rs. 960">
+
+</div>
+
+
 <div class="field full">
-<label>📷 Upload Product Picture Directly From Gallery</label>
-<input type="file" id="galleryImage" accept="image/*" onchange="galleryImageUpload(event)">
-<div class="upload-info">Mobile mein <b>Choose File</b> dabayein → Gallery/Photos se picture select karein.<br>Picture automatically compress hokar product ke saath save hogi.<br>Website ko image link dene ki zaroorat nahi.</div>
-<div class="preview"><img id="imagePreview" src="https://placehold.co/500x350?text=Product+Image" onerror="imgError(this)"></div>
+
+<label>Image URL — Optional</label>
+
+<input
+id="pImage"
+placeholder="Paste image URL if required"
+oninput="previewImage()">
+
 </div>
-<div class="field"><label>Availability</label><select id="pStock"><option>In Stock</option><option>Out of Stock</option><option>Available on Order</option></select></div>
-<div class="field"><label>Featured (shows on homepage for customers)</label><select id="pFeatured"><option value="false">No</option><option value="true">Yes</option></select></div>
-<div class="field full"><label>Description</label><textarea id="pDescription" placeholder="Professional product description"></textarea></div>
+
+
+<div class="field full">
+
+<label>📷 Upload Product Picture</label>
+
+<input
+type="file"
+id="galleryImage"
+accept="image/*"
+onchange="galleryImageUpload(event)">
+
+<div class="upload-info">
+
+Mobile mein <b>Choose File</b> dabayein →
+Gallery/Photos se picture select karein.
+
+<br>
+
+Picture automatically resize/compress hogi.
+
 </div>
-<button class="btn" onclick="saveProduct()">💾 Save Product</button>
-<button class="btn dark" onclick="clearForm()">Clear</button>
-</div></div>
+
+<div class="preview">
+
+<img
+id="imagePreview"
+src="https://placehold.co/500x350?text=Product+Image"
+onerror="imgError(this)">
+
 </div>
+
+</div>
+
+
+<div class="field">
+
+<label>Availability</label>
+
+<select id="pStock">
+
+<option>In Stock</option>
+<option>Out of Stock</option>
+<option>Available on Order</option>
+
+</select>
+
+</div>
+
+
+<div class="field">
+
+<label>Featured</label>
+
+<select id="pFeatured">
+
+<option value="false">No</option>
+<option value="true">Yes</option>
+
+</select>
+
+</div>
+
+
+<div class="field full">
+
+<label>Description</label>
+
+<textarea
+id="pDescription"
+placeholder="Professional product description">
+</textarea>
+
+</div>
+
+</div>
+
+
+<button class="btn" onclick="saveProduct()">
+💾 Save Product
+</button>
+
+<button class="btn dark" onclick="clearForm()">
+Clear
+</button>
+
+</div>
+
+</div>
+
+</div>
+
+
+<!-- MANAGE -->
 
 <div id="tab-manage" class="tab">
+
 <h2>Manage Products</h2>
+
 <div class="table-wrap">
+
 <table>
-<thead><tr><th>Image</th><th>Name</th><th>Model</th><th>Category</th><th>Price</th><th>Stock</th><th>Featured</th><th>Action</th></tr></thead>
+
+<thead>
+
+<tr>
+<th>Image</th>
+<th>Name</th>
+<th>Model</th>
+<th>Category</th>
+<th>Price</th>
+<th>Stock</th>
+<th>Featured</th>
+<th>Action</th>
+</tr>
+
+</thead>
+
 <tbody id="adminProducts"></tbody>
+
 </table>
+
 </div>
+
 </div>
+
+
+<!-- CATEGORIES -->
 
 <div id="tab-categoriesAdmin" class="tab">
+
 <h2>Category Management</h2>
-<div class="card"><div class="card-body">
-<div class="field"><label>New Category</label><input id="newCategory" placeholder="Example: Oil Seals"></div>
-<button class="btn" onclick="addCategory()">➕ Add Category</button>
-</div></div>
-<br>
-<div id="adminCategories" class="categories"></div>
+
+<div class="card">
+
+<div class="card-body">
+
+<div class="field">
+
+<label>New Category</label>
+
+<input
+id="newCategory"
+placeholder="Example: Oil Seals">
+
 </div>
+
+<button class="btn" onclick="addCategory()">
+➕ Add Category
+</button>
+
+</div>
+
+</div>
+
+<br>
+
+<div id="adminCategories" class="categories"></div>
+
+</div>
+
+
+<!-- FEATURED -->
 
 <div id="tab-featured" class="tab">
-<h2>Featured Products (visible to customers on homepage)</h2>
+
+<h2>Featured Products</h2>
+
 <div id="featuredProductsAdmin" class="products"></div>
+
 </div>
+
+
+<!-- SETTINGS -->
 
 <div id="tab-settings" class="tab">
+
 <h2>Website Settings</h2>
-<div class="card"><div class="card-body">
-<div class="field"><label>Company Name</label><input id="companySetting" value="MI TRADING COM"></div>
-<div class="field"><label>Phone</label><input id="phoneSetting" value="0313-4854823"></div>
-<div class="field"><label>Email</label><input id="emailSetting" value="mitradingcom04@gmail.com"></div>
-<div class="field"><label>Address</label><input id="addressSetting" value="Brandreth Road, Lahore, Pakistan"></div>
-<button class="btn" onclick="saveSettings()">Save Settings</button>
-</div></div>
+
+<div class="card">
+
+<div class="card-body">
+
+<div class="field">
+<label>Company Name</label>
+<input id="companySetting" value="MI TRADING COM">
+</div>
+
+<div class="field">
+<label>Phone</label>
+<input id="phoneSetting" value="0313-4854823">
+</div>
+
+<div class="field">
+<label>Email</label>
+<input id="emailSetting" value="mitradingcom04@gmail.com">
+</div>
+
+<div class="field">
+<label>Address</label>
+<input id="addressSetting" value="Brandreth Road, Lahore, Pakistan">
+</div>
+
+<button class="btn" onclick="saveSettings()">
+Save Settings
+</button>
+
 </div>
 
 </div>
+
 </div>
+
+
 </div>
+
 </div>
+
+</div>
+
+</div>
+
 
 <!-- DETAILS -->
+
 <div id="detailsModal" class="modal">
-<div class="modal-box"><div id="details"></div><button class="btn dark" onclick="closeDetails()">Close</button></div>
+
+<div class="modal-box">
+
+<div id="details"></div>
+
+<button class="btn dark"
+onclick="closeDetails()">
+Close
+</button>
+
 </div>
+
+</div>
+
 
 <!-- CART -->
+
 <div id="cartModal" class="modal">
+
 <div class="modal-box">
+
 <h2>Inquiry Cart</h2>
+
 <div id="cartItems"></div>
+
 <br>
-<button class="btn green" onclick="sendWhatsApp()">Send WhatsApp Inquiry</button>
-<button class="btn dark" onclick="closeCart()">Close</button>
+
+<button class="btn green"
+onclick="sendWhatsApp()">
+💬 Send WhatsApp Inquiry
+</button>
+
+<button class="btn dark"
+onclick="closeCart()">
+Close
+</button>
+
 </div>
+
 </div>
+
 
 <script>
-/* =========================================================
-   MI TRADING COM — LIVE SHARED PRODUCT SYSTEM
-   Products, categories, featured flags and settings are
-   stored in SHARED storage: every visitor sees what the
-   owner adds — not just the owner's own device.
-   Cart and login-state are PERSONAL (per device) storage.
-========================================================= */
-
-/* Password is NOT stored as plain text — only its SHA-256 hash.
-   To change the owner password: compute the SHA-256 hash of the
-   new password and replace the value below. */
-const PASSWORD_HASH = "0e9b19cf5d45df84fc729e4d1937bc2688e571d33b7038dfe2e7b8dc343da369";
 
 /* =========================================================
-   FIREBASE — real shared database, works on any real host
+MI TRADING COM
+CLEAN SINGLE-FILE WEBSITE
 ========================================================= */
+
+
+/* OWNER PASSWORD HASH */
+
+const PASSWORD_HASH =
+"0e9b19cf5d45df84fc729e4d1937bc2688e571d33b7038dfe2e7b8dc343da369";
+
+
+/* FIREBASE */
 
 const firebaseConfig = {
-apiKey: "AIzaSyAAeCNQFD5MdKORM4Icxc4HEJhQF1TmRVg",
-authDomain: "mi-trading-com.firebaseapp.com",
-projectId: "mi-trading-com",
-storageBucket: "mi-trading-com.firebasestorage.app",
-messagingSenderId: "885197273463",
-appId: "1:885197273463:web:6cb0fae956ad728e9ac972",
-measurementId: "G-ETZW9027X8"
+
+apiKey:"AIzaSyAAeCNQFD5MdKORM4Icxc4HEJhQF1TmRVg",
+
+authDomain:"mi-trading-com.firebaseapp.com",
+
+projectId:"mi-trading-com",
+
+storageBucket:"mi-trading-com.firebasestorage.app",
+
+messagingSenderId:"885197273463",
+
+appId:"1:885197273463:web:6cb0fae956ad728e9ac972",
+
+measurementId:"G-ETZW9027X8"
+
 };
+
 
 firebase.initializeApp(firebaseConfig);
-const db = firebase.firestore();
+
+const db=firebase.firestore();
+
+
+/* VARIABLES */
+
+let loggedIn=false;
+
+let editId=null;
+
+let activeCategory="All Products";
+
+let categories=[];
+
+let products=[];
+
+let cart=[];
+
+
+/* DEFAULT CATEGORIES */
+
+const DEFAULT_CATEGORIES=[
+
+"All Products",
+
+"Bearings",
+"Ball Bearings",
+"Deep Groove Ball Bearings",
+"Taper Roller Bearings",
+"Needle Roller Bearings",
+"Cylindrical Roller Bearings",
+"Pillow Block Bearings",
+
+"Linear Motion",
+"Linear Bearings",
+"Linear Guideways",
+"Ball Screws",
+
+"CNC Machine Parts",
+"CNC Ball Screws",
+
+"Timing Belts",
+"V-Belts",
+"Industrial Belts",
+
+"Pneumatic Fittings",
+"Pneumatic Components",
+
+"Hydraulic Fittings",
+"Hydraulic Components",
+
+"Electrical Items",
+"Industrial Tools",
+"Hardware",
+"Safety Items"
+
+];
+
+
+/* DEFAULT PRODUCTS */
+
+const DEFAULT_PRODUCTS=[
+
+{
+id:1,
+name:"Deep Groove Ball Bearing",
+title:"Deep Groove Ball Bearing",
+model:"6206",
+category:"Deep Groove Ball Bearings",
+price:"Rs. 960",
+image:"https://placehold.co/700x500?text=6206+Bearing",
+description:"High quality industrial deep groove ball bearing.",
+desc:"High quality industrial deep groove ball bearing.",
+stock:"In Stock",
+avail:"In Stock",
+featured:true
+},
+
+{
+id:2,
+name:"Taper Roller Bearing",
+title:"Taper Roller Bearing",
+model:"30206",
+category:"Taper Roller Bearings",
+price:"Rs. 1,250",
+image:"https://placehold.co/700x500?text=30206+Bearing",
+description:"Heavy duty taper roller bearing.",
+desc:"Heavy duty taper roller bearing.",
+stock:"In Stock",
+avail:"In Stock",
+featured:true
+},
+
+{
+id:3,
+name:"Timing Belt",
+title:"Timing Belt",
+model:"XL-100",
+category:"Timing Belts",
+price:"Rs. 450",
+image:"https://placehold.co/700x500?text=Timing+Belt",
+description:"Industrial timing belt.",
+desc:"Industrial timing belt.",
+stock:"In Stock",
+avail:"In Stock",
+featured:true
+},
+
+{
+id:4,
+name:"Pneumatic Fitting",
+title:"Pneumatic Fitting",
+model:"PC-6",
+category:"Pneumatic Fittings",
+price:"Ask for Price",
+image:"https://placehold.co/700x500?text=Pneumatic+Fitting",
+description:"6mm pneumatic connector.",
+desc:"6mm pneumatic connector.",
+stock:"In Stock",
+avail:"In Stock",
+featured:true
+}
+
+];
+
+
+/* =========================================================
+HELPERS
+========================================================= */
 
 async function hashText(text){
-const enc = new TextEncoder().encode(text);
-const buf = await crypto.subtle.digest("SHA-256", enc);
-return Array.from(new Uint8Array(buf)).map(b => b.toString(16).padStart(2,"0")).join("");
+
+const enc=new TextEncoder().encode(text);
+
+const buf=await crypto.subtle.digest("SHA-256",enc);
+
+return Array.from(new Uint8Array(buf))
+.map(b=>b.toString(16).padStart(2,"0"))
+.join("");
+
 }
 
-let loggedIn = false;
-let editId = null;
-let activeCategory = "All Products";
-let syncing = 0;
-
-const DEFAULT_CATEGORIES = [
-"All Products","Bearings","Ball Bearings","Deep Groove Ball Bearings",
-"Taper Roller Bearings","Needle Roller Bearings","Cylindrical Roller Bearings",
-"Pillow Block Bearings","Linear Motion","Linear Bearings","Linear Guideways",
-"Ball Screws","CNC Ball Screws","CNC Machine Parts","Timing Belts","V-Belts",
-"Industrial Belts","Pneumatic Fittings","Pneumatic Components","Hydraulic Fittings",
-"Hydraulic Components","Electrical Items","Industrial Tools","Hardware","Safety Items"
-];
-
-const DEFAULT_PRODUCTS = [
-{id:1,name:"Deep Groove Ball Bearing",title:"Deep Groove Ball Bearing",model:"6206",category:"Deep Groove Ball Bearings",price:"Rs. 960",image:"https://placehold.co/700x500?text=6206+Bearing",description:"High quality industrial deep groove ball bearing.",desc:"High quality industrial deep groove ball bearing.",stock:"In Stock",avail:"In Stock",featured:true},
-{id:2,name:"Taper Roller Bearing",title:"Taper Roller Bearing",model:"30206",category:"Taper Roller Bearings",price:"Rs. 1,250",image:"https://placehold.co/700x500?text=30206+Bearing",description:"Heavy duty taper roller bearing.",desc:"Heavy duty taper roller bearing.",stock:"In Stock",avail:"In Stock",featured:true},
-{id:3,name:"Timing Belt",title:"Timing Belt",model:"XL-100",category:"Timing Belts",price:"Rs. 450",image:"https://placehold.co/700x500?text=Timing+Belt",description:"Industrial timing belt.",desc:"Industrial timing belt.",stock:"In Stock",avail:"In Stock",featured:true},
-{id:4,name:"Pneumatic Fitting",title:"Pneumatic Fitting",model:"PC-6",category:"Pneumatic Fittings",price:"Ask for Price",image:"https://placehold.co/700x500?text=Pneumatic+Fitting",description:"6mm pneumatic connector.",desc:"6mm pneumatic connector.",stock:"In Stock",avail:"In Stock",featured:true}
-];
-
-let categories = [...DEFAULT_CATEGORIES];
-let products = [...DEFAULT_PRODUCTS];
-let cart = [];
 
 function showSync(on){
-document.getElementById("syncbar").classList.toggle("show", on);
+
+document
+.getElementById("syncbar")
+.classList.toggle("show",on);
+
 }
 
-/* =========================================================
-   STORAGE HELPERS
-   Shared data (products, categories, settings) → Firestore,
-   visible to every visitor of the real hosted site.
-   Personal data (cart, login) → localStorage, per device.
-========================================================= */
 
-async function saveProductsToCloud(list){
+function loadPersonal(key,fallback){
+
 try{
-await db.collection("mi_meta").doc("products").set({ list: list });
-return true;
-}catch(e){
-console.error("Firestore save error:", e);
-alert("Save nahi ho saka — internet check karein aur dobara koshish karein. (Agar image bohat bari hai to choti picture upload karein.)");
-return false;
-}
-}
 
-async function saveCategoriesToCloud(list){
-try{
-await db.collection("mi_meta").doc("categories").set({ list: list });
-return true;
-}catch(e){
-console.error("Firestore save error:", e);
-alert("Save nahi ho saka — internet check karein aur dobara koshish karein.");
-return false;
-}
-}
+const raw=localStorage.getItem(key);
 
-async function saveSettingsToCloud(obj){
-try{
-await db.collection("mi_meta").doc("settings").set(obj);
-return true;
-}catch(e){
-console.error("Firestore save error:", e);
-alert("Settings save nahi ho sakin — internet check karein.");
-return false;
-}
-}
+return raw?JSON.parse(raw):fallback;
 
-function loadPersonal(key, fallback){
-try{
-const raw = localStorage.getItem(key);
-return raw ? JSON.parse(raw) : fallback;
 }catch(e){
+
 return fallback;
-}
+
 }
 
-function savePersonal(key, value){
+}
+
+
+function savePersonal(key,value){
+
 try{
-localStorage.setItem(key, JSON.stringify(value));
+
+localStorage.setItem(key,JSON.stringify(value));
+
 }catch(e){
-console.error("Local storage error:", e);
-}
-}
 
-/* =========================================================
-   IMAGE URL
-========================================================= */
+console.error(e);
 
-function imageURL(url){
-if(!url) return "https://placehold.co/700x500?text=MI+TRADING+COM";
-url = String(url).trim();
-if(url.startsWith("data:image/")) return url;
-let drive = url.match(/drive\.google\.com\/file\/d\/([^/]+)/);
-if(drive) return "https://drive.google.com/uc?export=view&id=" + drive[1];
-if(url.includes("github.com") && url.includes("/blob/")){
-return url.replace("https://github.com/","https://raw.githubusercontent.com/").replace("/blob/","/");
-}
-return url;
 }
 
-function imgError(img){
-if(!img) return;
-img.onerror = null;
-img.src = "https://placehold.co/700x500?text=Image+Not+Available";
 }
 
-/* =========================================================
-   DIRECT GALLERY UPLOAD
-========================================================= */
-
-function galleryImageUpload(event){
-const file = event.target.files[0];
-if(!file) return;
-
-if(!file.type.startsWith("image/")){
-alert("Please select an image file.");
-event.target.value = "";
-return;
-}
-
-const maxSize = 15 * 1024 * 1024;
-if(file.size > maxSize){
-alert("Image 15MB se choti honi chahiye.");
-event.target.value = "";
-return;
-}
-
-const reader = new FileReader();
-
-reader.onload = function(e){
-const img = new Image();
-
-img.onload = function(){
-const MAX_WIDTH = 1000;
-const MAX_HEIGHT = 1000;
-let width = img.width;
-let height = img.height;
-
-if(width > MAX_WIDTH){
-height = height * (MAX_WIDTH / width);
-width = MAX_WIDTH;
-}
-if(height > MAX_HEIGHT){
-width = width * (MAX_HEIGHT / height);
-height = MAX_HEIGHT;
-}
-
-const canvas = document.createElement("canvas");
-canvas.width = Math.round(width);
-canvas.height = Math.round(height);
-
-const ctx = canvas.getContext("2d");
-ctx.drawImage(img, 0, 0, canvas.width, canvas.height);
-
-let compressed = canvas.toDataURL("image/webp", 0.75);
-if(!compressed || compressed.length < 100){
-compressed = canvas.toDataURL("image/jpeg", 0.75);
-}
-
-document.getElementById("pImage").value = compressed;
-document.getElementById("imagePreview").src = compressed;
-};
-
-img.onerror = function(){
-alert("Image load nahi ho saki.");
-};
-
-img.src = e.target.result;
-};
-
-reader.onerror = function(){
-alert("Image upload nahi ho saki.");
-};
-
-reader.readAsDataURL(file);
-}
-
-/* =========================================================
-   CATEGORIES
-========================================================= */
-
-function renderCategories(){
-document.getElementById("categories").innerHTML = categories.map(function(c){
-return `<div class="category ${activeCategory===c?"active":""}" onclick="filterCategory('${escape(c)}')">${escape(c)}</div>`;
-}).join("");
-
-document.getElementById("pCategory").innerHTML = categories.filter(c=>c!=="All Products").map(
-c=>`<option value="${escape(c)}">${escape(c)}</option>`
-).join("");
-}
-
-/* =========================================================
-   PRODUCTS
-========================================================= */
-
-function productCard(p, showAdmin){
-let name = p.name || p.title;
-let desc = p.description || p.desc || "";
-let stock = p.stock || p.avail || "";
-let isFeatured = p.featured===true || p.featured==="true";
-
-return `
-<div class="card">
-<div class="card-img-wrap">
-${isFeatured ? '<div class="featured-badge">⭐ FEATURED</div>' : ''}
-<div class="card-img"><img src="${imageURL(p.image)}" alt="${escape(name)}" loading="lazy" onerror="imgError(this)"></div>
-</div>
-<div class="card-body">
-<div class="badge-cat">${escape(p.category)}</div>
-<h3>${escape(name)}</h3>
-<div class="model">Model: ${escape(p.model)}</div>
-<div class="desc">${escape(desc)}</div>
-<div class="price">${escape(p.price||"Ask for Price")}</div>
-<div class="stock ${stock==="In Stock"?"instock":"outstock"}">● ${escape(stock)}</div>
-<div class="actions">
-<button class="details" onclick="details(${p.id})">Details</button>
-<button class="whatsapp" onclick="addCart(${p.id})">Inquiry</button>
-<button class="call" onclick="call()">Call</button>
-</div>
-<div class="admin-actions" id="admin-${p.id}">
-<button class="edit" onclick="editProduct(${p.id})">Edit</button>
-<button class="delete" onclick="deleteProduct(${p.id})">Delete</button>
-</div>
-</div>
-</div>`;
-}
-
-function renderFeaturedStrip(){
-let featured = products.filter(p => p.featured===true || p.featured==="true");
-const strip = document.getElementById("featuredStrip");
-const heading = document.getElementById("featuredHeading");
-
-if(!featured.length){
-strip.innerHTML = "";
-heading.style.display = "none";
-return;
-}
-heading.style.display = "block";
-strip.innerHTML = featured.map(p => productCard(p, loggedIn)).join("");
-}
-
-function renderProducts(){
-let search = document.getElementById("search").value.toLowerCase().trim();
-
-let list = products.filter(function(p){
-let categoryOK = activeCategory==="All Products" || p.category===activeCategory;
-let text = ((p.name||p.title||"")+" "+(p.model||"")+" "+(p.category||"")+" "+(p.description||p.desc||"")).toLowerCase();
-return categoryOK && (!search || text.includes(search));
-});
-
-document.getElementById("productCount").innerText = list.length + " product(s) found";
-
-if(!list.length){
-document.getElementById("productList").innerHTML = `<div class="empty">No products found.</div>`;
-} else {
-document.getElementById("productList").innerHTML = list.map(p => productCard(p, loggedIn)).join("");
-}
-
-renderFeaturedStrip();
-updateAdminButtons();
-}
-
-/* =========================================================
-   FILTER
-========================================================= */
-
-function filterCategory(c){
-activeCategory = c;
-renderCategories();
-renderProducts();
-document.getElementById("products").scrollIntoView({behavior:"smooth"});
-}
-
-function allProducts(){
-activeCategory = "All Products";
-document.getElementById("search").value = "";
-renderCategories();
-renderProducts();
-}
-
-/* =========================================================
-   DETAILS
-========================================================= */
-
-function details(id){
-let p = products.find(x=>x.id===id);
-if(!p) return;
-
-document.getElementById("details").innerHTML = `
-<img src="${imageURL(p.image)}" style="width:100%;max-height:350px;object-fit:contain;" onerror="imgError(this)">
-<h2>${escape(p.name||p.title)}</h2>
-<p><b>Model:</b> ${escape(p.model)}</p>
-<p><b>Category:</b> ${escape(p.category)}</p>
-<p><b>Price:</b> ${escape(p.price)}</p>
-<p><b>Stock:</b> ${escape(p.stock||p.avail)}</p>
-<p style="margin:15px 0;line-height:1.7;">${escape(p.description||p.desc)}</p>
-<a class="btn green" target="_blank" href="https://wa.me/923134854823?text=${encodeURIComponent("Hello MI TRADING COM, I am interested in "+(p.name||p.title)+" "+p.model)}">WhatsApp Inquiry</a>
-`;
-
-document.getElementById("detailsModal").style.display = "flex";
-}
-
-function closeDetails(){
-document.getElementById("detailsModal").style.display = "none";
-}
-
-/* =========================================================
-   LOGIN
-========================================================= */
-
-function openLogin(){
-if(loggedIn){
-openOwner();
-return;
-}
-document.getElementById("loginModal").style.display = "flex";
-}
-
-function closeLogin(){
-document.getElementById("loginModal").style.display = "none";
-document.getElementById("loginPassword").value = "";
-}
-
-async function login(){
-let password = document.getElementById("loginPassword").value;
-let enteredHash = await hashText(password);
-
-if(enteredHash === PASSWORD_HASH){
-loggedIn = true;
-await savePersonal("mi_owner", true);
-closeLogin();
-openOwner();
-renderProducts();
-}else{
-document.getElementById("loginError").innerText = "Incorrect password.";
-}
-}
-
-/* =========================================================
-   OWNER
-========================================================= */
-
-function openOwner(){
-document.getElementById("ownerModal").style.display = "flex";
-refreshAdmin();
-}
-
-function closeOwner(){
-document.getElementById("ownerModal").style.display = "none";
-}
-
-async function logout(){
-loggedIn = false;
-await savePersonal("mi_owner", false);
-closeOwner();
-updateAdminButtons();
-renderProducts();
-alert("Owner Logout Successful.");
-}
-
-function tab(id,btn){
-document.querySelectorAll(".tab").forEach(x=>x.classList.remove("active"));
-document.getElementById("tab-"+id).classList.add("active");
-document.querySelectorAll(".sidebar button").forEach(x=>x.classList.remove("active"));
-btn.classList.add("active");
-refreshAdmin();
-}
-
-/* =========================================================
-   SAVE / UPDATE PRODUCT
-========================================================= */
-
-async function saveProduct(){
-if(!loggedIn){
-alert("Owner Login Required.");
-return;
-}
-
-let name = document.getElementById("pName").value.trim();
-let model = document.getElementById("pModel").value.trim();
-let category = document.getElementById("pCategory").value;
-let price = document.getElementById("pPrice").value.trim();
-let image = document.getElementById("pImage").value.trim();
-let stock = document.getElementById("pStock").value;
-let featured = document.getElementById("pFeatured").value === "true";
-let description = document.getElementById("pDescription").value.trim();
-
-if(!name || !model){
-alert("Product Name and Model are required.");
-return;
-}
-
-if(editId){
-let p = products.find(x=>x.id===editId);
-if(p){
-p.name = name;
-p.title = name;
-p.model = model;
-p.category = category;
-p.price = price || "Ask for Price";
-if(image) p.image = image;
-p.stock = stock;
-p.avail = stock;
-p.featured = featured;
-p.description = description || "Industrial product supplied by MI TRADING COM.";
-p.desc = p.description;
-}
-}else{
-products.push({
-id: Date.now(),
-name: name,
-title: name,
-model: model,
-category: category,
-price: price || "Ask for Price",
-image: image || "https://placehold.co/700x500?text=MI+TRADING+COM",
-stock: stock,
-avail: stock,
-featured: featured,
-description: description || "Industrial product supplied by MI TRADING COM.",
-desc: description || "Industrial product supplied by MI TRADING COM."
-});
-}
-
-showSync(true);
-const ok = await saveProductsToCloud(products);
-showSync(false);
-
-if(!ok) return;
-
-alert(editId ? "Product Updated Successfully." : "Product Added Successfully. Ab yeh sab customers ko dikhega.");
-
-editId = null;
-clearForm();
-renderProducts();
-refreshAdmin();
-}
-
-/* =========================================================
-   EDIT PRODUCT
-========================================================= */
-
-function editProduct(id){
-let p = products.find(x=>x.id===id);
-if(!p) return;
-editId = id;
-
-document.getElementById("formTitle").innerText = "Edit Product";
-document.getElementById("pName").value = p.name || p.title || "";
-document.getElementById("pModel").value = p.model || "";
-document.getElementById("pCategory").value = p.category || "";
-document.getElementById("pPrice").value = p.price || "";
-document.getElementById("pImage").value = p.image || "";
-document.getElementById("pStock").value = p.stock || p.avail || "In Stock";
-document.getElementById("pFeatured").value = (p.featured===true || p.featured==="true") ? "true" : "false";
-document.getElementById("pDescription").value = p.description || p.desc || "";
-document.getElementById("imagePreview").src = imageURL(p.image);
-
-let gallery = document.getElementById("galleryImage");
-if(gallery) gallery.value = "";
-
-document.getElementById("ownerModal").style.display = "flex";
-document.getElementById("tab-add").classList.add("active");
-document.querySelectorAll(".tab").forEach(function(x){
-if(x.id!=="tab-add") x.classList.remove("active");
-});
-document.querySelectorAll(".sidebar button").forEach(x=>x.classList.remove("active"));
-}
-
-/* =========================================================
-   DELETE
-========================================================= */
-
-async function deleteProduct(id){
-if(!loggedIn) return;
-
-let p = products.find(x=>x.id===id);
-if(!p) return;
-
-if(confirm("Delete "+(p.name||p.title)+"?")){
-products = products.filter(x=>x.id!==id);
-showSync(true);
-await saveProductsToCloud(products);
-showSync(false);
-renderProducts();
-refreshAdmin();
-}
-}
-
-/* =========================================================
-   CLEAR FORM
-========================================================= */
-
-function clearForm(){
-editId = null;
-document.getElementById("formTitle").innerText = "Add Product";
-document.getElementById("pName").value = "";
-document.getElementById("pModel").value = "";
-document.getElementById("pPrice").value = "";
-document.getElementById("pImage").value = "";
-document.getElementById("pDescription").value = "";
-document.getElementById("pStock").value = "In Stock";
-document.getElementById("pFeatured").value = "false";
-
-const gallery = document.getElementById("galleryImage");
-if(gallery) gallery.value = "";
-
-document.getElementById("imagePreview").src = "https://placehold.co/500x350?text=Product+Image";
-}
-
-/* =========================================================
-   IMAGE URL PREVIEW
-========================================================= */
-
-function previewImage(){
-let url = document.getElementById("pImage").value.trim();
-if(!url){
-document.getElementById("imagePreview").src = "https://placehold.co/500x350?text=Product+Image";
-return;
-}
-document.getElementById("imagePreview").src = imageURL(url);
-}
-
-/* =========================================================
-   CATEGORY ADD
-========================================================= */
-
-async function addCategory(){
-let input = document.getElementById("newCategory");
-let name = input.value.trim();
-if(!name) return;
-
-if(categories.some(x => x.toLowerCase() === name.toLowerCase())){
-alert("Category already exists.");
-return;
-}
-
-categories.push(name);
-showSync(true);
-await saveCategoriesToCloud(categories);
-showSync(false);
-
-input.value = "";
-renderCategories();
-refreshAdmin();
-alert("Category Added.");
-}
-
-/* =========================================================
-   ADMIN REFRESH
-========================================================= */
-
-function refreshAdmin(){
-if(!loggedIn) return;
-
-document.getElementById("statProducts").innerText = products.length;
-document.getElementById("statCategories").innerText = categories.length;
-document.getElementById("statFeatured").innerText = products.filter(p => p.featured===true || p.featured==="true").length;
-document.getElementById("statStock").innerText = products.filter(p => (p.stock||p.avail)==="In Stock").length;
-
-document.getElementById("adminProducts").innerHTML = products.map(function(p){
-return `
-<tr>
-<td><img class="table-img" src="${imageURL(p.image)}" onerror="imgError(this)"></td>
-<td>${escape(p.name||p.title)}</td>
-<td>${escape(p.model)}</td>
-<td>${escape(p.category)}</td>
-<td>${escape(p.price)}</td>
-<td>${escape(p.stock||p.avail)}</td>
-<td>${(p.featured===true || p.featured==="true") ? "⭐ Yes" : "No"}</td>
-<td>
-<button class="btn" style="padding:6px;font-size:11px" onclick="editProduct(${p.id})">Edit</button>
-<button class="btn red" style="padding:6px;font-size:11px" onclick="deleteProduct(${p.id})">Delete</button>
-<button class="btn green" style="padding:6px;font-size:11px" onclick="toggleFeatured(${p.id})">⭐</button>
-</td>
-</tr>`;
-}).join("");
-
-document.getElementById("adminCategories").innerHTML = categories.filter(x=>x!=="All Products").map(
-x=>`<div class="category">${escape(x)}</div>`
-).join("");
-
-let featured = products.filter(p => p.featured===true || p.featured==="true");
-document.getElementById("featuredProductsAdmin").innerHTML = featured.length ? featured.map(p=>`
-<div class="card">
-<div class="card-img"><img src="${imageURL(p.image)}" onerror="imgError(this)"></div>
-<div class="card-body">
-<h3>${escape(p.name||p.title)}</h3>
-<div class="model">${escape(p.model)}</div>
-<div class="price">${escape(p.price)}</div>
-<button class="btn red" onclick="toggleFeatured(${p.id})">Remove Featured</button>
-</div>
-</div>`).join("") : `<div class="empty">No featured products. Mark a product as Featured to show it here for customers on the homepage.</div>`;
-}
-
-/* =========================================================
-   FEATURED TOGGLE
-========================================================= */
-
-async function toggleFeatured(id){
-let p = products.find(x=>x.id===id);
-if(!p) return;
-
-p.featured = !(p.featured===true || p.featured==="true");
-
-showSync(true);
-await saveProductsToCloud(products);
-showSync(false);
-
-renderProducts();
-refreshAdmin();
-}
-
-/* =========================================================
-   CART (personal — per visitor's device)
-========================================================= */
-
-async function addCart(id){
-let found = cart.find(x=>x.id===id);
-if(found){
-found.qty++;
-}else{
-cart.push({id:id, qty:1});
-}
-await savePersonal("mi_cart", cart);
-updateCart();
-alert("Product added to inquiry cart.");
-}
-
-function updateCart(){
-document.getElementById("cartCount").innerText = cart.reduce((a,b)=>a+b.qty,0);
-}
-
-function openCart(){
-let box = document.getElementById("cartItems");
-
-if(!cart.length){
-box.innerHTML = `<div class="empty">Inquiry cart is empty.</div>`;
-}else{
-box.innerHTML = cart.map(function(item){
-let p = products.find(x=>x.id===item.id);
-if(!p) return "";
-return `
-<div class="cart-item">
-<div><b>${escape(p.name||p.title)}</b><br><small>${escape(p.model)}</small><br>Qty: ${item.qty}</div>
-<button class="btn red" style="padding:5px" onclick="removeCart(${p.id})">Remove</button>
-</div>`;
-}).join("");
-}
-
-document.getElementById("cartModal").style.display = "flex";
-}
-
-async function removeCart(id){
-cart = cart.filter(x=>x.id!==id);
-await savePersonal("mi_cart", cart);
-updateCart();
-openCart();
-}
-
-function closeCart(){
-document.getElementById("cartModal").style.display = "none";
-}
-
-function sendWhatsApp(){
-if(!cart.length){
-alert("Inquiry cart is empty.");
-return;
-}
-
-let message = "Hello MI TRADING COM,%0A%0AI need quotation for:%0A%0A";
-
-cart.forEach(function(item){
-let p = products.find(x=>x.id===item.id);
-if(p){
-message += "• "+(p.name||p.title)+" - "+p.model+" x "+item.qty+"%0A";
-}
-});
-
-window.open("https://wa.me/923134854823?text="+message, "_blank");
-}
-
-/* =========================================================
-   SETTINGS
-========================================================= */
-
-async function saveSettings(){
-let settings = {
-company: document.getElementById("companySetting").value,
-phone: document.getElementById("phoneSetting").value,
-email: document.getElementById("emailSetting").value,
-address: document.getElementById("addressSetting").value
-};
-
-showSync(true);
-await saveSettingsToCloud(settings);
-showSync(false);
-
-alert("Settings Saved.");
-}
-
-/* =========================================================
-   ADMIN BUTTONS
-========================================================= */
-
-function updateAdminButtons(){
-document.querySelectorAll(".admin-actions").forEach(function(el){
-el.style.display = loggedIn ? "flex" : "none";
-});
-}
-
-/* =========================================================
-   NAVIGATION
-========================================================= */
-
-function go(id){
-let el = document.getElementById(id);
-if(!el) return;
-window.scrollTo({
-top: el.offsetTop - document.querySelector("header").offsetHeight,
-behavior:"smooth"
-});
-}
-
-function call(){
-window.location.href = "tel:03134854823";
-}
-
-/* =========================================================
-   ESCAPE HTML
-========================================================= */
 
 function escape(value){
-return String(value || "")
+
+return String(value||"")
+
 .replace(/&/g,"&amp;")
 .replace(/</g,"&lt;")
 .replace(/>/g,"&gt;")
 .replace(/"/g,"&quot;")
 .replace(/'/g,"&#039;");
+
 }
 
+
+function imageURL(url){
+
+if(!url)
+
+return "https://placehold.co/700x500?text=MI+TRADING+COM";
+
+url=String(url).trim();
+
+if(url.startsWith("data:image/"))
+
+return url;
+
+let drive=url.match(/drive\.google\.com\/file\/d\/([^/]+)/);
+
+if(drive)
+
+return "https://drive.google.com/uc?export=view&id="+drive[1];
+
+if(url.includes("github.com") && url.includes("/blob/"))
+
+return url
+.replace("https://github.com/","https://raw.githubusercontent.com/")
+.replace("/blob/","/");
+
+return url;
+
+}
+
+
+function imgError(img){
+
+if(!img)return;
+
+img.onerror=null;
+
+img.src="https://placehold.co/700x500?text=Image+Not+Available";
+
+}
+
+
 /* =========================================================
-   EVENTS
+FIRESTORE
 ========================================================= */
 
-document.getElementById("search").addEventListener("input", renderProducts);
+async function saveProductsToCloud(list){
 
-document.getElementById("loginPassword").addEventListener("keydown", function(e){
-if(e.key==="Enter") login();
-});
+try{
 
-document.querySelectorAll(".modal").forEach(function(modal){
-modal.addEventListener("click", function(e){
-if(e.target===modal) modal.style.display = "none";
-});
-});
+await db
+.collection("mi_meta")
+.doc("products")
+.set({list:list});
+
+return true;
+
+}catch(e){
+
+console.error(e);
+
+alert(
+"Product save nahi ho saka. Internet/Firebase connection check karein."
+);
+
+return false;
+
+}
+
+}
+
+
+async function saveCategoriesToCloud(list){
+
+try{
+
+await db
+.collection("mi_meta")
+.doc("categories")
+.set({list:list});
+
+return true;
+
+}catch(e){
+
+console.error(e);
+
+alert(
+"Category save nahi ho saki. Internet check karein."
+);
+
+return false;
+
+}
+
+}
+
+
+async function saveSettingsToCloud(obj){
+
+try{
+
+await db
+.collection("mi_meta")
+.doc("settings")
+.set(obj);
+
+return true;
+
+}catch(e){
+
+console.error(e);
+
+alert(
+"Settings save nahi ho sakin."
+);
+
+return false;
+
+}
+
+}
+
 
 /* =========================================================
-   INITIALIZE — real-time listeners on Firestore so every
-   visitor's page updates live the moment the owner adds,
-   edits, or deletes a product — no refresh needed.
+IMAGE UPLOAD
 ========================================================= */
 
-let firstProductsLoad = true;
-let firstCategoriesLoad = true;
+function galleryImageUpload(event){
 
-async function init(){
-showSync(true);
+const file=event.target.files[0];
 
-loggedIn = loadPersonal("mi_owner", false) === true;
-cart = loadPersonal("mi_cart", []);
-updateCart();
+if(!file)return;
+
+if(!file.type.startsWith("image/")){
+
+alert("Please select an image file.");
+
+event.target.value="";
+
+return;
+
+}
+
+
+if(file.size>15*1024*1024){
+
+alert("Image 15MB se choti honi chahiye.");
+
+event.target.value="";
+
+return;
+
+}
+
+
+const reader=new FileReader();
+
+
+reader.onload=function(e){
+
+const img=new Image();
+
+
+img.onload=function(){
+
+const MAX=1200;
+
+let width=img.width;
+
+let height=img.height;
+
+
+if(width>MAX){
+
+height=height*(MAX/width);
+
+width=MAX;
+
+}
+
+
+if(height>MAX){
+
+width=width*(MAX/height);
+
+height=MAX;
+
+}
+
+
+const canvas=document.createElement("canvas");
+
+canvas.width=Math.round(width);
+
+canvas.height=Math.round(height);
+
+
+const ctx=canvas.getContext("2d");
+
+ctx.drawImage(
+img,
+0,
+0,
+canvas.width,
+canvas.height
+);
+
+
+let compressed=
+canvas.toDataURL("image/webp",.72);
+
+
+if(!compressed){
+
+compressed=
+canvas.toDataURL("image/jpeg",.72);
+
+}
+
+
+document.getElementById("pImage").value=compressed;
+
+document.getElementById("imagePreview").src=compressed;
+
+};
+
+
+img.onerror=function(){
+
+alert("Image load nahi ho saki.");
+
+};
+
+
+img.src=e.target.result;
+
+};
+
+
+reader.readAsDataURL(file);
+
+}
+
+
+/* =========================================================
+CATEGORIES
+========================================================= */
+
+function renderCategories(){
+
+const box=document.getElementById("categories");
+
+
+box.innerHTML=categories.map(function(c){
+
+return `
+
+<div
+class="category ${activeCategory===c?"active":""}"
+onclick="filterCategory('${escape(c)}')">
+
+${escape(c)}
+
+</div>
+
+`;
+
+}).join("");
+
+
+document.getElementById("pCategory").innerHTML=
+
+categories
+.filter(c=>c!=="All Products")
+.map(c=>
+`<option value="${escape(c)}">${escape(c)}</option>`
+)
+.join("");
+
+}
+
+
+/* =========================================================
+PRODUCT CARD
+========================================================= */
+
+function productCard(p){
+
+const name=p.name||p.title||"Product";
+
+const desc=p.description||p.desc||"";
+
+const stock=p.stock||p.avail||"";
+
+const featured=
+p.featured===true ||
+p.featured==="true";
+
+
+return `
+
+<div class="card">
+
+<div class="card-img-wrap">
+
+${featured
+?'<div class="featured-badge">⭐ FEATURED</div>'
+:""}
+
+<div class="card-img">
+
+<img
+src="${imageURL(p.image)}"
+alt="${escape(name)}"
+loading="lazy"
+onerror="imgError(this)">
+
+</div>
+
+</div>
+
+
+<div class="card-body">
+
+<div class="badge-cat">
+${escape(p.category)}
+</div>
+
+<h3>${escape(name)}</h3>
+
+<div class="model">
+Model: ${escape(p.model)}
+</div>
+
+<div class="desc">
+${escape(desc)}
+</div>
+
+<div class="price">
+${escape(p.price||"Ask for Price")}
+</div>
+
+<div class="stock ${stock==="In Stock"?"instock":"outstock"}">
+● ${escape(stock)}
+</div>
+
+<div class="actions">
+
+<button
+class="details"
+onclick="details(${p.id})">
+Details
+</button>
+
+<button
+class="whatsapp"
+onclick="addCart(${p.id})">
+Inquiry
+</button>
+
+<button
+class="call"
+onclick="call()">
+Call
+</button>
+
+</div>
+
+
+<div
+class="admin-actions"
+id="admin-${p.id}">
+
+<button
+class="edit"
+onclick="editProduct(${p.id})">
+Edit
+</button>
+
+<button
+class="delete"
+onclick="deleteProduct(${p.id})">
+Delete
+</button>
+
+</div>
+
+</div>
+
+</div>
+
+`;
+
+}
+
+
+/* =========================================================
+FEATURED
+========================================================= */
+
+function renderFeaturedStrip(){
+
+const featured=products.filter(
+p=>p.featured===true || p.featured==="true"
+);
+
+const box=document.getElementById("featuredStrip");
+
+
+if(!featured.length){
+
+box.innerHTML=
+`<div class="empty">No featured products available.</div>`;
+
+return;
+
+}
+
+
+box.innerHTML=
+featured.map(productCard).join("");
+
 updateAdminButtons();
 
-// PRODUCTS — real-time listener
-db.collection("mi_meta").doc("products").onSnapshot(async function(docSnap){
-if(docSnap.exists && Array.isArray(docSnap.data().list) && docSnap.data().list.length){
-products = docSnap.data().list;
-}else if(firstProductsLoad){
-// nothing in the cloud yet — seed it with the starting products
-products = DEFAULT_PRODUCTS;
-try{ await db.collection("mi_meta").doc("products").set({ list: DEFAULT_PRODUCTS }); }catch(e){}
 }
-firstProductsLoad = false;
-renderProducts();
-refreshAdmin();
-showSync(false);
-}, function(err){
-console.error("Products listener error:", err);
-showSync(false);
+
+
+/* =========================================================
+PRODUCT SEARCH
+========================================================= */
+
+function renderProducts(){
+
+const search=
+document
+.getElementById("search")
+.value
+.toLowerCase()
+.trim();
+
+
+const list=products.filter(function(p){
+
+const categoryOK=
+activeCategory==="All Products" ||
+p.category===activeCategory;
+
+
+const text=
+
+(
+(p.name||p.title||"")+" "+
+(p.model||"")+" "+
+(p.category||"")+" "+
+(p.description||p.desc||"")+" "+
+(p.sku||"")+" "+
+(p.brand||"")+" "+
+(p.partNumber||"")
+)
+.toLowerCase();
+
+
+return categoryOK &&
+(!search || text.includes(search));
+
 });
 
-// CATEGORIES — real-time listener
-db.collection("mi_meta").doc("categories").onSnapshot(async function(docSnap){
-if(docSnap.exists && Array.isArray(docSnap.data().list) && docSnap.data().list.length){
-categories = docSnap.data().list;
-}else if(firstCategoriesLoad){
-categories = DEFAULT_CATEGORIES;
-try{ await db.collection("mi_meta").doc("categories").set({ list: DEFAULT_CATEGORIES }); }catch(e){}
+
+document.getElementById("productCount")
+.innerText=
+list.length+" product(s) found";
+
+
+if(!list.length){
+
+document.getElementById("productList").innerHTML=
+
+`<div class="empty">
+
+No products found.<br>
+
+Try another product name, model or part number.
+
+</div>`;
+
+}else{
+
+document.getElementById("productList").innerHTML=
+list.map(productCard).join("");
+
 }
-firstCategoriesLoad = false;
+
+
+renderFeaturedStrip();
+
+updateAdminButtons();
+
+}
+
+
+/* =========================================================
+FILTER
+========================================================= */
+
+function filterCategory(c){
+
+activeCategory=c;
+
 renderCategories();
-refreshAdmin();
-}, function(err){
-console.error("Categories listener error:", err);
+
+renderProducts();
+
+document
+.getElementById("products")
+.scrollIntoView({
+behavior:"smooth"
 });
+
 }
+
+
+function allProducts(){
+
+activeCategory="All Products";
+
+document.getElementById("search").value="";
+
+renderCategories();
+
+renderProducts();
+
+}
+
+
+/* =========================================================
+DETAILS
+========================================================= */
+
+function details(id){
+
+const p=products.find(x=>x.id===id);
+
+if(!p)return;
+
+
+document.getElementById("details").innerHTML=`
+
+<img
+src="${imageURL(p.image)}"
+alt="${escape(p.name||p.title)}"
+style="width:100%;max-height:350px;object-fit:contain"
+onerror="imgError(this)">
+
+<h2 style="margin-top:15px">
+${escape(p.name||p.title)}
+</h2>
+
+<p style="margin-top:8px">
+<b>Model:</b> ${escape(p.model)}
+</p>
+
+<p style="margin-top:8px">
+<b>Category:</b> ${escape(p.category)}
+</p>
+
+<p style="margin-top:8px">
+<b>Price:</b> ${escape(p.price||"Ask for Price")}
+</p>
+
+<p style="margin-top:8px">
+<b>Availability:</b> ${escape(p.stock||p.avail)}
+</p>
+
+<p style="margin:15px 0;line-height:1.7">
+${escape(p.description||p.desc||"")}
+</p>
+
+<a
+class="btn green"
+target="_blank"
+href="https://wa.me/923134854823?text=${encodeURIComponent(
+"Hello MI TRADING COM, I am interested in "+
+(p.name||p.title)+" "+p.model
+)}">
+
+💬 WhatsApp Inquiry
+
+</a>
+
+`;
+
+
+document.getElementById("detailsModal")
+.style.display="flex";
+
+}
+
+
+function closeDetails(){
+
+document.getElementById("detailsModal")
+.style.display="none";
+
+}
+
+
+/* =========================================================
+LOGIN
+========================================================= */
+
+function openLogin(){
+
+if(loggedIn){
+
+openOwner();
+
+return;
+
+}
+
+document.getElementById("loginModal")
+.style.display="flex";
+
+}
+
+
+function closeLogin(){
+
+document.getElementById("loginModal")
+.style.display="none";
+
+document.getElementById("loginPassword").value="";
+
+document.getElementById("loginError").innerText="";
+
+}
+
+
+async function login(){
+
+const password=
+document.getElementById("loginPassword").value;
+
+
+const enteredHash=
+await hashText(password);
+
+
+if(enteredHash===PASSWORD_HASH){
+
+loggedIn=true;
+
+savePersonal("mi_owner",true);
+
+closeLogin();
+
+openOwner();
+
+renderProducts();
+
+}else{
+
+document.getElementById("loginError")
+.innerText="Incorrect password.";
+
+}
+
+}
+
+
+/* =========================================================
+OWNER
+========================================================= */
+
+function openOwner(){
+
+if(!loggedIn)return;
+
+document.getElementById("ownerModal")
+.style.display="flex";
+
+refreshAdmin();
+
+}
+
+
+function closeOwner(){
+
+document.getElementById("ownerModal")
+.style.display="none";
+
+}
+
+
+function logout(){
+
+loggedIn=false;
+
+savePersonal("mi_owner",false);
+
+closeOwner();
+
+updateAdminButtons();
+
+renderProducts();
+
+alert("Owner Logout Successful.");
+
+}
+
+
+function tab(id,btn){
+
+document
+.querySelectorAll(".tab")
+.forEach(x=>x.classList.remove("active"));
+
+
+document
+.getElementById("tab-"+id)
+.classList.add("active");
+
+
+document
+.querySelectorAll(".sidebar button")
+.forEach(x=>x.classList.remove("active"));
+
+
+btn.classList.add("active");
+
+refreshAdmin();
+
+}
+
+
+/* =========================================================
+SAVE PRODUCT
+========================================================= */
+
+async function saveProduct(){
+
+if(!loggedIn){
+
+alert("Owner Login Required.");
+
+return;
+
+}
+
+
+const name=
+document.getElementById("pName").value.trim();
+
+const model=
+document.getElementById("pModel").value.trim();
+
+const category=
+document.getElementById("pCategory").value;
+
+const price=
+document.getElementById("pPrice").value.trim();
+
+const image=
+document.getElementById("pImage").value.trim();
+
+const stock=
+document.getElementById("pStock").value;
+
+const featured=
+document.getElementById("pFeatured").value==="true";
+
+const description=
+document.getElementById("pDescription").value.trim();
+
+
+if(!name||!model){
+
+alert("Product Name and Model are required.");
+
+return;
+
+}
+
+
+if(editId){
+
+const p=products.find(x=>x.id===editId);
+
+if(p){
+
+p.name=name;
+
+p.title=name;
+
+p.model=model;
+
+p.category=category;
+
+p.price=price||"Ask for Price";
+
+if(image)p.image=image;
+
+p.stock=stock;
+
+p.avail=stock;
+
+p.featured=featured;
+
+p.description=
+description||
+"Industrial product supplied by MI TRADING COM.";
+
+p.desc=p.description;
+
+}
+
+}else{
+
+products.push({
+
+id:Date.now(),
+
+name:name,
+
+title:name,
+
+model:model,
+
+category:category,
+
+price:price||"Ask for Price",
+
+image:
+image||
+"https://placehold.co/700x500?text=MI+TRADING+COM",
+
+stock:stock,
+
+avail:stock,
+
+featured:featured,
+
+description:
+description||
+"Industrial product supplied by MI TRADING COM.",
+
+desc:
+description||
+"Industrial product supplied by MI TRADING COM."
+
+});
+
+}
+
+
+showSync(true);
+
+
+const ok=
+await saveProductsToCloud(products);
+
+
+showSync(false);
+
+
+if(!ok)return;
+
+
+alert(
+editId
+?"Product Updated Successfully."
+:"Product Added Successfully. Ab yeh customers ko bhi dikhega."
+);
+
+
+editId=null;
+
+clearForm();
+
+renderProducts();
+
+refreshAdmin();
+
+}
+
+
+/* =========================================================
+EDIT
+========================================================= */
+
+function editProduct(id){
+
+const p=products.find(x=>x.id===id);
+
+if(!p)return;
+
+
+editId=id;
+
+
+document.getElementById("formTitle")
+.innerText="Edit Product";
+
+
+document.getElementById("pName").value=
+p.name||p.title||"";
+
+
+document.getElementById("pModel").value=
+p.model||"";
+
+
+document.getElementById("pCategory").value=
+p.category||"";
+
+
+document.getElementById("pPrice").value=
+p.price||"";
+
+
+document.getElementById("pImage").value=
+p.image||"";
+
+
+document.getElementById("pStock").value=
+p.stock||p.avail||"In Stock";
+
+
+document.getElementById("pFeatured").value=
+(p.featured===true||p.featured==="true")
+?"true":"false";
+
+
+document.getElementById("pDescription").value=
+p.description||p.desc||"";
+
+
+document.getElementById("imagePreview").src=
+imageURL(p.image);
+
+
+document.getElementById("ownerModal")
+.style.display="flex";
+
+
+document
+.querySelectorAll(".tab")
+.forEach(x=>x.classList.remove("active"));
+
+
+document
+.getElementById("tab-add")
+.classList.add("active");
+
+}
+
+
+/* =========================================================
+DELETE
+========================================================= */
+
+async function deleteProduct(id){
+
+if(!loggedIn)return;
+
+
+const p=products.find(x=>x.id===id);
+
+if(!p)return;
+
+
+if(confirm(
+"Delete "+(p.name||p.title)+"?"
+)){
+
+products=
+products.filter(x=>x.id!==id);
+
+
+showSync(true);
+
+const ok=
+await saveProductsToCloud(products);
+
+showSync(false);
+
+if(!ok)return;
+
+renderProducts();
+
+refreshAdmin();
+
+}
+
+}
+
+
+/* =========================================================
+CLEAR FORM
+========================================================= */
+
+function clearForm(){
+
+editId=null;
+
+document.getElementById("formTitle")
+.innerText="Add Product";
+
+
+document.getElementById("pName").value="";
+
+document.getElementById("pModel").value="";
+
+document.getElementById("pPrice").value="";
+
+document.getElementById("pImage").value="";
+
+document.getElementById("pDescription").value="";
+
+document.getElementById("pStock").value="In Stock";
+
+document.getElementById("pFeatured").value="false";
+
+
+const gallery=
+document.getElementById("galleryImage");
+
+if(gallery)gallery.value="";
+
+
+document.getElementById("imagePreview").src=
+"https://placehold.co/500x350?text=Product+Image";
+
+}
+
+
+/* =========================================================
+IMAGE PREVIEW
+========================================================= */
+
+function previewImage(){
+
+const url=
+document.getElementById("pImage")
+.value.trim();
+
+
+if(!url){
+
+document.getElementById("imagePreview").src=
+"https://placehold.co/500x350?text=Product+Image";
+
+return;
+
+}
+
+
+document.getElementById("imagePreview").src=
+imageURL(url);
+
+}
+
+
+/* =========================================================
+CATEGORY ADD
+========================================================= */
+
+async function addCategory(){
+
+const input=
+document.getElementById("newCategory");
+
+const name=input.value.trim();
+
+if(!name)return;
+
+
+if(categories.some(
+x=>x.toLowerCase()===name.toLowerCase()
+)){
+
+alert("Category already exists.");
+
+return;
+
+}
+
+
+categories.push(name);
+
+
+showSync(true);
+
+const ok=
+await saveCategoriesToCloud(categories);
+
+showSync(false);
+
+if(!ok)return;
+
+
+input.value="";
+
+renderCategories();
+
+refreshAdmin();
+
+alert("Category Added.");
+
+}
+
+
+/* =========================================================
+ADMIN REFRESH
+========================================================= */
+
+function refreshAdmin(){
+
+if(!loggedIn)return;
+
+
+document.getElementById("statProducts")
+.innerText=products.length;
+
+
+document.getElementById("statCategories")
+.innerText=categories.length;
+
+
+document.getElementById("statFeatured")
+.innerText=
+products.filter(
+p=>p.featured===true||p.featured==="true"
+).length;
+
+
+document.getElementById("statStock")
+.innerText=
+products.filter(
+p=>(p.stock||p.avail)==="In Stock"
+).length;
+
+
+document.getElementById("adminProducts")
+.innerHTML=
+
+products.map(function(p){
+
+return `
+
+<tr>
+
+<td>
+
+<img
+class="table-img"
+src="${imageURL(p.image)}"
+onerror="imgError(this)">
+
+</td>
+
+<td>
+${escape(p.name||p.title)}
+</td>
+
+<td>
+${escape(p.model)}
+</td>
+
+<td>
+${escape(p.category)}
+</td>
+
+<td>
+${escape(p.price)}
+</td>
+
+<td>
+${escape(p.stock||p.avail)}
+</td>
+
+<td>
+${
+(p.featured===true||p.featured==="true")
+?"⭐ Yes"
+:"No"
+}
+</td>
+
+<td>
+
+<button
+class="btn"
+style="padding:6px;font-size:11px"
+onclick="editProduct(${p.id})">
+Edit
+</button>
+
+<button
+class="btn red"
+style="padding:6px;font-size:11px"
+onclick="deleteProduct(${p.id})">
+Delete
+</button>
+
+<button
+class="btn green"
+style="padding:6px;font-size:11px"
+onclick="toggleFeatured(${p.id})">
+⭐
+</button>
+
+</td>
+
+</tr>
+
+`;
+
+}).join("");
+
+
+document.getElementById("adminCategories")
+.innerHTML=
+
+categories
+.filter(x=>x!=="All Products")
+.map(x=>
+`<div class="category">${escape(x)}</div>`
+)
+.join("");
+
+
+const featured=
+products.filter(
+p=>p.featured===true||p.featured==="true"
+);
+
+
+document.getElementById("featuredProductsAdmin")
+.innerHTML=
+
+featured.length
+
+?featured.map(p=>`
+
+<div class="card">
+
+<div class="card-img">
+
+<img
+src="${imageURL(p.image)}"
+onerror="imgError(this)">
+
+</div>
+
+<div class="card-body">
+
+<h3>
+${escape(p.name||p.title)}
+</h3>
+
+<div class="model">
+${escape(p.model)}
+</div>
+
+<div class="price">
+${escape(p.price)}
+</div>
+
+<button
+class="btn red"
+onclick="toggleFeatured(${p.id})">
+
+Remove Featured
+
+</button>
+
+</div>
+
+</div>
+
+`).join("")
+
+:
+
+`<div class="empty">
+No featured products.
+</div>`;
+
+}
+
+
+/* =========================================================
+FEATURED TOGGLE
+========================================================= */
+
+async function toggleFeatured(id){
+
+const p=products.find(x=>x.id===id);
+
+if(!p)return;
+
+
+p.featured=
+!(p.featured===true||p.featured==="true");
+
+
+showSync(true);
+
+const ok=
+await saveProductsToCloud(products);
+
+showSync(false);
+
+if(!ok)return;
+
+
+renderProducts();
+
+refreshAdmin();
+
+}
+
+
+/* =========================================================
+ADMIN BUTTONS
+========================================================= */
+
+function updateAdminButtons(){
+
+document
+.querySelectorAll(".admin-actions")
+.forEach(function(el){
+
+el.style.display=
+loggedIn?"flex":"none";
+
+});
+
+}
+
+
+/* =========================================================
+CART
+========================================================= */
+
+async function addCart(id){
+
+const found=
+cart.find(x=>x.id===id);
+
+
+if(found){
+
+found.qty++;
+
+}else{
+
+cart.push({
+id:id,
+qty:1
+});
+
+}
+
+
+savePersonal("mi_cart",cart);
+
+updateCart();
+
+alert("Product added to inquiry cart.");
+
+}
+
+
+function updateCart(){
+
+document.getElementById("cartCount")
+.innerText=
+cart.reduce(
+(a,b)=>a+b.qty,
+0
+);
+
+}
+
+
+function openCart(){
+
+const box=
+document.getElementById("cartItems");
+
+
+if(!cart.length){
+
+box.innerHTML=
+`<div class="empty">
+Inquiry cart is empty.
+</div>`;
+
+}else{
+
+box.innerHTML=
+
+cart.map(function(item){
+
+const p=
+products.find(x=>x.id===item.id);
+
+if(!p)return "";
+
+return `
+
+<div class="cart-item">
+
+<div>
+
+<b>
+${escape(p.name||p.title)}
+</b>
+
+<br>
+
+<small>
+Model: ${escape(p.model)}
+</small>
+
+<br>
+
+Qty: ${item.qty}
+
+</div>
+
+<button
+class="btn red"
+style="padding:5px"
+onclick="removeCart(${p.id})">
+
+Remove
+
+</button>
+
+</div>
+
+`;
+
+}).join("");
+
+}
+
+
+document.getElementById("cartModal")
+.style.display="flex";
+
+}
+
+
+function removeCart(id){
+
+cart=
+cart.filter(x=>x.id!==id);
+
+savePersonal("mi_cart",cart);
+
+updateCart();
+
+openCart();
+
+}
+
+
+function closeCart(){
+
+document.getElementById("cartModal")
+.style.display="none";
+
+}
+
+
+function sendWhatsApp(){
+
+if(!cart.length){
+
+alert("Inquiry cart is empty.");
+
+return;
+
+}
+
+
+let message=
+"Hello MI TRADING COM,\n\nI need quotation for:\n\n";
+
+
+cart.forEach(function(item){
+
+const p=
+products.find(x=>x.id===item.id);
+
+if(p){
+
+message+=
+"• "+
+(p.name||p.title)+
+" - "+
+p.model+
+" x "+
+item.qty+
+"\n";
+
+}
+
+});
+
+
+message+=
+"\nPlease share price and availability.";
+
+
+window.open(
+"https://wa.me/923134854823?text="+
+encodeURIComponent(message),
+"_blank"
+);
+
+}
+
+
+/* =========================================================
+SETTINGS
+========================================================= */
+
+async function saveSettings(){
+
+const settings={
+
+company:
+document.getElementById("companySetting").value,
+
+phone:
+document.getElementById("phoneSetting").value,
+
+email:
+document.getElementById("emailSetting").value,
+
+address:
+document.getElementById("addressSetting").value
+
+};
+
+
+showSync(true);
+
+const ok=
+await saveSettingsToCloud(settings);
+
+showSync(false);
+
+if(!ok)return;
+
+alert("Settings Saved.");
+
+}
+
+
+/* =========================================================
+NAVIGATION
+========================================================= */
+
+function go(id){
+
+const el=
+document.getElementById(id);
+
+if(!el)return;
+
+
+const header=
+document.querySelector("header");
+
+
+window.scrollTo({
+
+top:
+el.offsetTop-
+header.offsetHeight,
+
+behavior:"smooth"
+
+});
+
+}
+
+
+function call(){
+
+window.location.href=
+"tel:03134854823";
+
+}
+
+
+/* =========================================================
+EVENTS
+========================================================= */
+
+document
+.getElementById("search")
+.addEventListener(
+"input",
+renderProducts
+);
+
+
+document
+.getElementById("loginPassword")
+.addEventListener(
+"keydown",
+function(e){
+
+if(e.key==="Enter")
+login();
+
+}
+);
+
+
+document
+.querySelectorAll(".modal")
+.forEach(function(modal){
+
+modal.addEventListener(
+"click",
+function(e){
+
+if(e.target===modal)
+modal.style.display="none";
+
+}
+);
+
+});
+
+
+/* =========================================================
+FIREBASE REAL-TIME INIT
+========================================================= */
+
+let firstProductsLoad=true;
+
+let firstCategoriesLoad=true;
+
+
+async function init(){
+
+showSync(true);
+
+
+loggedIn=
+loadPersonal(
+"mi_owner",
+false
+)===true;
+
+
+cart=
+loadPersonal(
+"mi_cart",
+[]
+);
+
+
+updateCart();
+
+
+updateAdminButtons();
+
+
+/* PRODUCTS */
+
+db
+.collection("mi_meta")
+.doc("products")
+.onSnapshot(
+async function(docSnap){
+
+if(
+docSnap.exists &&
+Array.isArray(
+docSnap.data().list
+)
+){
+
+products=
+docSnap.data().list;
+
+}else if(firstProductsLoad){
+
+products=
+DEFAULT_PRODUCTS;
+
+try{
+
+await db
+.collection("mi_meta")
+.doc("products")
+.set({
+list:DEFAULT_PRODUCTS
+});
+
+}catch(e){
+
+console.error(e);
+
+}
+
+}
+
+
+firstProductsLoad=false;
+
+renderProducts();
+
+refreshAdmin();
+
+showSync(false);
+
+},
+function(err){
+
+console.error(
+"Products listener error:",
+err
+);
+
+products=
+products.length?
+products:
+DEFAULT_PRODUCTS;
+
+renderProducts();
+
+showSync(false);
+
+}
+);
+
+
+/* CATEGORIES */
+
+db
+.collection("mi_meta")
+.doc("categories")
+.onSnapshot(
+async function(docSnap){
+
+if(
+docSnap.exists &&
+Array.isArray(
+docSnap.data().list
+)
+){
+
+categories=
+docSnap.data().list;
+
+}else if(firstCategoriesLoad){
+
+categories=
+DEFAULT_CATEGORIES;
+
+try{
+
+await db
+.collection("mi_meta")
+.doc("categories")
+.set({
+list:DEFAULT_CATEGORIES
+});
+
+}catch(e){
+
+console.error(e);
+
+}
+
+}
+
+
+firstCategoriesLoad=false;
+
+renderCategories();
+
+refreshAdmin();
+
+},
+function(err){
+
+console.error(
+"Categories listener error:",
+err
+);
+
+categories=
+categories.length?
+categories:
+DEFAULT_CATEGORIES;
+
+renderCategories();
+
+}
+);
+
+}
+
 
 init();
+
 </script>
+
 </body>
 </html>
