@@ -4,24 +4,16 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1.0">
 
-<title>Bearings & CNC Parts Supplier in Lahore | MI TRADING COM Brandreth Road</title>
+<title>MI TRADING COM | Industrial Bearings, CNC Parts & General Supply - Lahore</title>
 
-<meta name="description" content="MI TRADING COM Lahore - SKF, FAG, NTN Bearings, CNC Parts, Pneumatic, Hydraulic, Belts Supplier. Brandreth Road Lahore. Call 0313-4854823 for Price.">
-
+<meta name="description" content="MI TRADING COM - Industrial Bearings, CNC Machine Parts, Belts, Pneumatic, Hydraulic, Electrical Items and Hardware Supplier in Lahore, Pakistan. Brandreth Road, Lahore.">
 <meta name="keywords" content="bearings Lahore, CNC parts Pakistan, industrial supply Lahore, pneumatic fittings, hydraulic components, timing belts, Brandreth Road industrial supplier">
 <meta name="robots" content="index,follow">
 
 <meta property="og:title" content="MI TRADING COM | Industrial & General Supply">
 <meta property="og:description" content="Industrial Bearings, CNC Parts, Belts, Pneumatic, Hydraulic, Electrical and Hardware Supplier in Lahore, Pakistan.">
 <meta property="og:type" content="website">
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-ETZW9027X8"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'G-ETZW9027X8');
-</script>
+
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='15' fill='%2310264a'/><text x='50' y='65' font-family='Arial' font-size='45' font-weight='900' fill='%23ff9800' text-anchor='middle'>MI</text></svg>">
 
 <style>
@@ -1912,7 +1904,7 @@ function loadPersonal(key,fallback){
 
 try{
 
-const raw=localStorage.getItem(key);
+const raw=sessionStorage.getItem(key);   // ← FIXED: sessionStorage
 
 return raw?JSON.parse(raw):fallback;
 
@@ -1929,7 +1921,7 @@ function savePersonal(key,value){
 
 try{
 
-localStorage.setItem(key,JSON.stringify(value));
+sessionStorage.setItem(key,JSON.stringify(value));  // ← FIXED: sessionStorage
 
 }catch(e){
 
@@ -2227,7 +2219,7 @@ document.getElementById("pCategory").innerHTML=
 categories
 .filter(c=>c!=="All Products")
 .map(c=>
-`<option value="${escape(c)}">${escape(c)}</option>`
+`<option value="\( {escape(c)}"> \){escape(c)}</option>`
 )
 .join("");
 
@@ -2604,7 +2596,7 @@ if(enteredHash===PASSWORD_HASH){
 
 loggedIn=true;
 
-savePersonal("mi_owner",true);
+savePersonal("mi_owner",true);   // ab sessionStorage mein
 
 closeLogin();
 
@@ -2650,7 +2642,10 @@ function logout(){
 
 loggedIn=false;
 
-savePersonal("mi_owner",false);
+savePersonal("mi_owner",false);   // session clear
+
+// extra safety
+try{ sessionStorage.removeItem("mi_owner"); }catch(e){}
 
 closeOwner();
 
@@ -3610,18 +3605,11 @@ async function init(){
 showSync(true);
 
 
-loggedIn=
-loadPersonal(
-"mi_owner",
-false
-)===true;
+// IMPORTANT: ab sessionStorage use ho raha hai
+loggedIn = loadPersonal("mi_owner", false) === true;
 
 
-cart=
-loadPersonal(
-"mi_cart",
-[]
-);
+cart = loadPersonal("mi_cart", []);
 
 
 updateCart();
