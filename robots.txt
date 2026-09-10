@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://mitradingcom04-cmyk.github.io/mi_trading_com/sitemap.xml
