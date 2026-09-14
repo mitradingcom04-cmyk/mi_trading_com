@@ -1420,6 +1420,16 @@ placeholder="Example: 6206">
 
 <select id="pCategory"></select>
 
+<button
+type="button"
+class="btn blue"
+style="margin:7px 0 0 0"
+onclick="openCategoryManager()">
+
+📁 Manage Categories
+
+</button>
+
 </div>
 
 
@@ -1577,13 +1587,18 @@ Clear
 
 <h2>Category Management</h2>
 
+<div class="notice">
+Yahan se aap website ki categories ko add, edit aur delete kar sakte hain.
+New category automatically Product Upload ke category dropdown mein bhi show hogi.
+</div>
+
 <div class="card">
 
 <div class="card-body">
 
 <div class="field">
 
-<label>New Category</label>
+<label>Category Name</label>
 
 <input
 id="newCategory"
@@ -1591,8 +1606,23 @@ placeholder="Example: Oil Seals">
 
 </div>
 
-<button class="btn" onclick="addCategory()">
+<button
+id="categorySaveBtn"
+class="btn"
+onclick="addCategory()">
+
 ➕ Add Category
+
+</button>
+
+<button
+id="categoryCancelBtn"
+class="btn dark"
+onclick="cancelCategoryEdit()"
+style="display:none">
+
+Cancel Edit
+
 </button>
 
 </div>
@@ -1600,6 +1630,10 @@ placeholder="Example: Oil Seals">
 </div>
 
 <br>
+
+<h3 style="margin-bottom:12px;color:#10264a">
+Website Categories
+</h3>
 
 <div id="adminCategories" class="categories"></div>
 
@@ -1730,7 +1764,7 @@ const PASSWORD_HASH =
 
 const firebaseConfig = {
 
-apiKey:"AIzaSyAAeCNQFD5MdKORM4Icxc4HEJhQF1TmRVg",
+apiKey:"AIzaSyAAeCNQFD5MdKORM4Icxc4HEJhQF1TmRV",
 
 authDomain:"mi-trading-com.firebaseapp.com",
 
@@ -1765,6 +1799,8 @@ let categories=[];
 let products=[];
 
 let cart=[];
+
+let editCategoryName=null;
 
 
 /* DEFAULT CATEGORIES */
@@ -1862,7 +1898,7 @@ name:"Pneumatic Fitting",
 title:"Pneumatic Fitting",
 model:"PC-6",
 category:"Pneumatic Fittings",
-price:"Ask for Price",
+price:"Rs. 300",
 image:"https://placehold.co/700x500?text=Pneumatic+Fitting",
 description:"6mm pneumatic connector.",
 desc:"6mm pneumatic connector.",
@@ -1904,7 +1940,7 @@ function loadPersonal(key,fallback){
 
 try{
 
-const raw=sessionStorage.getItem(key);   // ← FIXED: sessionStorage
+const raw=localStorage.getItem(key);
 
 return raw?JSON.parse(raw):fallback;
 
@@ -1921,7 +1957,7 @@ function savePersonal(key,value){
 
 try{
 
-sessionStorage.setItem(key,JSON.stringify(value));  // ← FIXED: sessionStorage
+localStorage.setItem(key,JSON.stringify(value));
 
 }catch(e){
 
@@ -2203,7 +2239,7 @@ return `
 
 <div
 class="category ${activeCategory===c?"active":""}"
-onclick="filterCategory('${escape(c)}')">
+onclick="filterCategory(${JSON.stringify(c)})">
 
 ${escape(c)}
 
@@ -2214,14 +2250,39 @@ ${escape(c)}
 }).join("");
 
 
-document.getElementById("pCategory").innerHTML=
+/* PRODUCT UPLOAD CATEGORY DROPDOWN */
+
+const select=document.getElementById("pCategory");
+
+if(select){
+
+const currentValue=select.value;
+
+select.innerHTML=
 
 categories
 .filter(c=>c!=="All Products")
-.map(c=>
-`<option value="\( {escape(c)}"> \){escape(c)}</option>`
-)
+.map(function(c){
+
+return `
+<option value="${escape(c)}">
+${escape(c)}
+</option>
+`;
+
+})
 .join("");
+
+if(
+currentValue &&
+categories.includes(currentValue)
+){
+
+select.value=currentValue;
+
+}
+
+}
 
 }
 
@@ -2596,7 +2657,7 @@ if(enteredHash===PASSWORD_HASH){
 
 loggedIn=true;
 
-savePersonal("mi_owner",true);   // ab sessionStorage mein
+savePersonal("mi_owner",true);
 
 closeLogin();
 
@@ -2642,10 +2703,7 @@ function logout(){
 
 loggedIn=false;
 
-savePersonal("mi_owner",false);   // session clear
-
-// extra safety
-try{ sessionStorage.removeItem("mi_owner"); }catch(e){}
+savePersonal("mi_owner",false);
 
 closeOwner();
 
@@ -2675,9 +2733,44 @@ document
 .forEach(x=>x.classList.remove("active"));
 
 
+if(btn){
+
 btn.classList.add("active");
 
+}
+
 refreshAdmin();
+
+}
+
+
+/* =========================================================
+OPEN CATEGORY MANAGER
+========================================================= */
+
+function openCategoryManager(){
+
+if(!loggedIn){
+
+alert("Owner Login Required.");
+
+return;
+
+}
+
+const categoryButton=
+Array.from(
+document.querySelectorAll(".sidebar button")
+).find(function(btn){
+
+return btn.getAttribute("onclick") &&
+btn.getAttribute("onclick")
+.includes("categoriesAdmin");
+
+});
+
+
+tab("categoriesAdmin",categoryButton);
 
 }
 
@@ -2725,6 +2818,15 @@ document.getElementById("pDescription").value.trim();
 if(!name||!model){
 
 alert("Product Name and Model are required.");
+
+return;
+
+}
+
+
+if(!category){
+
+alert("Please select a category.");
 
 return;
 
@@ -2901,6 +3003,30 @@ document
 .getElementById("tab-add")
 .classList.add("active");
 
+
+document
+.querySelectorAll(".sidebar button")
+.forEach(x=>x.classList.remove("active"));
+
+
+const addButton=
+Array.from(
+document.querySelectorAll(".sidebar button")
+).find(function(btn){
+
+return btn.getAttribute("onclick") &&
+btn.getAttribute("onclick")
+.includes("tab('add'");
+
+});
+
+
+if(addButton){
+
+addButton.classList.add("active");
+
+}
+
 }
 
 
@@ -3011,7 +3137,7 @@ imageURL(url);
 
 
 /* =========================================================
-CATEGORY ADD
+CATEGORY ADD / EDIT
 ========================================================= */
 
 async function addCategory(){
@@ -3021,12 +3147,125 @@ document.getElementById("newCategory");
 
 const name=input.value.trim();
 
-if(!name)return;
+if(!name){
+
+alert("Please enter category name.");
+
+return;
+
+}
 
 
-if(categories.some(
+/* EDIT CATEGORY */
+
+if(editCategoryName){
+
+if(
+name.toLowerCase()!==
+editCategoryName.toLowerCase() &&
+categories.some(
 x=>x.toLowerCase()===name.toLowerCase()
-)){
+)
+){
+
+alert("Category already exists.");
+
+return;
+
+}
+
+
+const index=
+categories.findIndex(
+x=>x===editCategoryName
+);
+
+if(index===-1){
+
+cancelCategoryEdit();
+
+return;
+
+}
+
+
+/* UPDATE CATEGORY */
+
+categories[index]=name;
+
+
+/* UPDATE PRODUCTS USING OLD CATEGORY */
+
+products.forEach(function(p){
+
+if(p.category===editCategoryName){
+
+p.category=name;
+
+}
+
+});
+
+
+showSync(true);
+
+const categoryOK=
+await saveCategoriesToCloud(categories);
+
+if(!categoryOK){
+
+showSync(false);
+
+return;
+
+}
+
+
+const productOK=
+await saveProductsToCloud(products);
+
+showSync(false);
+
+if(!productOK)return;
+
+
+activeCategory=
+activeCategory===editCategoryName
+?name
+:activeCategory;
+
+
+editCategoryName=null;
+
+input.value="";
+
+document.getElementById("categorySaveBtn")
+.innerText="➕ Add Category";
+
+document.getElementById("categoryCancelBtn")
+.style.display="none";
+
+
+renderCategories();
+
+renderProducts();
+
+refreshAdmin();
+
+alert("Category Updated Successfully.");
+
+return;
+
+}
+
+
+/* ADD NEW CATEGORY */
+
+if(
+categories.some(
+x=>x.toLowerCase()===name.toLowerCase()
+)
+){
 
 alert("Category already exists.");
 
@@ -3054,7 +3293,147 @@ renderCategories();
 
 refreshAdmin();
 
-alert("Category Added.");
+alert("Category Added Successfully.");
+
+}
+
+
+/* =========================================================
+EDIT CATEGORY
+========================================================= */
+
+function editCategory(name){
+
+if(name==="All Products"){
+
+alert("All Products category cannot be edited.");
+
+return;
+
+}
+
+
+editCategoryName=name;
+
+
+const input=
+document.getElementById("newCategory");
+
+input.value=name;
+
+document.getElementById("categorySaveBtn")
+.innerText="💾 Update Category";
+
+document.getElementById("categoryCancelBtn")
+.style.display="inline-block";
+
+
+input.focus();
+
+}
+
+
+/* =========================================================
+CANCEL CATEGORY EDIT
+========================================================= */
+
+function cancelCategoryEdit(){
+
+editCategoryName=null;
+
+const input=
+document.getElementById("newCategory");
+
+input.value="";
+
+document.getElementById("categorySaveBtn")
+.innerText="➕ Add Category";
+
+document.getElementById("categoryCancelBtn")
+.style.display="none";
+
+}
+
+
+/* =========================================================
+DELETE CATEGORY
+========================================================= */
+
+async function deleteCategory(name){
+
+if(name==="All Products"){
+
+alert("All Products category cannot be deleted.");
+
+return;
+
+}
+
+
+/* CHECK PRODUCTS */
+
+const usedProducts=
+products.filter(
+p=>p.category===name
+);
+
+
+if(usedProducts.length){
+
+alert(
+`"${name}" cannot be deleted because ${usedProducts.length} product(s) are using this category.
+
+Please change those products to another category first.`
+);
+
+return;
+
+}
+
+
+if(
+!confirm(
+`Delete category "${name}"?`
+)
+){
+
+return;
+
+}
+
+
+categories=
+categories.filter(
+x=>x!==name
+);
+
+
+if(activeCategory===name){
+
+activeCategory="All Products";
+
+}
+
+
+showSync(true);
+
+const ok=
+await saveCategoriesToCloud(categories);
+
+showSync(false);
+
+if(!ok)return;
+
+
+cancelCategoryEdit();
+
+renderCategories();
+
+renderProducts();
+
+refreshAdmin();
+
+alert("Category Deleted Successfully.");
 
 }
 
@@ -3168,15 +3547,79 @@ onclick="toggleFeatured(${p.id})">
 }).join("");
 
 
+/* CATEGORY MANAGEMENT */
+
 document.getElementById("adminCategories")
 .innerHTML=
 
-categories
-.filter(x=>x!=="All Products")
-.map(x=>
-`<div class="category">${escape(x)}</div>`
-)
-.join("");
+categories.map(function(x){
+
+if(x==="All Products"){
+
+return `
+
+<div class="category active">
+
+<div style="font-weight:bold">
+${escape(x)}
+</div>
+
+<small style="display:block;color:#777;margin-top:5px">
+Default category
+</small>
+
+</div>
+
+`;
+
+}
+
+
+const productCount=
+products.filter(
+p=>p.category===x
+).length;
+
+
+return `
+
+<div class="category">
+
+<div style="font-weight:bold;margin-bottom:8px">
+${escape(x)}
+</div>
+
+<small style="display:block;color:#777;margin-bottom:10px">
+${productCount} product(s)
+</small>
+
+<div style="display:flex;gap:5px;justify-content:center">
+
+<button
+class="btn blue"
+style="padding:6px 9px;font-size:11px"
+onclick="editCategory(${JSON.stringify(x)})">
+
+✏️ Edit
+
+</button>
+
+<button
+class="btn red"
+style="padding:6px 9px;font-size:11px"
+onclick="deleteCategory(${JSON.stringify(x)})">
+
+🗑️ Delete
+
+</button>
+
+</div>
+
+</div>
+
+`;
+
+}).join("");
 
 
 const featured=
@@ -3605,11 +4048,18 @@ async function init(){
 showSync(true);
 
 
-// IMPORTANT: ab sessionStorage use ho raha hai
-loggedIn = loadPersonal("mi_owner", false) === true;
+loggedIn=
+loadPersonal(
+"mi_owner",
+false
+)===true;
 
 
-cart = loadPersonal("mi_cart", []);
+cart=
+loadPersonal(
+"mi_cart",
+[]
+);
 
 
 updateCart();
