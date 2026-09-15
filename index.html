@@ -400,6 +400,10 @@ font-size:11px;
 background:#f59e0b;
 }
 
+.delete{
+background:var(--red);
+}
+
 .featured-badge{
 position:absolute;
 left:8px;
@@ -1420,16 +1424,6 @@ placeholder="Example: 6206">
 
 <select id="pCategory"></select>
 
-<button
-type="button"
-class="btn blue"
-style="margin:7px 0 0 0"
-onclick="openCategoryManager()">
-
-📁 Manage Categories
-
-</button>
-
 </div>
 
 
@@ -1587,18 +1581,13 @@ Clear
 
 <h2>Category Management</h2>
 
-<div class="notice">
-Yahan se aap website ki categories ko add, edit aur delete kar sakte hain.
-New category automatically Product Upload ke category dropdown mein bhi show hogi.
-</div>
-
 <div class="card">
 
 <div class="card-body">
 
 <div class="field">
 
-<label>Category Name</label>
+<label>New Category</label>
 
 <input
 id="newCategory"
@@ -1606,23 +1595,8 @@ placeholder="Example: Oil Seals">
 
 </div>
 
-<button
-id="categorySaveBtn"
-class="btn"
-onclick="addCategory()">
-
+<button class="btn" onclick="addCategory()">
 ➕ Add Category
-
-</button>
-
-<button
-id="categoryCancelBtn"
-class="btn dark"
-onclick="cancelCategoryEdit()"
-style="display:none">
-
-Cancel Edit
-
 </button>
 
 </div>
@@ -1630,10 +1604,6 @@ Cancel Edit
 </div>
 
 <br>
-
-<h3 style="margin-bottom:12px;color:#10264a">
-Website Categories
-</h3>
 
 <div id="adminCategories" class="categories"></div>
 
@@ -1764,7 +1734,7 @@ const PASSWORD_HASH =
 
 const firebaseConfig = {
 
-apiKey:"AIzaSyAAeCNQFD5MdKORM4Icxc4HEJhQF1TmRV",
+apiKey:"AIzaSyAAeCNQFD5MdKORM4Icxc4HEJhQF1TmRVg",
 
 authDomain:"mi-trading-com.firebaseapp.com",
 
@@ -1799,8 +1769,6 @@ let categories=[];
 let products=[];
 
 let cart=[];
-
-let editCategoryName=null;
 
 
 /* DEFAULT CATEGORIES */
@@ -1898,7 +1866,7 @@ name:"Pneumatic Fitting",
 title:"Pneumatic Fitting",
 model:"PC-6",
 category:"Pneumatic Fittings",
-price:"Rs. 300",
+price:"Ask for Price",
 image:"https://placehold.co/700x500?text=Pneumatic+Fitting",
 description:"6mm pneumatic connector.",
 desc:"6mm pneumatic connector.",
@@ -2022,12 +1990,15 @@ img.src="https://placehold.co/700x500?text=Image+Not+Available";
 
 
 /* =========================================================
-FIRESTORE
+FIRESTORE + LOCAL FALLBACK
 ========================================================= */
 
 async function saveProductsToCloud(list){
 
 try{
+
+/* always keep local backup first */
+savePersonal("mi_products",list);
 
 await db
 .collection("mi_meta")
@@ -2041,11 +2012,11 @@ return true;
 console.error(e);
 
 alert(
-"Product save nahi ho saka. Internet/Firebase connection check karein."
+"Cloud save fail (size/internet/permission). Product local pe save ho gaya. " +
+(e.message||"")
 );
 
-return false;
-
+return true; /* local success */
 }
 
 }
@@ -2054,6 +2025,8 @@ return false;
 async function saveCategoriesToCloud(list){
 
 try{
+
+savePersonal("mi_categories",list);
 
 await db
 .collection("mi_meta")
@@ -2067,10 +2040,11 @@ return true;
 console.error(e);
 
 alert(
-"Category save nahi ho saki. Internet check karein."
+"Category cloud save fail. Local pe save ho gaya. " +
+(e.message||"")
 );
 
-return false;
+return true;
 
 }
 
@@ -2104,7 +2078,7 @@ return false;
 
 
 /* =========================================================
-IMAGE UPLOAD
+IMAGE UPLOAD (stronger compression)
 ========================================================= */
 
 function galleryImageUpload(event){
@@ -2145,7 +2119,7 @@ const img=new Image();
 
 img.onload=function(){
 
-const MAX=1200;
+const MAX=800;
 
 let width=img.width;
 
@@ -2189,13 +2163,22 @@ canvas.height
 
 
 let compressed=
-canvas.toDataURL("image/webp",.72);
+canvas.toDataURL("image/webp",0.60);
 
 
-if(!compressed){
+if(!compressed || compressed.length>450000){
 
 compressed=
-canvas.toDataURL("image/jpeg",.72);
+canvas.toDataURL("image/jpeg",0.55);
+
+}
+
+
+if(compressed.length>500000){
+
+/* still too big – lower quality again */
+compressed=
+canvas.toDataURL("image/jpeg",0.40);
 
 }
 
@@ -2239,7 +2222,7 @@ return `
 
 <div
 class="category ${activeCategory===c?"active":""}"
-onclick="filterCategory(${JSON.stringify(c)})">
+onclick="filterCategory('${escape(c)}')">
 
 ${escape(c)}
 
@@ -2250,39 +2233,14 @@ ${escape(c)}
 }).join("");
 
 
-/* PRODUCT UPLOAD CATEGORY DROPDOWN */
-
-const select=document.getElementById("pCategory");
-
-if(select){
-
-const currentValue=select.value;
-
-select.innerHTML=
+document.getElementById("pCategory").innerHTML=
 
 categories
 .filter(c=>c!=="All Products")
-.map(function(c){
-
-return `
-<option value="${escape(c)}">
-${escape(c)}
-</option>
-`;
-
-})
+.map(c=>
+`<option value="\( {escape(c)}"> \){escape(c)}</option>`
+)
 .join("");
-
-if(
-currentValue &&
-categories.includes(currentValue)
-){
-
-select.value=currentValue;
-
-}
-
-}
 
 }
 
@@ -2733,44 +2691,9 @@ document
 .forEach(x=>x.classList.remove("active"));
 
 
-if(btn){
-
 btn.classList.add("active");
 
-}
-
 refreshAdmin();
-
-}
-
-
-/* =========================================================
-OPEN CATEGORY MANAGER
-========================================================= */
-
-function openCategoryManager(){
-
-if(!loggedIn){
-
-alert("Owner Login Required.");
-
-return;
-
-}
-
-const categoryButton=
-Array.from(
-document.querySelectorAll(".sidebar button")
-).find(function(btn){
-
-return btn.getAttribute("onclick") &&
-btn.getAttribute("onclick")
-.includes("categoriesAdmin");
-
-});
-
-
-tab("categoriesAdmin",categoryButton);
 
 }
 
@@ -2818,15 +2741,6 @@ document.getElementById("pDescription").value.trim();
 if(!name||!model){
 
 alert("Product Name and Model are required.");
-
-return;
-
-}
-
-
-if(!category){
-
-alert("Please select a category.");
 
 return;
 
@@ -3003,30 +2917,6 @@ document
 .getElementById("tab-add")
 .classList.add("active");
 
-
-document
-.querySelectorAll(".sidebar button")
-.forEach(x=>x.classList.remove("active"));
-
-
-const addButton=
-Array.from(
-document.querySelectorAll(".sidebar button")
-).find(function(btn){
-
-return btn.getAttribute("onclick") &&
-btn.getAttribute("onclick")
-.includes("tab('add'");
-
-});
-
-
-if(addButton){
-
-addButton.classList.add("active");
-
-}
-
 }
 
 
@@ -3137,7 +3027,7 @@ imageURL(url);
 
 
 /* =========================================================
-CATEGORY ADD / EDIT
+CATEGORY ADD
 ========================================================= */
 
 async function addCategory(){
@@ -3147,125 +3037,12 @@ document.getElementById("newCategory");
 
 const name=input.value.trim();
 
-if(!name){
-
-alert("Please enter category name.");
-
-return;
-
-}
+if(!name)return;
 
 
-/* EDIT CATEGORY */
-
-if(editCategoryName){
-
-if(
-name.toLowerCase()!==
-editCategoryName.toLowerCase() &&
-categories.some(
+if(categories.some(
 x=>x.toLowerCase()===name.toLowerCase()
-)
-){
-
-alert("Category already exists.");
-
-return;
-
-}
-
-
-const index=
-categories.findIndex(
-x=>x===editCategoryName
-);
-
-if(index===-1){
-
-cancelCategoryEdit();
-
-return;
-
-}
-
-
-/* UPDATE CATEGORY */
-
-categories[index]=name;
-
-
-/* UPDATE PRODUCTS USING OLD CATEGORY */
-
-products.forEach(function(p){
-
-if(p.category===editCategoryName){
-
-p.category=name;
-
-}
-
-});
-
-
-showSync(true);
-
-const categoryOK=
-await saveCategoriesToCloud(categories);
-
-if(!categoryOK){
-
-showSync(false);
-
-return;
-
-}
-
-
-const productOK=
-await saveProductsToCloud(products);
-
-showSync(false);
-
-if(!productOK)return;
-
-
-activeCategory=
-activeCategory===editCategoryName
-?name
-:activeCategory;
-
-
-editCategoryName=null;
-
-input.value="";
-
-document.getElementById("categorySaveBtn")
-.innerText="➕ Add Category";
-
-document.getElementById("categoryCancelBtn")
-.style.display="none";
-
-
-renderCategories();
-
-renderProducts();
-
-refreshAdmin();
-
-alert("Category Updated Successfully.");
-
-return;
-
-}
-
-
-/* ADD NEW CATEGORY */
-
-if(
-categories.some(
-x=>x.toLowerCase()===name.toLowerCase()
-)
-){
+)){
 
 alert("Category already exists.");
 
@@ -3293,147 +3070,7 @@ renderCategories();
 
 refreshAdmin();
 
-alert("Category Added Successfully.");
-
-}
-
-
-/* =========================================================
-EDIT CATEGORY
-========================================================= */
-
-function editCategory(name){
-
-if(name==="All Products"){
-
-alert("All Products category cannot be edited.");
-
-return;
-
-}
-
-
-editCategoryName=name;
-
-
-const input=
-document.getElementById("newCategory");
-
-input.value=name;
-
-document.getElementById("categorySaveBtn")
-.innerText="💾 Update Category";
-
-document.getElementById("categoryCancelBtn")
-.style.display="inline-block";
-
-
-input.focus();
-
-}
-
-
-/* =========================================================
-CANCEL CATEGORY EDIT
-========================================================= */
-
-function cancelCategoryEdit(){
-
-editCategoryName=null;
-
-const input=
-document.getElementById("newCategory");
-
-input.value="";
-
-document.getElementById("categorySaveBtn")
-.innerText="➕ Add Category";
-
-document.getElementById("categoryCancelBtn")
-.style.display="none";
-
-}
-
-
-/* =========================================================
-DELETE CATEGORY
-========================================================= */
-
-async function deleteCategory(name){
-
-if(name==="All Products"){
-
-alert("All Products category cannot be deleted.");
-
-return;
-
-}
-
-
-/* CHECK PRODUCTS */
-
-const usedProducts=
-products.filter(
-p=>p.category===name
-);
-
-
-if(usedProducts.length){
-
-alert(
-`"${name}" cannot be deleted because ${usedProducts.length} product(s) are using this category.
-
-Please change those products to another category first.`
-);
-
-return;
-
-}
-
-
-if(
-!confirm(
-`Delete category "${name}"?`
-)
-){
-
-return;
-
-}
-
-
-categories=
-categories.filter(
-x=>x!==name
-);
-
-
-if(activeCategory===name){
-
-activeCategory="All Products";
-
-}
-
-
-showSync(true);
-
-const ok=
-await saveCategoriesToCloud(categories);
-
-showSync(false);
-
-if(!ok)return;
-
-
-cancelCategoryEdit();
-
-renderCategories();
-
-renderProducts();
-
-refreshAdmin();
-
-alert("Category Deleted Successfully.");
+alert("Category Added.");
 
 }
 
@@ -3547,79 +3184,15 @@ onclick="toggleFeatured(${p.id})">
 }).join("");
 
 
-/* CATEGORY MANAGEMENT */
-
 document.getElementById("adminCategories")
 .innerHTML=
 
-categories.map(function(x){
-
-if(x==="All Products"){
-
-return `
-
-<div class="category active">
-
-<div style="font-weight:bold">
-${escape(x)}
-</div>
-
-<small style="display:block;color:#777;margin-top:5px">
-Default category
-</small>
-
-</div>
-
-`;
-
-}
-
-
-const productCount=
-products.filter(
-p=>p.category===x
-).length;
-
-
-return `
-
-<div class="category">
-
-<div style="font-weight:bold;margin-bottom:8px">
-${escape(x)}
-</div>
-
-<small style="display:block;color:#777;margin-bottom:10px">
-${productCount} product(s)
-</small>
-
-<div style="display:flex;gap:5px;justify-content:center">
-
-<button
-class="btn blue"
-style="padding:6px 9px;font-size:11px"
-onclick="editCategory(${JSON.stringify(x)})">
-
-✏️ Edit
-
-</button>
-
-<button
-class="btn red"
-style="padding:6px 9px;font-size:11px"
-onclick="deleteCategory(${JSON.stringify(x)})">
-
-🗑️ Delete
-
-</button>
-
-</div>
-
-</div>
-
-`;
-
-}).join("");
+categories
+.filter(x=>x!=="All Products")
+.map(x=>
+`<div class="category">${escape(x)}</div>`
+)
+.join("");
 
 
 const featured=
@@ -4035,7 +3608,7 @@ modal.style.display="none";
 
 
 /* =========================================================
-FIREBASE REAL-TIME INIT
+FIREBASE REAL-TIME INIT + LOCAL FALLBACK
 ========================================================= */
 
 let firstProductsLoad=true;
@@ -4086,10 +3659,12 @@ docSnap.data().list
 products=
 docSnap.data().list;
 
+savePersonal("mi_products",products);
+
 }else if(firstProductsLoad){
 
 products=
-DEFAULT_PRODUCTS;
+loadPersonal("mi_products",DEFAULT_PRODUCTS);
 
 try{
 
@@ -4097,7 +3672,7 @@ await db
 .collection("mi_meta")
 .doc("products")
 .set({
-list:DEFAULT_PRODUCTS
+list:products
 });
 
 }catch(e){
@@ -4126,9 +3701,7 @@ err
 );
 
 products=
-products.length?
-products:
-DEFAULT_PRODUCTS;
+loadPersonal("mi_products",DEFAULT_PRODUCTS);
 
 renderProducts();
 
@@ -4156,10 +3729,12 @@ docSnap.data().list
 categories=
 docSnap.data().list;
 
+savePersonal("mi_categories",categories);
+
 }else if(firstCategoriesLoad){
 
 categories=
-DEFAULT_CATEGORIES;
+loadPersonal("mi_categories",DEFAULT_CATEGORIES);
 
 try{
 
@@ -4167,7 +3742,7 @@ await db
 .collection("mi_meta")
 .doc("categories")
 .set({
-list:DEFAULT_CATEGORIES
+list:categories
 });
 
 }catch(e){
@@ -4194,9 +3769,7 @@ err
 );
 
 categories=
-categories.length?
-categories:
-DEFAULT_CATEGORIES;
+loadPersonal("mi_categories",DEFAULT_CATEGORIES);
 
 renderCategories();
 
