@@ -400,10 +400,6 @@ font-size:11px;
 background:#f59e0b;
 }
 
-.delete{
-background:var(--red);
-}
-
 .featured-badge{
 position:absolute;
 left:8px;
@@ -1990,15 +1986,12 @@ img.src="https://placehold.co/700x500?text=Image+Not+Available";
 
 
 /* =========================================================
-FIRESTORE + LOCAL FALLBACK
+FIRESTORE
 ========================================================= */
 
 async function saveProductsToCloud(list){
 
 try{
-
-/* always keep local backup first */
-savePersonal("mi_products",list);
 
 await db
 .collection("mi_meta")
@@ -2012,11 +2005,11 @@ return true;
 console.error(e);
 
 alert(
-"Cloud save fail (size/internet/permission). Product local pe save ho gaya. " +
-(e.message||"")
+"Product save nahi ho saka. Internet/Firebase connection check karein."
 );
 
-return true; /* local success */
+return false;
+
 }
 
 }
@@ -2025,8 +2018,6 @@ return true; /* local success */
 async function saveCategoriesToCloud(list){
 
 try{
-
-savePersonal("mi_categories",list);
 
 await db
 .collection("mi_meta")
@@ -2040,11 +2031,10 @@ return true;
 console.error(e);
 
 alert(
-"Category cloud save fail. Local pe save ho gaya. " +
-(e.message||"")
+"Category save nahi ho saki. Internet check karein."
 );
 
-return true;
+return false;
 
 }
 
@@ -2078,7 +2068,7 @@ return false;
 
 
 /* =========================================================
-IMAGE UPLOAD (stronger compression)
+IMAGE UPLOAD
 ========================================================= */
 
 function galleryImageUpload(event){
@@ -2119,7 +2109,7 @@ const img=new Image();
 
 img.onload=function(){
 
-const MAX=800;
+const MAX=1200;
 
 let width=img.width;
 
@@ -2163,22 +2153,13 @@ canvas.height
 
 
 let compressed=
-canvas.toDataURL("image/webp",0.60);
+canvas.toDataURL("image/webp",.72);
 
 
-if(!compressed || compressed.length>450000){
+if(!compressed){
 
 compressed=
-canvas.toDataURL("image/jpeg",0.55);
-
-}
-
-
-if(compressed.length>500000){
-
-/* still too big – lower quality again */
-compressed=
-canvas.toDataURL("image/jpeg",0.40);
+canvas.toDataURL("image/jpeg",.72);
 
 }
 
@@ -2238,7 +2219,7 @@ document.getElementById("pCategory").innerHTML=
 categories
 .filter(c=>c!=="All Products")
 .map(c=>
-`<option value="\( {escape(c)}"> \){escape(c)}</option>`
+`<option value="${escape(c)}">${escape(c)}</option>`
 )
 .join("");
 
@@ -3608,7 +3589,7 @@ modal.style.display="none";
 
 
 /* =========================================================
-FIREBASE REAL-TIME INIT + LOCAL FALLBACK
+FIREBASE REAL-TIME INIT
 ========================================================= */
 
 let firstProductsLoad=true;
@@ -3659,12 +3640,10 @@ docSnap.data().list
 products=
 docSnap.data().list;
 
-savePersonal("mi_products",products);
-
 }else if(firstProductsLoad){
 
 products=
-loadPersonal("mi_products",DEFAULT_PRODUCTS);
+DEFAULT_PRODUCTS;
 
 try{
 
@@ -3672,7 +3651,7 @@ await db
 .collection("mi_meta")
 .doc("products")
 .set({
-list:products
+list:DEFAULT_PRODUCTS
 });
 
 }catch(e){
@@ -3701,7 +3680,9 @@ err
 );
 
 products=
-loadPersonal("mi_products",DEFAULT_PRODUCTS);
+products.length?
+products:
+DEFAULT_PRODUCTS;
 
 renderProducts();
 
@@ -3729,12 +3710,10 @@ docSnap.data().list
 categories=
 docSnap.data().list;
 
-savePersonal("mi_categories",categories);
-
 }else if(firstCategoriesLoad){
 
 categories=
-loadPersonal("mi_categories",DEFAULT_CATEGORIES);
+DEFAULT_CATEGORIES;
 
 try{
 
@@ -3742,7 +3721,7 @@ await db
 .collection("mi_meta")
 .doc("categories")
 .set({
-list:categories
+list:DEFAULT_CATEGORIES
 });
 
 }catch(e){
@@ -3769,7 +3748,9 @@ err
 );
 
 categories=
-loadPersonal("mi_categories",DEFAULT_CATEGORIES);
+categories.length?
+categories:
+DEFAULT_CATEGORIES;
 
 renderCategories();
 
